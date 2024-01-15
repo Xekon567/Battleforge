@@ -1,0 +1,735 @@
+{
+  "name": "Luminastra Mooncouncil",
+  "id": "luminastra_mooncouncil",
+  "lore": "In the forgotten annals of time, when the universe was young and the cosmos brimmed with untapped potential, a race of Moon Elves known as the Luminastra emerged on the tranquil moon of Eclithra. Guided by ancient prophecies and guided by the celestial dance of the stars, these ethereal beings were blessed with an innate connection to the mystical energies of the moon.\n\nThe Luminastra revered the moon as a sacred source of wisdom, illumination, and tranquility. They observed the waxing and waning of the moon with awe, understanding that its cycles held profound secrets and potent magic. The most gifted Moon Elves delved deep into the mysteries of the lunar forces, unraveling the enigmatic spells that wove the cosmic tapestry.\n\nAs their knowledge grew, the Luminastra realized that their gift of moon magic was not just meant for personal mastery but to be shared with the entire elven society and even beyond. In the heart of the moonlit forest, they established the Mooncouncil—a gathering of the most skilled and wise Moon Elves from different clans. Their purpose was to safeguard the ancient knowledge, maintain harmony within their kind, and preserve the balance between the moon's influence and the natural world.\n\nThe Mooncouncil's members were selected through a rigorous process that combined mystical intuition with practical wisdom. They were distinguished by the luminescent markings on their skin, which glowed brightly with the phases of the moon, reflecting their profound connection with the lunar realm. Their eyes shone with an otherworldly brilliance, embodying the wisdom they had acquired through ages of study and meditation.\n\nUnder the guidance of the Mooncouncil, the Luminastra society thrived in harmony and peace. They embraced a symbiotic relationship with nature and practiced a form of moon-based magic that allowed them to communicate with the spirits of the forest, summon celestial beings, and harness the moon's light to enhance their abilities.\n\nAs eons passed, the Luminastra Mooncouncil's influence extended beyond their homelands of Eclithra. They became revered across the realms as paragons of celestial wisdom, arbiters of justice, and proponents of harmony. Many sought their counsel, and emissaries from various races sought to establish diplomatic relations with these moon-bound elves.\n\nYet, the Luminastra remained guardians of the moon's secrets, vowing to preserve the balance of the cosmos and the tranquility of their sacred moon. They stood vigilant, observing the stars and planets, ever watchful for any cosmic disturbance that could threaten the delicate weave of existence.\n\nAnd so, the Luminastra Mooncouncil persists—a timeless beacon of wisdom, their ancient city glowing in the moonlit night. Their legacy stretches across the ages, their magic intertwined with the celestial dance of the cosmos, and their purpose steadfast—to illuminate the paths of others, to keep the cosmic harmony, and to remain as the celestial guardians of Eclithra, the Moon of Luminastra.",
+  "author": "Xekon#8266",
+  "units": {
+    "elf_noble": {
+      "name": "Luminastra Noble",
+      "description": "A noble of the ancient high elves, leading his kin into battle.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Luminastra Noble",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": [{"id": "tactician", "x": 1}, "leader", {"id": "wounds", "x": 3}],
+          "weapons": [{"id": "handweapon", "count": 3}],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "handweapon", "count": 3}],
+              "withWeapon": [{"id": "handweapon", "count": 4}, {"id": "long_spear", "count": 3}, {"id": "great_weapon", "count": 3}, {"id": "polearm", "count": 3}]
+            },
+            {"addWeapon": ["long_bow"]},
+            {"addRule": ["cloak", "shield", {"id": "inspiring", "x": "Infantry"}, {"id": "power", "x": 1}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_noble_horse": {
+      "name": "Luminastra Noble on Warhorse",
+      "description": "A noble of the ancient high elves atop a mighty steed, leading his kin into battle.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Luminastra Noble on Warhorse",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": [{"id": "tactician", "x": 1}, {"id": "leader", "x": "Infantry, Cavarly"}, {"id": "wounds", "x": 3}],
+          "weapons": [{"id": "handweapon", "count": 3}, {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "lance", "count": 3}, {"id": "great_weapon", "count": 3}, {"id": "handweapon", "count": 4}]},
+            {"addWeapon": ["long_bow"]},
+            {"addRule": ["cloak", "shield", {"id": "power", "x": 1}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_noble_dragon": {
+      "name": "Luminastra Noble on Lunar Drake",
+      "description": "A noble of the ancient high elves atop a mighty dragon, leading his kin into battle.",
+      "category": "hero",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Luminastra Noble on Lunar Drake",
+          "movement": 10,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 13,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 5}, "fly"],
+          "weapons": [{"id": "handweapon", "count": 5}, {"id": "flame_breath", "count": 6}],
+          "options": [
+            {"replaceWeapon": [{"id": "handweapon", "count": 5}], "withWeapon": [{"id": "lance", "count": 5}, {"id": "great_weapon", "count": 5}]},
+            {"addWeapon": ["long_bow"]},
+            {"addRule": ["cloak", "relic_shield", "inspiring_aura"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_noble_chariot": {
+      "name": "Luminastra Noble on Chariot",
+      "description": "A chariot piloted by a noble of the ancient high elves.",
+      "category": "hero",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Luminastra Noble on Chariot",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 10,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 3}],
+          "weapons": [{"id": "hooves_and_teeth", "count": 4}, {"id": "handweapon", "count": 3}],
+          "options": [
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "lance", "count": 3}, {"id": "great_weapon", "count": 3}, {"id": "handweapon", "count": 4}]},
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 4}], "withWeapon": [{"id": "claws", "count": 4}]},
+            {"addWeapon": ["long_bow"]},
+            {"addRule": ["cloak", "relic_shield", {"id": "inspiring", "x": "Vehicle"}, {"id": "power", "x": 1}]},
+            {"replaceRule": [{"id": "tactician", "x": 2}], "withRule": [{"id": "tactician", "x": 3}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_archmage": {
+      "name": "Archmage",
+      "description": "A powerful spellcaster of the ancient high elves.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Archmage",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": ["leader", {"id": "power", "x": 1}, {"id": "wounds", "x": 3}],
+          "weapons": ["staff", "handweapon"],
+          "options": [
+            {"replaceWeapon": ["staff", "handweapon"], "withWeapon": ["great_staff", {"id": "great_weapon", "count": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_archmage_horse": {
+      "name": "Archmage on Warhorse",
+      "description": "A powerful spellcaster of the ancient high elves atop a mighty steed.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Archmage on Warhorse",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": ["leader", {"id": "power", "x": 1}, {"id": "wounds", "x": 3}],
+          "weapons": ["staff", "handweapon", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": ["staff", "handweapon"], "withWeapon": ["great_staff"]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "archmage_dragon": {
+      "name": "Archmage on Lunar Drake",
+      "description": "A powerful spellcaster of the ancient high elves atop a mighty dragon.",
+      "category": "hero",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Archmage on Starborn Drake",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 5}, "fly", {"id": "power", "x": 2}, {"id": "leader", "x": "Cavalry, Monster"}],
+          "weapons": [{"id": "staff", "count": 2}, {"id": "handweapon", "count": 2}, {"id": "flame_breath", "count": 6}],
+          "options": [
+            {"replaceWeapon": [{"id": "staff", "count": 2}, {"id": "handweapon", "count": 2}], "withWeapon": [{"id": "great_staff", "count": 3}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_archmage_chariot": {
+      "name": "Luminastra Archmage on Chariot",
+      "description": "A chariot piloted by a powerful spellcaster of the ancient high elves.",
+      "category": "hero",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Luminastra Archmage on Chariot",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 10,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 3}, {"id": "leader", "x": "Vehicle"}, {"id": "power", "x": 2}],
+          "weapons": [{"id": "hooves_and_teeth", "count": 4}, {"id": "handweapon", "count": 2}, {"id": "staff", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "staff", "count": 2}, {"id": "handweapon", "count": 2}], "withWeapon": [{"id": "great_staff", "count": 3}]},
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 4}], "withWeapon": [{"id": "claws", "count": 4}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "phoenix_paladin": {
+      "name": "Moon Paladin",
+      "description": "Noble Protector of the Temple of the Last Flame, blessed by the ancient Moon God.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Moon Paladin",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": [{"id": "resistant", "x": 2}, "fear", "fearless", "leader", {"id": "tactician", "x": 1}, {"id": "wounds", "x": 3}],
+          "weapons": [{"id": "heavy_polearm", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_polearm", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}]},
+            {"addRule": ["shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "phoenix_pal_phoenix": {
+      "name": "Moon Paladin on Divine Phoenix",
+      "description": "Noble Protector of the Temple of the Last Flame, riding a divine Phoenix.",
+      "category": "hero",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Moon Paladin on Divine Phoenix",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 7,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 2}, "fear", "fearless", "fly", "inspiring_aura"],
+          "weapons": [{"id": "heavy_polearm", "count": 4}, {"id": "beak_and_claws", "count": 6}, {"id": "flame_breath", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_polearm", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_phoenix_pal_chariot": {
+      "name": "Moon Paladin on Chariot",
+      "description": "A chariot piloted by a noble protector of the Temple of the Last Flame.",
+      "category": "hero",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Moon Paladin on Chariot",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 10,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 2}, "fear", "inspiring_aura", "fearless", {"id": "impact", "x": 3}],
+          "weapons": [{"id": "hooves_and_teeth", "count": 4}, {"id": "heavy_polearm", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_polearm", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}]},
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 4}], "withWeapon": [{"id": "claws", "count": 4}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_warriors": {
+      "name": "Luminastra Warriors",
+      "description": "Trained for centuries, these soldiers are the mainline defense against intruders.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Luminastra Warrior",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["handweapon", "shield"],
+          "options": [{"replaceWeapon": ["handweapon", "shield"], "withWeapon": [["long_bow", "light_handweapon"], ["long_spear", "shield"], {"id": "handweapon", "count": 2}], "modelLimit": "all"}],
+          "min": 10,
+          "max": 30
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_wardens": {
+      "name": "Luminastra Wardens",
+      "description": "Picked from promising warriors each generation, these elite soldiers are the last line of defense.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Luminastra Warden",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["great_weapon", "shield"],
+          "options": [{"replaceWeapon": ["great_weapon", "shield"], "withWeapon": [["pike", "shield"], ["long_bow", "light_handweapon"]], "modelLimit": "all"}],
+          "max": 20,
+          "min": 10
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_vanguard": {
+      "name": "Luminastra Vanguard",
+      "description": "Fast cavalry, patroling the outskirts of the elven realms.",
+      "category": "core",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Luminastra Vanguard",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "rules": ["scout"],
+          "weapons": ["spear", "long_bow", {"id": "hooves_and_teeth", "count": 2}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_knight": {
+      "name": "Luminastra Knights",
+      "description": "Mounted soldiers of the elves, overrunning their foes.",
+      "category": "core",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Luminastra Knight",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["lance", "shield", {"id": "hooves_and_teeth", "count": 2}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_guard": {
+      "name": "Coastal Guard",
+      "description": "These fearsome warriors protect the coasts and harbor-bastions of the elven realms.",
+      "category": "core",
+      "models": [{"name": "Coastal Guard", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["bow", "shield", "spear"], "min": 10, "max": 30}],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_protectors": {
+      "name": "Luminastra Protectors",
+      "description": "These battle-hardened veterans patrol the highlands along the elven coasts.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Luminastra Protector",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": ["cloak", "fearless"],
+          "weapons": [{"id": "great_axe", "count": 2}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_rangers": {
+      "name": "Shadowblade Rangers",
+      "description": "These scouts wield magical shadows to strike unseen.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Shadowblade Ranger",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "rules": ["ambush", "evasive"],
+          "weapons": ["long_bow", "handweapon"],
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}]
+    },
+    "elf_phoenix_templars": {
+      "name": "Moon Templars",
+      "description": "Protectors of the Temple of the Last Flame, blessed by the ancient Moon God.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Moon Templar",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": [{"id": "resistant", "x": 2}, "fearless", "fear"],
+          "weapons": [{"id": "heavy_polearm", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "heavy_polearm", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}], "modelLimit": "all"}, {"addRule": ["shield"], "modelLimit": "all"}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_blademasters": {
+      "name": "Luminastra Blademasters",
+      "description": "These battle-hardened veterans have mastered the way of the blade, striking enemies with unnatural swiftness.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Luminastra Blademaster",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "rules": ["fanatical", "furious"],
+          "weapons": [{"id": "great_weapon", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "great_weapon", "count": 2}], "withWeapon": [{"id": "great_hammer", "count": 2}]}, {"addRule": ["shield"], "modelLimit": "all"}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_dragoons": {
+      "name": "Luminastra Dragoons",
+      "description": "These noble warriors ride upon barded steeds into battle.",
+      "category": "elite",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Luminastra Dragoon",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": ["fearless"],
+          "weapons": ["lance", "shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "min": 5,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "elf_dragon_knights": {
+      "name": "Dragon Knights",
+      "description": "The personal bodyguards of elven nobles, these royal knights have tamed mighty dragons.",
+      "category": "rare",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Dragon Knight",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 11,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, "fearless", "fly"],
+          "weapons": [{"id": "lance", "count": 3}, {"id": "flame_breath", "count": 4}, {"id": "fangs_and_claws", "count": 3}, "bashing_tail"],
+          "options": [{"addRule": ["relic_shield"], "modelLimit": "all"}],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "great_eagle": {
+      "name": "Great Eagle",
+      "description": "A magnificent beast and ally to the High Elves.",
+      "category": "rare",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Great Eagle",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, "fly", {"id": "impact", "x": 2}],
+          "weapons": [{"id": "beak", "count": 2}, {"id": "claws", "count": 2}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "phoenix": {
+      "name": "Divine Phoenix",
+      "description": "A magical creature, its the destruction of fire incarnate.",
+      "category": "rare",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Divine Phoenix",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 12,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, "fly"],
+          "weapons": [{"id": "beak_and_claws", "count": 6}, {"id": "flame_breath", "count": 2}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "lunar_drake": {
+      "name": "Lunar Drake",
+      "description": "A terrifying dragon hailing from the mighty mountain ranges of the ancient elven lands.",
+      "category": "rare",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Luminastra Noble on Lunar Drake",
+          "movement": 10,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 13,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 5}, "fly"],
+          "weapons": [{"id": "flame_breath", "count": 6}, {"id": "fangs_and_claws", "count": 5}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_chariot": {
+      "name": "Luminastra Chariot",
+      "description": "A chariot piloted by a pair of elven warriors.",
+      "category": "elite",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Luminastra Chariot",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 10,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 3}],
+          "weapons": [{"id": "hooves_and_teeth", "count": 4}, "long_bow", "spear"],
+          "options": [
+            {"replaceWeapon": ["long_bow", "spear"], "withWeapon": [[{"id": "great_axe", "count": 2}]]},
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 4}], "withWeapon": [{"id": "claws", "count": 4}]},
+            {"addRule": ["banner"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_skycutter": {
+      "name": "Luminastra Skycutter",
+      "description": "A flying vessel piloted by a pair of elven warriors.",
+      "category": "elite",
+      "keywords": ["Beast", "Vehicle"],
+      "models": [
+        {
+          "name": "Luminastra Skycutter",
+          "movement": 10,
+          "fight": 6,
+          "shoot": 6,
+          "defense": 10,
+          "reflexes": 6,
+          "courage": 5,
+          "rules": [{"id": "wounds", "x": 3}, "fly"],
+          "weapons": ["ballista", {"id": "beak", "count": 2}, {"id": "claws", "count": 2}, {"id": "spear", "count": 2}],
+          "options": [{"addRule": ["banner"]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_ballista": {
+      "name": "Great Ballista",
+      "description": "A deadly war machine.",
+      "category": "rare",
+      "keywords": ["Warmachine"],
+      "models": [
+        {
+          "name": "Great Ballista",
+          "movement": 6,
+          "shoot": 6,
+          "fight": "-",
+          "defense": 8,
+          "courage": 5,
+          "reflexes": 5,
+          "rules": [{"id": "wounds", "x": 3}],
+          "weapons": [{"id": "ballista", "count": 2}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "elf_sisters": {
+      "name": "Sisters of the Veil",
+      "description": "Protectors of the lost kingdom of Avalon, firing enchanted arrows.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Sister of the Veil",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "rules": ["astral_quiver"],
+          "weapons": ["handweapon", "long_bow"],
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}]
+    }
+  },
+  "hidden_units": {
+    "waystone": {
+      "name": "Luminastra Waystone",
+      "description": "An ancient rune-inscribed waystone, capable of warding off evil magic.",
+      "category": "fortification",
+      "keywords": ["Fortification"],
+      "models": [{"name": "Luminastra Waystone", "courage": "-", "movement": "-", "shoot": "-", "fight": "-", "defense": "-", "reflexes": "-", "rules": ["terrain", "runes"], "min": 1, "max": 1}]
+    }
+  },
+  "weapons": {"tempest_blade": {"name": "Tempest Blade", "attacks": 3, "ap": 4, "short": "Melee", "rules": ["lethal"]}},
+  "rules": {
+    "cloak": {
+      "name": "Enchanted Cloak",
+      "description": "Enemy units suffer -1 Accuracy when targeting this unit if all models have this rule.",
+      "points": ["model.wounds", {"max": 1}, {"multiply": 1}]
+    },
+    "runes": {"name": "Warding Runes", "description": "All model within 6\" of this terrain feature have +1 to their Save characteristic when being hit by a Power.", "points": [20]},
+    "discipline": {"name": "Discipline", "description": "This unit and all friendly units within 6\" ignore Shock when making any reaction rolls.", "points": 15},
+    "astral_quiver": {"name": "Astral Quiver", "description": "When you use the Moonfire Arrows strategy on this unit, you don't spend SP to use it.", "points": 4},
+    "crown_of_ages": {"name": "Crown of Ages", "description": "This unit may perform a group activation with another unit.", "points": [10]}
+  },
+  "powers": {
+    "arcane_flux": {
+      "name": "Arcane Flux",
+      "description": "Target enemy model within 12\" takes 1 hit with AP(2). If it already cast a Power this turn, it takes 1 hit with AP(4) instead.",
+      "charge": 7
+    },
+    "runes_of_victory": {"name": "Runes of Victory", "description": "Target friendly unit within 12\" gets +1 Strength and Accuracy until the end of the round.", "charge": 6},
+    "tempest": {"name": "Tempest", "description": "Target enemy unit within 24\" take 6 hits with AP(0).", "charge": 5}
+  },
+  "strategies": [
+    {
+      "name": "Valor",
+      "phase": "activation",
+      "description": "Use before activating a unit. That unit may immediately remove up to 2 Shock.",
+      "flavor": "Standing in the face of near extinction has battle hardened even the youngest of their kind.",
+      "cost": 1
+    },
+    {
+      "name": "Veterancy",
+      "phase": "activation",
+      "description": "Use when taking a Initiative test. That unit is treated as having +2 Initiative for that test.",
+      "flavor": "With countless years of training, these soldiers are trained to react to any situation.",
+      "cost": 1
+    },
+    {
+      "name": "Moonfire Arrows",
+      "phase": "activation",
+      "description": "Use when a unit shoots. Hits rolls of 1 or 2 gain +2 AP.",
+      "flavor": "Weaved out of the flames of lunar dragons and enchanted by ancient secrets, these arrows are a potent weapon to slay even the greatest beasts.",
+      "cost": 2
+    }
+  ],
+  "relics": {
+    "phoenix_armor": {
+      "name": "Moon Armor",
+      "rule": {"id": "resistant", "x": 2},
+      "description": "Upgrade one Hero model with Resistant(2).",
+      "flavor": "Gilded armor that has been blessed by the Moon God.",
+      "points": 20
+    },
+    "tempest_blade": {
+      "name": "Tempest Blade",
+      "weapon": "tempest_blade",
+      "description": "Replace one Leader model Great Weapon with the Tempest Blade.",
+      "flavor": "A legendary blade wielded by kings of old, unleashing deadly storms whenever it strikes.",
+      "points": 10
+    },
+    "crown_of_ages": {
+      "name": "Crown of Ages",
+      "rule": "crown_of_ages",
+      "description": "Upgrade one Leader model with the Crown of Ages.",
+      "flavor": "This enchanted crown surrounds its wearer in a glittering aura of leadership.",
+      "points": 10
+    }
+  }
+}

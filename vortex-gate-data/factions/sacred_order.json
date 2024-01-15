@@ -1,0 +1,776 @@
+{
+  "id": "sacred_order",
+  "name": "Sacred Order",
+  "author": "guitarninja",
+  "lore": "In the far reaches, there exists a distant planet known as Sanctum Prime, a world shrouded in an eternal aura of ethereal light. On this planet, a devout and disciplined society of battle priests known as the Sacred Order has flourished for millennia.\n\nLegend has it that long ago, during a time of great darkness and despair, a mysterious and benevolent figure known as Saint Aurelia appeared among the inhabitants of Sanctum Prime. Saint Aurelia was said to possess extraordinary powers, capable of performing miracles and casting out evil with a single gesture. With her radiant presence and unwavering devotion to the cause of light, she became a guiding beacon for the people, leading them away from the abyss of darkness and despair.\n\nInspired by the teachings and example of Saint Aurelia, the people of Sanctum Prime formed the Sacred Order—a sacred brotherhood of battle priests dedicated to upholding the principles of light, righteousness, and protection against the forces of darkness. These battle priests, known as the Luminal Wardens, take on rigorous training from a young age, honing their minds, bodies, and spirits to become paragons of virtue and defenders of the innocent.\n\nThe Sacred Order's grand citadel, the Radiant Bastion, stands at the heart of Sanctum Prime, surrounded by lush gardens and majestic spires that seem to touch the heavens. Within the bastion's halls, sacred texts, and ancient scriptures of Saint Aurelia are meticulously preserved, guiding the Luminal Wardens on their sacred path.\n\nThe Luminal Wardens are known for their unique combat techniques that blend martial prowess with divine blessings. They wield radiant weapons, blessed by the holy light, and wear gleaming armor adorned with sacred symbols that invoke the power of their saint. Their combat abilities are said to be so potent that even the most malevolent of adversaries are forced to retreat in the face of their relentless pursuit of justice.\n\nBut the Sacred Order is not merely a military force; they are also compassionate healers, tending to the wounded and the suffering with divine grace. Their temples are sanctuaries of healing, where the afflicted come seeking solace and hope. The Luminal Wardens serve as both warriors and spiritual guides, providing counsel and guidance to those in need.\n\nThroughout the ages, the Sacred Order has faced numerous challenges, including dark cults, demonic incursions, and cosmic threats. Each time, they have emerged triumphant, guided by the eternal wisdom and protection of their holy saint, Saint Aurelia.\n\nThe legend of Saint Aurelia and the Sacred Order has spread beyond the borders of Sanctum Prime, inspiring others in the universe to seek their teachings and emulate their path of righteousness. Pilgrims from various worlds journey to the planet, seeking the wisdom of the Luminal Wardens and hoping to glimpse the radiant presence of Saint Aurelia herself.\n\nAs the Sacred Order continues to stand as a beacon of hope and defenders of light, their unwavering faith in their holy saint and their commitment to the preservation of cosmic harmony make them a symbol of hope and inspiration for all who seek to combat darkness and protect the innocent.",
+  "units": {
+    "holy_saint": {
+      "name": "High Saint",
+      "description": "A blessed leader of the sacred order, soaring over the battlefield like an angel of death.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "High Saint",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 8,
+          "reflexes": 7,
+          "rules": ["epic_tactician", "fly", "leader", {"id": "power", "x": 1}, {"id": "wounds", "x": 6}],
+          "weapons": ["saints_blade_shoot", {"id": "saints_blade_melee", "count": 6}],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Angel",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": ["fly"],
+          "weapons": ["heavy_pistol", {"id": "energy_handweapon", "count": 3}],
+          "min": 0,
+          "max": 2
+        }
+      ]
+    },
+    "battle_pulpit": {
+      "name": "Battle Pulpit",
+      "description": "A mighty religious symbol from which a High Warden leads their troops",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Battle Pulpit",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 9,
+          "reflexes": 6,
+          "rules": ["hover", "leader", "tactician", {"id": "wounds", "x": 4}],
+          "weapons": [{"id": "heavy_flamethrower", "count": 2}, {"id": "energy_powerweapon", "count": 4}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "high_warden": {
+      "name": "High Warden",
+      "description": "A high-ranking leader of the order, commanding troops on the battlefield.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "High Warden",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": ["leader", "tactician", {"id": "wounds", "x": 3}],
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 3}],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle"]},
+            {"replaceWeapon": ["combat_rifle", {"id": "light_handweapon", "count": 3}], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 4}]]},
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 4},
+              "withWeapon": [{"id": "energy_handweapon", "count": 4}, {"id": "energy_powerweapon", "count": 4}, {"id": "energy_powerweapon", "count": 4}, {"id": "energy_polearm", "count": 4}]
+            },
+            {"addRule": [{"id": "power", "x": 1}, {"id": "power", "x": 2}], "limit": 1},
+            {"addRule": ["jetpack_character", "destroyer_armor"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "warden": {
+      "name": "Warden",
+      "description": "A leader of the order, commanding troops on the battlefield.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Warden",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": ["leader", "tactician", {"id": "wounds", "x": 2}],
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 3}],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle"]},
+            {"replaceWeapon": ["combat_rifle", {"id": "light_handweapon", "count": 3}], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 4}]]},
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 4},
+              "withWeapon": [{"id": "energy_handweapon", "count": 4}, {"id": "energy_powerweapon", "count": 4}, {"id": "energy_greatweapon", "count": 4}, {"id": "energy_polearm", "count": 4}]
+            },
+            {"addRule": [{"id": "power", "x": 1}]},
+            {"addRule": ["jetpack_character", "destroyer_armor"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "herald": {
+      "name": "Herald",
+      "description": "A minor leader of the order, commanding troops on the battlefield.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Herald",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "rules": ["leader", "striker", {"id": "wounds", "x": 2}],
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle"]},
+            {"replaceWeapon": ["combat_rifle", {"id": "light_handweapon", "count": 2}], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 3}]]},
+            {"replaceWeapon": ["heavy_pistol"], "withWeapon": ["plasma_pistol", "flamethrower_pistol", "fusion_pistol"]},
+            {
+              "replaceWeapon": [{"id": "handweapon", "x": 3}],
+              "withWeapon": [{"id": "energy_handweapon", "x": 3}, {"id": "energy_powerweapon", "x": 3}, {"id": "energy_greatweapon", "x": 3}, {"id": "energy_polearm", "x": 3}]
+            },
+            {"addRule": ["jetpack_character", "destroyer_armor"], "limit": 1},
+            {"addRule": ["inspiring"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "combat_medic": {
+      "name": "Combat Medic",
+      "description": "A righteous battlefield medic trained in saving lives.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Combat Medic",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "rules": ["medic", "support", {"id": "wounds", "x": 2}],
+          "weapons": ["heavy_pistol", {"id": "handweapon", "count": 3}],
+          "options": [
+            {"replaceWeapon": ["heavy_pistol"], "withWeapon": ["plasma_pistol", "flamethrower_pistol", "fusion_pistol"]},
+            {
+              "replaceWeapon": [{"id": "handweapon", "x": 3}],
+              "withWeapon": [{"id": "energy_handweapon", "x": 3}, {"id": "energy_powerweapon", "x": 3}, {"id": "energy_greatweapon", "x": 3}, {"id": "energy_polearm", "x": 3}]
+            },
+            {"addRule": ["jetpack_character", "destroyer_armor"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "combat_preacher": {
+      "name": "Combat Preacher",
+      "description": "A battlefield cleric chanting powerful blessings.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Combat Preacher",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "rules": ["support", {"id": "wounds", "x": 2}, "zealot"],
+          "weapons": ["heavy_pistol", {"id": "handweapon", "x": 3}],
+          "options": [
+            {"replaceWeapon": ["heavy_pistol"], "withWeapon": ["plasma_pistol", "flamethrower_pistol", "fusion_pistol"]},
+            {
+              "replaceWeapon": [{"id": "handweapon", "x": 3}],
+              "withWeapon": [{"id": "energy_handweapon", "x": 3}, {"id": "energy_powerweapon", "x": 3}, {"id": "energy_greatweapon", "x": 3}, {"id": "energy_polearm", "x": 3}]
+            },
+            {"addRule": ["jetpack_character", "destroyer_armor"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "vanguard_squad": {
+      "name": "Vanguard Squad",
+      "description": "A group of newly trained soldiers armed with light weapons who have yet to prove their worth in battle.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Vanguard Sergeant",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["combat_rifle", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": "pistol", "withWeapon": ["plasma_pistol", "flamethrower_pistol", "fusion_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 2},
+              "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}, {"id": "energy_greatweapon", "count": 2}, {"id": "energy_polearm", "x": 2}]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Vangaurd", "movement": 6, "courage": 5, "shoot": 5, "fight": 5, "defense": 7, "reflexes": 5, "weapons": ["auto_rifle", "light_handweapon"], "min": 4, "max": 9}
+      ],
+      "options": [
+        {"replaceWeapon": "auto_rifle", "withWeapon": ["flamethrower", "fusion_rifle", "light_machinegun", "plasma_rifle"], "modelLimit": "1/5"},
+        {"replaceWeapon": ["auto_rifle", "light_handweapon"], "withWeapon": [["pistol", {"id": "handweapon", "count": 2}]]},
+        {
+          "replaceWeapon": {"id": "handweapon", "count": 2},
+          "withWeapon": [
+            {"id": "energy_handweapon", "count": 2},
+            {"id": "energy_greatweapon", "count": 2},
+            {"id": "shock_whip", "count": 2},
+            {"id": "energy_powerweapon", "count": 2},
+            {"id": "energy_polearm", "x": 2}
+          ],
+          "modelLimit": "2/5"
+        },
+        {"modelLimit": 1, "addRule": ["banner"]}
+      ]
+    },
+    "vindicator_squad": {
+      "name": "Vindicator Squad",
+      "description": "A group of zealous soldiers armed with combat rifles.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Vindicator Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["combat_rifle", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle"]},
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 2},
+              "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}, {"id": "energy_greatweapon", "count": 2}, {"id": "energy_polearm", "x": 2}]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Vindicator", "movement": 6, "courage": 6, "shoot": 6, "fight": 5, "defense": 7, "reflexes": 5, "weapons": ["combat_rifle", "light_handweapon"], "min": 4, "max": 9}
+      ],
+      "options": [
+        {"replaceWeapon": "combat_rifle", "withWeapon": ["flamethrower", "fusion_rifle", "light_machinegun", "plasma_rifle"], "modelLimit": "1/5"},
+        {"replaceWeapon": "combat_rifle", "withWeapon": ["fusion_cannon", "heavy_flamethrower", "heavy_machinegun", "plasma_cannon"], "modelLimit": "1/5"},
+        {"replaceWeapon": ["combat_rifle", "light_handweapon"], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 2}]]},
+        {"modelLimit": 1, "addRule": ["lucky_angel"]},
+        {"modelLimit": 1, "addRule": ["banner"]}
+      ]
+    },
+    "protector_squad": {
+      "name": "Protector Squad",
+      "description": "A group of zealots armed with shields and deadly melee weapons.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Protector Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["heavy_pistol", {"id": "energy_handweapon", "count": 2}, "shield"],
+          "options": [{"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]}],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Protector",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["heavy_pistol", {"id": "energy_handweapon", "count": 2}, "shield"],
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "options": [
+        {
+          "replaceWeapon": {"id": "energy_handweapon", "count": 2},
+          "withWeapon": [{"id": "energy_polearm", "count": 2}, {"id": "energy_powerweapon", "count": 2}, {"id": "energy_greatweapon", "count": 2}]
+        }
+      ]
+    },
+    "gravite_vindicator_squad": {
+      "name": "Gravite Vindicator Squad",
+      "description": "A group of zealous soldiers in heavy gravite armor.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Gravite Vindicator",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 9,
+          "reflexes": 6,
+          "rules": ["relentless"],
+          "weapons": ["heavy_flamethrower", {"id": "energy_handweapon", "count": 3}, {"id": "twin_combat_rifle"}],
+          "options": [
+            {"replaceWeapon": ["heavy_flamethrower"], "withWeapon": ["heavy_machinegun", "fusion_cannon", "plasma_cannon"]},
+            {
+              "replaceWeapon": {"id": "energy_handweapon", "count": 3},
+              "withWeapon": [{"id": "energy_powerweapon", "count": 3}, {"id": "energy_greatweapon", "count": 3}, {"id": "energy_polearm", "count": 3}]
+            },
+            {"addRule": "jetpack", "modelLimit": "all"},
+            {"addRule": "banner", "modelLimit": 1}
+          ],
+          "min": 3,
+          "max": 6
+        }
+      ]
+    },
+    "veteran_vindicator_squad": {
+      "name": "Veteran Vindicator Squad",
+      "description": "A group of veteran soldiers armed to the teeth.",
+      "category": "elite",
+      "rules": ["scout"],
+      "models": [
+        {
+          "name": "Veteran Vindicator Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle"]},
+            {"replaceWeapon": ["combat_rifle", {"id": "light_handweapon", "count": 2}], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 3}]]},
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 3},
+              "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "energy_powerweapon", "count": 3}, {"id": "energy_greatweapon", "count": 3}, {"id": "energy_polearm", "x": 3}]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veteran Vindicator",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 2}],
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "options": [
+        {"replaceWeapon": "combat_rifle", "withWeapon": ["flamethrower", "fusion_rifle", "light_machinegun", "plasma_rifle"]},
+        {"modelLimit": 1, "addRule": ["lucky_angel"]},
+        {"modelLimit": 1, "addRule": ["banner"]}
+      ]
+    },
+    "redemptor_squad": {
+      "name": "Redemptor Squad",
+      "description": "A group of shock troopers armed with devastating melee weapons.",
+      "category": "elite",
+      "rules": ["fanatical", {"id": "resistant", "x": 3}],
+      "models": [
+        {
+          "name": "Redemptor Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [{"id": "shock_whip", "count": 4}],
+          "options": [{"addWeapon": "heavy_pistol"}],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Redemptor",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [{"id": "shock_whip", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "shock_whip", "count": 2}], "withWeapon": [{"id": "energy_greatweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}]}],
+          "min": 4,
+          "max": 9
+        }
+      ]
+    },
+    "winged_vindicator_squad": {
+      "name": "Winged Vindicator Squad",
+      "description": "A group of zealous soldiers with flying jetpacks.",
+      "category": "elite",
+      "rules": ["fly"],
+      "models": [
+        {
+          "name": "Winged Vindicator Sergeant",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["heavy_pistol", {"id": "light_handweapon", "count": 2}],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "heavy_pistol", "count": 1}],
+              "withWeapon": [{"id": "flamethrower_pistol", "count": 1}, {"id": "fusion_pistol", "count": 1}, {"id": "plasma_pistol", "count": 1}],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": {"id": "light_handweapon", "count": 2},
+              "withWeapon": [{"id": "energy_powerweapon", "count": 2}, {"id": "energy_greatweapon", "count": 2}, {"id": "energy_polearm", "x": 2}]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Winged Vindicator",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["heavy_pistol", {"id": "light_handweapon", "count": 2}],
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "options": [
+        {"replaceWeapon": ["heavy_pistol", {"id": "light_handweapon", "count": 2}], "withWeapon": [[{"id": "heavy_pistol", "count": 2}, "light_handweapon"]]},
+        {
+          "replaceWeapon": [{"id": "heavy_pistol", "count": 1}],
+          "withWeapon": [{"id": "flamethrower_pistol", "count": 1}, {"id": "fusion_pistol", "count": 1}, {"id": "plasma_pistol", "count": 1}],
+          "modelLimit": "2/5",
+          "limit": 2
+        },
+        {"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "handweapon", "count": 2}]},
+        {"modelLimit": 1, "addRule": ["banner"]}
+      ]
+    },
+    "annihilator_squad": {
+      "name": "Annihilator Squad",
+      "description": "A group of zealous soldiers with heavy weapons to suppress and destroy the enemy.",
+      "category": "elite",
+      "rules": ["relentless"],
+      "models": [
+        {
+          "name": "Annihilator Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": ["combat_rifle", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": "combat_rifle", "withWeapon": ["combi_rifle", "twin_combat_rifle", "heavy_flamethrower"]},
+            {"replaceWeapon": ["combat_rifle", "light_handweapon"], "withWeapon": [["heavy_pistol", {"id": "handweapon", "count": 2}]]},
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "handweapon", "count": 2},
+              "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}, {"id": "energy_greatweapon", "count": 2}, {"id": "energy_polearm", "x": 2}]
+            }
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Annihilator", "movement": 6, "courage": 6, "shoot": 6, "fight": 6, "defense": 7, "reflexes": 5, "weapons": ["heavy_flamethrower", "light_handweapon"], "min": 4, "max": 9}
+      ],
+      "options": [
+        {"replaceWeapon": "heavy_flamethrower", "withWeapon": ["heavy_machinegun", "fusion_cannon", "plasma_cannon"]},
+        {"addRule": "lucky_angel", "modelLimit": 2},
+        {"modelLimit": 1, "addRule": ["banner"]}
+      ]
+    },
+    "sacred_juggernaut": {
+      "name": "Sacred Juggernaut",
+      "description": "A powerful mech suit piloted by a zealous soldier.",
+      "category": "rare",
+      "keywords": ["Vehicle", "Juggernaut"],
+      "models": [
+        {
+          "name": "Sacred Juggernaut",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 10,
+          "reflexes": 5,
+          "rules": ["vulnerable_rear", "walker", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "heavy_flamethrower", "count": 2}, {"id": "walker_flail", "count": 4}],
+          "options": [
+            {"replaceWeapon": {"id": "heavy_flamethrower", "count": 2}, "withWeapon": [{"id": "heavy_machinegun", "count": 2}]},
+            {"replaceWeapon": {"id": "walker_flail", "count": 4}, "withWeapon": [{"id": "walker_saw", "count": 4}]},
+            {"addRule": [{"name": "Berserk", "id": "resistant", "x": 4}, "relic_shield"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "apc": {
+      "name": "APC",
+      "description": "A durable transport piloted by zealous soldiers.",
+      "category": "transport",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "APC",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 0,
+          "defense": 11,
+          "reflexes": 6,
+          "rules": [{"id": "impact", "x": 3}, {"id": "transport", "x": 12}, "vulnerable_side_rear", {"id": "wounds", "x": 4}],
+          "weapons": ["twin_combat_rifle"],
+          "options": [
+            {"replaceWeapon": ["twin_combat_rifle"], "withWeapon": ["light_machinegun", "plasma_rifle", "fusion_rifle", "flamethrower", "missile_launcher"]},
+            {"addWeapon": ["hunter_missiles"]},
+            {"addRule": ["assault_ramp", {"id": "dozer", "name": "Dozer Blade"}, "spiked_ram", {"name": "Firing Slits", "id": "open_topped", "x": 12}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "heavy_apc": {
+      "name": "Heavy APC",
+      "description": "A heavy transport piloted by zealous soldiers.",
+      "category": "transport",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Heavy APC",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 0,
+          "defense": 12,
+          "reflexes": 6,
+          "rules": [{"id": "impact", "x": 3}, {"id": "transport", "x": 12}, "vulnerable_side_rear", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "twin_combat_rifle"}, {"id": "twin_combat_rifle"}, {"id": "twin_combat_rifle"}],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "twin_combat_rifle"}],
+              "withWeapon": [
+                {"id": "twin_heavy_machinegun"},
+                {"id": "twin_heavy_flamethrower"},
+                {"id": "twin_plasma_cannon"},
+                {"id": "twin_fusion_cannon"}
+              ]
+            },
+            {
+              "replaceWeapon": [{"id": "twin_combat_rifle"}, {"id": "twin_combat_rifle"}],
+              "withWeapon": [
+                [{"id": "twin_light_machinegun"}, {"id": "twin_light_machinegun"}],
+                [{"id": "twin_flamethrower"}, {"id": "twin_flamethrower"}],
+                [{"id": "twin_plasma_rifle"}, {"id": "twin_plasma_rifle"}],
+                [{"id": "twin_fusion_rifle"}, {"id": "twin_fusion_rifle"}]
+              ]
+            },
+            {"addWeapon": ["twin_combat_rifle", "heavy_machinegun", "plasma_cannon", "fusion_cannon", "heavy_flamethrower"], "limit": 1},
+            {"addWeapon": ["hunter_missiles"]},
+            {"addRule": ["assault_ramp", {"id": "dozer", "name": "Dozer Blade"}, "spiked_ram", {"name": "Firing Slits", "id": "open_topped", "x": 12}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "battle_tank": {
+      "name": "Battle Tank",
+      "description": "An armored tank piloted by zealous soldiers.",
+      "category": "rare",
+      "keywords": ["Vehicle", "Tank"],
+      "models": [
+        {
+          "name": "Battle Tank",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 0,
+          "defense": 12,
+          "reflexes": 6,
+          "rules": [{"id": "impact", "x": 6}, "vulnerable_side_rear", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "twin_combat_rifle"}, {"id": "twin_combat_rifle"}, "heavy_autocannon"],
+          "options": [
+            {"replaceWeapon": ["heavy_autocannon"], "withWeapon": ["battle_cannon", "twin_laser_cannon"]},
+            {
+              "replaceWeapon": [{"id": "twin_combat_rifle"}, {"id": "twin_combat_rifle"}],
+              "withWeapon": [
+                [{"id": "twin_light_machinegun"}, {"id": "twin_light_machinegun"}],
+                [{"id": "heavy_machinegun"}, {"id": "heavy_machinegun"}],
+                [{"id": "plasma_cannon"}, {"id": "plasma_cannon"}],
+                [{"id": "fusion_cannon"}, {"id": "fusion_cannon"}],
+                [{"id": "heavy_flamethrower"}, {"id": "heavy_flamethrower"}]
+              ]
+            },
+            {"addWeapon": ["hunter_missiles"]},
+            {"addRule": [{"id": "dozer", "name": "Dozer Blade"}, "spiked_ram"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "artillery_tank": {
+      "name": "Artillery Tank",
+      "description": "An armored artillery vehicle piloted by zealous soldiers.",
+      "category": "rare",
+      "keywords": ["Vehicle", "Tank"],
+      "models": [
+        {
+          "name": "Artillery Tank",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 0,
+          "defense": 10,
+          "reflexes": 6,
+          "rules": [{"id": "impact", "x": 3}, "vulnerable_side_rear", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "twin_combat_rifle"}, "twin_missile_launcher"],
+          "options": [
+            {
+              "replaceWeapon": ["twin_missile_launcher"],
+              "withWeapon": ["twin_aa_autocannon", "heavy_plasma_mortar", "twin_heavy_fusion_cannon", "medium_artillery_cannon", "artillery_cannon", "organ_missiles"]
+            },
+            {
+              "replaceWeapon": [{"id": "twin_combat_rifle"}],
+              "withWeapon": [
+                {"id": "twin_light_machinegun"},
+                {"id": "twin_flamethrower"},
+                {"id": "twin_plasma_rifle"},
+                {"id": "twin_fusion_rifle"}
+              ]
+            },
+            {"addRule": ["spiked_ram", {"id": "dozer", "name": "Dozer Blade"}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "weapons": {
+    "saints_blade_melee": {"name": "Saint's Blade (Melee)", "attacks": 1, "ap": 5, "short": "Melee"},
+    "saints_blade_shoot": {"name": "Saint's Blade (Shoot)", "attacks": 3, "ap": 2, "short": 6, "medium": 12},
+    "walker_flail": {"name": "Walker Flail", "attacks": 1, "ap": 3, "short": "Melee", "rules": ["lethal"]},
+    "walker_saw": {"name": "Walker Saw", "attacks": 1, "ap": 6, "short": "Melee"},
+    "shock_whip": {"name": "Shock Whip", "attacks": 1, "ap": 1, "short": "Melee", "rules": ["lethal"]},
+    "organ_missiles": {
+      "name": "Organ Missiles",
+      "profiles": [
+        {"name": "HE", "attacks": 2, "ap": 3, "short": 24, "medium": 48, "rules": ["indirect", {"id": "blast", "x": 3}]},
+        {"name": "AT", "attacks": 1, "ap": 6, "short": 18, "medium": 36, "rules": ["indirect", {"id": "deadly", "x": 1}]}
+      ]
+    },
+    "legend_vengeance_pistol": {"name": "The Vengeance Pistol", "attacks": 1, "short": 6, "ap": 7, "rules": ["pistol", {"id": "deadly", "x": 2}]}
+  },
+  "rules": {
+    "lucky_angel": {
+      "name": "Lucky Angel",
+      "description": "Once per round, this unit may re-roll one failed Strength or Accuracy test. This may be used one additional time per round for each model with this rule.",
+      "points": 5
+    },
+    "celestial": {"name": "Celestial", "hidden": true, "description": "This model gets +1 Save.", "description_short": "Save +1", "points": 2},
+    "coffin_enclosure": {"name": "Coffin Enclosure", "hidden": true, "description": "This model gets +1 Save.", "description_short": "Save +1", "points": 10},
+    "legend_rightous_banner": {
+      "name": "Rightous Banner",
+      "description": "Once per round when a Power(x) test is taken within 24\" of this unit, you may roll a D10. If the value is less than or equal to the test to cast the power, it is prevented."
+    }
+  },
+  "relics": {
+    "legend_gravity_field": {
+      "name": "Gravity Field",
+      "rule": {"id": "resistant", "x": 2},
+      "description": "Upgrade one Hero model with Resistant(2).",
+      "flavor": "This gravity field generator can be overcharged to bounce even the toughest attacks for a moment.",
+      "points": 20
+    },
+    "legend_holy_presence": {
+      "name": "Holy Presence",
+      "rule": {"id": "resistant", "x": 2},
+      "description": "Upgrade one _Leader_ or _Support_ model with Resistant(2).",
+      "flavor": "Blessed by the saints with enhanced armor.",
+      "points": 10
+    },
+    "legend_vengeance_pistol": {
+      "name": "The Vengeance Pistol",
+      "weapon": "legend_vengeance_pistol",
+      "description": "Replace one Fusion Pistol with The Vengeance Pistol",
+      "flavor": "This pistol is impued with holy fusion that can defeat even the most armored foes.",
+      "points": 10
+    }
+  },
+  "strategies": [
+    {
+      "name": "Miracle",
+      "phase": "activation",
+      "description": "Use when a unit takes one or more skill tests. Re-roll all failed skill tests.",
+      "flavor": "In times of great need, sometimes a miracle can save the day.",
+      "cost": 2
+    },
+    {
+      "name": "Divine Intervention",
+      "phase": "activation",
+      "description": "Use when taking a skill test. You may increase or decrease the result of that test by 1.",
+      "flavor": "The sacred order is witness to the hand of fate intervening on their behalf.",
+      "cost": 1
+    },
+    {
+      "name": "Holy Protection",
+      "phase": "activation",
+      "description": "Use when a Power(x) test is taken within 24\" of any Infantry unit. Roll a D10. If the value is less than or equal to the test to cast the power, it is prevented.",
+      "flavor": "Shielded by holy energy, Sacred Order can protect themselves from psychic powers.",
+      "cost": 1
+    }
+  ],
+  "buyLinks": [
+    {"name": "Games Workshop", "link": "https://www.games-workshop.com/en-US/Warhammer-40-000?N=2562756967+3639190268"},
+    {"name": "OnePageRules", "link": "https://www.myminifactory.com/object/3d-print-battle-wardens-army-bundle-137117"}
+  ],
+  "powers": {
+    "banishment": {"name": "Banishment", "description": "Target enemy model within 12\" takes 1 automatic hit with AP(7).", "charge": 5},
+    "purge": {"name": "Purge", "description": "Target enemy unit within 12\" take 8 automatic hits with AP 0.", "charge": 6},
+    "blessing": {"name": "Blessing", "description": "Target friendly unit within 24\" gets +1 Courage until the end of the round.", "charge": 7}
+  }
+}

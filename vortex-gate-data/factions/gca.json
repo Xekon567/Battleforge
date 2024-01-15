@@ -1,0 +1,857 @@
+{
+  "id": "gca",
+  "name": "Galactic Corporate Allegiance",
+  "author": "Xekon#2688",
+  "lore": "In the distant future, humanity has achieved interstellar travel and colonization, giving rise to a myriad of powerful corporations seeking to exploit the vast resources and opportunities scattered throughout the galaxy. Among these entities, one stands out as the most formidable and controversial: the Galactic Corporate Allegiance (GCA).\n\nThe GCA was founded several decades ago by a visionary entrepreneur named Alexander Kane. As an ambitious and shrewd businessman, Kane saw the potential for tremendous profits in controlling and monopolizing the security and military services across various star systems. He strategically merged several prominent private security firms, weapon manufacturers, and cybernetics corporations to create a vast conglomerate, the Galactic Corporate Allegiance.\n\nInitially, the GCA offered conventional security and protection services to various corporations and wealthy individuals operating in remote and dangerous corners of the galaxy. However, as the demand for more specialized and powerful security solutions increased, the GCA began assembling its private army, comprising elite soldiers, riot police units, and a lethal group of highly trained assassins.\n\nThe assassins became the most secretive and feared division within the GCA. Composed of individuals with exceptional combat skills, espionage expertise, and cybernetic enhancements, they were the perfect tools for eliminating anyone perceived as a threat to the GCA's interests. The identities of these assassins remained veiled in shadows, with their very existence becoming more of an urban legend whispered among the darkest corners of the galaxy.\n\nAs the GCA's influence grew, they secured exclusive contracts with various governments, corporations, and even influential figures, solidifying their dominance in the private military sector. The GCA's private army became a symbol of power and supremacy, ensuring loyalty from their clients and fear from their enemies. It was not uncommon for companies engaged in disputes to hire the GCA to mediate or even settle conflicts, using their military might as leverage.\n\nWith such a level of control and authority, the GCA inevitably attracted criticism and opposition from those who saw their actions as oppressive and monopolistic. A growing number of rebels and activists emerged to challenge the GCA's hegemony, leading to frequent clashes and skirmishes across the galaxy. The GCA, however, possessed the resources, technology, and unyielding determination to maintain its dominion.\n\nIn time, the Galactic Corporate Allegiance grew beyond merely being a military service provider. It expanded into various other sectors, including manufacturing, resource extraction, interstellar transportation, and even political influence. Some critics even accused the GCA of operating as a quasi-governmental entity, pulling the strings behind the scenes to manipulate planetary affairs and maximize their profits.\n\nDespite the controversy surrounding its methods and objectives, the Galactic Corporate Allegiance remained a formidable force, continuing to shape the destiny of the galaxy as it sought to solidify its place as the most influential corporate entity in the cosmos. Whether their legacy would be one of oppression and tyranny or prosperity and stability would depend on the choices they made and the adversaries they encountered in the ever-expanding reaches of the universe.",
+  "units": {
+    "exosuit_commander": {
+      "name": "Exosuit Commander",
+      "description": "A commander wearing a tough exoskeleton and deadly weapons.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Exosuit Commander",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", {"id": "handweapon", "count": 3}],
+          "options": [
+            {
+              "replaceWeapon": ["combat_rifle"],
+              "withWeapon": ["thermal_rifle", "plasma_rifle", "fusion_rifle", "flamethrower", "grenade_launcher", "heavy_machinegun", "laser_cannon", "autocannon", "web_cannon", "heavy_shotgun"]
+            },
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "energy_powerweapon", "count": 3}]},
+            {"addWeapon": ["rocket_pod", "railgun", "fusion_cannon", "plasma_cannon", "light_machinegun", "missile_launcher", "thermal_lance"], "limit": 1},
+            {"addRule": [{"name": "Jetpack", "id": "fly"}, "shield"]}
+          ],
+          "rules": ["ambush", {"id": "field_orders", "x": 1}, "leader", {"id": "wounds", "x": 3}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "veteran_commander": {
+      "name": "Veteran Commander",
+      "description": "A well-equipped commander who is deployed to secure and protect corporate property.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Veteran Commander",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", {"id": "handweapon", "count": 2}],
+          "rules": [{"id": "field_orders", "x": 1}, "leader", {"id": "wounds", "x": 3}],
+          "options": [
+            {"replaceWeapon": ["combat_rifle", {"id": "handweapon", "count": 2}], "withWeapon": [["pistol", {"id": "handweapon", "count": 3}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "energy_powerweapon", "count": 3}]},
+            {"addRule": [{"name": "Orbital Insertion", "id": "ambush"}, {"name": "Camo-Cloak", "id": "evasive"}]},
+            {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "scout_commander": {
+      "name": "Scout Commander",
+      "description": "A well-equipped commander specialised in sabotage and stealth.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Scout Commander",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["heavy_carbine", {"id": "handweapon", "count": 2}],
+          "rules": [{"id": "field_orders", "x": 1, "ArrayItem": "leader"}, {"id": "wounds", "x": 3}, "scout"],
+          "options": [
+            {"replaceWeapon": ["heavy_carbine"], "withWeapon": ["combat_shotgun", "sniper_rifle"]},
+            {"replaceWeapon": ["heavy_carbine", {"id": "handweapon", "count": 2}], "withWeapon": [["pistol", {"id": "handweapon", "count": 3}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "energy_powerweapon", "count": 3}]},
+            {"addRule": [{"name": "Camo-Cloak", "id": "evasive"}]},
+            {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]},
+            {"addModels": ["scout_drone"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "freelance_mage": {
+      "name": "Freelance Mage",
+      "description": "A well-equipped caster.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Freelance Mage",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["heavy_carbine", {"id": "handweapon", "count": 2}],
+          "rules": [{"id": "wounds", "x": 2}, {"id": "power", "x": 1}],
+          "options": [
+            {"replaceWeapon": ["heavy_carbine"], "withWeapon": ["combat_shotgun"]},
+            {"replaceWeapon": ["heavy_carbine", {"id": "handweapon", "count": 2}], "withWeapon": [["pistol", {"id": "handweapon", "count": 3}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": [{"id": "handweapon", "count": 3}], "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "energy_powerweapon", "count": 3}]},
+            {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "veterans": {
+      "name": "Veterans",
+      "description": "Well-equipped infantrymen who are deployed to secure and protect corporate property.",
+      "category": "core",
+      "options": [
+        {
+          "replaceWeapon": ["combat_rifle"],
+          "withWeapon": [
+            "light_machinegun",
+            "fusion_rifle",
+            "laser_cannon",
+            "flamethrower",
+            "plasma_rifle",
+            "grenade_launcher",
+            "heavy_machinegun",
+            "missile_launcher",
+            "web_carbine",
+            "thermal_rifle"
+          ],
+          "modelLimit": "1/5"
+        },
+        {"replaceWeapon": "combat_rifle", "withWeapon": "combat_shotgun", "modelLimit": "any"},
+        {"replaceWeapon": ["combat_rifle", "light_handweapon"], "withWeapon": [["energy_handweapon", "heavy_pistol", "shield"]], "modelLimit": "any"},
+        {"addRule": [{"name": "Orbital Insertion", "id": "ambush"}], "modelLimit": "all"},
+        {"addRule": ["field_radio"], "modelLimit": 1},
+        {"addRule": ["medic"], "modelLimit": 1}
+      ],
+      "models": [
+        {
+          "name": "Veteran Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": ["combat_rifle", "light_handweapon"], "withWeapon": [["pistol", {"id": "light_handweapon", "count": 2}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": [{"id": "light_handweapon", "count": 2}], "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}]},
+            {"addRule": {"id": "fear", "name": "Loudspeaker Drone"}}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Veteran", "movement": 6, "courage": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["combat_rifle", "light_handweapon"], "min": 4, "max": 9}
+      ]
+    },
+    "veteran_scouts": {
+      "name": "Veteran Scouts",
+      "description": "Elite infantrymen, specialised in sabotage and stealth.",
+      "category": "core",
+      "rules": ["scout"],
+      "options": [
+        {"replaceWeapon": "heavy_carbine", "withWeapon": ["combat_shotgun"]},
+        {"replaceWeapon": "heavy_carbine", "withWeapon": ["sniper_rifle"], "modelLimit": "2/5"},
+        {"replaceWeapon": "heavy_carbine", "withWeapon": ["plasma_rifle", "fusion_rifle", "grenade_launcher", "flamethrower", "thermal_rifle"], "modelLimit": "1/5"},
+        {"addRule": [{"name": "Camo-Cloak", "id": "evasive"}, {"name": "Jetpacks", "id": "fly"}], "modelLimit": "all"},
+        {"addRule": ["field_radio"], "modelLimit": 1}
+      ],
+      "models": [
+        {
+          "name": "Veteran Scout Sergeant",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["heavy_carbine", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": ["heavy_carbine", "light_handweapon"], "withWeapon": [["pistol", {"id": "light_handweapon", "count": 2}]]},
+            {"replaceWeapon": "pistol", "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Veteran Scout", "movement": 6, "courage": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["heavy_carbine", "light_handweapon"], "min": 4, "max": 9},
+        {"name": "Scout Drone", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 4, "reflexes": 5, "weapons": ["auto_carbine"], "rules": ["fly", "scout"], "min": 0, "max": 2}
+      ]
+    },
+    "exosuit_troopers": {
+      "name": "Exosuit Troopers",
+      "description": "Exosuit wearing elites, deployed as heavy support to combat enemy resistance that can't be orbitally bombarded.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Exosuit Trooper",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", {"id": "handweapon", "count": 2}],
+          "options": [
+            {
+              "replaceWeapon": ["combat_rifle"],
+              "withWeapon": ["thermal_rifle", "plasma_rifle", "fusion_rifle", "flamethrower", "grenade_launcher", "heavy_machinegun", "laser_cannon", "heavy_shotgun", "autocannon"]
+            },
+            {"replaceWeapon": [{"id": "handweapon", "count": 2}], "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "energy_powerweapon", "count": 2}]},
+            {"addWeapon": ["rocket_pod", "railgun", "fusion_cannon", "plasma_cannon", "light_machinegun", "missile_launcher", "thermal_lance"], "limit": 1, "modelLimit": "1/5"},
+            {"addRule": [{"name": "Jetpack", "id": "fly"}, "shield"], "modelLimit": "all"},
+            {"addRule": ["field_radio"], "modelLimit": 1}
+          ],
+          "rules": ["ambush"],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "light_walkers": {
+      "name": "Light Combat Walkers",
+      "description": "A lightly equipped recon walker, deployed into battle alongside human infantry.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Light Combat Walker",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 8,
+          "reflexes": 5,
+          "weapons": ["laser_cannon", "energy_powerweapon"],
+          "options": [
+            {"replaceWeapon": "laser_cannon", "withWeapon": ["missile_launcher", "heavy_machinegun", "heavy_flamethrower", "autocannon", "plasma_cannon", "thermal_lance", "fusion_cannon"]},
+            {"addWeapon": ["rocket_pod", "strike_missiles"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "keywords": ["Vehicle"],
+      "rules": [{"id": "wounds", "x": 3}, "fearless", "scout", "vulnerable_rear"]
+    },
+    "heavy_walker": {
+      "name": "Heavy Combat Walker",
+      "description": "A heavy-class combat walker, equipped with an array of devastating weapons.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Heavy Combat Walker",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 10,
+          "reflexes": 5,
+          "weapons": ["laser_cannon", {"id": "energy_powerweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": "laser_cannon", "withWeapon": ["missile_launcher", "heavy_machinegun", "heavy_flamethrower", "autocannon", "plasma_cannon", "thermal_lance", "fusion_cannon"]},
+            {
+              "replaceWeapon": [{"id": "energy_powerweapon", "count": 2}],
+              "withWeapon": ["missile_launcher", "heavy_machinegun", "heavy_flamethrower", "autocannon", "plasma_cannon", "thermal_lance", "fusion_cannon"]
+            },
+            {"addWeapon": ["strike_missiles", "rocket_pod"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"],
+      "rules": [{"id": "wounds", "x": 5}, "fearless", "vulnerable_rear"]
+    },
+    "security_drones": {
+      "name": "Security Drones",
+      "description": "Remote controlled drones which are used for surveilance of high-value property.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Security Drone",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["light_machinegun", "light_handweapon", "railgun"],
+          "options": [{"replaceWeapon": ["light_machinegun"], "withWeapon": ["laser_cannon", "heavy_flamethrower"]}, {"addRule": ["field_radio"], "modelLimit": 1}],
+          "rules": ["fearless", {"id": "wounds", "x": 2}],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    "support_drone": {
+      "name": "Support Drone",
+      "description": "An autonomous drone that can be equipped with various weapons and equipment to fulfill varied battlefield roles.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Support Drone",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["light_machinegun", "stomp"],
+          "options": [
+            {
+              "replaceWeapon": ["light_machinegun"],
+              "withWeapon": [
+                "fusion_rifle",
+                "laser_cannon",
+                "plasma_rifle",
+                "heavy_flamethrower",
+                "mortar",
+                "autocannon",
+                "heavy_machinegun",
+                "thermal_lance",
+                "missile_launcher",
+                "rocket_pod",
+                "railgun",
+                "web_cannon",
+                "heavy_shotgun"
+              ]
+            },
+            {"replaceWeapon": ["stomp"], "withWeapon": [{"id": "energy_powerweapon", "count": 2}]},
+            {"addRule": ["field_radio"], "modelLimit": 1}
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "keywords": ["Vehicle"],
+      "rules": ["fearless", "vulnerable_rear", {"id": "wounds", "x": 2}]
+    },
+    "heavy_support_drone": {
+      "name": "Heavy Support Drone",
+      "description": "An autonomous drone that can be equipped with various weapons and equipment to deal with threats on the battlefield.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Heavy Support Drone",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["fusion_cannon", {"id": "stomp", "count": 2}],
+          "options": [
+            {
+              "replaceWeapon": ["fusion_cannon"],
+              "withWeapon": ["plasma_cannon", "twin_laser_cannon", "twin_heavy_flamethrower", "heavy_mortar", "twin_autocannon", "gatling_gun", "missile_launcher", "twin_thermal_lance"]
+            },
+            {"addWeapon": ["rocket_pod", "railgun", "light_machinegun"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"],
+      "rules": [{"id": "wounds", "x": 3}, "fearless", "vulnerable_rear"]
+    },
+    "medic_specialist": {
+      "name": "Medic Specialist",
+      "description": "A medic contracted to support troops in combat.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Medic Specialist",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["auto_rifle", "smoke_grenade", "handweapon"],
+          "rules": ["medic", "support", {"id": "wounds", "x": 2}],
+          "options": [
+            {"replaceWeapon": ["auto_rifle", "handweapon"], "withWeapon": [["pistol", {"id": "handweapon", "count": 2}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "engineering_specialist": {
+      "name": "Engineering Specialist",
+      "description": "An engineer contracted to repair walkers and other vehicles in combat.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Engineering Specialist",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["auto_rifle", "handweapon"],
+          "rules": ["engineer", "support", {"id": "wounds", "x": 2}],
+          "options": [
+            {"replaceWeapon": ["auto_rifle"], "withWeapon": ["thermal_rifle", "fusion_rifle", "plasma_rifle", "grenade_launcher"]},
+            {"replaceWeapon": ["auto_rifle", "handweapon"], "withWeapon": [["pistol", {"id": "handweapon", "count": 2}]]},
+            {"replaceWeapon": ["pistol"], "withWeapon": ["plasma_pistol", "fusion_pistol", "flamethrower_pistol", "thermal_pistol"]},
+            {"replaceWeapon": [{"id": "handweapon", "count": 2}], "withWeapon": [{"id": "energy_powerweapon", "count": 2}]},
+            {"addRule": ["shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "armored_truck": {
+      "name": "Armored Truck",
+      "description": "An armored transport of the galactic corporate allegiance.",
+      "category": "transport",
+      "rules": [{"id": "impact", "x": 3}, {"id": "transport", "x": 11}, {"id": "wounds", "x": 5}, "vulnerable_side_rear"],
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Armored Truck",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 10,
+          "reflexes": 6,
+          "weapons": ["light_battle_cannon"],
+          "options": [
+            {"addRule": [{"id": "dozer", "name": "Dozer Blade"}, "field_radio"]},
+            {"addWeapon": [{"id": "light_machinegun", "count": 1}, {"id": "twin_combat_rifle", "count": 1}], "limit": 1},
+            {"replaceWeapon": "light_battle_cannon", "withWeapon": ["twin_gatling_gun", "missile_rack"]},
+            {"addWeapon": [{"id": "heavy_volley_gun", "count": 2}, {"id": "autocannon", "count": 2}], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "dog_handler": {
+      "name": "K9 Unit",
+      "description": "An operative tasked with handling a pack of attack dogs.",
+      "category": "elite",
+      "keywords": ["Storm Trooper", "Infantry", "Beast"],
+      "models": [
+        {"name": "K9 Sergeant", "courage": 5, "shoot": 6, "fight": 5, "defense": 6, "reflexes": 6, "movement": 6, "weapons": ["combat_shotgun", "light_handweapon"], "min": 1, "max": 1},
+        {"name": "Attack Dog", "courage": 5, "shoot": 0, "fight": 6, "defense": 5, "reflexes": 6, "movement": 6, "weapons": [{"id": "handweapon", "count": 2}], "min": 1, "max": 4}
+      ],
+      "rules": ["scout"]
+    },
+    "psyker_hunter_assassin": {
+      "name": "Psychic-Hunter Assassin",
+      "description": "An assassin trained in hunting down rogue psychics.",
+      "category": "elite",
+      "rules": [{"id": "wounds", "x": 3}, "fear", {"id": "ward", "x": 3}, "assassin"],
+      "models": [
+        {
+          "name": "Psychic-Hunter Assassin",
+          "movement": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 7,
+          "courage": 7,
+          "min": 1,
+          "max": 1,
+          "weapons": ["spectral_eye", {"id": "assassin_unarmed", "count": 4}]
+        }
+      ]
+    },
+    "sniper_assassin": {
+      "name": "Sniper Assassin",
+      "description": "An assassin trained in hunting down and removing dangerous leaders.",
+      "category": "elite",
+      "rules": [{"id": "wounds", "x": 3}, "assassin"],
+      "models": [
+        {
+          "name": "Sniper Assassin",
+          "movement": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 7,
+          "courage": 7,
+          "min": 1,
+          "max": 1,
+          "weapons": ["assassin_sniper", {"id": "light_handweapon", "count": 2}]
+        }
+      ]
+    },
+    "berserker_assassin": {
+      "name": "Berzerker Assassin",
+      "description": "An assassin trained in brutal close combat.",
+      "category": "elite",
+      "rules": [{"id": "wounds", "x": 3}, "assassin", "berzerk_overload"],
+      "models": [
+        {"name": "Berzerker Assassin", "movement": 7, "shoot": 7, "fight": 7, "defense": 6, "reflexes": 7, "courage": 7, "min": 1, "max": 1, "weapons": [{"id": "energy_handweapon", "count": 8}]}
+      ]
+    },
+    "stealth_assassin": {
+      "name": "Stealth Assassin",
+      "description": "An assassin sent to strike from the shadows.",
+      "category": "elite",
+      "rules": [{"id": "wounds", "x": 3}, "assassin", "stealth", "ambush"],
+      "models": [
+        {
+          "name": "Stealth Assassin",
+          "movement": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 7,
+          "courage": 7,
+          "min": 1,
+          "max": 1,
+          "weapons": ["mind_shredder", {"id": "phase_sword", "count": 4}]
+        }
+      ]
+    },
+    "agency_light_gunship": {
+      "name": "Corporate Light Gunship",
+      "description": "A light gunship with sliding doors for troop transport.",
+      "category": "transport",
+      "rules": [{"id": "transport", "x": 11}, "aircraft", "hover_mode", {"id": "wounds", "x": 5}],
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Corporate Light Gunship",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 11,
+          "reflexes": 6,
+          "weapons": [{"id": "laser_machinegun"}, {"id": "strike_missiles"}],
+          "options": [
+            {"replaceWeapon": {"id": "laser_machinegun"}, "withWeapon": {"id": "laser_cannon"}},
+            {"replaceWeapon": {"id": "strike_missiles"}, "withWeapon": {"id": "rocket_pod", "count": 2}},
+            {"addWeapon": [[{"id": "heavy_machinegun"}, {"id": "heavy_machinegun"}]]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "marine_apc": {
+      "name": "APC",
+      "description": "A durable transport built by the imperial marines.",
+      "rules": [{"id": "impact", "x": 3}, {"id": "transport", "x": 11}, "vulnerable_side_rear", {"id": "wounds", "x": 5}],
+      "category": "transport",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "APC",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 11,
+          "reflexes": 6,
+          "weapons": ["twin_combat_rifle"],
+          "options": [{"addWeapon": ["twin_combat_rifle", "hunter_missiles"]}, {"addRule": ["spiked_ram", {"id": "dozer", "name": "Dozer Blade"}]}],
+          "rules": [],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "repression_apc": {
+      "name": "Repression APC",
+      "description": "A heavy transport with firing slits.",
+      "category": "transport",
+      "rules": [{"id": "impact", "x": 6}, {"id": "transport", "x": 12}, {"id": "open_topped", "x": 6}, {"id": "wounds", "x": 5}, "vulnerable_side_rear"],
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Repression APC",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 11,
+          "reflexes": 6,
+          "weapons": ["twin_combat_rifle", "heavy_flamethrower"],
+          "options": [
+            {"addWeapon": ["heavy_flamethrower", "hunter_missiles"]},
+            {"replaceWeapon": "twin_combat_rifle", "withWeapon": "twin_grenade_launcher"},
+            {"addRule": ["spiked_ram", {"id": "dozer", "name": "Dozer Blade"}]}
+          ],
+          "rules": [],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "marine_heavy_tank": {
+      "name": "Heavy Assault APC",
+      "description": "A heavily armored transport sporting an arsenal of weapons built by the imperial marines.",
+      "category": "rare",
+      "rules": [{"id": "impact", "x": 6}, {"id": "transport", "x": 11}, {"id": "wounds", "x": 6}, "vulnerable_rear", "assault_ramp"],
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Heavy Assault APC",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "weapons": [{"id": "twin_heavy_machinegun"}, {"id": "assault_rifle_array"}, {"id": "assault_rifle_array"}],
+          "options": [
+            {"addWeapon": ["twin_combat_rifle", "heavy_fusion_rifle", "hunter_missiles"]},
+            {
+              "replaceWeapon": [{"id": "assault_rifle_array"}, {"id": "assault_rifle_array"}],
+              "withWeapon": [
+                [{"id": "flamethrower_cannon"}, {"id": "flamethrower_cannon"}],
+                [{"id": "twin_laser_cannon"}, {"id": "twin_laser_cannon"}]
+              ],
+              "limit": 1
+            },
+            {"replaceWeapon": {"id": "twin_heavy_machinegun"}, "withWeapon": {"id": "twin_gatling_gun"}},
+            {"addRule": ["spiked_ram", {"id": "dozer", "name": "Dozer Blade"}]}
+          ],
+          "rules": [],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "riders": {
+      "name": "Rider Squad",
+      "description": "A team of operatives mounted on either horseback or motorcycle for more mobility.",
+      "category": "elite",
+      "keywords": ["Mounted"],
+      "rules": [{"id": "impact", "x": 1}, {"id": "wounds", "x": 2}],
+      "options": [{"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": ["rider_lance"]}],
+      "models": [
+        {
+          "name": "Rider Sergeant",
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "movement": 8,
+          "reflexes": 5,
+          "weapons": ["pistol", {"id": "light_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": "pistol", "withWeapon": ["heavy_pistol", "plasma_pistol", "combat_shotgun"]},
+            {"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": ["handweapon", "energy_handweapon", "energy_powerweapon"]}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Rider",
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "movement": 8,
+          "defense": 6,
+          "reflexes": 5,
+          "weapons": ["heavy_pistol", {"id": "light_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": "heavy_pistol", "withWeapon": ["flamethrower", "grenade_launcher", "fusion_rifle", "plasma_rifle", "web_carbine", "combat_shotgun"], "modelLimit": 4},
+            {"addRule": "field_radio", "modelLimit": 1}
+          ],
+          "min": 4,
+          "max": 9
+        }
+      ]
+    },
+    "battle_tank": {
+      "name": "Battle Tank",
+      "description": "A main line battle tank.",
+      "category": "rare",
+      "keywords": ["Vehicle", "Battle Tank"],
+      "rules": ["vulnerable_side_rear", {"id": "wounds", "x": 6}],
+      "models": [
+        {
+          "name": "Battle Tank",
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 12,
+          "movement": 10,
+          "reflexes": 5,
+          "weapons": ["nova_cannon", {"id": "heavy_flamethrower"}],
+          "options": [
+            {"addRule": [{"id": "dozer", "name": "Dozer Blade"}, "field_radio", "extra_armor"]},
+            {"replaceWeapon": "nova_cannon", "withWeapon": ["battle_cannon", "siege_cannon", "twin_autocannon", "tank_hunter_cannon", "heavy_plasma_cannon", "gatling_cannon"]},
+            {"replaceWeapon": {"id": "heavy_flamethrower"}, "withWeapon": [{"id": "heavy_machinegun"}, {"id": "laser_cannon"}]},
+            {"addWeapon": [{"id": "light_machinegun", "count": 1}, {"id": "twin_combat_rifle", "count": 1}], "limit": 1},
+            {"addWeapon": ["hunter_missiles"]},
+            {
+              "addWeapon": [
+                [{"id": "heavy_machinegun"}, {"id": "heavy_machinegun"}],
+                [{"id": "heavy_fusion_rifle"}, {"id": "heavy_fusion_rifle"}],
+                [{"id": "heavy_flamethrower"}, {"id": "heavy_flamethrower"}],
+                [{"id": "plasma_cannon"}, {"id": "plasma_cannon"}]
+              ],
+              "limit": 1
+            }
+          ],
+          "rules": [{"id": "impact", "x": 6}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "hidden_units": {
+    "teleporter": {
+      "name": "Teleporter Unit",
+      "description": "Advanced \"borrowed\" technology allows for quick redeployment and surprise maneuvers during a firefight.",
+      "category": "fortification",
+      "models": [{"name": "Teleporter Unit", "min": 2, "max": 2, "rules": ["terrain", "portal"], "courage": "-", "movement": "-", "shoot": "-", "fight": "-", "defense": "-", "reflexes": "-"}],
+      "keywords": ["Fortification"]
+    },
+    "sentry_guns": {
+      "name": "Sentry Guns",
+      "description": "Large immobile drones used to lock down key positions.",
+      "category": "fortification",
+      "models": [
+        {
+          "name": "Sentry Gun",
+          "min": 1,
+          "max": 3,
+          "rules": ["ambush", {"id": "wounds", "x": 2}, "fearless"],
+          "courage": 5,
+          "movement": 0,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["twin_heavy_machinegun"],
+          "options": [{"replaceWeapon": "twin_heavy_machinegun", "withWeapon": ["twin_laser_cannon", "twin_gatling_gun", "missile_launcher"]}]
+        }
+      ],
+      "keywords": ["Fortification"]
+    }
+  },
+  "models": {
+    "scout_drone": {"name": "Scout Drone", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 4, "reflexes": 5, "weapons": ["auto_carbine"], "min": 1, "max": 1, "rules": ["scout", "fly"]}
+  },
+  "weapons": {
+    "shotgun_pistol": {"name": "Sawn-off Shotgun", "attacks": 1, "ap": 1, "short": 9, "rules": ["assault"]},
+    "twin_thermal_lance": {"name": "Twin Thermal Lance", "attacks": 2, "short": 24, "medium": 48, "ap": 6, "rules": ["heavy", "breaching", {"id": "deadly", "x": 1}]},
+    "heavy_carbine": {"name": "Heavy Carbine", "attacks": 1, "short": 9, "medium": 18, "ap": 1, "rules": ["assault"]},
+    "guardian_eagle": {"name": "Guardian Eagle", "attacks": 3, "ap": 1, "short": 12, "medium": 24, "rules": ["indirect"]},
+    "spectral_eye": {"name": "Spectral Eye", "attacks": 2, "ap": 4, "short": 9, "medium": 18},
+    "assassin_unarmed": {"name": "Assassin Martial Arts", "attacks": 1, "ap": 4, "short": "Melee", "rules": ["rending"]},
+    "mind_shredder": {"name": "Mind Shredder", "attacks": 1, "ap": 4, "short": 6, "medium": 12, "rules": [{"id": "shocking", "x": 3}]},
+    "web_carbine": {"name": "Web Carbine", "attacks": 1, "ap": 1, "short": 9, "medium": 18, "rules": [{"id": "shocking", "x": 2}, "assault"]},
+    "web_cannon": {"name": "Web Cannon", "attacks": 1, "ap": 1, "short": 12, "medium": 24, "rules": [{"id": "shocking", "x": 2}, {"id": "blast", "x": 3}, "assault"]},
+    "phase_sword": {"name": "Phase Sword", "attacks": 1, "ap": 5, "short": "Melee", "rules": ["rending", "phase"]},
+    "twin_grenade_launcher": {
+      "name": "Twin Grenade Launcher",
+      "profiles": [{"name": "Frag", "attacks": 2, "ap": 1, "rules": [{"id": "blast", "x": 3}], "medium": 24, "short": 12}, {"name": "AT", "attacks": 2, "ap": 3, "medium": 24, "short": 12}]
+    }
+  },
+  "rules": {
+    "inspiring": {
+      "name": "Inspiring",
+      "inputs": ["x"],
+      "description": "When activated, this unit may perform a group activation with up to 2 other friendly units of _X_ type within 6\".",
+      "points": 3
+    },
+    "portal": {
+      "name": "Portal",
+      "description": "_Infantry_ units may spend a _Move_ action to embark this model. To embark, the unit must all get within 1\" of this model. Immediately disembark from another model with the Portal special rule, making a _Move_ action originating from that model's edge.",
+      "points": 10
+    },
+    "field_orders": {
+      "name": "Field Orders",
+      "inputs": ["x"],
+      "description": "When this unit is activated, choose up to X friendly _Infantry_ units within 6\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Accuracy tests of 9+ \n * Re-roll failed Strength tests of 9+ \n * +3\" of Movement",
+      "points": ["rule.x", {"multiply": 10}]
+    },
+    "berzerk_overload": {"name": "Berzerk Overload", "description": "When this unit is destroyed, all units within 6\" gain 2 shock.", "points": 15},
+    "phase": {"name": "Phase", "description": "Units with the Resilient and Tough rules cannot use them for saves against this weapon's attacks.", "points": 2},
+    "legend_witch_hunter": {
+      "name": "Psychic Feedback",
+      "description": "This model may attempt to dispel one power per turn as though it had Ward(1). If it successfully dispels a power, deal 1 hit with AP(2) to the caster.",
+      "points": 5
+    },
+    "legend_alien_hunter": {"name": "Breacher Weapons", "description": "Once per turn, a unit with the Resilient and Tough rules cannot use them for saves against this unit's attack.", "points": 5},
+    "legend_mutant_hunter": {
+      "name": "Blacksite Warden",
+      "description": "When this model's unit successfully performs a reaction against a Charge action, the charging unit suffers 6 hits with no AP.",
+      "oints": 5
+    }
+  },
+  "strategies": [
+    {
+      "name": "Vigilance",
+      "phase": "activation",
+      "description": "Use when taking an Initiative test for a reaction. That unit is treated as having +2 Initiative for that test.",
+      "flavor": "With countless battles experienced, these soldiers are trained to react to any situation.",
+      "cost": 1
+    },
+    {
+      "name": "Shock and Awe",
+      "phase": "activation",
+      "description": "Use when fighting with an Infantry unit. Each model may use one of its ranged weapons instead of melee weapons when resolving that Fight action. This strategy may only be used once per round.",
+      "flavor": "A point blank volley of fire can utterly shatter the foe.",
+      "cost": 1
+    },
+    {
+      "name": "Stun Grenade",
+      "phase": "activation",
+      "description": "Use when an Infantry unit activates. Select one enemy unit within 6\" of that unit (or within 24\" if your unit is equipped with a grenade launcher) - the chosen unit suffers 2 Shock and subtracts 1 from its Initiative until the end of the current battle round.",
+      "cost": 2,
+      "flavor": "Flashbangs and tear gas, whilst normally used for non-lethal pacification, are equally effective at stunning armed targets."
+    }
+  ],
+  "relics": {
+    "legend_witch_hunter": {
+      "name": "Reality Stabilizer",
+      "rule": "legend_witch_hunter",
+      "description": "Upgrade one Leader model with Reality Stabilizer.",
+      "flavor": "The culmination of extensive R&D, this magitech gadget painfully counters attempts to cast unwanted spells.",
+      "points": 10
+    },
+    "legend_alien_hunter": {
+      "name": "Breacher Weapons",
+      "rule": "legend_alien_hunter",
+      "description": "Upgrade one Leader model with Breacher Weapons.",
+      "flavor": "Experimental tech allows the bearer to bypass even the most advanced or paranormal of defences.",
+      "points": 10
+    },
+    "legend_mutant_hunter": {
+      "name": "Blacksite Warden",
+      "rule": "legend_mutant_hunter",
+      "description": "Upgrade one Leader model with Blacksite Warden.",
+      "flavor": "Countless years defending GCA blacksites from external threats has given this commander great skill in repelling close-quarters ambushes.",
+      "points": 10
+    }
+  },
+  "powers": {}
+}

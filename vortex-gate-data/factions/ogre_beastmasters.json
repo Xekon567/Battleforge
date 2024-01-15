@@ -1,0 +1,612 @@
+{
+  "name": "Ogre Beastmasters",
+  "id": "ogre_beastmasters",
+  "color": "#4f9ae0",
+  "lore": "Once, in a distant corner of the universe, there existed an ice planet known as Glacia, a desolate and frozen world where survival was a constant struggle. Despite the harsh conditions, Glacia was home to a remarkable species known as the Ogre Beastmasters. These mighty beings were enormous and possessed incredible strength, hailing from a long line of powerful and proud warriors.\n\nThe history of the Ogre Beastmasters traced back to a time when Glacia was ruled by rivaling clans, each vying for dominance over the frozen tundras and the meager resources they offered. In the early days, the ogres were simply fierce warriors, often waging brutal wars against one another in an endless quest for power.\n\nOne fateful day, however, a rare and powerful bond began to emerge between the ogres and the creatures that roamed Glacia's icy wilderness. A group of skilled ogre warriors stumbled upon a wounded and dying ice beast, a creature renowned for its ferocity and icy breath. Instead of finishing off the creature, the warriors showed mercy and tended to its wounds. In an unexpected turn of events, the ice beast recognized the ogres' kindness and allowed them to approach without aggression.\n\nAs the ogres nursed the creature back to health, an unbreakable bond formed between the warriors and the ice beast, marking the beginning of a profound alliance. Word spread quickly across Glacia, and soon other ogre warriors sought out the elusive ice beasts, hoping to establish their own connections.\n\nThe ogre warriors who succeeded in forging these powerful bonds became known as the first Beastmasters. They discovered that they could communicate with and control the ice beasts, tapping into a long-forgotten gift that allowed them to tame and harness the fierce and mythical creatures. The ice beasts, in turn, offered their unique abilities and survival skills to aid their newfound companions.\n\nOver time, the bond between the ogres and the ice beasts deepened, shaping the entire culture of the ogres. The ogre clans shifted their focus from constant warfare to mastering the art of beast taming. The Beastmasters became revered and held esteemed positions within their clans, guiding their people toward a harmonious coexistence with the ice beasts.\n\nThe society of the Ogre Beastmasters became structured around respect for nature and the balance of life on Glacia. The ogres learned to live in harmony with their icy environment, utilizing the ice beasts' talents to secure food, build shelters, and protect their territories. The harsh climate, once seen as a burden, became a source of strength and wisdom for the ogres, as they adapted and thrived in their unforgiving home.\n\nToday, the Ogre Beastmasters stand as the wise guardians of Glacia, ensuring the survival of their clans and the diverse range of ice beasts that roam the frozen expanse. Their reputation as fearsome warriors has evolved into one of empathy and understanding, reflecting the bond they share with their loyal companions. And though Glacia remains an unforgiving and treacherous planet, the unity between the ogres and the ice beasts has made them a force to be reckoned with, living in harmony as the protectors of their icy realm.",
+  "description": "The greatest of ogre tribes, who only interact with their lessers when they need something - food, coin, or just a challenge!",
+  "units": {
+    "great_ogre_leader": {
+      "name": "Great-Ogre Mounted Leader",
+      "description": "From high atop his mount, this great-ogre leads his tribe",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Great-Ogre Leader",
+          "movement": "12",
+          "shoot": 4,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "courage": 8,
+          "min": 1,
+          "max": 1,
+          "rules": [{"id": "leader", "x": "cavalry"}, {"id": "wounds", "x": 3}, {"id": "great_leader", "x": 1}, {"id": "resistant", "x": 3}],
+          "weapons": [{"id": "giant_spear", "count": 4}, {"id": "leader_melee", "count": 3}, {"id": "mount_horns", "x": 5}, {"id": "mount_feet", "x": 3}]
+        }
+      ]
+    },
+    "great_ogre_fangriders": {
+      "name": "Great-Ogre Fangriders",
+      "description": "The weakest of the Great-Ogres, they're nevertheless terrifying in a fight.",
+      "category": "core",
+      "options": [{"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 2}],
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Great-Ogre Heir",
+          "movement": 8,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "courage": 6,
+          "min": 1,
+          "max": 1,
+          "weapons": ["punching_shield", "pistol", {"id": "grand_weapon", "count": 3}, {"id": "fangrider_tusks", "count": 4}]
+        },
+        {
+          "name": "Fangrider",
+          "movement": 8,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "courage": 6,
+          "min": 2,
+          "max": 8,
+          "weapons": ["punching_shield", {"id": "grand_weapon", "count": 3}, {"id": "fangrider_tusks", "count": 4}]
+        }
+      ]
+    },
+    "carnivorous_scavengers": {
+      "name": "Carnivorous Scavengers",
+      "description": "Carnivorous beasts that follow the great-ogres, taking their feasts from the bodies left behind.",
+      "category": "core",
+      "keywords": ["Beasts"],
+      "models": [
+        {
+          "name": "Attack Beast",
+          "movement": 7,
+          "shoot": 4,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "courage": 4,
+          "weapons": [{"id": "scav_claws", "count": 3}],
+          "rules": [{"id": "fear"}, {"id": "wounds", "x": 2}],
+          "min": 2,
+          "max": 20
+        }
+      ]
+    },
+    "ferocious_pets": {
+      "name": "Ferocious Pets",
+      "description": "Pets of the great-ogres, underestimating these wildcats will be your doom",
+      "keywords": ["Beasts"],
+      "category": ["core"],
+      "models": [{"name": "Ferocious Pets", "movement": 10, "shoot": 4, "fight": 5, "defense": 5, "reflexes": 6, "courage": 4, "weapons": [{"id": "pet_tusks", "count": 2}], "min": 2, "max": 20}]
+    },
+    "ogre_captain": {
+      "name": "Ogre Captain",
+      "description": "The ferocious leader of a mercenary company.",
+      "category": "hero",
+      "keywords": ["Heavy Infantry"],
+      "models": [
+        {
+          "name": "Ogre Captain",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "courage": 7,
+          "reflexes": 6,
+          "rules": [{"id": "leader", "x": "Infantry, Heavy Infantry"}, {"id": "merc_tactics", "x": 1}, {"id": "wounds", "x": 4}],
+          "weapons": [{"id": "grand_weapon", "count": 5}],
+          "options": [
+            {"replaceWeapon": [{"id": "grand_weapon", "count": 5}], "withWeapon": [{"id": "grand_hammer", "count": 5}, {"id": "great_polearm", "count": 5}]},
+            {"addWeapon": [{"id": "heavy_pistol", "count": 2}]},
+            {"addRule": ["shield", {"id": "inspiring", "x": "Infantry, Heavy Infantry"}]},
+            {"replaceRule": [{"id": "merc_tactics", "x": 1}], "withRule": [{"id": "merc_tactics", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_captain_beast": {
+      "name": "Ogre Captain on Tundra Beast",
+      "description": "From high atop his mount, this ogre captain leads his mercenary company.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Ogre Captain on Tundra Beast",
+          "movement": "12",
+          "shoot": 5,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "courage": 7,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 3}, {"id": "heavy_impact", "x": 6}, {"id": "leader", "x": "Mounted"}, {"id": "warrior", "x": 2}],
+          "weapons": [{"id": "mount_feet", "count": 2}, "frost_breath", {"id": "grand_weapon", "count": 6}, {"id": "mount_horns", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "grand_weapon", "count": 6}], "withWeapon": [{"id": "grand_hammer", "count": 6}, {"id": "great_polearm", "count": 6}]},
+            {"addRule": ["relic_shield", {"id": "inspiring", "x": "Heavy Infantry, Cavalry"}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_captain_chariot": {
+      "name": "Ogre Captain on Chariot",
+      "description": "A ferocious leader on a crudely crafted chariot pulled by two terrifying beasts.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Ogre Captain on Chariot",
+          "movement": 10,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 9,
+          "reflexes": 7,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 4}, {"id": "leader", "x": "Vehicle"}, {"id": "merc_tactics", "x": 1}],
+          "weapons": [{"id": "grand_weapon", "count": 5}, {"id": "brutal_tusks", "count": 8}],
+          "options": [
+            {"replaceWeapon": [{"id": "grand_weapon", "count": 5}], "withWeapon": [{"id": "grand_hammer", "count": 5}, {"id": "great_polearm", "count": 5}]},
+            {"addWeapon": [{"id": "heavy_pistol", "count": 2}]},
+            {"addRule": ["relic_shield", {"id": "inspiring", "x": "Vehicle"}]},
+            {"replaceRule": [{"id": "merc_tactics", "x": 1}], "withRule": [{"id": "merc_tactics", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_shaman": {
+      "name": "Ogre Shaman",
+      "description": "A powerful wizard of a mercenary company.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Ogre Shaman",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "courage": 7,
+          "reflexes": 6,
+          "rules": [{"id": "leader", "x": "Infantry, Heavy Infantry"}, {"id": "power", "x": 1}, {"id": "wounds", "x": 4}],
+          "weapons": [{"id": "grand_weapon", "count": 6}],
+          "options": [{"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_shaman_beast": {
+      "name": "Ogre Shaman on Tundra Beast",
+      "description": "From high atop his mount, this powerful wizard supports his mercenary company.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Ogre Shaman on Tundra Beast",
+          "movement": "12",
+          "shoot": 5,
+          "fight": 6,
+          "defense": 12,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 3}, {"id": "heavy_impact", "x": 6}, {"id": "leader", "x": "Mounted"}, {"id": "power", "x": 2}],
+          "weapons": [{"id": "mount_feet", "count": 2}, "frost_breath", {"id": "grand_weapon", "count": 7}, {"id": "mount_horns", "count": 4}],
+          "options": [{"replaceRule": [{"id": "power", "x": 2}], "withRule": [{"id": "power", "x": 3}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_shaman_chariot": {
+      "name": "Ogre Shaman on Chariot",
+      "description": "A powerful wizard on a crudely crafted chariot pulled by two terrifying beasts.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Ogre Shaman on Chariot",
+          "movement": 10,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 9,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 4}, {"id": "leader", "x": "Vehicle"}, {"id": "power", "x": 1}],
+          "weapons": [{"id": "grand_weapon", "count": 6}, {"id": "brutal_tusks", "count": 8}],
+          "options": [{"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_beastmaster": {
+      "name": "Ogre Beastmaster",
+      "description": "A skilled hunter, and the leader of the beast packs in a company, Beastmasters are often more comfortable with animals than their own kind.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Ogre Beastmaster",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "courage": 7,
+          "reflexes": 6,
+          "rules": ["ambush", "evasive", {"id": "hunter_tactics", "x": 1}, {"id": "leader", "x": "Beast"}, {"id": "wounds", "x": 4}],
+          "weapons": [{"id": "great_weapon", "count": 4}, "heavy_crossbow", "hunting_spear"],
+          "options": [{"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_beastmaster_beast": {
+      "name": "Ogre Beastmaster on Tundra Beast",
+      "description": "From high atop his mount, this skilled hunter leads his beast pack.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Ogre Beastmaster on Tundra Beast",
+          "movement": "12",
+          "shoot": 5,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "courage": 7,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 3}, {"id": "heavy_impact", "x": 6}, {"id": "leader", "x": "Beast"}, {"id": "hunter_tactics", "x": 2}],
+          "weapons": [{"id": "mount_feet", "count": 2}, "frost_breath", {"id": "great_weapon", "count": 4}, "heavy_crossbow", "hunting_spear", {"id": "mount_horns", "count": 4}],
+          "options": [{"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_beastmaster_chariot": {
+      "name": "Ogre Beastmaster on Chariot",
+      "description": "A skilled hunter on a crudely crafted chariot pulled by two terrifying beasts.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Ogre Beastmaster on Chariot",
+          "movement": 10,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 9,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 4}, {"id": "leader", "x": "Vehicle"}, {"id": "warrior", "x": 1}],
+          "weapons": [{"id": "brutal_tusks", "count": 8}, {"id": "great_weapon", "count": 4}, "heavy_crossbow", "hunting_spear"],
+          "options": [{"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_mercenaries": {
+      "name": "Ogre Mercenaries",
+      "description": "The rank-and-file, as much as any ogre can be.",
+      "category": "core",
+      "keywords": ["Heavy Infantry"],
+      "models": [
+        {
+          "name": "Ogre Mercenary",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "courage": 6,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 2}],
+          "weapons": [{"id": "great_weapon", "count": 3}],
+          "options": [{"replaceWeapon": [{"id": "great_weapon", "count": 3}], "withWeapon": [[{"id": "great_weapon", "count": 2}, "spiked_gauntlet"]]}],
+          "min": 3,
+          "max": 12
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "ogre_veterans": {
+      "name": "Ogre Veterans",
+      "Description": "The old guard of a mercenary company, who have long since earned their place.",
+      "category": "elite",
+      "keywords": ["Heavy Infantry"],
+      "models": [
+        {
+          "name": "Ogre Veteran",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "courage": 6,
+          "reflexes": 6,
+          "rules": [{"id": "wounds", "x": 2}],
+          "weapons": [{"id": "grand_weapon", "count": 4}],
+          "options": [{"replaceWeapon": [{"id": "grand_weapon", "count": 4}], "withWeapon": [[{"id": "grand_weapon", "count": 3}, "spiked_gauntlet"]]}],
+          "min": 3,
+          "max": 12
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "ogre_canoneers": {
+      "name": "Ogre Canoneers",
+      "description": "With the strength of an ogre, your definition of 'sidearm' quickly changes.",
+      "category": "core",
+      "keywords": ["Heavy Infantry"],
+      "models": [
+        {
+          "name": "Ogre Canoneer",
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 2}],
+          "weapons": [{"id": "clubbing_fists", "count": 2}, "handcannon"],
+          "min": 3,
+          "max": 12
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "goblin_auxiliary": {
+      "name": "Goblin Auxiliaries",
+      "description": "The one thing goblins value more than their lives is shiny things. With mercenary work, they can get both.",
+      "category": "core",
+      "keywords": ["Infantry", "Goblin"],
+      "models": [
+        {
+          "name": "Goblin Auxiliary",
+          "movement": 6,
+          "shoot": 5,
+          "courage": 4,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 5,
+          "rules": ["trappers"],
+          "weapons": ["light_handweapon", "sling"],
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "ogre_beastriders": {
+      "name": "Ogre Beastriders",
+      "description": "Outriders for mercenary companies - when ogres can find beasts strong enough to carry them!",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Ogre Beastrider",
+          "movement": 8,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "impact", "x": 2}, {"id": "wounds", "x": 3}],
+          "weapons": [{"id": "great_weapon", "count": 3}, {"id": "brutal_tusks", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "great_weapon", "count": 3}], "withWeapon": [[{"id": "great_weapon", "count": 2}, "spiked_gauntlet"], {"id": "heavy_polearm", "count": 3}]},
+            {"addWeapon": ["heavy_pistol"]}
+          ],
+          "min": 2,
+          "max": 12
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "ogre_veteran_beastrider": {
+      "name": "Ogre Veteran Beastriders",
+      "description": "Elite outriders for mercenary companies - when ogres can find beasts strong enough to carry them!",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Ogre Veteran Beastrider",
+          "movement": 8,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "impact", "x": 2}, {"id": "wounds", "x": 3}],
+          "weapons": [{"id": "grand_weapon", "count": 3}, {"id": "brutal_tusks", "count": 4}],
+          "options": [
+            {"replaceWeapon": [{"id": "grand_weapon", "count": 3}], "withWeapon": [[{"id": "grand_weapon", "count": 2}, "spiked_gauntlet"], {"id": "great_polearm", "count": 3}]},
+            {"addWeapon": ["heavy_pistol"]}
+          ],
+          "min": 2,
+          "max": 12
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "hunting_beasts": {
+      "name": "Hunting Beasts",
+      "description": "Feral beasts that are sickened on their prey by their ogre masters.",
+      "category": "elite",
+      "keywords": ["Beast"],
+      "models": [
+        {
+          "name": "Hunting Beast",
+          "movement": 8,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "courage": 4,
+          "rules": ["evasive", {"id": "wounds", "x": 2}],
+          "weapons": [{"id": "fangs_and_claws", "count": 2}],
+          "min": 3,
+          "max": 12
+        }
+      ]
+    },
+    "goblin_stuffhucker": {
+      "name": "Goblin Stuff-Hucker",
+      "description": "Goblins feel most at home away from the front lines, so their Ogre leaders designed artillery to help them contribute.",
+      "category": "rare",
+      "keywords": ["Warmachine", "Artillery", "Goblin"],
+      "models": [
+        {
+          "name": "Goblin Stuff-Chucker",
+          "movement": 7,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 11,
+          "reflexes": 5,
+          "courage": 5,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 2}],
+          "weapons": ["stuff_chucker", {"id": "brutal_tusks", "count": 2}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_cannon": {
+      "name": "Beast-Pulled Cannon",
+      "description": "No mercenary company worth its coin lets a siege stop them.  The ogres use this monstrosity to crack walls and, when there's no walls around, monsters.",
+      "category": "rare",
+      "keywords": ["Warmachine", "Arillery"],
+      "models": [
+        {
+          "name": "Beast-Pulled Cannon",
+          "movement": 7,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 12,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 2}],
+          "weapons": ["cannon", {"id": "brutal_tusks", "count": 2}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_veterans_beast": {
+      "name": "Ogre Veterans on Tundra Beast",
+      "description": "From high atop his mount, a pair of ogre veterans crush anyone under their bulk.",
+      "category": "rare",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Ogre Veterans on Tundra Beast",
+          "movement": "12",
+          "shoot": 5,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "resistant", "x": 3}, {"id": "heavy_impact", "x": 6}],
+          "weapons": [{"id": "mount_feet", "count": 2}, "frost_breath", {"id": "grand_weapon", "count": 4}, "heavy_crossbow", {"id": "mount_horns", "count": 4}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ogre_chariot": {
+      "name": "Ogre Chariot",
+      "description": "A crudely crafted chariot pulled by two terrifying beasts.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Ogre Chariot",
+          "movement": 10,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 9,
+          "reflexes": 6,
+          "courage": 6,
+          "rules": [{"id": "wounds", "x": 3}, {"id": "impact", "x": 4}],
+          "weapons": [{"id": "great_weapon", "count": 3}, {"id": "brutal_tusks", "count": 8}],
+          "options": [{"replaceWeapon": [{"id": "great_weapon", "count": 3}], "withWeapon": [{"id": "heavy_polearm", "count": 3}]}, {"addWeapon": ["heavy_pistol"]}, {"addRule": ["banner"]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "weapons": {
+    "fangrider_tusks": {"name": "Fanged Beast's Tusks", "attacks": 1, "ap": 3, "rules": ["lance"], "short": "Melee"},
+    "punching_shield": {"name": "Punching Shield", "attacks": 1, "ap": 1, "short": "Melee", "rules": ["buckler"]},
+    "scav_claws": {"name": "Scavenger's Claws", "attacks": 1, "ap": 3, "short": "Melee"},
+    "pet_tusks": {"name": "Pets' Tusks", "attacks": 1, "ap": 2, "short": "Melee"},
+    "giant_spear": {"name": "Great Leader's Spear", "attacks": 1, "ap": 4, "short": "Melee"},
+    "leader_melee": {"name": "Leader's Punches and Kicks", "attacks": 1, "ap": 1, "short": "Melee"},
+    "mount_horns": {"name": "Massive Horns", "attacks": 1, "ap": 5, "short": "Melee"},
+    "mount_feet": {"name": "Crushing Hooves", "attacks": 1, "ap": 6, "short": "Melee"},
+    "spiked_gauntlet": {"name": "Spiked Gauntlet", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["parry"]},
+    "brutal_tusks": {"name": "Brutal Tusks", "attacks": 1, "short": "Melee", "ap": 3, "rules": ["lance"]},
+    "hunting_spear": {"name": "Hunting Spear", "attacks": 1, "ap": 3, "short": 6, "medium": 12, "rules": ["assault"]},
+    "stuff_chucker": {"name": "Stuff-Chucker", "attacks": 1, "ap": 2, "short": 18, "medium": 36, "rules": [{"id": "blast", "x": 6}, "indirect"]},
+    "sling": {"name": "Sling", "attacks": 1, "short": 9, "medium": 18, "rules": ["assault"]},
+    "frost_breath": {"name": "Frost Breath", "attacks": 1, "short": 9, "medium": 18, "ap": 2, "rules": [{"id": "blast", "x": 6}, {"id": "shocking", "x": 1}]}
+  },
+  "rules": {
+    "great_leader": {
+      "name": "Leader's Bellowing",
+      "inputs": ["x"],
+      "description": "When this unit is activated, choose up to X friendly _Cavalry_ units within 6\".  These units re-roll failed Strength tests of 9+",
+      "points": ["rule.x", {"multiply": 10}]
+    },
+    "merc_tactics": {
+      "name": "Mercenary Tactics",
+      "inputs": ["x"],
+      "description": "When this unit is activated, choose up to X friendly _Heavy Infantry_ units within 6\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Strength tests of 9+ \n * +3\" Movement",
+      "points": ["rule.x", {"multiply": 15}]
+    },
+    "hunter_tactics": {
+      "name": "Hunter Tactics",
+      "inputs": ["x"],
+      "description": "When this unit is activated, choose up to X friendly _Beast_ units within 12\" to receive one of the following bonuses until the end of the round: \n * Re-roll failed Strength tests of 9+ \n * Re-roll failed Initiative tests of 9+",
+      "points": ["rule.x", {"multiply": 15}]
+    },
+    "trappers": {"name": "Trappers", "description": "When this unit successfully falls back from an enemy unit, the enemy unit suffers 1 hit with no AP for each model in this unit.", "points": [1]}
+  },
+  "strategies": {
+    "stampede": {
+      "phase": "activation",
+      "name": "Stampede",
+      "description": "Use when a _Cavalry_ unit makes a charge action. The Impact Rule gains +1 AP for the charge.",
+      "flavor": "Ogres like to charge with full force into enemy ranks and trampling them beneath their hooves and tusks.",
+      "cost": 1
+    },
+    "thick_skinned": {
+      "phase": "activation",
+      "name": "Thick Skinned",
+      "description": "Use before taking Save rolls for an Infantry unit. It gets +1 Save.",
+      "flavor": "Ogres are said to have layers of hardened skin that are impossible to penetrate.",
+      "cost": 2
+    },
+    "brutality": {
+      "phase": "activation",
+      "name": "Brutality",
+      "description": "Use before fighting with a _Cavalry_ unit. Hit rolls of 1 or 2 gain +1 AP.",
+      "flavor": "With their superior strength and savagery these beasts can easily crush any opposition.",
+      "cost": 1
+    }
+  },
+  "powers": {
+    "haste": {"name": "Haste", "description": "Target friendly unit within 12\" may immediately make a free move action.", "charge": 7},
+    "pain": {"name": "Pain", "description": "Target enemy model within 12\" takes 1 automatic hit with AP(3).", "charge": 6, "subfactions": ["none", "poison", "wrath", "excess", "change"]},
+    "lightning_storm": {"name": "Lightning Storm", "description": "Target enemy unit within 12\" take 5 hits each with no AP", "charge": 7}
+  }
+}

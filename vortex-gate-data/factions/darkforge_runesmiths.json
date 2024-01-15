@@ -1,0 +1,484 @@
+{
+  "name": "Darkforge Runesmiths",
+  "id": "darkforge_runesmiths",
+  "lore": "In the heart of a foreboding mountain range, where the veins of obsidian and onyx ran deep, the Darkforge Runesmiths found their home. These mountain dwarves were unlike any other of their kind, for they had embraced the shadows that dwelled within the depths of the earth. Legends whispered that eons ago, they made a sinister pact with ancient, malevolent powers that were buried within their mountainous realm.\n\nThe tale of the Darkforge Runesmiths began with a daring and ambitious leader named Durgan Blackheart. Frustrated by their isolation and a desire for power, Durgan delved deep into the ancient tomes and arcane secrets of their mountain home. It was during these research expeditions that he stumbled upon a forgotten chamber deep within the heart of the mountain. There, he discovered an ancient runestone infused with dark, malevolent magic.\n\nIn his quest for power, Durgan made a fateful choice. He decided to invoke the power of the runestone and, in doing so, entered into a pact with a malevolent entity known as the Shadowbinder. This entity granted the Darkforge Runesmiths unparalleled mastery over dark magic, but in return, they were forever bound to serve its nefarious desires.\n\nUnder the influence of the Shadowbinder, the Darkforge Runesmiths were forever changed. Their once-beautiful underground city was twisted into a dark, nightmarish labyrinth filled with shadows and eerie, blue-hued torches that flickered with unnatural fire. The dwarves' traditional craftsmanship took on an eerie quality, with their weapons and armor being imbued with malevolence, capable of sowing chaos and despair on the battlefield.\n\nThe Darkforge Runesmiths' craft was the stuff of nightmares. They learned to inscribe dark runes onto their weapons and armor, infusing them with wicked enchantments. Their blades could drain the life force of their victims, and their armor turned them into eerie specters on the battlefield, difficult to harm. They reveled in the terror they could strike into the hearts of their foes.\n\nThe Darkforge Runesmiths were a secretive and tightly-knit society, ruled by a council of elders who communed with the Shadowbinder to determine their actions. They harbored a deep-seated desire for power and dominance over their underground domain, and they viewed the world above with a malevolent eye. Their ambition led them to wage war on neighboring dwarven clans, and they sought to expand their dominion, spreading darkness and fear.\n\nTheir malevolence and dark ambitions brought the Darkforge Runesmiths into conflict with other races and even their fellow dwarves, who saw them as a dark stain on their kind. Their relentless pursuit of power and willingness to unleash dark magic upon the world above led to their isolation from other dwarven clans and earned them a fearsome reputation throughout the land.\n\nThe Darkforge Runesmiths' legacy was one of darkness and evil, marked by their mastery of malevolent magic and their insatiable lust for power. Their underground city became a forbidden place, and their name was whispered in fear and trepidation by those who knew of their existence.\n\nThe Darkforge Runesmiths, masters of malevolent craft, remained a haunting presence in the annals of dwarven history, a reminder of the peril that could befall those who dared to delve too deep into the shadows.",
+  "author": "Xekon#8266",
+  "units": {
+    "darkforge_warlock": {
+      "name": "Darkforge Warlock",
+      "description": "A master of the dark arts, trained in infernal runesmithing.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Warlock",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": ["leader", {"id": "power", "x": 1}],
+          "weapons": ["frag_grenade", {"id": "heavy_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}]},
+            {"addWeapon": "heavy_pistol"},
+            {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "darkforge_warlock_chariot": {
+      "name": "Darkforge Warlock on War Chariot",
+      "description": "A master of the dark arts, driving a deadly chariot.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Warlock on War Chariot",
+          "movement": 12,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": [{"id": "heavy_impact", "x": 3}, "leader", {"id": "power", "x": 1}],
+          "weapons": ["frag_grenade", {"id": "heavy_handweapon", "count": 2}, {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}]},
+            {"addWeapon": "heavy_pistol"},
+            {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"]
+    },
+    "darkforge_warlock_greater_fire_elemental": {
+      "name": "Darkforge Warlock on Greater Fire Elemental",
+      "description": "A master of the dark arts, riding a powerful bound fire elemental destroying everything in its path.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Warlock on Greater Fire Elemental",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 7,
+          "defense": 11,
+          "reflexes": 5,
+          "wounds": 5,
+          "rules": ["leader", {"id": "power", "x": 2}],
+          "weapons": [{"id": "crushing_fists", "count": 4}, {"id": "flame_breath", "count": 6}, "frag_grenade", {"id": "heavy_handweapon", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}]},
+            {"addWeapon": "heavy_pistol"},
+            {"replaceRule": [{"id": "power", "x": 2}], "withRule": [{"id": "power", "x": 3}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "darkforge_lord": {
+      "name": "Darkforge Lord",
+      "description": "A noble and respected member of the darkforge council.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Lord",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": ["leader", "striker"],
+          "weapons": [{"id": "heavy_handweapon", "count": 3}, "heavy_pistol"],
+          "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 3}], "withWeapon": [{"id": "grand_weapon", "count": 3}, {"id": "heavy_polearm", "count": 3}]}, {"addWeapon": "shield"}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "darkforge_lord_chariot": {
+      "name": "Darkforge Lord on War Chariot",
+      "description": "A noble and respected member of the darkforge council driving a deadly chariot.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Lord on War Chariot",
+          "movement": 12,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": [{"id": "heavy_impact", "x": 3}, "leader", "striker"],
+          "weapons": [{"id": "heavy_handweapon", "count": 3}, "heavy_pistol", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 3}], "withWeapon": [{"id": "grand_weapon", "count": 3}, {"id": "heavy_polearm", "count": 3}]}, {"addWeapon": "shield"}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"]
+    },
+    "darkforge_king": {
+      "name": "Darkforge King",
+      "description": "A highly feared king of the darkforge council.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge King",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 8,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": ["leader", "tactician"],
+          "weapons": [{"id": "heavy_handweapon", "count": 4}, "heavy_pistol"],
+          "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}, {"id": "heavy_polearm", "count": 4}]}, {"addWeapon": "shield"}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "darkforge_king_chariot": {
+      "name": "Darkforge King on War Chariot",
+      "description": "A highly feared king of the darkforge council on a deadly chariot.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge King on War Chariot",
+          "movement": 12,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 8,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": [{"id": "heavy_impact", "x": 3}, "leader", "tactician"],
+          "weapons": [{"id": "heavy_handweapon", "count": 4}, "heavy_pistol", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 4}], "withWeapon": [{"id": "grand_weapon", "count": 4}, {"id": "heavy_polearm", "count": 4}]}, {"addWeapon": "shield"}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"]
+    },
+    "centaur_hybrid_lord": {
+      "name": "Centaur Lord Hybrid",
+      "description": "A powerful experimental warrior, half beast and half dwarf.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Centaur Lord Hybrid",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 0,
+          "fight": 7,
+          "defense": 8,
+          "reflexes": 6,
+          "wounds": 4,
+          "rules": ["leader", "warrior"],
+          "weapons": [{"id": "great_weapon", "count": 3}, "spiked_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "great_weapon", "count": 3}, "shield"], "withWeapon": [{"id": "grand_weapon", "count": 4}]}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Mounted"]
+    },
+    "darkforge_engineer": {
+      "name": "Darkforge Engineer",
+      "description": "A master craftsmith, developing and repairing devastating warmachines.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Darkforge Engineer",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": ["engineer", "support"],
+          "weapons": ["frag_grenade", "heavy_pistol", "heavy_handweapon"],
+          "options": [{"replaceWeapon": ["heavy_pistol"], "withWeapon": ["handgun", "shotgun"]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "darkforge_soulbound": {
+      "name": "Darkforge Soulbound",
+      "description": "Dwarven warriors branded with cursed runes and clad in dark armor.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Soulbound",
+          "movement": 5,
+          "courage": 5,
+          "shoot": 0,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 5,
+          "wounds": 1,
+          "weapons": ["heavy_handweapon", "spiked_shield"],
+          "options": [{"replaceWeapon": ["heavy_handweapon", "spiked_shield"], "withWeapon": [{"id": "great_weapon", "count": 2}], "modelLimit": "all"}],
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "darkforge_firebrands": {
+      "name": "Darkforge Firebrands",
+      "description": "Dwarven gunners branded with cursed runes and equipped with devastating weapons.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Firebrand",
+          "movement": 5,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 5,
+          "wounds": 1,
+          "weapons": ["handgun", "spear"],
+          "options": [{"replaceWeapon": ["handgun"], "withWeapon": ["flamethrower", "mortar_rifle"], "modelLimit": "2/10"}],
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "cinder_spirits": {
+      "name": "Cinder Spirits",
+      "description": "Bound fire elementals, unleashed onto the foe in a whirlwind of fire and hatred.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Cinder Spirits",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 5,
+          "wounds": 2,
+          "weapons": [{"id": "great_weapon", "count": 3}, "flame_breath"],
+          "min": 3,
+          "max": 6
+        }
+      ],
+      "keywords": ["Monster"]
+    },
+    "darkforge_bloodseekers": {
+      "name": "Darkforge Bloodseekers",
+      "description": "Elite dwarven warriors branded with cursed runes, charging into the fray with deadly weapons.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Bloodseeker",
+          "movement": 5,
+          "courage": 6,
+          "shoot": 0,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 5,
+          "wounds": 2,
+          "rules": ["fear", "fearless"],
+          "weapons": [{"id": "great_weapon", "count": 3}],
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+    },
+    "centaur_hybrids": {
+      "name": "Centaur Hybrids",
+      "description": "Experimental warriors, half beast and half dwarf.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Centaur Hybrid",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 0,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 5,
+          "wounds": 3,
+          "weapons": [{"id": "great_weapon", "count": 3}, "spiked_shield", {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "great_weapon", "count": 3}, "spiked_shield"], "withWeapon": [{"id": "grand_weapon", "count": 4}], "modelLimit": "1/3"}],
+          "min": 3,
+          "max": 6
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "keywords": ["Mounted"]
+    },
+    "darkforge_chariot": {
+      "name": "Darkforge War Chariot",
+      "description": "A pair of dwarf warriors driving a deadly chariot.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Darkforge War Chariot",
+          "movement": 12,
+          "courage": 5,
+          "shoot": 0,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "wounds": 3,
+          "rules": [{"id": "heavy_impact", "x": 3}],
+          "weapons": [{"id": "heavy_handweapon", "count": 2}, {"id": "heavy_hooves_and_teeth", "count": 2}],
+          "options": [{"replaceWeapon": [{"id": "heavy_handweapon", "count": 2}], "withWeapon": [{"id": "grand_weapon", "count": 2}, {"id": "heavy_polearm", "count": 2}]}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Vehicle"]
+    },
+    "greater_fire_elemental": {
+      "name": "Greater Fire Elemental",
+      "description": "A powerful bound fire elemental destroying everything in its path.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Greater Fire Elemental",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 7,
+          "defense": 11,
+          "reflexes": 5,
+          "wounds": 5,
+          "weapons": [{"id": "crushing_fists", "count": 4}, {"id": "flame_breath", "count": 6}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Monster"]
+    },
+    "darkforge_artillery": {
+      "name": "Darkforge Artillery",
+      "description": "Powerful guns and siege engines often back up the Darkforge war machine.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Darkforge Artillery",
+          "movement": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 8,
+          "courage": 5,
+          "reflexes": 5,
+          "wounds": 3,
+          "rules": ["support"],
+          "weapons": ["cannon", {"id": "heavy_handweapon", "count": 3}],
+          "options": [{"replaceWeapon": ["cannon"], "withWeapon": ["mortar", "heavy_mortar", "rocket_battery"]}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Warmachine", "Artillery"]
+    },
+    "darkforge_war_train": {
+      "name": "Darkforge War Train",
+      "description": "A steam powered armored train, capable of devastating assaults and pulling artillery pieces into battle.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Darkforge War Train",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 0,
+          "defense": 11,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": [{"id": "heavy_impact", "x": 6}],
+          "weapons": [{"id": "cannon", "count": 2}],
+          "options": [{"addRule": [{"id": "heavy_impact", "x": 6}]}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "keywords": ["Warmachine", "Vehicle"]
+    },
+    "obsidian_golems": {
+      "name": "Obsidian Golems",
+      "description": "Bound earth elementals, crushing their foes with the crushing weight of their volcanic bodies.",
+      "category": "elite",
+      "models": [
+        {"name": "Obsidian Golem", "movement": 6, "courage": 5, "shoot": 0, "fight": 6, "defense": 9, "reflexes": 5, "wounds": 2, "weapons": [{"id": "crushing_fists", "count": 5}], "min": 3, "max": 6}
+      ],
+      "keywords": ["Monster"]
+    }
+  },
+  "weapons": {"legend_cursed_blade": {"name": "Blade of Ruin", "attacks": 1, "ap": 3, "short": "Melee", "rules": [{"id": "deadly", "x": 1}]}},
+  "rules": {"legend_war_veteran": {"name": "Gauntlets of Dark Desires", "description": "This unit can be affected an additional time by the Absorb Strength strategy.", "points": 5}},
+  "powers": {
+    "demonic_armor": {"name": "Demonic Armor", "description": "Target friendly unit within 24\" has +1 Save until end of turn.", "charge": 5},
+    "touch_of_death": {"name": "Touch of Death", "description": "Target enemy unit within 12\" takes 3 hits with AP(3).", "charge": 6},
+    "spectral_cloak": {"name": "Spectral Cloak", "description": "Target friendly unit within 12\" causes attacking units to suffer -1 Accuracy until end of turn.", "charge": 7}
+  },
+  "strategies": [
+    {
+      "name": "Blazing Runes",
+      "phase": "activation",
+      "description": "Use before a unit fights. Hit rolls of 1 or 2 gain +1 AP.",
+      "flavor": "Corrupted Dwarves wield enchanted weapons, covered in unholy runes and burning with dark magic.",
+      "cost": 1
+    },
+    {
+      "name": "Absorb Strength",
+      "phase": "activation",
+      "description": "Use when a friendly unit destroys an enemy unit. That unit gains +1 Strength until the end of the battle. A unit may only be affected by this strategy once.",
+      "flavor": "Corrupted Dwarves consume the souls of foes they’ve slain to gain ever greater strength.",
+      "cost": 2
+    },
+    {
+      "phase": "activation",
+      "name": "Daemonforged Bullets",
+      "description": "Use before a unit shoots. Add +6\" to the short and long range bands of all weapons.",
+      "flavor": "Possessed bullets, forged in Hellfire and inscribed with cursed runes, are highly unstable but very effective.",
+      "cost": 1
+    }
+  ],
+  "relics": [
+    {
+      "name": "Runic Armor",
+      "rule": {"id": "resistant", "x": 3},
+      "description": "Upgrade one _Leader_ model with Resistant(3).",
+      "flavor": "This enchanted piece of armor grants its wearer unholy vitality.",
+      "points": 10
+    },
+    {
+      "name": "Blade of Ruin",
+      "weapon": "legend_cursed_blade",
+      "description": "Replace one _Leader_ model's Great Weapon(X) with Blade of Ruin(X).",
+      "flavor": "This ancient relic emits an aura of malice, dripping with black blood.",
+      "points": 10
+    },
+    {
+      "name": "Gauntlets of Dark Desires",
+      "rule": "legend_war_veteran",
+      "description": "Upgrade one _Leader_ model with the Gauntlets of Dark Desire.",
+      "flavor": "These gauntlets were forged from obsidian and are carved with broken oaths, granting its wearer unholy power.",
+      "points": 20
+    }
+  ]
+}

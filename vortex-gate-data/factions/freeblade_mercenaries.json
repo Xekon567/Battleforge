@@ -1,0 +1,296 @@
+{
+  "id": "freeblade_mercenaries",
+  "name": "Freeblade Mercenaries",
+  "author": "guitarninja",
+  "lore": "In a distant and war-torn region of the galaxy, where the fires of conflict rage on countless planets, a formidable group of mercenaries known as the Freeblade Mercenaries emerged to claim their place in the annals of history.\n\nLong ago, a visionary engineer and battle-scarred warrior named Kellan Greythorne sought to change the tide of war. Witnessing the devastation caused by relentless conflicts and the plight of innocent civilians caught in the crossfire, Kellan was determined to create a force that could bring balance to the chaos.\n\nWith a brilliant mind for engineering and a deep understanding of combat tactics, Kellan conceived the idea of building colossal fighting robots, known as Battleframes, which could rival the destructive might of any army. These towering mechanical giants were not only marvels of technology but also powerful symbols of hope and protection for those they defended.\n\nKellan founded the Freeblade Mercenaries with a core group of skilled engineers, warriors, and strategists, all sharing his vision of offering their services to the highest bidder. The Freeblades saw themselves as guardians of the innocent, a neutral force that could be hired to defend planets, liberate oppressed civilizations, or push back invading forces.\n\nTheir headquarters, known as the Forge Bastion, became a mobile fortress and workshop, where skilled engineers and mechanics meticulously crafted and maintained the Battleframes. Each Freeblade was equipped with unique weaponry and defenses, tailored to their pilot's preferences and abilities.\n\nAs the reputation of the Freeblade Mercenaries spread throughout the galaxy, they became highly sought after by leaders of warring factions, governments, and wealthy corporations. The Freeblades' services were not cheap, but their effectiveness on the battlefield was unquestionable.\n\nDespite their mercenary nature, the Freeblades developed a strong code of honor. They refused to participate in genocidal campaigns or support tyrants, adhering to a set of principles that set them apart from common mercenaries. They were warriors with a purpose, aiming to bring stability and peace to the chaotic realms they traversed.\n\nThe Freeblades' ranks expanded over time as skilled pilots and engineers sought to join their cause, drawn by the chance to wield the immense power of the Battleframes and the promise of making a difference in the galaxy.\n\nHowever, the path of the Freeblade Mercenaries was not without challenges. They faced enemies who sought to discredit and dismantle them, as well as internal struggles to maintain their neutrality and honor in the face of lucrative offers and moral dilemmas.\n\nThrough it all, Kellan Greythorne and his fellow Freeblades stood firm, committed to their mission of bringing justice and protection to those in need. Their legend grew, and the name of the Freeblade Mercenaries became synonymous with both awe and trepidation.\n\nIn the swirling storm of war and politics, the Freeblade Mercenaries strode forward, a formidable force for hire, guided by their principles and the belief that their immense power should be used for the betterment of the galaxy. As long as there were battles to be fought and innocents to defend, the Freeblades would continue to stand as a beacon of hope in the darkest corners of the cosmos.",
+  "units": {
+    "command_battleframe": {
+      "name": "Command Battleframe",
+      "description": "A medium weight mech equipped with devastating weapons.",
+      "category": "hero",
+      "keywords": ["Vehicle"],
+      "rules": ["tactician_aura"],
+      "models": [
+        {
+          "name": "Command Battleframe",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 5,
+          "rules": ["vulnerable_rear", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "heavy_autocannon", "count": 2}, {"id": "stomp", "count": 2}, {"id": "light_machinegun"}],
+          "options": [
+            {
+              "replaceWeapon": ["heavy_autocannon"],
+              "withWeapon": [
+                "twin_fusion_cannon",
+                "twin_plasma_cannon",
+                "titanic_power_weapon",
+                "titanic_energy_weapon",
+                "twin_flamethrower_cannon",
+                "gatling_cannon",
+                "twin_thermal_lance",
+                "twin_gravity_cannon",
+                "twin_tesla_cannon",
+                "titanic_energy_spear"
+              ],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": [{"id": "light_machinegun"}],
+              "withWeapon": [
+                {"id": "plasma_rifle"},
+                {"id": "fusion_rifle"},
+                {"id": "thermal_rifle"},
+                {"id": "rocket_pod"},
+                {"id": "gravity_rifle"},
+                {"id": "tesla_rifle"}
+              ]
+            },
+            {"addRule": ["relic_shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "light_battleframe": {
+      "name": "Light Battleframe",
+      "description": "A light weight mech equipped with devastating weapons.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Light Battleframe",
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 12,
+          "reflexes": 5,
+          "rules": ["vulnerable_rear", {"id": "wounds", "x": 5}],
+          "weapons": [{"id": "heavy_autocannon", "count": 2}, {"id": "stomp", "count": 2}, {"id": "light_machinegun"}],
+          "options": [
+            {
+              "replaceWeapon": ["heavy_autocannon"],
+              "withWeapon": [
+                "twin_fusion_cannon",
+                "twin_plasma_cannon",
+                "titanic_power_weapon",
+                "titanic_energy_weapon",
+                "twin_flamethrower_cannon",
+                "gatling_cannon",
+                "twin_thermal_lance",
+                "twin_gravity_cannon",
+                "twin_tesla_cannon",
+                "titanic_energy_spear"
+              ],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": [{"id": "light_machinegun"}],
+              "withWeapon": [
+                {"id": "plasma_rifle"},
+                {"id": "fusion_rifle"},
+                {"id": "thermal_rifle"},
+                {"id": "rocket_pod"},
+                {"id": "gravity_rifle"},
+                {"id": "tesla_rifle"}
+              ]
+            },
+            {"addRule": ["relic_shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "medium_battleframe": {
+      "name": "Medium Battleframe",
+      "description": "A medium weight mech equipped with devastating weapons.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Medium Battleframe",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 5,
+          "rules": ["vulnerable_rear", {"id": "wounds", "x": 6}],
+          "weapons": [{"id": "light_battle_cannon", "count": 2}, {"id": "heavy_stomp", "count": 3}, {"id": "light_machinegun"}],
+          "options": [
+            {
+              "replaceWeapon": ["light_battle_cannon"],
+              "withWeapon": [
+                "titanic_power_weapon",
+                "titanic_energy_weapon",
+                "titanic_energy_spear",
+                "gatling_cannon",
+                "twin_heavy_plasma_cannon",
+                "heavy_fusion_cannon",
+                "twin_heavy_thermal_lance",
+                "heavy_gravity_cannon"
+              ],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": [{"id": "light_machinegun"}],
+              "withWeapon": [
+                {"id": "plasma_rifle"},
+                {"id": "fusion_rifle"},
+                {"id": "thermal_rifle"},
+                {"id": "rocket_pod"},
+                {"id": "gravity_rifle"},
+                {"id": "tesla_rifle"}
+              ]
+            },
+            {"limit": 1, "addWeapon": ["twin_aa_autocannon", "titan_rocket_pod"]},
+            {"addRule": ["relic_shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "heavy_battleframe": {
+      "name": "Heavy Battleframe",
+      "description": "A heavy weight mech equipped with devastating weapons.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Heavy Battleframe",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 5,
+          "rules": ["vulnerable_rear", {"id": "wounds", "x": 6}],
+          "weapons": [
+            {"id": "battle_cannon", "count": 2},
+            {"id": "twin_light_machinegun", "count": 2},
+            {"id": "twin_storm_missiles", "count": 3},
+            {"id": "heavy_stomp", "count": 3}
+          ],
+          "options": [
+            {
+              "replaceWeapon": ["battle_cannon"],
+              "withWeapon": [
+                "harpoon_cannon",
+                "triple_flamethrower_cannon",
+                "twin_heavy_plasma_cannon",
+                "heavy_fusion_cannon",
+                "titanic_power_weapon",
+                "titanic_energy_weapon",
+                "titanic_energy_spear",
+                "twin_heavy_thermal_lance",
+                "twin_heavy_gravity_cannon",
+                "gatling_cannon"
+              ],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": [{"id": "twin_light_machinegun"}],
+              "withWeapon": [
+                {"id": "twin_plasma_rifle"},
+                {"id": "twin_fusion_rifle"},
+                {"id": "twin_thermal_rifle"},
+                {"id": "twin_rocket_pod"},
+                {"id": "twin_gravity_rifle"},
+                {"id": "twin_tesla_rifle"}
+              ],
+              "limit": 2
+            },
+            {"replaceWeapon": ["twin_storm_missiles"], "withWeapon": ["twin_siege_cannon"], "limit": 3},
+            {"addRule": ["relic_shield"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "weapons": {
+    "titanic_energy_weapon": {"name": "Titanic Energy Weapon", "profiles": [{"name": "Strike", "attacks": 2, "short": "Melee", "ap": 7}, {"name": "Sweep", "attacks": 5, "short": "Melee", "ap": 3}]},
+    "titanic_power_weapon": {
+      "name": "Titanic Power Weapon",
+      "profiles": [
+        {"name": "Smash", "attacks": 2, "short": "Melee", "ap": 9, "rules": ["cumbersome", {"id": "deadly", "x": 1}]},
+        {"name": "Sweep", "attacks": 5, "short": "Melee", "ap": 3, "rules": ["cumbersome"]}
+      ]
+    },
+    "titanic_energy_spear": {
+      "name": "Titanic Energy Spear",
+      "profiles": [{"name": "Thrust", "attacks": 2, "short": "Melee", "ap": 7, "rules": ["lance"]}, {"name": "Sweep", "attacks": 5, "short": "Melee", "ap": 3}],
+      "rules": [{"id": "reach", "x": 1}]
+    },
+    "titan_rocket_pod": {
+      "name": "Titanic Rocket Pod",
+      "profiles": [
+        {"name": "HE", "attacks": 2, "short": 36, "medium": 72, "ap": 2, "rules": [{"id": "blast", "x": 2}, "heavy"]},
+        {"name": "AP", "attacks": 2, "short": 24, "medium": 48, "ap": 6, "rules": ["heavy"]}
+      ]
+    },
+    "twin_siege_cannon": {"name": "Twin Siege Cannon", "attacks": 2, "short": 24, "medium": 48, "ap": 4, "rules": ["heavy", {"id": "blast", "x": 2}]},
+    "triple_flamethrower_cannon": {"name": "Triple Flamethrower Cannon", "attacks": 9, "short": 9, "medium": 18, "ap": 5, "rules": ["breaching"]},
+    "harpoon_cannon": {"name": "Harpoon Cannon", "attacks": 1, "short": 18, "medium": 36, "ap": 8, "rules": [{"id": "deadly", "x": 2}, {"id": "drag", "x": 3}, "heavy"]},
+    "twin_storm_missiles": {"name": "Twin Storm Missiles", "attacks": 2, "ap": 6, "short": 36, "medium": 72, "rules": ["heavy"]}
+  },
+  "rules": {
+    "legend_battlebond": {"name": "Battlebond", "description": "This unit may be attached to another unit with the same unit type keyword at the start of the battle.", "points": 10},
+    "legend_enhanced_servos": {"name": "Enhanced Servos", "description": "This unit increases its Movement characteristic by 2\".", "points": 10},
+    "legend_chivalry": {"name": "Chivalry", "description": "This unit may re-roll failed Strength and Accuracy tests when attacking a model with Save 10 or higher.", "points": 10}
+  },
+  "strategies": {
+    "ion_shields": {
+      "phase": "activation",
+      "name": "Ion Shields",
+      "description": "Use when a unit is targeted by an attack. For that attack, roll a D10 each time that unit is hit. On a 3 or less the hit is ignored.",
+      "flavor": "Freeblade Mercenaries are equipped with powerful ion shields which allow them to deflect the heaviest of firepower.",
+      "cost": 2
+    },
+    "veterancy": {
+      "phase": "activation",
+      "name": "Veterancy",
+      "description": "Use when a unit takes a _Shoot_ or _Fight_ action. That unit may re-roll failed _Accuracy_ and _Strength_ tests of 9+.",
+      "flavor": "Each Freeblade Mercenary is a hero with countless titles they earned in battle.",
+      "cost": 1
+    },
+    "final_stand": {
+      "phase": "activation",
+      "name": "Final Stand",
+      "description": "Use when a unit is destroyed. If it didn't activate this round, it may take a free _Fight_ or _Shoot_ action before it is removed from the game.",
+      "flavor": "With a last energy impulse the Freeblade Mercenary lashes out at his foe in revenge.",
+      "cost": 1
+    }
+  },
+  "relics": {
+    "battlebond": {
+      "name": "Battlebond",
+      "rule": "legend_battlebond",
+      "description": "Upgrade one model with Battlebond.",
+      "flavor": "These Freeblade Mercenaries have formed a brotherly bond, fighting as one on the battlefield.",
+      "points": 10
+    },
+    "enhanced_servos": {
+      "name": "Enhanced Servos",
+      "rule": "legend_enhanced_servos",
+      "description": "Upgrade one model with Enhanced Servos.",
+      "points": 10,
+      "flavor": "Using state of the art machinery this hulking mech can move swiftly across the battlefield."
+    },
+    "chivalry": {
+      "name": "Chivalry",
+      "weapon": "legend_chivalry",
+      "flavor": "This Freeblade Mercenary is well trained in destroying renegade warmachines in glorious combat.",
+      "description": "Upgrade one model with Chivalry.",
+      "points": 10
+    }
+  }
+}

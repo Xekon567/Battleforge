@@ -1,0 +1,611 @@
+{
+  "id": "celestial_praetorians",
+  "name": "Celestial Praetorians",
+  "author": "guitarninja",
+  "lore": "\n\nIn the far reaches of the cosmos, where stars twinkle like celestial gems, exists an ethereal order known as the Celestial Praetorians hailing from the world of Sancturia. These warriors, clad in resplendent gold armor, are a highly elite and revered force dedicated to maintaining peace and safeguarding the balance of the universe.\n\nLong ago, when the galaxy was plagued by turmoil and conflict, a council of ancient celestial beings came together to forge a solution. They recognized that a powerful force of exceptional warriors was needed to uphold justice and protect innocent lives. From this divine assembly, the idea of the Celestial Praetorians was born.\n\nTo ensure only the most skilled and virtuous warriors would join their ranks, the Celestial Praetorians devised a rigorous and transcendent selection process. From countless worlds, candidates were chosen for their unwavering courage, indomitable will, and unparalleled martial prowess. These chosen warriors underwent celestial trials that tested not only their combat abilities but also their character, as their resolve to protect the innocent and defend the greater good was of paramount importance.\n\nThose who successfully endured these trials were inducted into the sacred order of the Celestial Praetorians. The newly anointed Praetorians were bestowed with armor forged from the rarest and most potent materials infused with the very essence of the cosmos. When donned, this golden armor seemed to radiate the brilliance of a thousand stars, filling the hearts of all who beheld it with awe and reverence.\n\nThe Celestial Praetorians were a small, select force, but they were far from alone in their mission. To supplement their numbers and enhance their capabilities, each Praetorian was accompanied by a retinue of specialists, drawn from different worlds and realms. These specialists brought unique skills and knowledge, including healers, strategists, sages, and mystics. Together, they formed a harmonious and formidable team, capable of overcoming any challenge that threatened the cosmic harmony.\n\nFor eons, the Celestial Praetorians have been vigilant sentinels, patrolling the far reaches of the universe, seeking out injustice and conflict. Wherever darkness tried to overtake the light, they stood resolute, quelling chaos, and restoring peace.\n\nTheir reputation as the epitome of virtue and valor has earned them the admiration and respect of countless beings across the galaxies. Tales of their heroism and selflessness are sung in ballads and whispered in the quiet of space.\n\nThe Celestial Praetorians remain devoted to their mission, a celestial beacon of hope and justice in the vast cosmos. They stand united, shining like distant stars, a testament to the power of unity and the strength that comes from embracing diversity in the pursuit of a greater purpose. As long as there is darkness in the universe, the Celestial Praetorians will continue their sacred oath, ensuring that the light of goodness and the brilliance of hope shall never wane.",
+  "units": {
+    "witch_hunters_champion": {
+      "name": "Witch Hunter Champion",
+      "description": "A Witch Hunter leader adept at leading witch hunters into battle.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Witch Hunter Champion",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": ["combat_rifle", {"id": "light_handweapon", "count": 3}],
+          "rules": [{"id": "ward", "x": 1}, {"id": "tactician", "x": 1}, {"id": "leader", "x": "Infantry"}],
+          "options": [
+            {
+              "replaceWeapon": ["combat_rifle", {"id": "light_handweapon", "count": 3}],
+              "withWeapon": [["flamethrower", {"id": "light_handweapon", "count": 3}], {"id": "energy_greatweapon", "count": 4}],
+              "limit": 1
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "throne_commander": {
+      "name": "Praetorian Commander",
+      "description": "Highly trained and elite fighters.",
+      "category": "hero",
+      "rules": [{"id": "tactician", "x": 2}, {"id": "leader", "x": "Infantry"}],
+      "models": [
+        {
+          "name": "Praetorian Commander",
+          "courage": 8,
+          "shoot": 8,
+          "fight": 8,
+          "movement": 6,
+          "defense": 9,
+          "reflexes": 7,
+          "wounds": 4,
+          "weapons": [{"id": "praetorian_sword_blade", "count": 5}, "praetorian_sword_pistol"],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "praetorian_sword_blade", "count": 5}, "praetorian_sword_pistol"],
+              "withWeapon": [
+                [{"id": "praetorian_spear_blade", "count": 5}, "praetorian_spear_rifle"],
+                [{"id": "praetorian_axe_blade", "count": 5}, "praetorian_axe_rifle"],
+                ["praetorian_rifle", {"id": "handweapon", "count": 4}]
+              ]
+            },
+            {"addWeapon": {"id": "praetorian_dagger"}},
+            {"addWeapon": "shield"},
+            {"addRule": ["destroyer_armor"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "throne_captain": {
+      "name": "Praetorian Captain",
+      "description": "Highly trained and elite fighters.",
+      "category": "hero",
+      "rules": [{"id": "tactician", "x": 1}, {"id": "leader", "x": "Infantry"}],
+      "models": [
+        {
+          "name": "Praetorian Captain",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "movement": 6,
+          "defense": 9,
+          "reflexes": 7,
+          "wounds": 3,
+          "weapons": [{"id": "praetorian_sword_blade", "count": 4}, "praetorian_sword_pistol"],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "praetorian_sword_blade", "count": 4}, "praetorian_sword_pistol"],
+              "withWeapon": [
+                [{"id": "praetorian_spear_blade", "count": 4}, "praetorian_spear_rifle"],
+                [{"id": "praetorian_axe_blade", "count": 4}, "praetorian_axe_rifle"],
+                ["praetorian_rifle", {"id": "handweapon", "count": 3}]
+              ]
+            },
+            {"addWeapon": {"id": "praetorian_dagger"}},
+            {"addWeapon": "shield"},
+            {"addRule": ["destroyer_armor"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "praetorian_captain_on_jetbike": {
+      "name": "Praetorian Captain on Jetbike",
+      "description": "Praetorians on high speed jet bikes.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "rules": ["hover", {"id": "tactician", "x": 1}, {"id": "leader", "x": "Infantry, Biker"}],
+      "models": [
+        {
+          "name": "Praetorian Captain on Jetbike",
+          "courage": 7,
+          "shoot": 8,
+          "fight": 8,
+          "defense": 9,
+          "movement": 8,
+          "reflexes": 7,
+          "wounds": 3,
+          "weapons": ["praetorian_rifle_array", {"id": "praetorian_lance", "count": 5}],
+          "options": [{"replaceWeapon": ["praetorian_rifle_array"], "withWeapon": ["praetorian_missiles"]}, {"addWeapon": {"id": "praetorian_dagger"}}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "praetorian_blademaster": {
+      "name": "Praetorian Blademaster",
+      "description": "A Praetorian who foreswore ranged weapons in favor of mastering the blade.",
+      "category": "hero",
+      "keywords": ["Infantry"],
+      "rules": ["striker", {"id": "leader", "x": "Infantry"}],
+      "models": [
+        {
+          "name": "Praetorian Blademaster",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "movement": 6,
+          "defense": 9,
+          "reflexes": 7,
+          "wounds": 3,
+          "weapons": [{"id": "praetorian_sword_blade", "count": 4}, "praetorian_sword_pistol"],
+          "options": [{"addWeapon": {"id": "praetorian_dagger"}}, {"addWeapon": "shield"}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "witch_hunters": {
+      "name": "Witch Hunters",
+      "description": "A group of Witch hunters adept at hunting Psychic individuals.",
+      "category": "core",
+      "keywords": ["Infantry", "Witch Hunters"],
+      "options": [
+        {"replaceWeapon": ["combat_rifle", "light_handweapon"], "withWeapon": [["flamethrower", "light_handweapon"], {"id": "energy_greatweapon", "count": 2}], "modelLimit": "all", "limit": 1}
+      ],
+      "models": [
+        {
+          "name": "Witch Hunter Leader",
+          "movement": 6,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["combat_rifle", "light_handweapon"],
+          "rules": [{"id": "ward", "x": 1}],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Witch Hunter", "movement": 6, "courage": 6, "shoot": 6, "fight": 6, "defense": 7, "reflexes": 6, "weapons": ["combat_rifle", "light_handweapon"], "min": 4, "max": 9}
+      ]
+    },
+    "throne_guardians": {
+      "name": "Praetorians",
+      "description": "Highly trained and elite fighters.",
+      "category": "core",
+      "options": [
+        {
+          "replaceWeapon": [{"id": "praetorian_sword_blade", "count": 2}, "praetorian_sword_pistol"],
+          "withWeapon": [
+            [{"id": "praetorian_spear_blade", "count": 2}, "praetorian_spear_rifle"],
+            [{"id": "praetorian_spear_blade", "count": 2}, "praetorian_spear_fusion"],
+            [{"id": "praetorian_spear_blade", "count": 2}, "praetorian_spear_carbine"],
+            ["praetorian_rifle", {"id": "handweapon", "count": 1}]
+          ]
+        },
+        {"addWeapon": "praetorian_dagger"},
+        {"addWeapon": "shield"},
+        {"addRule": "banner", "modelLimit": 1}
+      ],
+      "models": [
+        {
+          "name": "Praetorian",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "movement": 6,
+          "defense": 9,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": [{"id": "praetorian_sword_blade", "count": 2}, "praetorian_sword_pistol"],
+          "min": 3,
+          "max": 5
+        }
+      ]
+    },
+    "praetorian_jetpack_squad": {
+      "name": "Praetorian Jetpack Squad",
+      "description": "Highly trained and elite fighters.",
+      "category": "elite",
+      "rules": ["fly", "ambush"],
+      "options": [{"addWeapon": "praetorian_dagger"}],
+      "models": [
+        {
+          "name": "Praetorian Jetpack",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "movement": 8,
+          "defense": 8,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": ["shield", "praetorian_pistol"],
+          "options": [{"replaceWeapon": ["shield", "praetorian_pistol"], "withWeapon": [["praetorian_lance_rifle", {"id": "praetorian_lance_blade", "count": 2}]]}],
+          "min": 3,
+          "max": 6
+        }
+      ]
+    },
+    "throne_wardens": {
+      "name": "Wardens",
+      "description": "Watch masters and veteran praetorians.",
+      "category": "core",
+      "rules": [{"id": "resistant", "x": 3}],
+      "options": [
+        {
+          "replaceWeapon": [{"id": "praetorian_spear_blade", "count": 3}, "praetorian_spear_rifle"],
+          "withWeapon": [[{"id": "praetorian_axe_blade", "count": 3}, "praetorian_axe_rifle"], ["praetorian_rifle", {"id": "handweapon", "count": 2}]]
+        },
+        {"addWeapon": "praetorian_dagger"},
+        {"addRule": "banner", "modelLimit": 1}
+      ],
+      "models": [
+        {
+          "name": "Warden",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 9,
+          "movement": 6,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": [{"id": "praetorian_spear_blade", "count": 3}, "praetorian_spear_rifle"],
+          "min": 3,
+          "max": 5
+        }
+      ]
+    },
+    "throne_jetbikes": {
+      "name": "Jetbikes",
+      "description": "Praetorians on high speed jet bikes.",
+      "category": "elite",
+      "rules": ["hover"],
+      "options": [{"replaceWeapon": ["praetorian_rifle_array"], "withWeapon": ["praetorian_missiles"]}],
+      "models": [
+        {
+          "name": "Jetbike",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 9,
+          "movement": 8,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": ["praetorian_rifle_array", {"id": "praetorian_lance", "count": 3}],
+          "min": 3,
+          "max": 9
+        }
+      ]
+    },
+    "praetorian_destoyers": {
+      "name": "Praetorian Gravite Squad",
+      "description": "Praetorians clad in very heavy armor.",
+      "rules": ["ambush"],
+      "category": "elite",
+      "models": [
+        {
+          "name": "Praetorian Gravite Warrior",
+          "movement": 5,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 10,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": ["twin_guardian_rifle", {"id": "twin_energy_handweapon", "count": 3}],
+          "options": [
+            {"replaceWeapon": {"id": "twin_energy_handweapon", "count": 3}, "withWeapon": [{"id": "energy_powerweapon", "count": 3}]},
+            {"replaceWeapon": "twin_guardian_rifle", "withWeapon": ["twin_guardian_destructor", "heavy_flamethrower"]}
+          ],
+          "min": 3,
+          "max": 6
+        }
+      ]
+    },
+    "praetorian_assault_destroyers": {
+      "name": "Praetorian Gravite Assault Squad",
+      "description": "Praetorians in extra heavy armor.",
+      "category": "elite",
+      "rules": ["ambush"],
+      "models": [
+        {
+          "name": "Praetorian Gravite Warrior",
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 10,
+          "movement": 5,
+          "reflexes": 7,
+          "wounds": 2,
+          "weapons": [{"id": "praetorian_spear_blade", "count": 3}, "praetorian_spear_rifle", "praetorian_grenade_launcher"],
+          "options": [
+            {"replaceWeapon": [{"id": "praetorian_spear_blade", "count": 3}, "praetorian_spear_rifle"], "withWeapon": [[{"id": "praetorian_axe_blade", "count": 3}, "praetorian_axe_rifle"]]},
+            {"addWeapon": "praetorian_dagger"}
+          ],
+          "min": 3,
+          "max": 9
+        }
+      ]
+    },
+    "praetorian_heavy_tank": {
+      "name": "Relic Heavy APC",
+      "description": "A heavily armored transport sporting an arsenal of weapons built by the imperial marines.",
+      "keywords": ["Vehicle"],
+      "category": "rare",
+      "rules": [{"id": "impact", "x": 6}, {"id": "transport", "x": 11}, "vulnerable_rear"],
+      "models": [
+        {
+          "name": "Relic Heavy APC",
+          "movement": 10,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 13,
+          "reflexes": 7,
+          "wounds": 6,
+          "weapons": [{"id": "twin_heavy_machinegun"}, {"id": "twin_laser_cannon"}, {"id": "twin_laser_cannon"}],
+          "options": [{"addWeapon": ["twin_combat_rifle", "heavy_fusion_rifle", "hunter_missiles"]}, {"addRule": ["spiked_ram", {"id": "dozer", "name": "Dozer Blade"}]}],
+          "rules": [],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "light_attack_vehicle": {
+      "name": "Light Hover Tank",
+      "description": "A light attack vehicle with medium tank killing capability.",
+      "keywords": ["Vehicle"],
+      "category": "elite",
+      "rules": [{"id": "impact", "x": 3}, "vulnerable_side_rear", "hover"],
+      "models": [{"name": "Light Hover Tank", "movement": 10, "courage": 7, "shoot": 7, "fight": 7, "defense": 11, "wounds": 4, "reflexes": 7, "weapons": ["twin_light_laser_cannon"], "min": 1, "max": 1}]
+    },
+    "hover_tank": {
+      "name": "Hover Tank",
+      "description": "A hover tank with good tank killing capability.",
+      "keywords": ["Vehicle"],
+      "category": "rare",
+      "rules": [{"id": "impact", "x": 6}, "vulnerable_side_rear", "hover"],
+      "models": [
+        {
+          "name": "Hover Tank",
+          "movement": 10,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 7,
+          "wounds": 6,
+          "weapons": ["twin_light_laser_cannon", {"id": "twin_heavy_machinegun"}],
+          "min": 1,
+          "max": 1,
+          "options": [{"replaceWeapon": "twin_light_laser_cannon", "withWeapon": ["twin_laser_cannon", "twin_plasma_cannon"]}]
+        }
+      ]
+    },
+    "hover_transport": {
+      "name": "Hover Transport",
+      "description": "A hover transport with decent supporting weaponry.",
+      "keywords": ["Vehicle"],
+      "category": "transport",
+      "rules": [{"id": "impact", "x": 6}, {"id": "transport", "x": 6}, "vulnerable_side_rear", "hover"],
+      "models": [
+        {
+          "name": "Hover Tank",
+          "movement": 10,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 7,
+          "wounds": 5,
+          "weapons": ["twin_light_laser_cannon", {"id": "twin_heavy_machinegun"}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "combat_walker": {
+      "name": "Praetorian Combat Juggernaut",
+      "description": "An agile walker with melee weapons.",
+      "rules": ["vulnerable_rear"],
+      "category": "rare",
+      "keywords": ["Vehicle, Juggernaut"],
+      "models": [
+        {
+          "name": "Praetorian Combat Juggernaut",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 7,
+          "wounds": 5,
+          "weapons": ["walker_sword_shoot", {"id": "walker_sword_blade", "count": 5}, {"id": "titan_shield"}],
+          "options": [
+            {
+              "replaceWeapon": ["walker_sword_shoot", {"id": "walker_sword_blade", "count": 5}, {"id": "titan_shield"}],
+              "withWeapon": [[{"id": "walker_spear_blade", "count": 5}, "walker_spear_rifle", {"id": "twin_guardian_rifle", "count": 2}]]
+            },
+            {"replaceWeapon": {"id": "twin_guardian_rifle", "count": 2}, "withWeapon": [{"id": "twin_guardian_destructor", "count": 2}, {"id": "heavy_flamethrower", "count": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "relic_assault_walker": {
+      "name": "Relic Juggernaut",
+      "description": "A heavily armed ancient walker.",
+      "rules": ["vulnerable_rear"],
+      "category": "rare",
+      "keywords": ["Vehicle, Juggernaut"],
+      "models": [
+        {
+          "name": "Relic Juggernaut",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 12,
+          "reflexes": 7,
+          "wounds": 5,
+          "weapons": ["heavy_gatling_gun", {"id": "walker_fist", "count": 4}, {"id": "twin_combat_rifle"}],
+          "options": [{"replaceWeapon": "heavy_gatling_gun", "withWeapon": ["twin_heavy_fusion_rifle"]}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "heavy_assault_walker": {
+      "name": "Heavy Assault Juggernaut",
+      "description": "A heavily armed prime walker.",
+      "rules": ["vulnerable_rear"],
+      "category": "rare",
+      "keywords": ["Vehicle, Juggernaut"],
+      "models": [
+        {
+          "name": "Heavy Assault Juggernaut",
+          "movement": 6,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 13,
+          "reflexes": 7,
+          "wounds": 6,
+          "weapons": [{"id": "heavy_walker_fist", "count": 6}, "praetorian_missile_array"],
+          "options": [
+            {"replaceWeapon": {"id": "heavy_walker_fist", "count": 3}, "withWeapon": ["twin_plasma_cannon", "twin_light_laser_cannon", "twin_laser_cannon"]},
+            {"replaceWeapon": {"id": "heavy_walker_fist", "count": 3}, "withWeapon": ["twin_plasma_cannon", "twin_light_laser_cannon", "twin_laser_cannon"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "weapons": {
+    "praetorian_eagle": {"name": "Praetorian Eagle", "attacks": 3, "ap": 1, "short": 12, "medium": 24, "rules": ["indirect"]},
+    "spectral_eye": {"name": "Spectral Eye", "attacks": 2, "ap": 4, "short": 9, "medium": 18},
+    "assassin_unarmed": {"name": "Assassin Martial Arts", "attacks": 1, "ap": 4, "short": "Melee", "rules": ["rending"]},
+    "mind_shredder": {"name": "Mind Shredder", "attacks": 1, "ap": 4, "short": 6, "medium": 12, "rules": [{"id": "shocking", "x": 3}]},
+    "web_carbine": {"name": "Web Carbine", "attacks": 1, "ap": 1, "short": 9, "medium": 18, "rules": [{"id": "shocking", "x": 2}, "assault"]},
+    "web_cannon": {"name": "Web Cannon", "attacks": 1, "ap": 1, "short": 12, "medium": 24, "rules": [{"id": "shocking", "x": 2}, {"id": "blast", "x": 3}, "assault"]},
+    "phase_sword": {"name": "Phase Sword", "attacks": 1, "ap": 5, "short": "Melee", "rules": ["rending", "phase"]},
+    "twin_grenade_launcher": {
+      "name": "Twin Grenade Launcher",
+      "profiles": [{"name": "Frag", "attacks": 2, "ap": 1, "rules": [{"id": "blast", "x": 3}], "medium": 24, "short": 12}, {"name": "AT", "attacks": 2, "ap": 3, "medium": 24, "short": 12}]
+    },
+    "praetorian_grenade_launcher": {"name": "Praetorian Grenade Launcher", "attacks": 1, "short": 6, "medium": 12, "ap": 1, "rules": [{"id": "blast", "x": 2}]},
+    "praetorian_rifle_array": {"name": "Praetorian Rifle Array", "attacks": 3, "short": 12, "medium": 24, "ap": 1, "rules": ["rapid_fire"]},
+    "praetorian_missile_array": {"name": "Praetorian Missile Array", "attacks": 4, "short": 12, "medium": 24, "ap": 2, "rules": ["heavy"]},
+    "praetorian_missiles": {
+      "name": "Praetorian Missiles",
+      "rules": ["assault"],
+      "profiles": [
+        {"name": "Flak", "attacks": 2, "short": 12, "medium": 24, "ap": 4, "rules": ["anti_air"]},
+        {"name": "AT", "attacks": 1, "short": 12, "medium": 24, "ap": 6, "rules": [{"id": "deadly", "x": 1}]}
+      ]
+    },
+    "praetorian_lance": {"name": "Praetorian Lance", "attacks": 1, "short": "Melee", "ap": 3, "rules": ["lance"]},
+    "praetorian_dagger": {"name": "Praetorian Dagger", "attacks": 1, "short": "Melee", "ap": 1},
+    "praetorian_axe_blade": {"name": "Praetorian Axe (Blade)", "attacks": 1, "short": "Melee", "ap": 5, "rules": ["cumbersome"]},
+    "praetorian_axe_rifle": {"name": "Praetorian Axe (Rifle)", "attacks": 1, "short": 6, "medium": 12, "ap": 1, "rules": ["assault", "brutal"]},
+    "praetorian_lance_blade": {"name": "Praetorian Lance (Blade)", "attacks": 1, "short": "Melee", "ap": 4},
+    "praetorian_lance_rifle": {"name": "Praetorian Lance (Rifle)", "attacks": 1, "short": 6, "medium": 12, "ap": 3, "rules": ["assault"]},
+    "praetorian_spear_blade": {"name": "Praetorian Spear (Blade)", "attacks": 1, "short": "Melee", "ap": 2},
+    "praetorian_spear_rifle": {"name": "Praetorian Spear (Rifle)", "attacks": 1, "short": 12, "medium": 24, "ap": 1, "rules": ["rapid_fire"]},
+    "praetorian_spear_carbine": {"name": "Praetorian Spear (Carbine)", "attacks": 1, "short": 9, "medium": 18, "ap": 1, "rules": ["assault"]},
+    "praetorian_spear_fusion": {"name": "Praetorian Spear (Fusion)", "attacks": 1, "short": 6, "medium": 12, "ap": 6},
+    "praetorian_rifle": {
+      "name": "Praetorian Rifle",
+      "profiles": [{"name": "HE", "attacks": 1, "short": 18, "medium": 36, "ap": 2, "rules": ["rapid_fire"]}, {"name": "AP", "attacks": 1, "short": 12, "medium": 24, "ap": 5}]
+    },
+    "twin_guardian_rifle": {"name": "Twin Guardian Rifle", "attacks": 2, "short": 12, "medium": 24, "ap": 2, "rules": ["rapid_fire"]},
+    "twin_guardian_destructor": {"name": "Twin Guardian Destructor", "attacks": 2, "short": 9, "medium": 18, "ap": 4, "rules": ["assault"]},
+    "praetorian_pistol": {"name": "Praetorian Pistol", "attacks": 1, "short": 9, "ap": 4, "rules": ["pistol"]},
+    "praetorian_sword_pistol": {"name": "Praetorian Sword (Pistol)", "attacks": 1, "short": 6, "medium": 12, "ap": 1, "rules": ["pistol"]},
+    "praetorian_sword_blade": {"name": "Praetorian Sword (Blade)", "attacks": 1, "short": "Melee", "ap": 2},
+    "walker_sword_shoot": {"name": "Juggernaut Sword (Shoot)", "attacks": 2, "short": 6, "medium": 12, "ap": 3, "rules": [{"id": "blast", "x": 3}]},
+    "walker_sword_blade": {"name": "Juggernaut Sword (Blade)", "attacks": 1, "short": "Melee", "ap": 5},
+    "walker_spear_blade": {"name": "Juggernaut Spear (Blade)", "attacks": 1, "short": "Melee", "ap": 8},
+    "walker_spear_rifle": {"name": "Juggernaut Spear (Shoot)", "attacks": 2, "short": 12, "medium": 24, "ap": 5},
+    "laser_spear": {
+      "name": "Laser Spear",
+      "profiles": [{"name": "Blade", "attacks": 1, "short": "Melee", "ap": 3}, {"name": "Carbine", "attacks": 1, "short": 9, "medium": 18, "ap": 3, "rules": ["assault"]}]
+    },
+    "scorching_spear": {
+      "name": "Scorching Spear",
+      "profiles": [{"name": "Blade", "attacks": 1, "short": "Melee", "ap": 3}, {"name": "Flame", "attacks": 1, "short": 6, "medium": 12, "ap": 4, "rules": ["assault"]}]
+    }
+  },
+  "powers": {
+    "interrogate": {"name": "Interrogation", "description": "Target enemy unit within 12\" must re-roll one die of your choice on its next Skill test.", "charge": 7},
+    "banishment": {"name": "Banishment", "description": "Target enemy model within 12\" takes 1 automatic hit with AP(7).", "charge": 5},
+    "purge": {"name": "Purge", "description": "Target enemy unit within 12\" take 8 automatic hits with AP 0.", "charge": 6}
+  },
+  "rules": {
+    "berzerk_overload": {"name": "Berzerk Overload", "description": "When this unit is destroyed, all units within 6\" gain 2 shock.", "points": 15},
+    "phase": {"name": "Phase", "description": "Units with the Resilient and Tough rules cannot use them for saves against this weapon's attacks.", "points": 2},
+    "legend_witch_hunter": {"name": "Psychic Feedback", "description": "Once per turn, when a power within 24\" of this model gets dispelled, deal 1 hit with AP(2) to the caster.", "points": 5},
+    "legend_alien_hunter": {"name": "Breacher Weapons", "description": "Once per turn, a unit with the Resilient and Tough rules cannot use them for saves against this unit's attack.", "points": 5},
+    "legend_mutant_hunter": {
+      "name": "Blacksite Warden",
+      "description": "When this model's unit successfully performs a reaction against a Charge action, the charging unit suffers 6 hits with no AP.",
+      "oints": 5
+    },
+    "banner_of_blindness": {
+      "name": "Banner of Blindness",
+      "description": "Once per round a when a friendly Infantry unit is targeted by a shooting attack, the attacker suffers -1 Accuracy.",
+      "points": 10
+    },
+    "legend_ever_vigilant": {"name": "Ever-Vigilant", "description": "If this unit did not take a Move or _Charge_ action in its previous activation, it gains +1 to its Save", "points": 5},
+    "legend_peerless_warrior": {
+      "name": "Peerless Warrior",
+      "description": "Once per round, this model's unit may perform a free Fight action after being targeted by a Fight or Charge action. It may not Fight again this round.",
+      "points": 20
+    }
+  },
+  "strategies": [
+    {
+      "phase": "activation",
+      "name": "Combat Awareness",
+      "description": "Use when shooting with a unit. That unit may target enemies it is engaged with at -1 Accuracy.",
+      "flavor": "Praetorians are trained to be expertly aware of their surroundings including where their allies are.",
+      "cost": 1
+    },
+    {
+      "phase": "activation",
+      "name": "Relic Deflectors",
+      "description": "Use before taking Save rolls for a unit. Reduce the AP of all hits by 2.",
+      "flavor": "With ancient deflection fields, Praetorians can deflect even the heaviest attacks.",
+      "cost": 2
+    },
+    {
+      "phase": "activation",
+      "name": "Psychic Shield",
+      "description": "Use when a Power(x) test is taken within 24\" of any _Infantry_ unit. Roll a D10. If the value is less than or equal to the test to cast the power, it is prevented.",
+      "flavor": "Shielded by holy energy, Praetorians can protect themselves from psychic powers.",
+      "cost": 1
+    }
+  ],
+  "relics": {
+    "ever_vigilant": {
+      "name": "Ever-Vigilant",
+      "rule": "legend_ever_vigilant",
+      "description": "Choose a unit consisting of a single model.  It gains the Ever Vigilant rule.",
+      "flavor": "As a guardian of the Emperor's Throne, the Guardians are patient - and watchful.",
+      "points": 10
+    },
+    "peerless_warrior": {
+      "name": "Peerless Warrior",
+      "rule": "legend_peerless_warrior",
+      "description": "Choose a unit consisting of a single model.  It gains the Peerless Warrior rule.",
+      "flavor": "The Praetorians are the strongest of mankind's warriors, and through augmentation can move faster than sight",
+      "points": 20
+    }
+  },
+  "color": "#7d0a15",
+  "secondary_color": "#010203"
+}

@@ -1,0 +1,457 @@
+{
+  "name": "Draylith Fireborn",
+  "id": "draylith_fireborn",
+  "author": "Xekon#8266",
+  "lore": "In the heart of a realm cloaked in shadows and eternal night, a race of dark elves known as the Draylith Fireborn forged an extraordinary bond with the majestic dragons that roamed the skies above. As descendants of ancient elven lineage, the Draylith once lived in seclusion, hidden away from the world in a realm known as Nyrinthia.\n\nNyrinthia was a land of eerie beauty, with bioluminescent flora illuminating the caverns and towering obsidian spires that reached towards the surface. Within the depths of their subterranean realm, the Draylith Fireborn found their lives entwined with a rare species of dragons known as Emberwings. These magnificent creatures were born from the molten heart of the earth and possessed an innate affinity for fire and shadow.\n\nLegend spoke of a celestial event that occurred centuries ago when a great comet streaked across the midnight sky, crashing into Nyrinthia. The impact not only gave birth to the Emberwings but also infused the dark elves with a unique spark of draconic magic. This newfound connection bound the two races inextricably, and together, they forged a powerful alliance to safeguard their realm and ensure the balance between light and dark.\n\nThe Draylith Fireborn were distinct from other dark elves in both appearance and temperament. Their skin bore a smoky, obsidian hue, and their eyes glowed with hues of amber, crimson, or emerald, mirroring the colors of their dragon kin. They possessed a graceful, ethereal beauty, reminiscent of their elven heritage, but they also exhibited a rugged resilience and fiery determination.\n\nAs guardians of Nyrinthia, the Draylith Fireborn and Emberwings developed an inseparable bond through a unique ritual known as the Emberweave. During this ancient rite, a Draylith and an Emberwing would connect their souls, sharing their strengths, memories, and emotions. This union allowed the dark elves to tap into the dragon's elemental powers and channel it into their formidable abilities, while the Emberwings gained heightened intelligence and a deeper understanding of the world.\n\nFor centuries, the Draylith Fireborn and their dragon companions defended Nyrinthia from various threats. Whether it be the encroaching forces of darkness seeking to plunge their realm into chaos or the envious eyes of neighboring civilizations coveting their power, the Draylith stood united with their dragon allies to repel any intruders.\n\nYet, as the eons passed, a great cataclysm threatened Nyrinthia, triggered by the ambitions of an ancient enemy thought long vanquished. The Draylith Fireborn and their Emberwing companions faced their greatest challenge yet, their bond and unity tested to the breaking point.\n\nIn the face of this upheaval, the Draylith Fireborn must navigate a treacherous path, tapping into the depths of their intertwined history with the dragons. Only by embracing their heritage, upholding their unshakable bond with the Emberwings, and drawing upon the ancient wisdom of their ancestors, can the Draylith Fireborn hope to preserve Nyrinthia and the legacy of their race—a legacy forever bound with the soaring flames of the mighty Emberwings.",
+  "weapons": {"barbed_spear": {"name": "Barbed Spear", "attacks": 1, "ap": 1, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "rending"]}},
+  "rules": {
+    "poisoned_blades": {"name": "Barbed Blades", "description": "This model's melee weapons have +1 AP against enemies without _Damage Table(X)_.", "points": 5},
+    "cloak": {"name": "Dragonscale Cloak", "description": "This model has +2 to its Save characteristic when being hit by a ranged attack.", "points": 2},
+    "discipline": {"name": "Discipline", "description": "This unit and all friendly units within 6\" ignore Shock when making any Overwatch or Defensive Stance reaction rolls.", "points": 15},
+    "devour": {"name": "Devour", "description": "Roll a D10 each time this model destroys a model. On a 1 or 2 this model removes one critical wound token.", "points": 4}
+  },
+  "powers": {
+    "blind": {"name": "Blind", "description": "Target enemy unit within 12\" gets -1 Accuracy until the end of the round.", "charge": 6, "school": "shadow"},
+    "shroud": {"name": "Shroud", "description": "Target friendly unit within 12\" gets -1 to be hit the next time it is attacked.", "charge": 6},
+    "pain": {"name": "Pain", "description": "Target enemy model within 12\" takes 1 automatic hit with AP(3).", "charge": 6, "subfactions": ["none", "pestilence", "wrath", "excess", "change"]}
+  },
+  "relics": [],
+  "units": {
+    "dark_lord": {
+      "name": "Dark Lord",
+      "description": "A prince of the sinister elves.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Dark Lord",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": [{"id": "handweapon", "count": 4}, "enchanted_shield"],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "handweapon", "count": 4}, "enchanted_shield"],
+              "withWeapon": [{"id": "great_weapon", "count": 3}, {"id": "handweapon", "count": 5}, {"id": "heavy_polearm", "count": 3}]
+            },
+            {"addWeapon": [{"id": "repeater_crossbow", "count": 2}]},
+            {"addRule": ["cloak", "poisoned_blades"], "modelLimit": 1},
+            {"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}
+          ],
+          "rules": ["leader", {"id": "warrior", "x": 1}, "fear"],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": ["none"]
+    },
+    "dark_lord_mount": {
+      "name": "Dark Lord on Nightmare",
+      "description": "A prince of the sinister elves, riding a baleful steed.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Dark Lord on Mount",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 6,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": [{"id": "handweapon", "count": 4}, "enchanted_shield", {"id": "hooves_and_teeth", "count": 2}],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "handweapon", "count": 4}, "enchanted_shield"],
+              "withWeapon": [{"id": "great_weapon", "count": 3}, {"id": "handweapon", "count": 5}, [{"id": "lance", "count": 3}, "shield"]]
+            },
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 2}], "withWeapon": [{"id": "claws", "count": 2}]},
+            {"addWeapon": [{"id": "repeater_crossbow", "count": 2}]},
+            {"addRule": ["cloak", "poisoned_blades"], "modelLimit": 1},
+            {"addRule": "fly"},
+            {"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}
+          ],
+          "rules": [{"id": "warrior", "x": 1}, {"id": "leader", "x": "Infantry, Cavarly"}, "fear"],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": ["none"],
+      "keywords": ["Mounted"]
+    },
+    "sorcerer": {
+      "name": "Sorcerer",
+      "description": "A powerful spellcaster of the sinister elves.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Sorcerer",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": ["great_staff"],
+          "rules": ["leader", {"id": "power", "x": 1}],
+          "min": 1,
+          "max": 1,
+          "options": [{"replaceWeapon": ["great_staff"], "withWeapon": [{"id": "handweapon", "count": 3}]}, {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}]
+        }
+      ],
+      "subfactions": ["none"]
+    },
+    "sorcerer_mount": {
+      "name": "Sorcerer on Nightmare",
+      "description": "A powerful spellcaster of the sinister elves, riding a baleful steed.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Sorcerer on Mount",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": [{"id": "hooves_and_teeth", "count": 2}, "great_staff"],
+          "options": [
+            {"replaceWeapon": ["great_staff"], "withWeapon": [{"id": "handweapon", "count": 3}]},
+            {"replaceWeapon": [{"id": "hooves_and_teeth", "count": 2}], "withWeapon": [{"id": "claws", "count": 2}]},
+            {"addRule": "fly"},
+            {"replaceRule": [{"id": "power", "x": 1}], "withRule": [{"id": "power", "x": 2}]}
+          ],
+          "rules": [{"id": "power", "x": 1}, {"id": "leader", "x": "Infantry, Cavarly"}],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "subfactions": ["none"],
+      "keywords": ["Mounted"]
+    },
+    "dark_lord_dragon": {
+      "name": "Dark Lord on Balefire Drake",
+      "description": "",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Dark Lord on Balefire Drake",
+          "min": 1,
+          "max": 1,
+          "movement": 10,
+          "courage": 6,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 13,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["fly", {"id": "leader", "x": "Infantry, Cavalry"}, {"id": "warrior", "x": 1}],
+          "options": [
+            {"replaceWeapon": [{"id": "handweapon", "count": 6}, "shield"], "withWeapon": [{"id": "great_weapon", "count": 5}, [{"id": "lance", "count": 4}, "shield"]]},
+            {"addWeapon": [{"id": "repeater_crossbow", "count": 2}]},
+            {"addRule": ["cloak", "poisoned_blades"], "modelLimit": 1},
+            {"replaceRule": [{"id": "warrior", "x": 1}], "withRule": [{"id": "warrior", "x": 2}]}
+          ],
+          "weapons": [{"id": "flame_breath", "count": 4}, {"id": "beak_and_claws", "count": 4}, {"id": "handweapon", "count": 6}, "shield"]
+        }
+      ],
+      "keywords": ["Monster"]
+    },
+    "sorcerer_dragon": {
+      "name": "Sorcerer on Balefire Drake",
+      "description": "",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Sorcerer on Balefire Drake",
+          "min": 1,
+          "max": 1,
+          "movement": 10,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 13,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["fly", {"id": "power", "x": 3}, {"id": "leader", "x": "Infantry, Cavalry"}],
+          "options": [
+            {"replaceWeapon": [{"id": "great_staff", "count": 2}], "withWeapon": [{"id": "handweapon", "count": 4}]},
+            {"replaceRule": [{"id": "power", "x": 3}], "withRule": [{"id": "power", "x": 4}]}
+          ],
+          "weapons": [{"id": "flame_breath", "count": 4}, {"id": "beak_and_claws", "count": 4}, {"id": "great_staff", "count": 2}]
+        }
+      ],
+      "keywords": ["Monster"]
+    },
+    "elf_soldiers": {
+      "name": "Fireborn Warriors",
+      "description": "A cohort of well-drilled and callous warriors.",
+      "category": "core",
+      "models": [{"max": 20, "min": 10, "name": "Warwrior", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["poison_handweapon", "shield"]}],
+      "options": [
+        {"replaceWeapon": ["poison_handweapon", "shield"], "withWeapon": [["barbed_spear", "shield"], ["repeater_crossbow", "light_handweapon"]]},
+        {"addRule": ["champion"], "modelLimit": 1},
+        {"addRule": ["banner"], "modelLimit": 1},
+        {"addRule": ["musician"], "modelLimit": 1}
+      ],
+      "subfactions": ["none"]
+    },
+    "elf_guard": {
+      "name": "Precipice Guard",
+      "description": "Specially-trained defenders of the dark elven realms.",
+      "category": "core",
+      "models": [
+        {"max": 20, "min": 10, "name": "Warriors", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["barbed_spear", "shield", "repeater_crossbow"]}
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "subfactions": ["none"]
+    },
+    "elf_riders": {
+      "name": "Shadow Vanguard",
+      "description": "Skirmishing horsemen of the corrupted legions, trained with a variety of weapons.",
+      "category": "core",
+      "models": [
+        {
+          "max": 15,
+          "min": 5,
+          "name": "Vanguard",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["barbed_spear", "repeater_crossbow", "shield", {"id": "hooves_and_teeth", "count": 2}],
+          "rules": ["scout"]
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "subfactions": ["none"]
+    },
+    "elf_riders_warlock": {
+      "name": "Coven Riders",
+      "description": "Apprentice warlocks, flanking the enemy on cursed steeds to unleash sorcerous hell.",
+      "category": "rare",
+      "models": [
+        {
+          "max": 15,
+          "min": 5,
+          "name": "Coven Rider",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["poison_handweapon", "magic_bolt", {"id": "hooves_and_teeth", "count": 2}],
+          "rules": ["scout"]
+        }
+      ],
+      "options": [{"addRule": [["champion", {"id": "power", "x": "1"}]], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "subfactions": ["none"]
+    },
+    "elf_riders_beast": {
+      "name": "Helbeast Riders",
+      "description": "Heavy cavalry on terrifying creatures.",
+      "category": "elite",
+      "models": [
+        {
+          "max": 10,
+          "min": 5,
+          "name": "Helbeast Rider",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["heavy_lance", "shield", {"id": "rending_claws", "count": 2}]
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "subfactions": ["none"]
+    },
+    "elf_pirates": {
+      "name": "Elven Raiders",
+      "description": "A rag-tag band of skirmishers.",
+      "category": "core",
+      "models": [{"max": 20, "min": 10, "name": "Raider", "movement": 7, "courage": 5, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["light_handweapon", "handweapon"]}],
+      "options": [
+        {"replaceWeapon": ["handweapon"], "withWeapon": ["repeater_crossbow"], "modelLimit": "all"},
+        {"addRule": ["champion"], "modelLimit": 1},
+        {"addRule": ["banner"], "modelLimit": 1},
+        {"addRule": ["musician"], "modelLimit": 1}
+      ],
+      "subfactions": ["none"]
+    },
+    "gargoyles": {
+      "name": "Gargoyles",
+      "description": "A pack of vicious, winged shadow creatures.",
+      "category": "elite",
+      "models": [
+        {
+          "max": 15,
+          "min": 5,
+          "name": "Gargoyle",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["javelin", "poison_handweapon", "spiked_buckler"],
+          "rules": ["fly"]
+        }
+      ],
+      "options": [
+        {"replaceWeapon": ["javelin"], "withWeapon": ["repeater_crossbow"], "modelLimit": "all"},
+        {"addRule": ["champion"], "modelLimit": 1},
+        {"addRule": ["banner"], "modelLimit": 1},
+        {"addRule": ["musician"], "modelLimit": 1}
+      ],
+      "subfactions": ["none"]
+    },
+    "nagas": {
+      "name": "Dread Nagas",
+      "description": "A pack of vicious, serpentine shadow creatures.",
+      "category": "elite",
+      "models": [{"max": 6, "min": 3, "name": "Dread Naga", "movement": 8, "courage": 5, "shoot": 5, "fight": 5, "defense": 5, "wounds": 2, "reflexes": 6, "weapons": ["glaive"]}],
+      "options": [
+        {"replaceWeapon": ["glaive"], "withWeapon": [["poison_handweapon", "great_bow"]], "modelLimit": "all"},
+        {"addRule": ["champion"], "modelLimit": 1},
+        {"addRule": ["banner"], "modelLimit": 1},
+        {"addRule": ["musician"], "modelLimit": 1}
+      ],
+      "subfactions": ["none"]
+    },
+    "elf_bodyguards": {
+      "name": "Elven Bodyguards",
+      "description": "The elite and royalty, protecting their dark lords with their lives.",
+      "category": "elite",
+      "models": [{"max": 20, "min": 5, "name": "Bodyguard", "movement": 7, "courage": 6, "shoot": 5, "fight": 6, "defense": 6, "reflexes": 6, "weapons": [{"id": "poison_great_weapon", "count": 2}]}],
+      "options": [
+        {"replaceWeapon": [{"id": "poison_great_weapon", "count": 2}], "withWeapon": [{"id": "great_polearm", "count": 2}], "modelLimit": "all"},
+        {"addRule": ["champion"], "modelLimit": 1},
+        {"addRule": ["banner"], "modelLimit": 1},
+        {"addRule": ["musician"], "modelLimit": 1}
+      ],
+      "subfactions": ["none"]
+    },
+    "hydra": {
+      "name": "Hydra",
+      "description": "A many-headed fiend capable of destroying entire regiments in a single rampage.",
+      "category": "rare",
+      "models": [
+        {
+          "name": "Hydra",
+          "min": 1,
+          "max": 1,
+          "movement": 8,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 5,
+          "wounds": 3,
+          "rules": ["crazed", "devour", "fear"],
+          "weapons": [{"id": "flame_breath", "count": 6}, {"id": "beak_and_claws", "count": 6}]
+        }
+      ],
+      "keywords": ["Monster"]
+    },
+    "pirate_lord": {
+      "name": "Pirate Lord",
+      "description": "A ruthless mercenary, leading fellow pirates onto raids.",
+      "category": "hero",
+      "models": [
+        {
+          "max": 1,
+          "min": 1,
+          "name": "Pirate Lord",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "wounds": 3,
+          "weapons": [{"id": "lethal_handweapon", "count": 3}, {"id": "heavy_handweapon", "count": 2}],
+          "rules": ["leader", "cloak", {"id": "warrior_tactics", "x": 1}]
+        }
+      ],
+      "subfactions": ["none"]
+    },
+    "assasin": {
+      "name": "Goretaker",
+      "description": "Frenzied assassins, seeking corrupt glory above pay or renown.",
+      "category": "elite",
+      "models": [
+        {
+          "max": 1,
+          "min": 1,
+          "name": "Stalker",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [{"id": "heavy_poison_handweapon", "count": 6}],
+          "rules": ["ambush", "support", "assassin"]
+        }
+      ],
+      "subfactions": ["none"]
+    },
+    "elf_berserkers": {
+      "name": "Elven Damned",
+      "description": "Warped beyond sanity, these frothing elves hurl themselves at the foe.",
+      "category": "elite",
+      "models": [
+        {
+          "max": 20,
+          "min": 10,
+          "name": "Damned",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 6,
+          "weapons": [{"id": "poison_handweapon", "count": 2}],
+          "rules": ["scout"],
+          "options": [{"replaceWeapon": [{"id": "poison_handweapon", "count": 2}], "withWeapon": [["buckler", "poison_handweapon"], ["heavy_polearm"]]}]
+        }
+      ],
+      "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}],
+      "subfactions": ["none"]
+    }
+  },
+  "strategies": [
+    {
+      "name": "Valor",
+      "phase": "activation",
+      "description": "Use before activating a unit. That unit may immediately remove up to 2 Shock.",
+      "flavor": "None of the corrupted elves care for whatever comes before them.",
+      "cost": 1
+    },
+    {
+      "name": "Veterancy",
+      "phase": "activation",
+      "description": "Use when taking a Initiative test. That unit is treated as having +2 Initiative for that test.",
+      "flavor": "With countless battles experienced, these soldiers are trained to react to any situation.",
+      "cost": 1
+    },
+    {
+      "name": "Manbane Bolts",
+      "phase": "activation",
+      "description": "Use before a unit shoots with Repeater Crossbows. Attacks from those crossbows gain +1 AP.",
+      "flavor": "Noxious toxins form the brunt of a repeater crossbow's lethality.",
+      "cost": 1
+    }
+  ]
+}

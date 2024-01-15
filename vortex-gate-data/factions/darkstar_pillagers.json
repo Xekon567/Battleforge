@@ -1,0 +1,904 @@
+{
+  "id": "darkstar_pillagers",
+  "name": "Darkstar Pillagers",
+  "author": "guitarninja",
+  "lore": "In the distant reaches of the cosmos, where the light of stars fades into the obsidian darkness of space, lurks a menacing faction of space pirates known as the Darkstar Pillagers. Born from the shadows of forgotten worlds and driven by a ruthless thirst for power and riches, they have carved a fearsome reputation across the galactic expanse.\n\nThe origins of the Darkstar Pillagers can be traced back to a time when the galaxy was ravaged by turmoil and instability. Amidst the chaos of interstellar wars and political upheavals, a group of cunning and ambitious individuals sought refuge and anonymity in the outer fringes of known space. These disparate rogues, each with their own tales of tragedy and defiance, found themselves drawn together by the promise of freedom and boundless opportunities that lay beyond the boundaries of law and order.\n\nAt the heart of this motley crew stood their enigmatic and terrifying leader, Captain Kalara \"Blackheart\" Vex. Renowned for her strategic brilliance and ruthless tactics, Kalara was a figure shrouded in mystery, her true past veiled in whispers and speculation. Legends spoke of a dark past filled with betrayal and loss, fueling her unyielding drive for power and a desire to build an empire under her command.\n\nUnder Captain Kalara's leadership, the scattered misfits organized themselves into the formidable Darkstar Pillagers. Their fleet consisted of a diverse array of stolen and salvaged starships, each vessel meticulously modified to become a lethal instrument of raiding and plunder. The Pillagers' ships were painted in dark hues, adorned with eerie symbols that struck fear into the hearts of those who gazed upon them.\n\nThe space ports scattered in the outer reaches of the galaxy became their sanctuaries, providing the perfect cover for their sinister operations. From these clandestine bases, the Pillagers planned their raids, gathering intelligence on valuable targets and vulnerable worlds. They struck swiftly and without mercy, descending upon unsuspecting planets with ferocity and precision.\n\nWorlds that dared to resist were met with swift and brutal retribution. The Darkstar Pillagers unleashed a reign of terror, leaving behind a trail of devastation that sent shivers through the galactic communities. Planetary governments and mercantile consortiums were forced to pay exorbitant tributes or face the wrath of the merciless Captain Kalara and her marauding fleet.\n\nYet, the Pillagers' cohesion was not without its challenges. Internal power struggles, betrayals, and rivalries threatened to tear them apart from within. Some questioned the growing brutality of their actions, while others saw opportunity in exploiting their own comrades for personal gain. But Captain Kalara's iron will and swift justice ensured that dissent was silenced, and loyalty to the Pillagers was demanded at any cost.\n\nAs the Darkstar Pillagers continued their reign of terror, the tales of their ruthless exploits spread like wildfire across the galaxy. Their name became synonymous with fear, their dark banner a haunting symbol of impending doom. Some saw them as the scourge of the stars, while others admired their audacity and sought to emulate their exploits.\n\nIn the shadows of the vast cosmos, the legend of the Darkstar Pillagers grows with each passing raid, their legacy one of terror and infamy. As Captain Kalara's fleet roves through the celestial void, the galaxy trembles in anticipation, unsure of what dark fate may befall them should they cross paths with the dreaded Pillagers. And so, the saga of the Darkstar Pillagers continues, a harrowing tale of pirates whose insatiable lust for plunder shapes the destiny of worlds and stirs the darkest fears of all who dwell in the cosmos.",
+  "units": {
+    "beastmaster": {
+      "name": "Beastmaster",
+      "description": "A collector of rare beasts, mounted on a fast hover board.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Beastmaster",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 7,
+          "wounds": 3,
+          "rules": [{"id": "warrior", "x": 1}, "hover", {"id": "leader", "x": "Beast, Monster"}],
+          "reflexes": 6,
+          "weapons": ["barb_launcher", {"id": "glaive", "count": 3}],
+          "options": [
+            {"replaceWeapon": [{"id": "glaive", "count": 3}], "withWeapon": [["barb_pistol", {"id": "barb_knife", "count": 4}]]},
+            {"replaceWeapon": ["barb_pistol"], "withWeapon": ["flamethrower_pistol", "fusion_pistol"]},
+            {"replaceWeapon": [{"id": "barb_knife", "count": 4}], "withWeapon": [{"id": "energy_handweapon", "count": 4}, {"id": "poison_whip", "count": 4}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "jetbike_master": {
+      "name": "Raid Master on Jetbike",
+      "description": "A Raid Master is a revered individual, leading their fellow dark elves into battle on a swift jetbike.",
+      "category": "hero",
+      "keywords": ["Mounted"],
+      "models": [
+        {
+          "name": "Raid Master on Jetbike",
+          "movement": 8,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 7,
+          "wounds": 3,
+          "rules": [{"id": "heavy_impact", "x": 3}, "hover", {"id": "leader", "x": "Infantry, Biker"}, {"id": "tactician", "x": 1}],
+          "weapons": ["barb_pistol", {"id": "barb_sword", "count": 5}, {"id": "twin_barb_rifle"}],
+          "options": [
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "barb_sword", "count": 5},
+              "withWeapon": [
+                {"id": "energy_handweapon", "count": 5},
+                {"id": "poison_whip", "count": 5},
+                {"id": "energy_greatweapon", "count": 5},
+                {"id": "razor_whips", "count": 7},
+                {"id": "net_and_spear", "count": 5},
+                {"id": "twin_energy_handweapon", "count": 6}
+              ]
+            },
+            {"replaceWeapon": [{"id": "twin_barb_rifle"}], "withWeapon": [{"id": "fusion_rifle"}, {"id": "thermal_lance"}]},
+            {"addRule": [{"name": "Grisly Trophy", "id": "fear"}, {"name": "Dark Prism", "id": "power", "x": 1}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "abomination_master": {
+      "name": "Abomination Master",
+      "description": "A Dark Elf Master who experiments on his fellow kin to create abominations.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Abomination Master",
+          "movement": 7,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 6,
+          "wounds": 3,
+          "rules": [{"id": "defender", "x": 1}, "hover", {"id": "leader", "x": "Infantry, Heavy Infantry"}],
+          "weapons": ["barb_pistol", {"id": "barb_sword", "count": 5}],
+          "options": [
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["poison_sprayer", "heavy_sniper_rifle", "poison_dart_rifle"]},
+            {"replaceWeapon": {"id": "barb_sword", "count": 5}, "withWeapon": [{"id": "poison_whip", "count": 5}]},
+            {"addWeapon": "poison_injector"},
+            {"addRule": [{"name": "Dark Prism", "id": "power", "x": 1}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "raid_master": {
+      "name": "Raid Master",
+      "category": "hero",
+      "description": "A Raid Master is a revered individual, leading their fellow dark elves into battle.",
+      "models": [
+        {
+          "name": "Raid Master",
+          "movement": 7,
+          "courage": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 7,
+          "wounds": 3,
+          "rules": ["leader", {"id": "tactician", "x": 1}],
+          "weapons": ["barb_pistol", {"id": "barb_sword", "count": 5}],
+          "options": [
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {
+              "replaceWeapon": {"id": "barb_sword", "count": 5},
+              "withWeapon": [
+                {"id": "energy_handweapon", "count": 5},
+                {"id": "poison_whip", "count": 5},
+                {"id": "energy_greatweapon", "count": 5},
+                {"id": "razor_whips", "count": 7},
+                {"id": "net_and_spear", "count": 5},
+                {"id": "twin_energy_handweapon", "count": 6}
+              ]
+            },
+            {"addRule": [{"name": "Grisly Trophy", "id": "fear"}, {"name": "Dark Prism", "id": "power", "x": 1}, "jetpack_character"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "blade_master": {
+      "name": "Blade Master",
+      "description": "A terrifying combatant, leading his fellow blade adepts into battle.",
+      "category": "hero",
+      "models": [
+        {
+          "name": "Blade Master",
+          "courage": 7,
+          "movement": 7,
+          "shoot": 7,
+          "fight": 7,
+          "defense": 8,
+          "reflexes": 7,
+          "wounds": 3,
+          "rules": ["fear", "furious", "leader", {"id": "tactician", "x": 1}],
+          "weapons": [{"id": "energy_greatweapon", "count": 3}],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "ravagers": {
+      "name": "Ravagers",
+      "description": "A squad of Dark Elven warriors with deadly weaponry.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Ravager Sergeant",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["barb_rifle", "barb_knife"],
+          "options": [
+            {"replaceWeapon": ["barb_rifle", "barb_knife"], "withWeapon": [["barb_pistol", {"id": "barb_knife", "count": 2}]]},
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {"replaceWeapon": {"id": "barb_knife", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "poison_whip", "count": 2}]},
+            {"addWeapon": "fear_grenade_launcher"}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Ravager", "movement": 7, "courage": 5, "shoot": 6, "fight": 5, "defense": 6, "reflexes": 6, "weapons": ["barb_rifle", "barb_knife"], "min": 4, "max": 9}
+      ],
+      "options": [
+        {"replaceWeapon": "barb_rifle", "withWeapon": ["fusion_rifle", "shred_rifle", "emp_rifle", "flamethrower", "grenade_launcher"], "modelLimit": "2/10"},
+        {"replaceWeapon": "barb_rifle", "withWeapon": ["heavy_flamethrower", "thermal_lance", "barb_cannon", "fusion_cannon", "missile_launcher", "laser_machinegun"], "modelLimit": "1/10"}
+      ]
+    },
+    "witches": {
+      "name": "Witches",
+      "description": "A squad of Dark Elven warriors with deadly weaponry.",
+      "category": "core",
+      "rules": ["swift"],
+      "models": [
+        {
+          "name": "Witch Sergeant",
+          "movement": 7,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": ["barb_pistol", {"id": "barb_knife", "count": 2}],
+          "options": [
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {"replaceWeapon": {"id": "barb_knife", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "poison_whip", "count": 2}]},
+            {"addWeapon": "fear_grenade_launcher"}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Witch", "movement": 7, "courage": 5, "shoot": 5, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["barb_pistol", {"id": "barb_knife", "count": 2}], "min": 4, "max": 9}
+      ],
+      "options": [
+        {
+          "replaceWeapon": {"id": "barb_knife", "count": 2},
+          "withWeapon": [{"id": "razor_whips", "count": 4}, {"id": "net_and_spear", "count": 2}, {"id": "twin_energy_handweapon", "count": 3}],
+          "modelLimit": "3/10"
+        }
+      ]
+    },
+    "abomination_warriors": {
+      "name": "Abomination Warriors",
+      "description": "A group of Dark Elven warriors subject to genetic experiments.",
+      "category": "core",
+      "models": [
+        {
+          "name": "Abomination Warrior Leader",
+          "movement": 6,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 5,
+          "weapons": [{"id": "barb_sword", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "barb_sword", "count": 2}], "withWeapon": [{"id": "poison_whip", "count": 3}]},
+            {"addWeapon": ["barb_pistol", "heavy_sniper_rifle", "poison_sprayer"], "limit": 1}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Abomination Warrior", "movement": 6, "courage": 5, "shoot": 5, "fight": 6, "defense": 7, "reflexes": 5, "weapons": [{"id": "barb_sword", "count": 2}], "min": 4, "max": 9}
+      ],
+      "options": [{"addWeapon": ["poison_sprayer", "poison_dart_rifle"], "modelLimit": "1/5"}]
+    },
+    "blade_adepts": {
+      "name": "Blade Adepts",
+      "description": "A squad of Dark Elven warriors with devastating melee weapons.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Blade Adept",
+          "courage": 6,
+          "movement": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 6,
+          "rules": ["fear", "furious"],
+          "weapons": [{"id": "energy_greatweapon", "count": 3}],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "mutated_abominations": {
+      "name": "Mutated Abominations",
+      "description": "A group of Dark Elven warriors whose genetic experiments went wrong.",
+      "category": "elite",
+      "keywords": ["Heavy Infantry"],
+      "models": [
+        {
+          "name": "Mutated Abominations",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 4,
+          "fight": 6,
+          "defense": 8,
+          "reflexes": 5,
+          "wounds": 2,
+          "weapons": ["poison_sprayer", {"id": "mutated_fists", "count": 4}],
+          "options": [{"replaceWeapon": ["poison_sprayer"], "withWeapon": ["energy_handweapon"]}],
+          "min": 3,
+          "max": 6
+        }
+      ]
+    },
+    "courtesans": {
+      "name": "Courtesans",
+      "description": "A Master's trusted advisors, using their political power and poisoned weapons to keep the upper hand.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Courtesan",
+          "courage": 6,
+          "movement": 7,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "wounds": 2,
+          "rules": ["legend_pop", "support"],
+          "weapons": [{"id": "toxic_blade", "count": 2}],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    "ghouls": {
+      "name": "Ghouls",
+      "description": "Terrifying beasts, ripping apart their foes at their Master's behalf.",
+      "category": "elite",
+      "keywords": ["Beast"],
+      "models": [
+        {
+          "name": "Ghoul",
+          "movement": 7,
+          "courage": 4,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 5,
+          "wounds": 2,
+          "rules": [{"id": "resistant", "x": 2}, "furious", "support"],
+          "weapons": [{"id": "piercing_claws", "count": 3}],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    "psychic_servant": {
+      "category": "elite",
+      "name": "Psychic Servant",
+      "description": "A powerful psychic being kept under control by their master.",
+      "models": [
+        {
+          "name": "Psychic Servant",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "wounds": 2,
+          "rules": [{"id": "power", "x": 1}, "support"],
+          "weapons": ["dreadful_gaze"],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "naga_bodyguards": {
+      "name": "Naga Bodyguards",
+      "description": "Loyal mercenaries, protecting their masters with their lives.",
+      "category": "elite",
+      "models": [
+        {
+          "name": "Naga Bodyguard",
+          "movement": 7,
+          "courage": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 5,
+          "wounds": 2,
+          "rules": [{"id": "resistant", "x": 3}],
+          "weapons": [{"id": "heavy_energy_sword", "count": 3}, "barb_carbine"],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    "grand_abomination": {
+      "name": "Grand Abomination",
+      "description": "A giant twisted abomination used as a blunt tool against enemies.",
+      "category": "rare",
+      "keywords": ["Monster"],
+      "models": [
+        {
+          "name": "Grand Abomination",
+          "movement": 8,
+          "courage": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 10,
+          "reflexes": 5,
+          "wounds": 3,
+          "rules": ["hover"],
+          "weapons": [{"id": "claw_blade", "count": 4}, {"id": "barb_stinger", "count": 2}],
+          "options": [
+            {
+              "replaceWeapon": {"id": "claw_blade", "count": 2},
+              "withWeapon": [
+                "twin_poison_sprayer",
+                {"id": "poison_injector", "count": 2},
+                {"id": "razor_whips", "count": 4},
+                {"id": "pain_gauntlet", "count": 2},
+                {"id": "twin_energy_handweapon", "count": 3}
+              ],
+              "limit": 2
+            },
+            {
+              "replaceWeapon": {"id": "barb_stinger", "count": 2},
+              "withWeapon": [
+                {"id": "barb_cannon", "count": 2},
+                {"id": "thermal_lance", "count": 2},
+                {"id": "emp_rifle", "count": 2},
+                {"id": "barb_launcher", "count": 2},
+                {"id": "flamethrower", "count": 2},
+                {"id": "fusion_rifle", "count": 2}
+              ]
+            },
+            {"addWeapon": ["soul_vortex"]},
+            {"addRule": [{"id": "tactician", "x": 1}]}
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    "hunting_beasts": {
+      "name": "Hunting Beasts",
+      "description": "Feral beasts that are sickened on their prey by their elven masters.",
+      "category": "elite",
+      "keywords": ["Beast"],
+      "models": [
+        {
+          "name": "Hunting Beast",
+          "movement": 8,
+          "shoot": 0,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "courage": 4,
+          "wounds": 2,
+          "rules": ["evasive"],
+          "weapons": [{"id": "fangs_and_claws", "count": 2}],
+          "min": 3,
+          "max": 12
+        }
+      ]
+    },
+    "bird_swarm": {
+      "name": "Bird Swarm",
+      "description": "A swarm of small birds with sharp claws.",
+      "category": "elite",
+      "keywords": ["Beast"],
+      "models": [
+        {
+          "name": "Bird Swarm",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 0,
+          "fight": 5,
+          "defense": 4,
+          "reflexes": 4,
+          "wounds": 3,
+          "rules": ["fly"],
+          "weapons": [{"id": "sharp_claws", "count": 3}],
+          "min": 3,
+          "max": 12
+        }
+      ]
+    },
+    "harpies": {
+      "name": "Harpies",
+      "description": "A squad of winged Dark Elven mercenaries with a variety of weapons.",
+      "category": "elite",
+      "rules": ["ambush", "fly"],
+      "models": [
+        {
+          "name": "Harpy Sergeant",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["barb_carbine", "light_handweapon"],
+          "options": [
+            {"replaceWeapon": ["barb_carbine", "light_handweapon"], "withWeapon": [["barb_pistol", {"id": "light_handweapon", "count": 2}]]},
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "poison_whip", "count": 2}, {"id": "energy_polearm", "count": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Harpy", "movement": 8, "courage": 5, "shoot": 6, "fight": 5, "defense": 6, "reflexes": 6, "weapons": ["barb_carbine", "light_handweapon"], "min": 4, "max": 9}
+      ],
+      "options": [
+        {"replaceWeapon": "barb_carbine", "withWeapon": ["fusion_rifle", "shred_rifle", "emp_rifle", "flamethrower", "grenade_launcher"], "modelLimit": "1/5"},
+        {"replaceWeapon": "barb_carbine", "withWeapon": ["heavy_flamethrower", "barb_cannon", "fusion_cannon", "thermal_lance", "missile_launcher"], "modelLimit": "1/5"}
+      ]
+    },
+    "jetbike_ravagers": {
+      "name": "Jetbike Witches",
+      "description": "A squad of Dark Elven warriors on swift jetbikes.",
+      "category": "elite",
+      "keywords": ["Mounted"],
+      "rules": [{"id": "heavy_impact", "x": 1}, "hover"],
+      "models": [
+        {
+          "name": "Jetbike Witch Sergeant",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["barb_rifle", "light_handweapon", {"id": "twin_barb_rifle"}],
+          "options": [
+            {"replaceWeapon": "barb_pistol", "withWeapon": ["fusion_pistol", "flamethrower_pistol"]},
+            {"replaceWeapon": {"id": "light_handweapon", "count": 2}, "withWeapon": [{"id": "energy_handweapon", "count": 2}, {"id": "poison_whip", "count": 2}, {"id": "energy_polearm", "count": 2}]}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Jetbike Witch",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 7,
+          "reflexes": 6,
+          "weapons": ["barb_rifle", "light_handweapon", {"id": "twin_barb_rifle"}],
+          "min": 2,
+          "max": 11
+        }
+      ],
+      "options": [
+        {"replaceWeapon": ["barb_rifle", "light_handweapon"], "withWeapon": [["barb_pistol", {"id": "light_handweapon", "count": 2}]]},
+        {"replaceWeapon": [{"id": "twin_barb_rifle"}], "withWeapon": [{"id": "fusion_rifle"}, {"id": "thermal_lance"}], "modelLimit": "1/3"}
+      ]
+    },
+    "hoverboard_riders": {
+      "name": "Hoverboard Riders",
+      "description": "A group of Dark Elven warriors mounted on fast hover boards.",
+      "category": "elite",
+      "keywords": ["Mounted"],
+      "rules": ["hover"],
+      "models": [
+        {
+          "name": "Hoverboard Leader",
+          "movement": 8,
+          "courage": 5,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 6,
+          "reflexes": 6,
+          "weapons": ["barb_launcher", {"id": "glaive", "count": 2}],
+          "options": [
+            {"replaceWeapon": [{"id": "glaive", "count": 2}], "withWeapon": [["barb_pistol", {"id": "barb_knife", "count": 3}]]},
+            {"replaceWeapon": ["barb_pistol"], "withWeapon": ["flamethrower_pistol", "fusion_pistol"]},
+            {"replaceWeapon": [{"id": "barb_knife", "count": 3}], "withWeapon": [{"id": "energy_handweapon", "count": 3}, {"id": "poison_whip", "count": 3}]},
+            {"addWeapon": "fear_grenade_launcher"}
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {"name": "Hoverboarder", "movement": 8, "courage": 5, "shoot": 5, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["barb_launcher", {"id": "glaive", "count": 2}], "min": 4, "max": 19}
+      ]
+    },
+    "void_bomber": {
+      "name": "Void Bomber",
+      "description": "A light bomber aircraft.",
+      "category": "elite",
+      "keywords": ["Aircraft", "Vehicle"],
+      "models": [
+        {
+          "name": "Void Bomber",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 9,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["aircraft"],
+          "weapons": [{"id": "twin_fusion_cannon"}, "void_bombs"],
+          "options": [
+            {"replaceWeapon": {"id": "twin_fusion_cannon"}, "withWeapon": {"id": "twin_fusion_cannon", "count": 2}},
+            {"addWeapon": ["void_missiles"]},
+            {"addRule": ["gravity_thrusters"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "strike_fighter": {
+      "name": "Strike Fighter",
+      "description": "A light fighter aircraft.",
+      "category": "elite",
+      "keywords": ["Aircraft", "Vehicle"],
+      "models": [
+        {
+          "name": "Strike Fighter",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 9,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["aircraft"],
+          "weapons": ["strike_missiles", {"id": "twin_fusion_cannon"}, {"id": "twin_barb_rifle"}],
+          "options": [
+            {
+              "replaceWeapon": {"id": "twin_barb_rifle"},
+              "withWeapon": [
+                {"id": "barb_cannon"},
+                {"id": "laser_machinegun"},
+                {"id": "fusion_cannon"},
+                {"id": "thermal_lance"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {
+              "replaceWeapon": {"id": "twin_fusion_cannon"},
+              "withWeapon": [{"id": "twin_laser_machinegun"}, {"id": "twin_thermal_lance"}, {"id": "twin_missile_launcher"}]
+            },
+            {"addRule": ["gravity_thrusters"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "serpent_scout_craft": {
+      "name": "Serpent Scout Craft",
+      "description": "A mobile scouting vehicle equipped with anti-gravity technology.",
+      "category": "elite",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Serpent Scout Craft",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 9,
+          "reflexes": 6,
+          "wounds": 4,
+          "rules": ["hover", {"id": "impact", "x": 3}, "vulnerable_side_rear"],
+          "weapons": [{"id": "barb_cannon"}, {"id": "twin_barb_rifle"}],
+          "options": [
+            {
+              "replaceWeapon": {"id": "twin_barb_rifle"},
+              "withWeapon": [
+                {"id": "barb_cannon"},
+                {"id": "laser_machinegun"},
+                {"id": "fusion_cannon"},
+                {"id": "thermal_lance"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {"addRule": ["gravity_thrusters", "reinforced_ram", {"name": "Grisly Trophy", "id": "fear"}]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "boarding_barge": {
+      "name": "Boarding Barge",
+      "description": "A hovering transport vehicle used for boarding enemy vessels.",
+      "category": "transport",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Boarding Barge",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 10,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["hover", {"id": "impact", "x": 3}, {"id": "open_topped", "x": 12}, {"id": "transport", "x": 12}, "vulnerable_side_rear"],
+          "weapons": [{"id": "barb_cannon"}],
+          "options": [
+            {
+              "replaceWeapon": [{"id": "barb_cannon"}],
+              "withWeapon": [
+                {"id": "laser_machinegun"},
+                {"id": "fusion_cannon"},
+                {"id": "thermal_lance"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {"addWeapon": "fear_grenade_launcher"},
+            {"addRule": ["weapon_racks", "reinforced_ram", {"name": "Grisly Trophy", "id": "fear"}, "gravity_thrusters"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "devastator_barge": {
+      "name": "Devastator Barge",
+      "description": "A hovering vehicle equipped with a variety of weapon platforms to use against vehicles and infantry.",
+      "category": "rare",
+      "keywords": ["Vehicle"],
+      "models": [
+        {
+          "name": "Devastator Barge",
+          "courage": 5,
+          "movement": 10,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 11,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": ["hover", {"id": "heavy_impact", "x": 3}, "vulnerable_side_rear"],
+          "weapons": [{"id": "barb_cannon"}, {"id": "barb_cannon"}, {"id": "barb_cannon"}],
+          "options": [
+            {
+              "replaceWeapon": {"id": "barb_cannon"},
+              "withWeapon": [
+                {"id": "laser_machinegun"},
+                {"id": "thermal_lance"},
+                {"id": "fusion_cannon"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {
+              "replaceWeapon": {"id": "barb_cannon"},
+              "withWeapon": [
+                {"id": "laser_machinegun"},
+                {"id": "thermal_lance"},
+                {"id": "fusion_cannon"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {
+              "replaceWeapon": {"id": "barb_cannon"},
+              "withWeapon": [
+                {"id": "laser_machinegun"},
+                {"id": "thermal_lance"},
+                {"id": "fusion_cannon"},
+                {"id": "heavy_flamethrower"},
+                {"id": "missile_launcher"}
+              ]
+            },
+            {"addWeapon": "fear_grenade_launcher"},
+            {"addRule": ["reinforced_ram_heavy", {"name": "Grisly Trophy", "id": "fear"}, "gravity_thrusters"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "hover_tank": {
+      "name": "Hover Tank",
+      "description": "A hovering tank outfitted with a variety of devastating weapons.",
+      "category": "rare",
+      "keywords": ["Tank", "Vehicle"],
+      "models": [
+        {
+          "name": "Hover Tank",
+          "movement": 10,
+          "courage": 5,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 11,
+          "reflexes": 6,
+          "wounds": 5,
+          "rules": [{"id": "heavy_impact", "x": 6}, "hover", "vulnerable_side_rear"],
+          "weapons": [{"id": "twin_fusion_cannon"}, {"id": "twin_barb_rifle"}],
+          "options": [
+            {
+              "replaceWeapon": "twin_fusion_cannon",
+              "withWeapon": ["twin_barb_cannon", "twin_missile_launcher", "twin_thermal_lance", "twin_laser_machinegun", "heavy_fusion_cannon", "distortion_cannon"]
+            },
+            {
+              "replaceWeapon": {"id": "twin_barb_rifle"},
+              "withWeapon": [
+                {"id": "barb_cannon"},
+                {"id": "thermal_lance"},
+                {"id": "missile_launcher"},
+                {"id": "fusion_cannon"},
+                {"id": "laser_machinegun"},
+                {"id": "heavy_flamethrower"}
+              ]
+            },
+            {"addRule": ["reinforced_ram_heavy", {"name": "Grisly Trophy", "id": "fear"}, "gravity_thrusters"]}
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "hidden_units": {
+    "teleporter": {
+      "name": "Teleporter Unit",
+      "description": "Advanced Technology allows for quick redeployment and surprise maneuvers during a firefight.",
+      "category": "fortification",
+      "keywords": ["Fortification"],
+      "models": [{"name": "Teleporter Unit", "min": 2, "max": 2, "rules": ["terrain", "portal"], "courage": "-", "movement": "-", "shoot": "-", "fight": "-", "defense": "-", "reflexes": "-"}]
+    }
+  },
+  "weapons": {
+    "glaive": {"name": "Twin Glaive", "attacks": 1, "short": "Melee", "ap": 1, "rules": [{"id": "reach", "x": 1}, "rending"]},
+    "dreadful_gaze": {"name": "Dreadful Gaze", "attacks": 3, "short": 6, "medium": 12, "ap": 2, "rules": ["pistol"]},
+    "poison_dart_rifle": {"name": "Poison Dart Rifle", "attacks": 1, "short": 12, "medium": 24, "ap": 1, "rules": ["assault", "poison"]},
+    "poison_sprayer": {"name": "Poison Sprayer", "attacks": 3, "short": 6, "medium": 12, "ap": 1, "rules": ["poison"]},
+    "twin_poison_sprayer": {"name": "Twin Poison Sprayer", "attacks": 6, "short": 6, "medium": 12, "ap": 1, "rules": ["poison"]},
+    "poison_injector": {"name": "Poison Injector", "attacks": 1, "short": "Melee", "ap": 4, "rules": ["poison"]},
+    "pain_gauntlet": {"name": "Pain Gauntlet", "attacks": 1, "short": "Melee", "ap": 6, "rules": ["cumbersome"]},
+    "barb_stinger": {"name": "Poison Stinger", "attacks": 1, "short": "Melee", "ap": 2, "rules": ["poison"]},
+    "chain_whips": {"name": "Chain Whips", "attacks": 1, "short": "Melee", "ap": 2},
+    "claw_blade": {"name": "Claw Blade", "attacks": 1, "short": "Melee", "ap": 3},
+    "soul_vortex": {"name": "Soul Vortex", "attacks": 1, "short": 9, "medium": 18, "ap": 3, "rules": [{"id": "blast", "x": 3}]},
+    "leeching_tentacles": {"name": "Leeching Tentacles", "attacks": 1, "short": "Melee", "ap": 2, "rules": ["rending"]},
+    "sharp_claws": {"name": "Sharp Claws", "attacks": 1, "short": "Melee"},
+    "razor_whips": {"name": "Razor Whips", "attacks": 1, "short": "Melee", "rules": [{"id": "deadly", "x": 1}]},
+    "net_and_spear": {"name": "Combat Spear and Net", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["ensnare", {"id": "reach", "x": 1}]},
+    "barb_launcher": {"name": "Poison Launcher", "attacks": 1, "short": 9, "medium": 18, "rules": ["assault", "poison"]},
+    "twin_barb_rifle": {"name": "Twin Poison Rifle", "attacks": 2, "short": 12, "medium": 24, "rules": ["rapid_fire", "poison"]},
+    "barb_cannon": {"name": "Poison Cannon", "attacks": 3, "short": 18, "medium": 36, "ap": 1, "rules": ["heavy", "poison"]},
+    "twin_barb_cannon": {"name": "Twin Poison Cannon", "attacks": 6, "short": 18, "medium": 36, "ap": 1, "rules": ["heavy", "poison"]},
+    "poison_whip": {"name": "Poison Whip", "attacks": 1, "ap": 1, "short": "Melee", "rules": [{"id": "reach", "x": 1}, "poison"]},
+    "toxic_blade": {"name": "Toxic Blade", "attacks": 1, "short": "Melee", "rules": ["deadly_poison"]},
+    "shred_rifle": {"name": "Shred Rifle", "attacks": 1, "short": 6, "medium": 12, "ap": 3, "rules": ["assault", {"id": "blast", "x": 3}]},
+    "void_missiles": {"name": "Void Missiles", "attacks": 1, "short": 24, "medium": 48, "ap": 4, "rules": [{"id": "blast", "x": 3}]},
+    "void_bombs": {"name": "Void Bombs", "attacks": 2, "short": 6, "ap": 4, "rules": ["bomb", {"id": "blast", "x": 3}]},
+    "distortion_cannon": {"name": "Distortion Cannon", "attacks": 2, "short": 24, "medium": 48, "ap": 8, "rules": [{"id": "blast", "x": 3}, {"id": "deadly", "x": 1}]}
+  },
+  "rules": {
+    "weapon_racks": {"name": "Weapon Racks", "description": "Models shooting while embarked on this unit may re-roll failed Accuracy tests of 9+.", "points": 10},
+    "trophy_racks": {"name": "Trophy Racks", "description": "Enemy units within 6\" of this model suffer -1 Courage.", "points": 5},
+    "reinforced_ram": {"name": "Reinforced Ram", "hidden": true, "description_short": "Impact(+3)", "description": "This model gains Impact(+3).", "points": 6},
+    "reinforced_ram_heavy": {"name": "Reinforced Ram", "hidden": true, "description_short": "Heavy Impact(+3)", "description": "This model gains Impact(+3).", "points": 12},
+    "legend_scion_of_the_sky": {
+      "name": "Scion of the Sky",
+      "description": "Models with _Hover_ or _Aircraft_ that start their activation within 6\" of this model gain +2\" to their movement",
+      "points": 10
+    },
+    "legend_pop": {"name": "Purveyor of Poison", "description": "Weapons in this model's unit with _Poison_ cause successful re-rolls of 2 or less instead of 1.", "points": 10},
+    "gravity_thrusters": {"name": "Gravity Thrusters", "description": "If this model performs two _Move_ actions on its turn, enemy units suffer -1 Accuracy when targeting this model.", "points": 10},
+    "legend_master_of_war": {"name": "Master of War", "description": "When this unit makes an attack targeting an enemy _Leader_ or _Support_ model, it may reroll hit rolls of 9+.", "points": 5},
+    "portal": {
+      "name": "Portal",
+      "description": "_Infantry_ and _Biker_ units may spend a _Move_ action to embark this model. To embark, the unit must all get within 1\" of this model. Immediately disembark from another model with the Portal special rule, making a _Move_ action originating from that model's edge.",
+      "points": 10
+    }
+  },
+  "strategies": {
+    "pain_embrace": {
+      "name": "Pain's Embrace",
+      "phase": "activation",
+      "flavor": "Dark Elves revel in pain as it only makes them stronger.",
+      "description": "Use this strategy when one of your units is targeted by an attack. Roll a die for each hit, on a 3 or less that hit is prevented.",
+      "cost": 2
+    },
+    "eager_to_fight": {
+      "name": "Eager to Fight",
+      "phase": "activation",
+      "flavor": "Dark Elves long for the next raid to fight again.",
+      "description": "Use when a unit declares a _Charge_ action. That unit gets +3\" of Movement for that action.",
+      "cost": 1
+    },
+    "combat_drugs": {
+      "name": "Combat Drugs",
+      "phase": "pre_game",
+      "description": "At the beginning of the game, one point for each unit receives one of these bonuses until the end of the game:\n\n+1 Strength\n+1\" Movement\n+1 Courage\n+1 Save",
+      "flavor": "The dark elves deploy a variety of enhancing concoctions which greatly boost their natural abilities.",
+      "cost": "1/per"
+    }
+  },
+  "relics": {
+    "scion_of_the_sky": {
+      "name": "Scion of the Sky",
+      "rule": "legend_scion_of_the_sky",
+      "description": "Upgrade one _Leader_ model with Scion of the Sky",
+      "flavor": "This leader is adept at guiding the ships of their raids.",
+      "points": 20
+    },
+    "purveyor_of_poison": {
+      "name": "Purveyor of Poison",
+      "rule": "legend_pop",
+      "description": "Upgrade one _Leader_ model with Purveyor of Poison",
+      "flavor": "With access to strange sources, this leader's poisons are more potent than most.",
+      "points": 10
+    },
+    "master_of_war": {
+      "name": "Master of War",
+      "rule": "legend_master_of_war",
+      "description": "Upgrade one _Leader_ model with Master of War.",
+      "flavor": "The truly long-lived among the dark elves master many methods of war.",
+      "points": 10
+    }
+  },
+  "powers": {
+    "power": {"name": "Power", "description": "Target friendly unit within 12\" gains +1 Strength and +1 Accuracy until the end of the turn. ", "charge": 5},
+    "despair": {"name": "Despair", "description": "Target enemy unit within 12\" suffers -1 Save until the end of the activation phase.", "charge": 6},
+    "pain": {"name": "Pain", "description": "Target enemy unit within 12\" take 5 hits with AP(1).", "charge": 7}
+  }
+}

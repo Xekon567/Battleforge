@@ -1,0 +1,1630 @@
+{
+    "id": "barbarians",
+    "name": "Invading Tribes",
+    "subfactions": {
+        "migration_period_germanics": {
+            "name": "Migration Period Germanics (250 - 561 AD)",
+            "phase": "activation",
+            "id": "migration_period_germanics",
+            "description": "The Germanics (Mostly, Goths, Visigoths, Suebi, and Vandals) were a hostile, frontier people during the beginning of this era. They would often be strong allies or enemies of the Romans during this period, with their allegiances being decided by what they viewed as the best opportunity.",
+            "restricted": "true"
+        }
+    ,
+        "ostrogoths": {
+            "name": "Ostrogoths (400 - 561 AD)",
+            "phase": "activation",
+            "id": "ostrogoths",
+            "description": "After breaking away from the collapsing Hun Empire, they migrated towards the Byzantine Empire, hoping for a rich area to be carved out for them. Sadly, Thracian Goths were already in position and the Byzantine did not have more resources or land to spare. After much struggle, a deal was arranged where they would be given legitimately if they 'liberated' Italy and swore loyalty to the Emperor in the East.",
+            "restricted": "true"
+        }
+    ,
+    "gepids_lombards": {
+            "name": "Gepids and Early Lombards (450 - 774 AD)",
+            "phase": "activation",
+            "id": "gepids_lombards",
+            "description": "These two cultures lived in what is now North Western Germany. Due to the chaos of the period, and the intrusion of other warrior cultures, they moved increasingly south over time. The two clashed in what is now Austria, and the victorious Lombards fled their 'allies' into what is now Northern Italy. They remained there for centuries.",
+            "restricted": "true"
+        },
+        "vandals": {
+            "name": "Vandals (442-535 AD)",
+            "phase": "activation",
+            "id": "Vandals",
+            "description": "A central European people who fled the Huns and then captured much of Northern Africa. They are known for their hatred for the javelin, their dislike for fighting on foot, and their love of the cavalry spear.",
+            "restricted": "true"
+        }
+    ,
+    "west_goths": {
+        "name": "Visigoths (475-720 AD)",
+        "phase": "activation",
+        "id": "west_goths",
+        "description": "While sackers of Rome, the Visigoths conquered much in Gaul, and retained control of 'Spain' till the 8th century. Unlike their various Germanic 'cousins', they were more flexible in their fighting styles, but were praised for their talent with the javelin thrown from horseback.",
+        "restricted": "true"
+    },
+    "burgundians": {
+        "name": "Burgundians (250-532 AD)",
+        "phase": "activation",
+        "id": "west_goths",
+        "description": "While sackers of Rome, the Visigoths conquered much in Gaul, and retained control of 'Spain' till the 8th century. Unlike their various Germanic 'cousins', they were more flexible in their fighting styles, but were praised for their talent with the javelin thrown from horseback.",
+        "restricted": "true"
+    }
+},
+    "units": {
+        "germanic_warriors": {
+            "name": "Germanic Warriors",
+            "description": "Under many of the Germanic rulars of the time, The Romans, with their Catholicism, were isolated to the civilian world. More than one source tells of Gothic women being chastied for letting their boys learn to read. The fewer (Compared to Romantics) Germanics were set apart to be warriors; while their swords, mail, and even horses they had made them proud and boastful, eager to prove their worth, and unwilling to be a coward in front of others.",
+            "subfactions": ["migration_period_germanics", "ostrogoths", "burgundians"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "warrior_culture"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "travel_horse"}, {"addRule": "stubborn"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"addRule": "light_armor", "modelLimit": 5}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "trusted_germanic_warriors": {
+            "name": "Dugundiz Germanic Warriors",
+            "description": "The Dugundiz (Trusted, Capable) were the freeman and warrior class who having finished their young adulthood, now were experianced fighters of reasonable skill.",
+            "subfactions": ["migration_period_germanics", "ostrogoths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "warrior_culture"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "travel_horse"}, {"addRule": "stubborn"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"addRule": "light_armor", "modelLimit": 5}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "trusted_burgundian_warriors": {
+            "name": "Dugundiz Burgundian Warriors",
+            "description": "The Dugundiz (Trusted, Capable) were the freeman and warrior class who having finished their young adulthood, now were experianced fighters of reasonable skill.",
+            "subfactions": ["burgundians"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "mount_horse"}, {"addRule": "light_armor"}, {"addRule": "stubborn"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "shield", "withWeapon": ["two_handed_axe"]},
+                        {"addWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": "light_armor", "modelLimit": 5}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_trusted_goth_warriors": {
+            "name": "Gothic Lancers",
+            "description": "The Dugundiz (Trusted, Capable) were the freeman and warrior class who having finished their young adulthood, now were experianced fighters of reasonable skill.",
+            "subfactions": ["ostrogoths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_warrior_culture", "light_cavalry", "mount_horse"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addRule": "stubborn"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spear"]},
+                        {"addRule": "light_armor", "modelLimit": 5}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+            "lowborn_spear_levy": {
+                "name": "Peasant Spear Levy",
+                "description": "Due to the plentiful supply of landless men, spears, and shields; it is likely that if the Germanics were involved in a battle that required them to defend their lands, rather then raid those of another, they would attempt to form a basic spear levy as was common at the time. While the Germanic culture was full of raids and tribal warfare, it was the landowning, 'freemen' who had experiance and equipment.",
+                "subfactions": ["migration_period_germanics", "ostrogoths", "burgundians"],
+                "category": "core",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "shield", "if_it_bleeds", "spearmen"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Lowborn",
+                        "courage": 4,
+                        "movement": 6,
+                        "shoot": 5,
+                        "fight": 4,
+                        "defense": 5,
+                        "reflexes": 4,
+                        "wounds": 1,
+                        "weapons": ["spear", "javelin"],
+                        "options": [{"addRule": "agile"}],
+                        "min": 5,
+                        "max": 15
+                    }
+                ]
+            },
+            "former_foederati": {
+                "name": "Former Foederati",
+                "description": "The 'Foederati' (The term comes from a Latin word for 'treaty'), were often allied 'barbarian' peoples or tribes that were bound by treaty and subsidized with land, money, or resources; to act as a 'buffer force' or mercenaries.",
+                "subfactions": ["migration_period_germanics", "ostrogoths", "burgundians"],
+                "category": "rare",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "shield", "if_it_bleeds", "spearmen"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Foederati",
+                        "courage": 5,
+                        "movement": 6,
+                        "shoot": 5,
+                        "fight": 6,
+                        "defense": 5,
+                        "reflexes": 6,
+                        "wounds": 1,
+                        "weapons": ["spear", "hand_weapon"],
+                        "options": [{"addWeapon": "javelin"}, {"addRule": "mount_horse"},
+                            {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]}
+                            ],
+                        "min": 5,
+                        "max": 15
+                    }
+                ]
+            },  
+            "former_foederati_veterans": {
+                "name": "Former Foederati Veterans",
+                "description": "As time passed, warriors would gain renown, experience, and wealth. This meant better equipment and fighting ability.",
+                "subfactions": ["migration_period_germanics", "ostrogoths", "burgundians"],
+                "category": "rare",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "shield", "if_it_bleeds", "spearmen"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Foederati",
+                        "courage": 6,
+                        "movement": 6,
+                        "shoot": 6,
+                        "fight": 6,
+                        "defense": 5,
+                        "reflexes": 6,
+                        "wounds": 1,
+                        "weapons": ["spear", "hand_weapon"],
+                        "options": [{"addWeapon": "javelin"}, {"addRule": "mount_horse"}, {"addRule": "light_armor"},
+                            {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]}],
+                        "min": 5,
+                        "max": 15
+                    }
+                ]
+            },  
+            "bagaudae": {
+                "name": "Bagaudae",
+                "description": "Bagaudae (Celtic for 'fighters', Latin for 'brigands'), were revolting peasant warriors. Many of these uprisings were put down, but eventually some of them managed to time themselves with a barbarian invasion. The causes of unrest often were: excessive taxation, forced labor, and being treated as property.",
+                "subfactions": ["migration_period_germanics", "ostrogoths", "burgundians"],
+                "category": "core",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "buckler", "if_it_bleeds", "light_infantry"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Peasant",
+                        "courage": 4,
+                        "movement": 7,
+                        "shoot": 5,
+                        "fight": 4,
+                        "defense": 5,
+                        "reflexes": 4,
+                        "wounds": 1,
+                        "weapons": ["hand_weapon"],
+                        "options": [{"addWeapon": "javelin"},{"addRule": "agile"}],
+                        "min": 5,
+                        "max": 10
+                    }
+                ]
+            },
+            "goth_bagaudae": {
+                "name": "Rioting Bagaudae",
+                "description": "Bagaudae (Celtic for 'fighters', Latin for 'brigands'), were revolting peasant warriors. Many of these uprisings were put down, but eventually some of them managed to time themselves with a barbarian invasion. The causes of unrest often were: excessive taxation, forced labor, and being treated as property.",
+                "subfactions": ["ostrogoths"],
+                "category": "rare",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "buckler", "if_it_bleeds", "light_infantry"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Peasant",
+                        "courage": 4,
+                        "movement": 7,
+                        "shoot": 5,
+                        "fight": 4,
+                        "defense": 5,
+                        "reflexes": 4,
+                        "wounds": 1,
+                        "weapons": ["hand_weapon"],
+                        "options": [{"addWeapon": "javelin"},{"addWeapon": "stones"},
+                        {"addRule": "agile"},
+                        {"replaceRule": "buckler", "withRule": ["shield"]}],
+                        "min": 5,
+                        "max": 10
+                    }
+                ]
+            },
+        "skirmishers": {
+            "name": "Landless Skirmishers",
+            "description": "A band of the impoverished, landless men who could only bring the clothes on their back, a short blade or club, and some ranged weapons.",
+            "subfactions": [],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "skirmisher_formation", "if_it_bleeds"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Lowborn",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": [
+                                "bow",
+                                "sling",
+                                "short_bow"
+                            ]},
+                            {"addRule": "buckler"}, {"addRule": "reluctant"}, {"addRule": "agile"}
+                        ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "light_tribal_warriors": {
+            "name": "Light Tribal Warriors",
+            "description": "As the Germanic Cultures conquered other peoples and tribes, expanding their armies, some of these people fought as allies or subordinants before they had fully been assimilated or abandoned. The Gepids and Lombards included Saxons and Slavs in some of their armies.",
+            "subfactions": ["migration_period_germanics", "gepids_lombards", "none", "italo_lombards", "west_goths", "ostrogoths", "burgundians"
+            ],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "buckler", "light_infantry", "if_it_bleeds", "warrior_culture"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Tribal Warrior",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                    {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]}, {"addRule": "agile"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "tribal_warriors": {
+            "name": "Tribal Warriors",
+            "description": "As the Germanic Cultures conquered other peoples and tribes, expanding their armies, some of these people fought as allies or subordinants before they had fully been assimilated or abandoned. The Gepids and Lombards included Saxons and Slavs in some of their armies.",
+            "subfactions": ["migration_period_germanics", "gepids_lombards", "none", "italo_lombards", "west_goths", "burgundians"
+            ],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "shield", "if_it_bleeds", "warrior_culture"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Tribal Warrior",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                    {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "basque_skirm": {
+            "name": "Basque Warriors",
+            "description": "The 'Basque'/'Gascon' people lived around the present day borders of France and Spain. Historically, they were mostly ignored by the Romans and those around them. When others did notice them and try to conquer them, they put up fierce resistance. They were eventually conquered, and even before that, plenty of them saw employment as mercenaries.",
+            "subfactions": ["west_goths"],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "skirmisher_formation", "if_it_bleeds"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Basque Freeman",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "javelin", "withWeapon": ["sling"]}, 
+                        {"replaceRule": "skirmisher_formation", "withRule": ["light_infantry"]},
+                            {"addRule": "buckler"},
+                            {"addRule": "reluctant"},
+                            {"addRule": "warrior_culture"},
+                            {"addRule": "agile"}, {"addRule": "stubborn"}, {"addRule": "travel_horse"}
+                        ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "basque_light_horse": {
+            "name": "Basque Light Horse",
+            "description": "The 'Basque' people lived around the present day borders of France and Spain. Historically, they were mostly ignored by the Romans and those around them. When others did notice them and try to conquer them, they put up fierce resistance. They were eventually conquered, and even before that, plenty of them saw employment as mercenaries.",
+            "subfactions": ["west_goths"],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "skirmisher_formation", "if_it_bleeds", "travel_horse"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Basque Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [
+                            {"addRule": "buckler"}, {"replaceRule": "skirmisher_formation", "withRule": ["light_infantry"]},
+                            {"addRule": "reluctant"},
+                            {"addRule": "agile"}, {"addRule": "stubborn"}
+                        ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "comitatus": {
+            "name": "Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["migration_period_germanics", "gepids_lombards", "none", "italo_lombards", "west_goths", "ostrogoths"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "warrior_culture"],
+            "keywords": ["Infantry", "Heavy_Infantry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword", "shield", "javelin"
+                    ],
+                    "options": [
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]},
+                        {"addRule": "scout"},
+                        {"addRule": "travel_horse"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "burgundian_comitatus": {
+            "name": "Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["burgundians"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "warrior_culture"],
+            "keywords": ["Infantry", "Heavy_Infantry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword", "shield", "javelin"
+                    ],
+                    "options": [
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"]},
+                        {"replaceWeapon": "shield", "withWeapon": ["two_handed_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": "scout"},
+                        {"addRule": "travel_horse"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "shield_mount_comitatus": {
+            "name": "Shielded and Mounted Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["migration_period_germanics", "gepids_lombards", "none", "italo_lombards", "west_goths"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "shield","superior_cavalry", "furious_charge"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"],
+                    "options": [
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "javelin"},
+                        {"addRule": "mount_warrior_culture"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_comitatus": {
+            "name": "Mounted Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["migration_period_germanics", "gepids_lombards", "none", "italo_lombards", "west_goths", "burgundians"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "superior_cavalry", "furious_charge"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"
+                    ],
+                    "options": [
+                        {"addRule": "buckler"},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "kontos"},
+                        {"addRule": "mount_warrior_culture"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },  
+        "shield_vandal_comitatus": {
+            "name": "Shielded Vandal Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["vandals"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "shield","superior_cavalry", "furious_charge", "light_cavalry"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"],
+                    "options": [
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]},
+                        {"addRule": "mount_warrior_culture"}],
+                        "notes": "WAB:GG and Hans Delbruck (Super hardcore Geramn historian) both agree that thrusting spears are in and javelins are out for the Vandals.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "vandal_comitatus": {
+            "name": "Vandal Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["vandals"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "superior_cavalry", "furious_charge", "light_cavalry"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"
+                    ],
+                    "options": [
+                        {"addRule": "buckler"},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "kontos"},
+                        {"addRule": "mount_warrior_culture"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mount_eastgoth_comitatus": {
+            "name": "Mounted Ostrogoth Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["ostrogoths"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "superior_cavalry", "furious_charge"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"
+                    ],
+                    "options": [
+                        {"addRule": "buckler"},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "kontos"},
+                        {"addRule": "cloth_horse_armor"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "eastgoth_shield_mount_comitatus": {
+            "name": "Shielded and Mounted Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["ostrogoths"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "shield","superior_cavalry", "furious_charge"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"],
+                    "options": [
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "javelin"}, {"addRule": "cloth_horse_armor"}
+                    ],
+                    "notes": "WAB:GG and Hans Delbruck (Super hardcore Geramn historian)both lists the East Goths as using barding, likely copied from the Romans or Persians.",
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },   
+        "burgund_shield_mount_comitatus": {
+            "name": "Shielded and Mounted Comitatus",
+            "description": "There was many different words for personal guards and retinues of powerful nobles, such as for lords or even a king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures. The latin term 'Comitatus' (Retainer), is used to refer to the general concept of such loyal warriors.",
+            "category": "elite",
+            "subfactions": ["burgundians"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": ["fierce", "mount_horse", "shield","superior_cavalry", "furious_charge"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comitatus",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword"],
+                    "options": [
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "javelin"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_franci": {
+            "name": "Mounted Franci",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those with more money and resources.",
+            "subfactions": ["gepids_lombards", "none", "early_hre", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Franci",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "light_armor", "modelLimit": 5},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "franci": {
+            "name": "Franci",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those with more money and resources.",
+            "subfactions": ["gepids_lombards", "none", "italo_lombards", "early_hre", "burgundy", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Franci",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "vandal_franci": {
+            "name": "Vandal Franci",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those with more money and resources.",
+            "subfactions": ["vandals"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse", "light_cavalry"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Franci",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword", "shield","hand_weapon"],
+                    "options": [{"addRule": "light_armor"},
+                        {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]}],
+                        "notes": "WAB:GG and Hans Delbruck (Super hardcore Geramn historian) both agree that thrusting spears are in and javelins are out for the Vandals.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "italian_militia": {
+            "name": "Italian Communal Militia",
+            "description": "While northern Italy had plenty of reasonable or even good spear militia, the poorer or less trained members of its militia armies were meager.",
+            "subfactions": ["italo_lombards", "gepids_lombards"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Milita",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addWeapon": "reluctant"},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "warrior_elite": {
+            "name": "Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["gepids_lombards", "none", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "travel_horse"},
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]},
+                        {"addRule": "scout"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mount_warrior_elite": {
+            "name": "Mounted Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["gepids_lombards", "none"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]},
+                        {"addRule": "scout"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "vandal_warrior_elite": {
+            "name": "Vandal Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["vandals"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "sword", "withWeapon": ["spear"]}],
+                        "notes": "WAB:GG and Hans Delbruck (Super hardcore Geramn historian) both agree that thrusting spears are in and javelins are out for the Vandals.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mount_westgoth_warrior_elite": {
+            "name": "Mounted Visigoth Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]},
+                        {"addRule": "scout"}
+                    ],
+                        "notes": "Hans Delbruck (Super hardcore Geramn historian) lists the West Goths as being quite talented with throwing spears from horseback.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "veteran_westgoth_warrior_elite": {
+            "name": "Veteran Visigoth Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]}],
+                        "notes": "Hans Delbruck (Super hardcore Geramn historian) lists the West Goths as being quite talented with throwing spears from horseback.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "eastgoth_mount_warrior_elite": {
+            "name": "Mounted Warrior Elite",
+            "description": "Among the 'Freemen' were 'warriors' who had obtained greater experiance and training. Those who had volunteered for raids or campaigns, or survived various 'calls to muster' would find opportunity to become full time warriors or even warrior nobility.",
+            "subfactions": ["ostrogoths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "superior_cavalry", "if_it_bleeds", "mount_horse", "mount_warrior_culture"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [
+                        {"addRule": "light_armor"}, {"addRule": "cloth_horse_armor"},
+                        {"addRule": "superior_cavalry"}, {"addRule": "furious_charge"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mount_kontos_elite": {
+            "name": "Mounted Kontos Elite",
+            "description": "The Kontos was a large spear desended from those used by the Greek Hoplites. Even when shrunk down for use by men riding horses, it was still a huge and fearsome weapon, requiring both hands.",
+            "subfactions": ["gepids_lombards", "none", "vandals", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse", "buckler"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["kontos","hand_weapon"],
+                    "options": [
+                        {"addRule": "light_armor"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "eastgoth mount_kontos_elite": {
+            "name": "Mounted Kontos Elite",
+            "description": "The Kontos was a large spear desended from those used by the Greek Hoplites. Even when shrunk down for use by men riding horses, it was still a huge and fearsome weapon, requiring both hands.",
+            "subfactions": ["ostrogoths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "mount_horse", "buckler", "mount_warrior_culture"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["kontos","hand_weapon"],
+                    "options": [
+                        {"addRule": "light_armor"}, {"addRule": "cloth_horse_armor"},
+                        {"addRule": "superior_cavalry"}, {"addRule": "furious_charge"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "freemen": {
+            "name": "Freemen Infantry",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those who had less land and resources, but still could support themselves and show up with the basics.",
+            "subfactions": ["gepids_lombards"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"]},{"addRule": "agile"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "later_freemen": {
+            "name": "Freemen Milita",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those who had less land and resources, but still could support themselves and show up with the basics.",
+            "subfactions": ["italo_lombards", "early_hre", "burgundy", "none", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry", "Heavy_Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "archer_freemen": {
+            "name": "Freemen Archer Milita",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those who had less land and resources, but still could support themselves and show up with the basics.",
+            "subfactions": ["italo_lombards", "early_hre", "burgundy", "none", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry"],
+            "keywords": [
+                "Infantry", "Heavy_Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["bow","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},{"addRule": "agile"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mounted_freemen": {
+            "name": "Mounted Freemen",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those who had less land and resources, but still could support themselves and show up with the basics.",
+            "subfactions": ["gepids_lombards", "none", "italo_lombards", "early_hre", "burgundy", "west_goths"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_cavalry", "travel_horse", "spearmen"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"]},
+                        {"replaceRule": "travel_horse", "withRule": ["mount_horse"]}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "veteran_italo_franci": {
+            "name": "Veteran Franci Militia",
+            "description": "Among the Italo-Lombards, some of the Franci militia became wealthy and well trained enough, to be a sort of 'elite militia'.",
+            "subfactions": ["italo_lombards"],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "spearmen"],
+            "keywords": [
+                "Infantry", "Heavy_Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Franci",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield","hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"addRule": "light_armor"},
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "italian_milites": {
+            "name": "Italian Milites",
+            "description": "The milites (Previously a Roman term for 'soldier) were a professional soldier class, who often fought on horseback, as had increasingly been the tradition and focus of the Lombards over the previous few hundred years. While similar to the 'knights' of later periods, which this class would evolve into (Especially for the Normans), they focused less on the thrusting spear or lance, and more on the throwing spear and sword.",
+            "subfactions": ["italo_lombards"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["spearmen"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Milites",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["sword", "shield", "javelin"],
+                    "options": [{"addRule": "war_horse"}, {"addRule": "light_armor"}, {"addRule": "heavy_armor"},
+                                {"replaceWeapon": "javelin", "withWeapon": "spear"},
+                                {"replaceWeapon": "sword", "withWeapon": ["spartha"]},
+                                {"replaceWeapon": "sword", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 1
+                }
+            ]
+        },
+        "alan_nomad_archer": {
+            "name": "Alan Tribal Allies",
+            "description": "The Alans were a Turkic/Iranian people from the Caucasus. They became spread over a wider area and assimilated into several other cultures, sometimes as subjects and sometimes as mercenaries.", 
+            "subfactions": ["vandals", "ostrogoths"],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["light_cavalry", "buckler", "mount_horse", "reluctant"],
+            "keywords": [
+                "Cavalry"
+            ],
+            "models": [
+                {
+                    "name": "Steppe Nomads",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["bow", "hand_weapon"
+                    ],
+                    "options": [
+                        [{"replaceWeapon": "hand_weapon"}, {"withWeapon": "javelin"}],
+                        [{"replaceWeapon": "bow"}, {"withWeapon": "composite_bow"}]
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+    "dux": {
+        "name": "Dux",
+        "description": "Dux, was a latin word meaning 'leader' or 'general'. The Dux made up the upper echelons of power in Germanic society, and the word would evolve into the familiar 'Duke'.",
+        "subfactions": [],
+        "category": "command",
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 2}, "leader", {"id": "wounds", "x": 2}],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Dux",
+                "courage": 7,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 7,
+                "defense": 7,
+                "reflexes": 7,
+                "wounds": 2,
+                "weapons": ["spartha", "shield", "javelin"],
+                "options": [{"addRule": "war_horse"},
+                {"addRule": "mount_horse"},
+                    {"replaceWeapon": "shield", 
+                            "withWeapon": "bow"}
+                        ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "gastald": {
+        "name": "Gastaldo",
+        "description": "As paid officials with direct allegiance to the roving Lombard kings, a gastald was an official with civil, military, and judicial power over an urban area.",
+        "subfactions": ["gepids_lombards"],
+        "category": "command",
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Gastald",
+                "courage": 6,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 6,
+                "reflexes": 7,
+                "wounds": 2,
+                "weapons": ["spear", "shield", "javelin"],
+                "options": [{"addRule": "war_horse"},
+                        {"replaceWeapon": ["spear", "shield"], 
+                            "withWeapon": "bow"},
+                            {"addRule": "mount_horse"}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "comes": {
+        "name": "Comes",
+        "description": "A Comes (plural, comites), was another latin word, like 'Dux'. This word meant 'companion', but increasingly among late Romans and 'Migration Era' Germanic peoples, meant 'military leader'. This word eventually evolved into the term 'count' and became a rank of nobility.",
+        "subfactions": ["none", "burgundy", "early_hre", "italo_lombards", "migration_period_germanics", "west_goths", "vandals", "ostrogoths"],
+        "category": "command",
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Comes",
+                "courage": 7,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 6,
+                "reflexes": 7,
+                "wounds": 2,
+                "weapons": ["spear", "shield", "javelin"],
+                "options": [{"addRule": "mount_horse"},
+                {"addRule": "war_horse"},
+                        {"replaceWeapon": ["spear", "shield"], 
+                            "withWeapon": "bow"}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "bishop": {
+        "name": "Bishop",
+        "description": "As the Germanics christianized, Christianity (The Germanics were not always Catholic) became a center of their lives. The Church had access to so much wealth and lands, that some of its officals assembled their own armies and operated as warlords.",
+        "category": "command",
+        "subfactions": ["gepids_lombards", "none", "early_hre"],
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader", "man_of_god", {"id": "wounds", "x": 2}],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Abbod",
+                "courage": 7,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 5,
+                "reflexes": 6,
+                "wounds": 2,
+                "weapons": ["spear", "shield"],
+                "options": [{"addRule": "mount_horse"},
+                    {"addRule": "light_armor"},
+                    {"addRule": "travel_horse"},
+                    {"addRule": "heavy_armor"}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "priest": {
+        "name": "Christian Priest",
+        "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+        "category": "command",
+        "subfactions": [""],
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example", "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Abbod",
+                "courage": 3,
+                "movement": 6,
+                "shoot": 3,
+                "fight": 3,
+                "defense": 3,
+                "reflexes": 3,
+                "wounds": 1,
+                "weapons": ["spear", "shield"],
+                "options": [{"addRule": "mount_horse"},
+                    {"addRule": "light_armor"},
+                    {"addRule": "travel_horse"}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    }
+},
+    "weapons": {"spear": {"name": "Spear", "attacks": 1, "short": "Melee", "ap": 1, "rules": [{"id": "reach", "x": 1}, {"id": "impale"}]},
+    "short_bow": {"name": "Short Bow", "attacks": 1, "short": 9, "medium": 18, "ap": 1},
+    "composite_bow": {"name": "Composite Bow", "attacks": 1, "short": 15, "medium": 30, "ap": 1},
+    "kontos": {"name": "Kontos", "attacks": 1, "short": "Melee", "rules": [{"ap": 1},{"id": "reach", "x": 1}, {"id": "impale"}]}},
+    "rules": {
+        "fierce": {
+            "name": "Fierce",
+            "hidden": false,
+            "description_short": "If an enemy unit in short distence (12') runs away or flees, this unit has to charge them. It gets +1 to melee when it does so",
+            "description":  "If an enemy unit in short distence (12') runs away or flees, this unit has to charge them. It gets +1 to melee when it does so",
+            "flavor":"During the early Dark Ages, some units were exceptionally eager to 'run down' or 'run through' the enemy.",
+            "points": [-1]},
+        "trample_them": {
+                "name": "Trample Them",
+                "hidden": false,
+                "description_short": "",
+                "description":  "Whenever this unit does a group activation with a unit or uses 'Field Orders' on a unit, that unit gets 'superior_cavalry' for the rest of the round.",
+                "points": [6]},
+        "rex_italiae": {
+                    "name": "Rex Italiae",
+                    "hidden": false,
+                    "description_short": "",
+                    "description":  "Unless the enemy is the 'Late Romans (400-500 AD)' or Early Byzantine Empire: this army can recruit or use any unit from the Late Romans (400-500 AD) faction.",
+                    "points": [5]},
+"notes": "These are redundant because my pushes are not being accepted and I need these rules to work for playtesting.",
+"light_infantry": {
+    "name": "Light Infantry",
+    "hidden": false,
+"description": "(This unit cannot use 'Spearmen' Rule) Optional: +1 save against ranged attacks made at long range, -1 Save to Melee.",
+    "flavor": "This unit can choose to fight as skirmishers as a loose formation, or 'close up' to fight as traditional infantry.",
+    "points": [1]
+},
+"furious_charge": {
+    "name": "Furious Charge",
+    "hidden": false,
+    "description_short": "Charge and win, enemy unit breaks",
+    "description": "(Requires Horse or War Horse) If this unit charges another and 'wins' the first round of combat, the other unit has to roll a break test. If the other unit has 'stubborn' rule, roll a d6, on a 1,2,or 3 the other unit avoids the break test.",
+    "flavor": "The fury of heavy cavalry was terrifying to those not prepared for the loud pounding of hooves and for the sheer weight of the charge.",
+    "points": [3]},
+    "superior_cavalry": {
+        "name": "Superior Cavalry",
+        "hidden": false,
+        "description": "(Requires Horse or War Horse) This unit may re-roll failed Strength tests when charging or making a Fight reaction (To a Charge).",
+        "points": [4]},
+        "man_of_god": {"name": "Man of God", "description": "This unit can be merged with any other unit, that unit may re-roll any failed Courage test when removing Shock once per turn.", "points": 15},
+            "spearmen": {"name": "Spearmen", "description": "(Note: Requires unmounted, spear and shield) Should this unit do a 'Hold' action and be charged before it's next turn, it has +1 Strength when performing a Counter-Attack reaction and ignores 'Horseman Warrior Culture'.", "points": 0.5},
+            "pike": {"name": "Pike", "description": "Should this unit be charged, it has +1 Strength when performing a Counter-Attack reaction and it gets to attack first.", "points": 1.5},
+            "impale": {"name": "Impale", "description": "(Note: Requires horse or warhorse) This weapon gets +1 AP when used during a Charge.", "points": 0.5},
+            "joust": {"name": "Joust", "description": "(Note: Requires horse or warhorse) This weapon gets +2 AP when used during a Charge.", "points": 1},
+            "warrior_culture": {"name": "Warrior Culture", "description": "(Note: Requires attack with melee weapon without 'Reach') This unit gets a +1 Str during a Charge.", "points": 0.5},
+            "mount_warrior_culture": {"name": "Horseman Warrior Culture", "description": "(Note: Requires melee weapon and Horse/War Horse) This unit gets a +1 Str during a Charge", "points": 1},
+            "cloth_horse_armor": {"name": "Cloth Horse Armor", "hidden": true, "description_short": "+1 Save vs Melee attacks.", "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 1}]}
+        },
+    "relics": {
+        "otto": {
+        "subfactions": ["early_hre", "none"],
+        "name": "Otto, The Great",
+        "rule": "saint",
+        "flavor": "Otto I, was not the start of his dynasty, but the he was the man who made the Holy Roman Empire what it became and is thought to be the first 'German' Emperor. Otto was a religious man, who showed that mounted archers were no longer the dominant force in Central Europe. Heavy Cavalry and 'Knights' would be the future",
+        "description": "Upgrade one Dux model with 'Trample Them'.",
+        "points": 6
+    },
+    "odoacer": {
+        "subfactions": ["migration_period_germanics", "none"],
+        "name": "Odoacer",
+        "rule": "rex_italiae",
+        "flavor": "In terms of lineage, history only certain that Odacer was some type of German. Only year the Western Empire did not have enough land to pay their Foederati as well as the Legionaries, and did not have any land to spare them. Odoacer led the Barbarians in a revolt, defeated the Romans, won over The Senate, disbanded the Army, paid lip service to the Emperor in the East. He ruled as King of the Italy (Rex Italia) untill he was murdered during a diplomatic meeting.",
+        "description": "Upgrade one Dux model with 'Rex Italiae'.",
+        "points": 5
+    }
+},
+    "strategies": [
+        
+    {
+        "subfactions": ["none", "gepids_lombards", "migration_period_germanics"],
+        "name": "Going Berserk",
+        "phase": "activation",
+        "description": "A selected unit gains +1 Strength till the end of the turn, but they can't use the turn to move away from the closest enemy.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["migration_period_germanics", "gepids_lombards", "none"],
+        "name": "Terrible Charge",
+        "phase": "activation",
+        "description": "One unit on foot gains the rule of 'furious_charge' till the end of the turn.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["migration_period_germanics"],
+        "name": "Swine's_Head",
+        "phase": "activation",
+        "description": "A selected unit gains +1 AP for all their melee weapons, during a charge.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["migration_period_germanics", "ostrogoths"],
+        "name": "Veterans",
+        "phase": "activation",
+        "description": "All units of geoguth may, once for the entire battle, choose to reroll all their dice to hit by shooting or melee. All dice must be rerolled, good or bad.",
+        "flavor": "Many years of campaigning have given the Germanics a pool of hardened veterans.",
+        "cost": 1
+    },
+    {
+        "subfactions": ["ostrogoths"],
+        "name": "Hurry Hurry",
+        "phase": "activation",
+        "description": "Use after Cavalry makes or attempts a Rushing action. The unit reduces its Shock by one.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["ostrogoths", "early_hre"],
+        "name": "Run Them Down",
+        "phase": "activation",
+        "description": "Use when a Cavalry makes a Charge action. The Impact Rule gains +1 AP for the charge.",
+        "flavor": "",
+        "cost": 1
+    }
+]
+    }

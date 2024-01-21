@@ -1,0 +1,729 @@
+{
+    "id": "persians",
+    "name": "Persians",
+    "subfactions": {
+        "early_persian": {"name": "Early Sassanid Persians (226-500)", "id": "early_persian", "background": "", "restricted": "true"},
+        "latter_persian": {"name": "Sassanid Persians (501-649)", "id": "latter_persian", "background": "", "restricted": "true"}
+    },
+    "units": {
+        "tudun": {
+            "name": "Tudun",
+            "description": "The Tudun was a type of minor offical, somewhat like a mayor or village leader.",
+            "category": "command",
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Tudun",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, "leader", {"id": "wounds", "x": 2}],
+                    "weapons": ["bow", "sword"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "tudun_on_warhorse": {
+            "name": "Tudun on War Horse",
+            "description": "The Tudun was a type of minor offical, somewhat like a mayor or village leader.",
+            "category": "command",
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Tudun on War Horse",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "war_horse", {"id": "wounds", "x": 2}],
+                    "weapons": ["bow", "sword"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "knyaz": {
+            "name": "Prince",
+            "description": "The Prince (Knyaz) ruled like a king and had his center of power around a major trading city. His status is very similar to the earlier Jarls and many of these princes were desendents of Swede nobility. This unit could also represent a 'Voi-vode' (army, to lead), who would lead an army for the local prince.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Knyaz/Voivode",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 8,
+                    "rules": [{"id": "field_orders", "x": 1}, "leader", {"id": "wounds", "x": 3}],
+                    "weapons": ["shield", "spear"],
+                    "options": [
+                        {"replaceWeapon": ["spear", "shield"], "withWeapon": ["two_handed_axe"]},
+                        {"addWeapon": "bow"},
+                        {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "knyaz_on_warhorse": {
+            "name": "Prince on War Horse",
+            "description": "The Prince (Knyaz) ruled like a king and had his center of power around a major trading city. His status is very similar to the earlier Jarls and many of these princes were desendents of Swede nobility. This unit could also represent a 'Voi-vode' (army, to lead), who would lead an army for the local prince.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Knyaz/Voivode on War Horse",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 8,
+                    "rules": [{"id": "field_orders", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "war_horse", {"id": "wounds", "x": 3}],
+                    "weapons": ["shield", "spear"],
+                    "options": [
+                        {"replaceWeapon": ["spear", "shield"], "withWeapon": ["two_handed_axe"]},
+                        {"addWeapon": "bow"},
+                        {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "pagyan_skirmishers": {
+            "name": "Paygan Skirmishers",
+            "description": "The Paygan were a peasant levee, some reportedly recruited because they didn't pay their taxes. They took to the field with only a javelin or slingshot. They were generally used for physical labor and to 'make up the numbers'.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Paygan Skirmisher",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 4,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["unarmed", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": "hand_weapon", "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": "sling", "modelLimit": "all"},
+                        {"addRule": ["stubborn", "strider"], "modelLimit": "all"},
+                        {"addRule": ["buckler", "wicker_shield"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "paygan_spearmen": {
+            "name": "Paygan Spearmen",
+            "description": "The Paygan were a peasant levee, some reportedly recruited because they didn't pay their taxes. They took to the field with only a reasonable spear and a small wood shield, or a shield of wicker. They were generally used for physical labor and to 'make up the numbers'.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Paygan Spearman",
+                    "movement": 6,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "if_it_bleeds", "warband"],
+                    "weapons": ["spear"],
+                    "options": [{"replaceRule": "buckler", "withRule": ["wicker_shield", "cane_shield"], "limit": 1, "modelLimit": "all"}, {"addRule": "stubborn", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "persian_archer": {
+            "name": "Persian Archers",
+            "description": "Persian warfare had heavily used the bow, just like the Babylonians and Assyrians before them.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Persian Archer",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["unarmed", "short_bow"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": "hand_weapon", "modelLimit": "all"},
+                        {"replaceWeapon": "short_bow", "withWeapon": ["bow", "composite_bow"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "agile"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "persian_city_archers": {
+            "name": "Persian City Archers",
+            "description": "Those who were fighting to defend their settlement, were generally better equipped, of higher status and more motivated.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Persian City Archer",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["cane_shield_wall", "if_it_bleeds", "light_infantry", "warband"],
+                    "weapons": ["unarmed", "short_bow"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "short_bow", "withWeapon": ["bow", "composite_bow"], "modelLimit": "all"},
+                        {"addRule": "stubborn", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "persian_city_milita": {
+            "name": "Persian City Militia",
+            "description": "Those who were fighting to defend their settlement, were generally better equipped, of higher status and more motivated.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Persian City Militia",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["cane_shield", "if_it_bleeds", "warband"],
+                    "weapons": ["spear"],
+                    "options": [{"addRule": "cane_shield_wall", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "young_steppe_nomad_cavalry": {
+            "name": "Young Steppe Nomad Cavalry",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Young Steppe Nomad",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "light_cavalry", "mount_horse"],
+                    "weapons": ["spear"],
+                    "options": [{"replaceWeapon": "spear", "withWeapon": "javelin"}, {"replaceRule": "buckler", "withRule": "shield", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "young_steppe_nomad_archer": {
+            "name": "Young Steppe Nomad Mounted Archer",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Young Steppe Nomad",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "light_cavalry", "mount_horse"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "options": [{"replaceWeapon": "bow", "withWeapon": "composite_bow", "modelLimit": "all"}, {"addWeapon": "javelin"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "steppe_nomad_cavalry": {
+            "name": "Steppe Nomad Cavalry",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Steppe Nomad",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_cavalry", "mount_horse"],
+                    "weapons": ["spear"],
+                    "options": [{"replaceWeapon": "spear", "withWeapon": "javelin"}, {"replaceRule": "buckler", "withRule": "shield", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "steppe_nomad_archer": {
+            "name": "Steppe Nomad Mounted Archer",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "core",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Steppe Nomad",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_cavalry", "mount_horse"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "options": [{"replaceWeapon": "bow", "withWeapon": "composite_bow", "modelLimit": "all"}, {"addWeapon": "javelin"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "roxolani_riders": {
+            "name": "Roxolani Riders",
+            "description": "Over time the Sarmatians increasingly adopted the long lance, to the degree that the Romans remembered them as lancers first.",
+            "category": "core",
+            "subfactions": ["latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Roxolani Rider",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "mount_horse"],
+                    "weapons": ["kontos"],
+                    "options": [{"addRule": ["furious_charge", "superior_cavalry", "stubborn", "light_armor"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "vet_roxolani_riders": {
+            "name": "Veteran Roxolani Riders",
+            "description": "Over time the Sarmatians increasingly adopted the long lance, to the degree that the Romans remembered them as lancers first.",
+            "category": "core",
+            "subfactions": ["latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Veteran Roxolani Rider",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "mount_horse"],
+                    "weapons": ["kontos"],
+                    "options": [{"addRule": ["furious_charge", "superior_cavalry", "light_armor"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "seasoned_persian_spearmen": {
+            "name": "Seasoned Persian Spearmen",
+            "description": "Over time the militias and levees would increasingly be replaced by mercenaries and a professional force that was organically recruited from those who showed promise in earlier battles.",
+            "category": "core",
+            "subfactions": ["latter_persian"],
+            "models": [
+                {
+                    "name": "Seasoned Persian Spearmen",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["cane_shield"],
+                    "weapons": ["spear"],
+                    "options": [{"modelLimit": "all", "addRule": ["stubborn", "cane_shield_wall"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "kurdish_archer": {
+            "name": "Kurdish Archers",
+            "description": "The Kurds were legendary for their knowledge of the mountains and hills of their homeland, and their ability as archers and skirmishers.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Kurdish Archer",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "light_infantry", "strider", "warband"],
+                    "weapons": ["unarmed", "short_bow"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "short_bow", "withWeapon": ["bow", "composite_bow"], "modelLimit": "all"},
+                        {"addRule": ["buckler", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "sogdian_warriors": {
+            "name": "Sogdian Warriors",
+            "description": "The Sogdian Warriors sometimes provided heavy infantry to the Persians. Being native to an incredibly prosperous area, they had access to quality equipment and training.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Heavy Infantry"],
+            "models": [
+                {
+                    "name": "Sogdian Warrior",
+                    "courage": 6,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["warband", "if_it_bleeds"],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["heavy_mace"], "modelLimit": "all"},
+                        {"replaceRule": "shield", "withRule": ["cane_shield"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "light_armor"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "daylami_warriors": {
+            "name": "Daylami Warriors",
+            "description": "The Daylami were a mountainous people of northern Iran, who were recorded as being fierce warriors. The Muslims failed to conquer them till the arrival of the Turks a thousand years later.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian"],
+            "keywords": ["Heavy Infantry"],
+            "models": [
+                {
+                    "name": "Dailamite Warrior",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "light_infantry", "warband", "warrior_culture"],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"addWeapon": "javelin"},
+                        {"addRule": ["stubborn", "light_armor", "travel_horse"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "royal_persian_archer": {
+            "name": "Royal Persian Kamandaran",
+            "description": "The 'Kamandaran' (Bow Bearer) were not lowly levees or milita, but were professional warriors trained in the art of the deadly composite bow.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "models": [
+                {
+                    "name": "Royal Persian Kamandaran",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["cane_shield_wall", "light_infantry"],
+                    "weapons": ["composite_bow", "hand_weapon"],
+                    "options": [{"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "steppe_noble_cavalry": {
+            "name": "Steppe Noble Cavalry",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Steppe Noble",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_cavalry", "mount_horse"],
+                    "weapons": ["spear"],
+                    "options": [{"replaceWeapon": "spear", "withWeapon": "javelin"}, {"replaceRule": "buckler", "withRule": "shield", "modelLimit": "all"}, {"addRule": "light_armor"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "steppe_noble_cavalry_lancers": {
+            "name": "Steppe Noble Cavalry Lancers",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "elite",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Steppe Noble",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["buckler", "war_horse"],
+                    "weapons": ["spear"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": "javelin"},
+                        {"replaceRule": "buckler", "withRule": "shield", "modelLimit": "all"},
+                        {"addRule": ["cloth_horse_armor", "furious_charge", "superior_cavalry"], "modelLimit": "all"},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "elite_steppe_noble_cavalry": {
+            "name": "Elite Steppe Noble Cavalry",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "elite",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Elite Steppe Noble",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["buckler", "war_horse", "half_horse_armor", "light_armor"],
+                    "weapons": ["spear", "bow"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": "javelin"},
+                        {"replaceWeapon": "bow", "withWeapon": "composite_bow"},
+                        {"replaceRule": "buckler", "withRule": "shield", "modelLimit": "all"},
+                        {"addRule": ["cloth_horse_armor", "furious_charge", "superior_cavalry"], "modelLimit": "all"},
+                        {"replaceRule": ["light_armor"], "withRule": ["heavy_armor"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "khazar_noble_cavalry": {
+            "name": "Khazar Noble Cavalry",
+            "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomadic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+            "category": "elite",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Khazar Noble",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_cavalry", "mount_horse"],
+                    "weapons": ["hand_weapon", "bow"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spear", "javelin"]},
+                        {"replaceWeapon": "bow", "withWeapon": ["composite_bow", "shield"]},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "roxolani_noble_cavalry_lancers": {
+            "name": "Roxolani Noble Cavalry Lancers",
+            "description": "Overtime the Sarmatians began to mimic their Iranian or Turkic ancestors, wearing increasing amounts of scale, cloth, and mail armor, and adopting shock cavalry tactics.",
+            "category": "elite",
+            "subfactions": ["none", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Roxolani Noble",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "war_horse"],
+                    "weapons": ["kontos"],
+                    "options": [
+                        {"addRule": ["cloth_horse_armor", "furious_charge", "superior_cavalry"], "modelLimit": "all"},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "alan_nomad_archer": {
+            "name": "Alan Tribal Allies",
+            "description": "The Alans were a Turkic/Iranian people from the Caucasus. They became spread over a wider area and assimilated into several other cultures, sometimes as subjects and sometimes as mercenaries.",
+            "category": "rare",
+            "subfactions": ["none", "early_persian", "latter_persian"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Alan Tribal",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "light_cavalry", "mount_horse", "stubborn"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": "javelin"}, {"replaceWeapon": "bow", "withWeapon": "composite_bow"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        }
+    },
+    "weapons": {},
+    "rules": {
+        "cane_shield_wall": {
+            "name": "Cane Shield Wall",
+            "description": "If this unit hasn’t made a Move action this round it gives units behind it +1 Save against ranged attacks to a maximum of 7.",
+            "points": [1]
+        },
+        "wicker_shield": {"name": "Wicker Shield", "description": "This model has +1 Save against ranged attacks.", "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 1}]},
+        "cane_shield": {
+            "name": "Cane Shield",
+            "description": "This model has +2 Save against ranged attacks and +1 Save against melee attacks. \nThis model can't Rush and if it fails a Break Test, it loses the Cane Shield rule for the rest of the game.",
+            "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 2.5}]
+        }
+    },
+    "relics": [],
+    "strategies": [
+        {
+            "subfactions": ["early_persian"],
+            "name": "Tactical Retreat",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit attempts to fall back from melee. That unit automatically passes the Initiative check required to fall back.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "subfactions": ["early_persian"],
+            "name": "Rallying Move",
+            "phase": "activation",
+            "description": "Use before a unit makes a _Move_ action. That unit may perform a free Rally action.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "subfactions": ["early_persian"],
+            "name": "Devastating Charge",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit makes a Charge action. All their Melee weapons gain +1 AP for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "subfactions": ["latter_persian"],
+            "name": "Veterans",
+            "phase": "activation",
+            "description": "Use when a _Roxolani_ or _Steppe Noble_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "cost": 1
+        },
+        {
+            "subfactions": ["latter_persian"],
+            "name": "Hurry Hurry",
+            "phase": "activation",
+            "description": "Use after a _Cavalry_ unit fails to rush a Move action. The unit doesn't suffer any shock.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "subfactions": ["latter_persian"],
+            "name": "Run Them Down",
+            "phase": "activation",
+            "description": "Use when a _Cavalry_ unit makes a Charge action. Weapons with the \"Impale\" special rule gain +1 AP for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "name": "Hail of Arrows",
+            "phase": "activation",
+            "description": "Use before a unit performs a _Shoot_ action. Weapons without the \"Assault\" special rule shoot with +1 Accuracy for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        {
+            "name": "Shield Wall",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit, all with spears and shields, is being charged or targeted by a shooting attack. If that unit moved one or no times this round it gets +1 Save. This strategy stays in effect until the unit moves.",
+            "cost": 1
+        },
+        {
+            "phase": "activation",
+            "name": "Shock Attack",
+            "description": "Use when charging with a _Cavalry unit. If the attack hits, assign 2 additional Shock.",
+            "flavor": "After the archers dispersed the enemy, cavalry launch shock attacks to keep them from retaliating.",
+            "cost": 1
+        }
+    ]
+}

@@ -1,0 +1,929 @@
+{
+    "id": "scots_irish",
+    "name": "Irish and Scots",
+    "subfactions": {
+        "scots_irish_raiders": {
+            "name": "Scots/Irish Raiders and Colonists",
+            "phase": "activation",
+            "id": "scots_irish_raiders",
+            "description": "These were the people and the descendants, of those who raid the coasts of Greater Britannia, typically around the areas of he Welsh.",
+            "restricted": "true"
+        }
+    ,
+        "powys": {
+            "name": "Eastern Welsh (600-720)",
+            "phase": "activation",
+            "id": "powys",
+            "description": "Before they were occupied by the Anglo-Saxons, these people made moderate use of the bow and were most successful in battle when raiding Anglo-Saxon settlers.",
+            "restricted": "true"
+        }
+    },
+    "units": {
+        "early_ceithern": {
+            "name": "Ceithern Militia",
+            "description": "The widespread poverty and isolation of Ireland resulted in it's Ceithern (Group of Soldiers), being rather poorly equipped, compared to the warriors and soldiers of other peoples.",
+            "subfactions": ["none", "scots_irish_raiders"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "buckler", "if_it_bleeds", "light_infantry"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Ceithirne",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                    {"addRule": "agile"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "rowdy_early_ceithern": {
+            "name": "Rowdy Ceithern",
+            "description": "This unit represents the less disiplined, more bloodthrirsty or violent warriors or raiders among the Irish of this time period.",
+            "subfactions": ["none", "scots_irish_raiders"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "buckler", "if_it_bleeds", "light_infantry"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Ceithirne",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                    {"addRule": "agile"}, {"addRule": "fierce"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "wolfhounds": {
+            "name": "Irish Wolfhounds",
+            "description": "The Irish were known for their fierce wolfhounds, which guarded their homes and flocks from wolves or thieves. With enough training and time, they were recorded as being suitable for a raid or quick defense of the homeland.",
+            "subfactions": ["none", "scots_irish_raiders"],
+            "category": "rare",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry", "dogs"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Packmaster",
+                    "courage": 6,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                    {"addRule": "agile"}, {"addRule": "fierce"}, {"addRule": "buckler"}],
+                    "min": 5,
+                    "max": 10
+                },
+                {
+                    "name": "Wolfhound",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 0,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon"],
+                    "options": [
+                    {"addRule": "reluctant"}, {"addRule": "fierce"}, {"addRule": "fanatical"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "pagenses": {
+            "name": "Pagenses",
+            "description": "'Pagenses' ('peasants' or 'pagans') was the word used for those who couldn't fully afford their own spear and shield often fought as skirmishers. These people were mostly the very poor and very young.",
+            "category": "core",
+            "subfactions": ["none", "scots_irish_raiders"],
+            "min": 1,
+            "max": 1,
+            "rules": ["skirmisher_formation", "warband", "if_it_bleeds"],
+            "keywords": [
+                "Infantry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Pagenses",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "sling", "hand_weapon"
+                    ],
+                    "options": [
+                        {"addRule": "buckler"},
+                        {
+                            "replaceWeapon": "sling",
+                            "withWeapon": [
+                                "javelin"
+                            ]
+                        }, {"addRule": "reluctant"},
+                        {"addRule": "agile"}
+                    ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "late_combrogi_archers": {
+            "name": "Priodaur Archers",
+            "description": "The Priodaur (Freemen) were mostly ordinary people who had experiance in raiding bands or training in militias. The Powys were heavy users of the bow, and the possible ancestors of later British archers.",
+            "subfactions": ["powys", "south_welsh"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin", "shield"],
+                    "options": [{
+                        "replaceWeapon": "javelin",
+                        "withWeapon": [
+                            "bow"
+                        ]
+                    }],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "early_combrogi_riders": {
+            "name": "Combrogi Riders",
+            "description": "While the quality of horses within the British Isles was lacking, the local ('Brythonic', Celtic language) people were very fond of ponies and made good use of them when traveling or skirmishing.",
+            "subfactions": ["none", "early_gwynedd", "dumnonia", "british"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "shield", "if_it_bleeds", "light_cavalry", "travel_horse"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Combrogi",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "noble_combrogi_riders": {
+            "name": "Combrogi Noble Riders",
+            "description": "In some areas, the more wealthy members of society could obtain fully capable warhorses.",
+            "subfactions": ["british", "dumnonia"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "shield", "if_it_bleeds", "light_cavalry", "war_horse"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Combrogi",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon":"spartha"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "teulu": {
+            "name": "Teulu",
+            "description": "Like many other counterparts, the old Welsh word 'Teulu' (Spoken as 'Tailey' translates to 'family'. Personally knowing and being related to the royal family or highest nobility, these warriors have a vested interest in victory for their liege.", 
+            "category": "elite",
+            "subfactions": ["british", "none"],
+            "min": 1,
+            "max": 1,
+            "rules": [],
+            "options": [],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "late_gwyneed_teulu": {
+            "name": "Gwynedd Teulu",
+            "description": "Like many other counterparts, the old Welsh word 'Teulu' (Spoken as 'Tailey' translates to 'family'. Personally knowing and being related to the royal family or highest nobility, these warriors have a vested interest in victory for their liege.", 
+            "category": "elite",
+            "subfactions": ["early_gwynedd", "gwynedd"],
+            "min": 1,
+            "max": 1,
+            "rules": [],
+            "options": [],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spear"]}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "british_teulu": {
+            "name": "Successor Teulu Riders",
+            "description": "While there was a shortage, some of the old Romano-British 'stud-farm's survived, and a higher quality 'war-horse' could be supplied to a select few.", 
+            "category": "elite",
+            "subfactions": ["british"],
+            "min": 1,
+            "max": 1,
+            "rules": ["travel_horse", "light_cavalry"],
+            "options": [{"replaceRule": "travel_horse", "withRule": ["war_horse"]}],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "spear"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "south_teulu": {
+            "name": "Southern Teulu",
+            "description": "Like many other counterparts, the old Welsh word 'Teulu' (Spoken as 'Tailey' translates to 'family'. Personally knowing and being related to the royal family or highest nobility, these warriors have a vested interest in victory for their liege.", 
+            "category": "elite",
+            "subfactions": [
+                "south_welsh"
+            ],
+            "min": 1,
+            "max": 1,
+            "rules": [],
+            "options": [],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["bow"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["welsh_longbow"]}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "strathclyde_teulu": {
+            "name": "Strathclyde Teulu Riders",
+            "description": "Both the Roman and Celtic nobility treasured horses as a status symbol and so it was natural that their successors would feel the same.", 
+            "category": "elite",
+            "subfactions": ["early_strathclyde"],
+            "min": 1,
+            "max": 1,
+            "rules": ["travel_horse", "light_cavalry"],
+            "options": [{"replaceRule": "travel_horse", "withRule": ["war_horse"]}],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]},
+                        {"addWeapon": "spear"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mounted_teulu": {
+            "name": "Teulu Riders",
+            "description": "Both the Roman and Celtic nobility treasured horses as a status symbol and so it was natural that their successors would feel the same. While there was a shortage, some of the old Romano-British 'stud-farm's survived, and a higher quality 'war-horse' could be supplied to a select few.", 
+            "category": "elite",
+            "subfactions": ["none", "early_gwynedd", "gwynedd"],
+            "min": 1,
+            "max": 1,
+            "rules": ["travel_horse", "light_cavalry"],
+            "options": [],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "compainions": {
+            "name": "Lord's Companions",
+            "description": "After the Angles, Britians, and Saxons merged into a single culture, it is not clear what the warrior elite serving the local 'count', 'king', 'aetheling',or 'ealdorman', were known as. Some sources call these men 'Companions', 'Hearthguard', or 'Royal Bodyguard', but these terms are clearly not from the time period. These men were known to have unflinchy loyalty and were willing to do any act of cruelity or violence without thought for their 'lord'. In exchange, they are given honor, glory, respect, all the finer things in life, women, and a place by the fire. These wealthier of these men even owned and rode horses into battle.", 
+            "category": "elite",
+            "subfactions": ["anglian_kingdoms_heptarchy", "late_kent", "merica", "wessex"],
+            "min": 1,
+            "max": 1,
+            "rules": [],
+            "options": [{"addRule": "travel_horse"}],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Hearthguard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "shield"
+                    ],
+                    "options": [{"addWeapon": "javelin"},
+                    {"addRule": "light_armor"},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spartha"]},
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "rex": {
+            "name": "Rex",
+            "description": "Rex is Latin for 'King', and was the word used for leaders of kingdoms, while the memory of Romano-British Civilization remained.",
+            "category": "command",
+            "subfactions": ["early_gwynedd", "british"],
+            "min": 1,
+            "max": 1,
+            "rules": ["lead_by_example",{"id": "field_orders", "x": 2}, "leader"],
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Rex",
+                    "courage": 8,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 8,
+                    "wounds": 2,
+                    "weapons": ["spear", "shield"],
+                    "options": [
+                        {"addWeapon": "javelin"}, {"addRule": "war_horse"}
+                        ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "tiern": {
+            "name": "Tiern",
+            "description": "Tiern was the Welsh word for 'King' or 'Lord', however a man with this title might be a prince or a close family member of a king.",
+            "category": "command",
+            "subfactions": ["none", "dumnonia", "early_strathclyde", "south_welsh", "gwynedd"],
+            "min": 1,
+            "max": 1,
+            "rules": ["lead_by_example",{"id": "field_orders", "x": 2}, "leader"],
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Tiern",
+                    "courage": 8,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "wounds": 2,
+                    "weapons": ["spear", "shield"],
+                    "options": [
+                        {"addWeapon": "javelin"}, {"addRule": "war_horse"},
+                        {"replaceWeapon": ["spear", "shield"]}
+                        ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "uchelwyr": {
+            "name": "Uchelwyr",
+            "description": "'Uchelwr' was a Welsh word that referred to a lesser noble. These nobles either commanded bands of warriors when the king went to battle, or they commanded troops by themselves for minor battles.",
+            "category": "command",
+            "subfactions": [],
+            "min": 1,
+            "max": 1,
+            "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader", "buckler"],
+            "options": [{"addRule": "travel_horse"}],
+            "keywords": ["Command"],
+            "models": [
+                {
+                    "name": "Uchelwyr",
+                    "courage": 7,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 7,
+                    "wounds": 2,
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"addRule": "war_horse"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "bonnedig": {
+            "name": "Bonnedig",
+            "description": "'Bonnedig' ('Poorest Freemen') was the word used for those who couldn't fully afford their own spear and shield often fought as skirmishers. These people were mostly the very poor and very young. ",
+            "category": "core",
+            "subfactions": ["south_welsh", "powys", "gwynedd"],
+            "min": 1,
+            "max": 1,
+            "rules": ["skirmisher_formation", "warband", "if_it_bleeds"],
+            "keywords": [
+                "Infantry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Lowborn",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "sling", "hand_weapon"
+                    ],
+                    "options": [
+                        {
+                            "addWeapon": "shield"
+                        },
+                        {
+                            "replaceWeapon": "sling",
+                            "withWeapon": [
+                                "bow",
+                                "javelin"
+                            ]
+                        }, {"addRule": "reluctant"},
+                        {"addRule": "agile"}
+                    ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]},
+        "abbod": {
+            "name": "Sacerdot",
+            "description": "While the successors to the Romano-British were christianized, the Welsh were converting as well. Soon the Church became a center of their lives. As the wealthy churches across the land were frequent targets of raids, the local religious leader could end up having to help organize a defense.",
+            "category": "command",
+            "subfactions": [],
+            "min": 1,
+            "max": 1,
+            "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader", "man_of_god"],
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Abbod",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 2,
+                    "weapons": ["spear", "shield"],
+                    "options": [{"addRule": "war_horse"},
+                        {"addRule": "light_armor"},
+                        {"addRule": "travel_horse"}
+                        ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "priest": {
+            "name": "Christian Priest",
+            "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+            "category": "command",
+            "subfactions": ["british", "south_welsh", "powys", "gwynedd"],
+            "min": 1,
+            "max": 1,
+            "rules": ["lead_by_example", "leader", "man_of_god"],
+            "keywords": ["command"],
+            "models": [
+                {
+                    "name": "Abbod",
+                    "courage": 3,
+                    "movement": 6,
+                    "shoot": 3,
+                    "fight": 3,
+                    "defense": 3,
+                    "reflexes": 3,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield"],
+                    "options": [{"addRule": "war_horse"},
+                        {"addRule": "light_armor"},
+                        {"addRule": "travel_horse"}
+                        ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "brythonic_skirmishers": {
+            "name": "Brythonic Skirmishers",
+            "description": "'Brythonic' refers to people who spoke a 'Celtic language', mainly the 'Britons' who lived in Brittany, the Welish, and the Britons who once ruled the lands that would become England. Like many cultures, including the Romans, those who couldn't fully afford their own spear and shield often fought as skirmishers.",
+            "category": "rare",
+            "subfactions": ["none", "early_gwynedd","british"],
+            "min": 1,
+            "max": 1,
+            "rules": ["skirmisher_formation", "warband", "if_it_bleeds"],
+            "options": [{"addRule": "travel_horse"}],
+            "keywords": [
+                "Infantry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Brythonic Skirmisher",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "javelin", "hand_weapon"
+                    ],
+                    "options": [
+                        {
+                            "addWeapon": "shield"
+                        },
+                        {
+                            "replaceWeapon": "javelin",
+                            "withWeapon": [
+                                "spear",
+                                "bow",
+                                "sling"
+                            ]
+                        },
+                        {"addRule": "agile"}
+                    ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "helwyr": {
+            "name": "Helwyr",
+            "description": "Helwyr (Hunters) were those likely to have an example of the early Welsh longbow. Made of elm, the early Welsh longbow was based around power, rather than long range. '",
+            "category": "rare",
+            "subfactions": ["gwynedd", "powys"],
+            "min": 1,
+            "max": 1,
+            "rules": ["skirmisher_formation", "warband", "if_it_bleeds"],
+            "options": [{"addRule": "travel_horse"}],
+            "keywords": [
+                "Infantry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Hunter",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "javelin", "hand_weapon"
+                    ],
+                    "options": [
+                        {
+                            "addWeapon": "shield"
+                        },
+                        {
+                            "replaceWeapon": "javelin",
+                            "withWeapon": [
+                                "bow",
+                                "sling",
+                                "welsh_longbow"
+                            ]
+                        },
+                        {"addRule": "agile"}
+                    ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "strathclyde": {
+            "name": "Strathclyde Warriors",
+            "description": "Between what became England and Scotland, were lands populated by a 'Brythonic' people, who were ethnically very similar to the Welish. Among the 'Britons', they were remarkable for their abiltiy on horseback.",
+            "category": "rare",
+            "subfactions": ["none"],
+            "min": 1,
+            "max": 1,
+            "rules": ["light_cavalry", "warband", "if_it_bleeds", "travel_horse"],
+            "keywords": [
+                "Infantry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Strathclyde Warrior",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "javelin", "hand_weapon"
+                    ],
+                    "options": [
+                        {
+                            "addWeapon": "shield"
+                        }
+                    ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "early_strathclyde": {
+            "name": "Early Strathclyde Warriors",
+            "description": "The Strathcylyde were a 'Brythonic' (Celtic speaking) people, who were ethnically very similar to or were Welsh. Among the 'Britons', they were remarkable for their abiltiy on horseback.",
+            "category": "core",
+            "subfactions": ["early_strathclyde"],
+            "min": 1,
+            "max": 1,
+            "rules": ["light_cavalry", "warband", "if_it_bleeds", "travel_horse"],
+            "options": [{"replaceRule": "travel_horse", "withRule": ["war_horse"]}],
+            "keywords": [
+                "Cavalry", "Skirmisher"
+            ],
+            "models": [
+                {
+                    "name": "Strathclyde Warrior",
+                    "courage": 5,
+                    "movement": 7,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": [
+                        "javelin", "hand_weapon"
+                    ],
+                    "options": [
+                        {
+                            "addWeapon": "shield"},
+                            {
+                                "replaceWeapon": "javelin",
+                                "withWeapon": [
+                                    "heavy_throwing_spear"
+                                ]
+                            }
+                        ],
+                    "notes": "Add special rules here",
+                    "rules": [],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        }   
+    },
+    "weapons": {},
+    "rules": {
+        "welsh_longbow": {"name": "Welsh Longbow", "attacks": 1, "short": 12, "medium": 24, "ap": 2},
+        "king_of_three_kingdoms": {
+            "name": "King of Three Kingdoms",
+            "inputs": ["x"],
+            "description": "Any figure in at least two chosen units, can be upgraded with 'light_armor' for 2 points.",
+            "points": [0]
+    },
+    "dogs": {
+        "name": "Just Dogs",
+        "hidden": false,
+        "description": "Normally, missile attacks are divided randomly among the human leader and the dogs. While the human leader is alive, the dogs use the same courage and conditions, as the human leader. Once the human leader dies, the dogs default to their own conditions and courage.",
+        "points": [0]
+    }
+    },
+    "relics": {
+        "athelstan": {
+        "subfactions": ["south_welsh"],
+        "name": "King Maredudd ab Owain",
+        "rule": "king_of_three_kingdoms",
+        "flavor": "Maredudd inherited half of South Wales and as a prince conquered the other half. During his life he fought off the Anglo Mercians and the Norse Vikings, and generally was undefeated in battle. He was quite wealthy and willing to pay ransoms for his warriors.",
+        "description": "Upgrade one model of Tiern with 'king_of_three_Kingdoms'.",
+        "points": 0
+    }
+    },
+    "strategies": [
+    {
+        "subfactions": ["british", "gwynedd"],
+        "name": "Shield Wall",
+        "phase": "activation",
+        "description": "All units with shields and spears equipped (light infantry not included), if that unit moved one or no times this round, and if charged or targeted by a shooting attack it gets +1 Save and ignores the 'superior_cavalry' rule. This effect remains in place till the unit moves.",
+        "flavor": "The bordweall (Old English for 'Shield Wall'), was a tactic and model of fighting that grew popular with the Anglo-Saxons right before or around the start of the Viking Invasion. Communities were organized into sizes that would produce a 'fyrd', which is a part time militia of freemen/ceorls, who fought shoulder to shoulder in formation.",
+        "cost": 1
+    },
+    {
+        "subfactions": ["british"],
+        "name": "Bolster",
+        "phase": "activation",
+        "description": "Use when an Infantry unit is targeted by an enemy. If it did not move this round, that unit may increase its cover level by 1 (none to normal, normal to fortified).",
+        "cost": 1
+    },
+    {
+        "subfactions": ["british"],
+        "name": "Wall With Spikes",
+        "phase": "activation",
+        "description": "Choose 1 or 2 units with the 'spearman' rule, which are being charged. Increase their Initiative by +1 during any attempt to 'Counter Attack'.",
+        "cost": 1
+    },
+    {
+        "subfactions": ["early_gwynedd"],
+        "phase": "The Hunt",
+        "description": "Use before shooting with a unit. Add 3' to the short and long ranges of all weapons for that unit.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["early_gwynedd", "gwynedd", "early_strathclyde", "dumnonia", "south_welsh"],
+        "name": "Celtic Warfare",
+        "phase": "activation",
+        "description": "Use after an Infantry unit makes a Move action. That unit may make a free Shoot action with -1 Accuracy. Any weapons with Assault may ignore the -1 Accuracy penalty.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["early_gwynedd", "gwynedd", "early_strathclyde", "dumnonia", "south_welsh"],
+        "name": "Move and Rally",
+        "phase": "activation",
+        "description": "Use before a unit takes a Move action. After the move, that unit may perform a free Rally action.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["gwynedd"],
+        "name": "Mixed Weapons",
+        "phase": "activation",
+        "description": "Use before a unit makes a charge action (Requires unit to have javelins and no spears), half the units figures may make a 'Shoot' action with their javelins.",
+        "flavor": "",
+        "cost": 1
+    },
+    {
+        "subfactions": ["south_welsh"],
+        "name": "Through The Door",
+        "phase": "activation",
+        "description": "Use before a unit makes a Shoot action with Bows or Welsh longbows. The Shoot action gains +1 AP.",
+        "flavor": "There are written accounts of the powerful Welsh longbow shooting arrows 'a hand's width into an oak door'.",
+        "cost": 1
+    }
+    
+
+] 
+}

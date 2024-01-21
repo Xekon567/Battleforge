@@ -1,0 +1,239 @@
+{
+    "factions": {
+        "romans": {"name": "Romans", "id": "romans", "url": "romans.json", "color": "#9f0807"},
+        "anglo_saxons": {"name": "Anglo Saxons", "id": "anglo_saxons", "url": "anglo_saxons.json", "color": "#436497", "alliance": "north_sea"},
+        "saxons": {"name": "Saxons", "id": "saxons", "url": "saxons.json", "color": "#594228"},
+        "franks": {"name": "Franks", "id": "franks", "url": "franks.json", "color": "#6372AA"},
+        "normans_bretons": {"name": "Normans and Bretons", "id": "normans_bretons", "url": "normans_bretons.json", "color": "#6372AA", "secondary_color": "#BDBDBD", "alliance": "north_sea"},
+        "romano_british": {"name": "Romano-British/Brittany", "id": "romano_british", "url": "romano_british.json", "color": "#2596be"},
+        "norse": {"name": "Norse", "id": "norse", "url": "norse.json", "color": "#6372AA", "secondary_color": "9f0807", "alliance": "north_sea"},
+        "slavs": {"name": "Slavs (Rus and Polish)", "id": "slavs", "url": "slavs.json", "color": "#D83658"},
+        "steppe_peoples_magyars": {"name": "Steppe Peoples and Magyars", "id": "steppe_peoples_magyars", "url": "steppe_peoples_magyars.json", "color": "#D83658"},
+        "british_and_welsh_kingdoms": {"name": "British And Welsh Kingdoms (Brythonic)", "id": "british_and_welsh_kingdoms", "url": "british_and_welsh_kingdoms.json", "color": "#2596be"},
+        "germanic_italo_kingdoms": {"name": "Central European Kingdoms", "id": "germanic_italo_kingdoms", "url": "germanic_italo_kingdoms.json", "color": "#D83658"},
+        "barbarians": {"name": "Invading Tribes", "id": "barbarians", "url": "barbarians.json", "color": "#D83658"},
+        "persians": {"name": "Persians", "id": "persians", "url": "persians.json", "color": "#cc3333"}
+    },
+    "alliances": {"north_sea": {"name": "Danelaw/North Sea Empire"}},
+    "unfinished_factions": {
+        "bulgars": {"name": "Bulgars", "id": "bulgars", "url": "bulgars.json", "color": "#D83658"},
+        "scots_irish": {"name": "Irish and Scots", "id": "scots_irish", "url": "scots_irish.json", "color": "#594228"}
+    },
+    "categories": {"command": {"name": "Command"}, "support": {"name": "Support"}, "large": {"name": "Large"}, "core": {"name": "Core"}, "rare": {"name": "Rare"}, "elite": {"name": "Elite"}},
+    "organizations": {
+        "standard_army": {
+            "name": "Standard Army (Core)",
+            "cost": 0,
+            "description": "A well-rounded force for taking on any opponent.",
+            "categories": {"command": {"min": 1, "max": 2}, "support": {"min:": 0, "max": 3}, "core": {"min": 4, "max": 8}, "rare": {"max": 3}, "elite": {"max": 2}, "allies": {"max": 2}}
+        }
+    },
+    "relics": {
+        "inspired": {
+            "name": "Inspired",
+            "rule": "legend_courage",
+            "description": "Upgrade one Leader model with Inspired.",
+            "flavor": "This model inspires the best in those who serve them.",
+            "points": 5
+        },
+        "expert_fighter": {
+            "name": "Expert Fighter",
+            "rule": "legend_expert_fighter",
+            "description": "Upgrade one Leader model with Expert Fighter.",
+            "flavor": "This model has fought in many close quarters fights and survived.",
+            "points": 5
+        },
+        "quick_reflexes": {
+            "name": "Quick Reflexes",
+            "rule": "legend_quick_reflexes",
+            "description": "Upgrade one Leader model with Quick Reflexes.",
+            "flavor": "This model has expert awareness and can react quickly.",
+            "points": 5
+        }
+    },
+    "powers": {},
+    "strategies": {},
+    "weapons": {
+        "unarmed": {"name": "Unarmed", "attacks": 1, "short": "Melee"},
+        "stones": {"name": "Stones", "attacks": 1, "short": 6, "rules": ["assault", "hurled_weapons"]},
+        "hand_weapon": {"name": "Hand Weapon", "attacks": 1, "short": "Melee", "ap": 1},
+        "sword": {"name": "Sword", "attacks": 1, "short": "Melee", "ap": 1},
+        "spartha": {"name": "Spatha", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["rending"]},
+        "spear": {"name": "Spear", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["impale", {"id": "reach", "x": 1}]},
+        "pike": {"name": "Pike", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["cumbersome", {"id": "reach", "x": 2}, {"id": "pike"}]},
+        "crossbow": {"name": "Crossbow", "attacks": 1, "short": 18, "medium": 36, "ap": 2, "rules": ["indirect", "reload"]},
+        "javelin": {"name": "Javelins", "attacks": 1, "short": 12, "ap": 1, "rules": ["assault", "hurled_weapons"]},
+        "plumbata": {"name": "Plumbata", "attacks": 1, "short": 9, "medium": 18, "ap": 1, "rules": ["brutal", "assault", "hurled_weapons"]},
+        "heavy_throwing_spear": {"name": "Heavy Throwing Spears", "attacks": 1, "short": 6, "ap": 2, "rules": ["assault", "hurled_weapons"]},
+        "short_bow": {"name": "Short Bow", "attacks": 1, "short": 9, "medium": 18, "ap": 1},
+        "bow": {"name": "Bow", "attacks": 1, "short": 12, "medium": 24, "ap": 1},
+        "sling": {"name": "Sling", "attacks": 1, "short": 12, "medium": 24, "ap": 1, "rules": ["rapid_fire"]},
+        "trained_sling": {"name": "Trained Sling", "attacks": 2, "short": 12, "medium": 24, "ap": 2, "rules": ["rapid_fire"]},
+        "staff_sling": {"name": "Staff Sling", "attacks": 1, "short": 15, "medium": 30, "ap": 2, "rules": ["indirect"]},
+        "longbow": {"name": "Long Bow", "attacks": 1, "short": 18, "medium": 36, "ap": 1, "rules": ["indirect"]},
+        "composite_bow": {"name": "Composite Bow", "attacks": 1, "short": 15, "medium": 30, "ap": 1},
+        "lance": {"name": "Lance", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["joust"]},
+        "kontos": {"name": "Kontos", "attacks": 1, "short": "Melee", "ap": 1, "rules": ["impale", {"id": "reach", "x": 2}]},
+        "impact": {"name": "Impact", "attacks": 1, "short": "Melee"},
+        "longsword": {"name": "Longsword", "attacks": 1, "short": "Melee", "ap": 2, "rules": ["rending"]},
+        "hand_axe": {"name": "One Handed Axe", "attacks": 1, "short": "Melee", "ap": 2},
+        "heavy_mace": {"name": "Heavy Mace", "attacks": 1, "short": "Melee", "ap": 2},
+        "two_handed_axe": {"name": "Two Handed Axe", "attacks": 1, "short": "Melee", "ap": 3},
+        "shield": {"name": "Shield", "attacks": 0, "short": "Melee", "rules": [{"id": "shield"}]},
+        "large_shield": {"name": "Large Shield", "attacks": 0, "short": "Melee", "rules": [{"id": "large_shield"}]},
+        "buckler": {"name": "Buckler", "attacks": 0, "short": "Melee", "rules": [{"id": "buckler"}]},
+        "spear_and_shield": {"name": "Spear and Shield", "attacks": 0, "short": "Melee", "rules": [{"id": "reach", "x": 2}, "shield"]},
+        "horse_attack": {"name": "Hooves and Teeth", "attacks": 1, "short": "Melee"}
+    },
+    "rules": {
+        "legend_courage": {"name": "Inspired", "description": "This model gains +1 Courage.", "points": 10},
+        "legend_quick_reflexes": {"name": "Quick Reflexes", "description": "This model gains +1 Initiative.", "points": 10},
+        "legend_expert_fighter": {"name": "Expert Fighter", "description": "This model may make one additional attack with any Melee weapon.", "points": 10},
+        "large_shield": {
+            "name": "Large Shield",
+            "description": "This model has +2 Save against ranged attacks and +1 Save against melee attacks.",
+            "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 3}]
+        },
+        "buckler": {
+            "name": "Buckler",
+            "description": "This model has +1 Save against melee attacks. If it's in Skirmisher Formation it also has +1 Save against ranged attacks.",
+            "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 1}]
+        },
+        "hurled_weapons": {
+            "name": "Hurled Weapons",
+            "description": "When this unit is targeted by an attack with an “Assault“ weapon this unit can make a free Shoot action with this weapon.",
+            "points": [0]
+        },
+        "skirmisher_formation": {
+            "name": "Skirmisher Formation",
+            "description": "This unit has +1 Save against ranged attacks made at long range or at a range of more than 6\" and -1 Save against melee attacks.",
+            "flavor": "This unit is part of a spread out formation, which means it can more easily dodge incoming missiles, but is more vunerable to being rushed by infantry.",
+            "points": [0]
+        },
+        "vet_skirmisher_formation": {
+            "name": "Veteran Skirmishers",
+            "description": "This unit has +1 Save against ranged attacks made at long range or at a range of more than 6\" and -1 Save against melee attacks. It has +1 Initiative when rushing.",
+            "flavor": "This unit is part of a spread out formation, which means it can more easily dodge incoming missiles, but is more vunerable to being rushed by infantry.",
+            "points": [0.5]
+        },
+        "light_infantry": {
+            "name": "Light Infantry",
+            "description": "(This unit cannot use the \"Spearmen\" special rule) When this unit is deployed, arrives from reserves or makes a Move or Evade action it can choose to gain or lose Skirmisher Formation (+1 Save against ranged attacks made at long range or at a range of more than 6“ and -1 Save against melee attacks) until the end of the game. \n",
+            "flavor": "This unit can choose to fight as skirmishers as a loose formation, or 'close up' to fight as traditional infantry.",
+            "points": [1]
+        },
+        "light_cavalry": {
+            "name": "Light Cavalry",
+            "description": "When this unit is deployed, arrives from reserves or makes a Move or Evade action it can choose to gain or lose Skirmisher Formation (+1 Save against ranged attacks made at long range or at a range of more than 6“, -1 Save against melee attacks and +1 Initiative when rushing) until the end of the game. \n",
+            "flavor": "This unit can choose to fight as skirmishers as a loose formation, or 'close up' to fight as medium cavalry.",
+            "points": [1]
+        },
+        "warband": {
+            "name": "Warband",
+            "description": "+1 Strength when attacking falling back units but -1 Save when falling back themselves.",
+            "flavor": "Warbands are units that due to a lack of professional training, are overconfident in the chase or while being fired upon, but are filled with fear when being chased or seeing the blood of their fellow countrymen.",
+            "points": [-1]
+        },
+        "if_it_bleeds": {
+            "name": "If It Bleeds",
+            "description": "This unit gains one less shock for being hit by an attack but gains two shock for losing one or more models during an attack.",
+            "flavor": "Warbands are units that due to a lack of professional training, are overconfident in the chase or while being fired upon, but are filled with fear when being chased or seeing the blood of their fellow countrymen.",
+            "points": [-2]
+        },
+        "light_footed": {
+            "name": "Light Footed",
+            "description": "This unit gets +1 Movement.",
+            "flavor": "With less armor and no shield to weigh them down, these men can be quite nimble.",
+            "points": [0]
+        },
+        "furious_charge": {
+            "name": "Furious Charge",
+            "description": "(Requires War Horse) Enemy units charged by this unit are assigned 1 additional shock if the attack hits.",
+            "flavor": "The fury of heavy cavalry was terrifying to those not prepared for the loud pounding of hooves and for the sheer weight of the charge.",
+            "points": [3]
+        },
+        "superior_cavalry": {
+            "name": "Superior Cavalry",
+            "description": "(Requires Horse or War Horse) This unit may re-roll failed Strength tests when charging or making a Fight reaction when being charged.",
+            "points": [4]
+        },
+        "mount_horse": {
+            "name": "Mounted (Horse)",
+            "description": "Increase this model's Movement by 2\". This model may dismount at the end of any Move action. A model that has dismounted may no longer remount.",
+            "points": 2
+        },
+        "war_horse": {
+            "name": "War Horse (Destrier/Stallion)",
+            "description": "Increase this model's Movement by 2\". This model may dismount at the end of any Move action. A model that has dismounted may no longer remount. This model gets an additional Melee attack with AP0.",
+            "points": 3
+        },
+        "travel_horse": {
+            "name": "Travel Horse (Courser/Pony)",
+            "description": "This model has -1 Save against ranged attacks but has +2\" Movement. Models with the \"Light Infantry\" special rule and in Skirmish Formation gain +1 Initiative when rushing. This model may dismount at the end of a Move action. A model that has dismounted may no longer remount.",
+            "points": 1.5
+        },
+        "lead_by_example": {"name": "Lead By Example", "description": "This unit can be merged with any other unit, will be harmed after that unit is.", "points": 0},
+        "army_general": {"name": "Army General", "description": "Friendly units within 12' of this unit do not experience 'Warband'.", "points": 5},
+        "horse_armor": {"name": "Horse Armor", "description": "This model has +1 Save.", "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 2}]},
+        "half_horse_armor": {
+            "name": "Half Horse Armor",
+            "description": "This unit has +1 Save against attacks from units that are being charged or attacked by this unit.",
+            "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 1}]
+        },
+        "cloth_horse_armor": {"name": "Cloth Horse Armor", "description": "This model has +1 Save against melee attacks.", "points": ["model.rules.wounds.x", {"max": 1}, {"multiply": 1}]},
+        "field_orders": {
+            "name": "Field Orders",
+            "inputs": ["x"],
+            "description": "When this unit is activated, choose X friendly Infantry units within 6\" to receive one of the following bonuses: \n* Re-roll Accuracy rolls of 9+ \n* Re-roll Strength rolls of 9+ \n* +3\" Movement \n\nA unit may only benefit from one Field Order.",
+            "points": [15, {"multiply": "rule.x"}]
+        },
+        "fierce": {
+            "name": "Fierce",
+            "description": "If an enemy unit within Movement range fails a break test or falls back this unit has to charge them if possible. If this unit fights this way they gain +1 Strength for that attack.",
+            "flavor": "During the early Dark Ages, some units were exceptionally eager to 'run down' or 'run through' the enemy.",
+            "points": [-1]
+        },
+        "saint": {
+            "name": "Saint",
+            "inputs": ["x"],
+            "description": "Friendly units of X types within 6'' may re-roll a single failed Courage test when removing Shock.",
+            "points": ["rule.x", {"multiply": 10}]
+        },
+        "man_of_god": {
+            "name": "Man of God",
+            "description": "This unit can be merged with any other unit, that unit may re-roll any failed Courage test when removing Shock once per turn.",
+            "points": 10
+        },
+        "spearmen": {
+            "name": "Spearmen",
+            "description": "(Requires Spear, shield and to be unmounted) Should this unit do a 'Hold' action and be charged before it's next turn, it has +1 Strength when performing an Attack reaction and ignores the enemy “Warrior Culture“ special rule.",
+            "points": 0.5
+        },
+        "pike": {"name": "Pike", "description": "Should this unit be charged, it has +1 Strength when performing a Counter-Attack reaction and it gets to attack first.", "points": 1.5},
+        "impale": {"name": "Impale", "description": "(Requires Horse or War Horse) This weapon gets +1 AP when used during a Charge.", "points": 0.5},
+        "joust": {"name": "Joust", "description": "(Requires Horse or War Horse) This weapon gets +2 AP when used during a Charge.", "points": 1},
+        "warrior_culture": {"name": "Warrior Culture", "description": "This model gets +1 Strength when using a weapon without the \"Reach\" special rule when charging.", "points": 0.5},
+        "mount_warrior_culture": {"name": "Horseman Warrior Culture", "description": "(Requires Horse or War Horse) This model gets +1 Strength when charging.", "points": 1},
+        "light_spearmen": {
+            "name": "Light Spearmen",
+            "description": "(Requires Spear, shield and to be unmounted) Should this unit do a 'Hold' action and be charged by a _Cavalry_ unit before it's next turn, it has +1 Strength when performing an Attack reaction and ignores the enemy “Horseman Warrior Culture“ special rule.",
+            "points": 0
+        },
+        "light_professional_swordsmen": {
+            "name": "Light Professional Swordsmen",
+            "description": "(Requires Spatha and to be unmounted) Should this unit do a 'Hold' action and be charged before it's next turn, it has +1 Save against that attack and ignores the enemy “Warrior Culture“ special rule.",
+            "points": 0.5
+        },
+        "minor_leader": {
+            "name": "Minor Leader",
+            "description": "When activated, this unit may perform a group activation with 1 other friendly _Infantry_ unit within 6\". That unit may use this unit's Courage and Initiative value when taking skill tests.",
+            "points": 5
+        },
+        "minor_leader_x": {
+            "name": "Minor Leader (X)",
+            "description": "When activated, this unit may perform a group activation with 1 other friendly unit of (X) type within 6\". That unit may use this unit's Courage and Initiative value when taking skill tests.",
+            "inputs": ["x"],
+            "points": 5
+        }
+    }
+}

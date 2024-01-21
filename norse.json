@@ -1,0 +1,408 @@
+{
+    "id": "norse",
+    "name": "Norse/Norway/Danes",
+    "notes": "Note to self, vikings almost never used two-handed swords, and the hand-axe was way more plentiful then the sword was. Swords were mostly imported or they somewhat cut corners on them if they made them locally. The spear was the main weapon, the shield was somewhat flimsy but of reasonable size.",
+    "subfactions": {
+        "harald_hardråde": {
+            "name": "Harald Hardråde (1046-1066)",
+            "phase": "activation",
+            "id": "harald_hardråde",
+            "description": "Harald Hardrada ('hard ruler'), was a former member of the Nordic royal family who fled and joined the Byzantine Varangian Guard, won many battles and then was banished to Rus. Returning home, he fought another person with royal blood, became king of Norway, fought two wars against his neighboors, before then claiming the English throne and invading. Many of his soldiers were former Varangian Guard.",
+            "restricted": "true"
+        },
+        "norse": {"name": "Norse (800-1015)", "phase": "activation", "id": "norse", "description": "Regular norse.", "restricted": "true"},
+        "north_sea_empire": {
+            "name": "Norse (1016 and 1035)",
+            "phase": "activation",
+            "id": "north_sea_empire",
+            "description": "Cnut the Great was king of: Denmark, England and Norway; and his empire is known today as the 'North Sea Empire'",
+            "restricted": "true"
+        }
+    },
+    "units": {
+        "jarl": {
+            "name": "Jarl",
+            "description": "Below the rank of 'king', there was the rank of 'Jarl' (Which has a common shared ancestor  with the word 'Earl'), which signified a powerful leader with much land and power (Such as a duke). Such powerful noble leaders often lead armies in the place of the King himself. Often the Jarl had a chance to end up king himself, or was the leader of a distant settlement, which might revolt and become it's own kingdom or something like a duchy.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Jarl",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", "leader", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "jarl_on_warhorse": {
+            "name": "Jarl on War Horse",
+            "description": "Below the rank of 'king', there was the rank of 'Jarl' (Which has a common shared ancestor  with the word 'Earl'), which signified a powerful leader with much land and power (Such as a duke). Such powerful noble leaders often lead armies in the place of the King himself. Often the Jarl had a chance to end up king himself, or was the leader of a distant settlement, which might revolt and become it's own kingdom or something like a duchy.",
+            "category": "command",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Jarl on War Horse",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, "war_horse", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "hersir": {
+            "name": "Hersir",
+            "description": "The Hersirs were mean who were trusted by their Jarl to organize a portion of his hands, to protect him, and avenge his death if need be. Many Hersirs had their own personal armies and a group or groups of hindmen as bodyguards.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Hersir",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", "leader", {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "hersir_on_warhorse": {
+            "name": "Hersir on War Horse",
+            "description": "The Hersirs were mean who were trusted by their Jarl to organize a portion of his hands, to protect him, and avenge his death if need be. Many Hersirs had their own personal armies and a group or groups of hindmen as bodyguards.",
+            "category": "command",
+            "min": 1,
+            "max": 1,
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Hersir on War Horse",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, "war_horse", {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "konnungr": {
+            "name": "Konnungr",
+            "description": "A konnungr (king) leading his personal army.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Konnungr",
+                    "movement": 6,
+                    "courage": 8,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 2}, "lead_by_example", "leader", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "konnungr_on_warhorse": {
+            "name": "Konnungr on War Horse",
+            "description": "A konnungr (king) leading his personal army.",
+            "category": "command",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Konnungr on War Horse",
+                    "movement": 6,
+                    "courage": 8,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 2}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, "war_horse", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["two_handed_axe", "spear", "hand_axe"]}, {"addWeapon": ["javelin"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "bondi_militia": {
+            "name": "Bondi Leidang Militia",
+            "description": "Like many other lands, the Norse had a pool of freemen that they would call up for military service if the need was requrired. Technically there was many men required to serve as Bondi within the 'leidang', but calling them all up for service would leave the land fallow, the rocks unmined, and the timber uncut. As such few of the bondi were called up at any time. The bondi, not being professional warriors, liked to guard the flanks and rear of armies, while also providing plenty of archer support.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Bondir Militia",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "spearmen", "warband"],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "bondi_bowmen": {
+            "name": "Bondi Leidang Bowmen",
+            "description": "Like many other lands, the Norse had a pool of freemen that they would call up for military service if the need was requrired. Technically there was many men required to serve as Bondi within the 'leidang', but calling them all up for service would leave the land fallow, the rocks unmined, and the timber uncut. As such few of the bondi were called up at any time. The bondi, not being professional warriors, liked to guard the flanks and rear of armies, while also providing plenty of archer support.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Bondir Bowman",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["warband", "if_it_bleeds", "light_infantry"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "norse_youngmen": {
+            "name": "Youngmen Warriors",
+            "description": "According to some written sources, the Norse and Vikings were organized like the Saxons were during their early raiding days. As such, younger men seeking fame and plunder would form into bands with the most charismatic as their leader. Eventually, with enough experience and renown, they could lead their own bands, or join a more accomplished one.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Youngman",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["fierce", "if_it_bleeds", "warband"],
+                    "weapons": [{"id": "hand_weapon", "count": 2}, "shield"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"], "limit": 2}, {"addWeapon": "javelin"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "experienced_raiders": {
+            "name": "Veteran Norse Raiders",
+            "description": "Besides the younger men, are the more experienced and accomplished warriors, and like many other cultures, including other 'barbarians' and even the Romans, older men typically had better equipment, resilience, and experience. As Viking, Norse, or Saxon warlords or nobles gained power and grew older, they would draw in more and more of these experienced fighters, along with having their inexperienced fighters become experienced over time.",
+            "category": "core",
+            "models": [
+                {
+                    "name": "Veteran",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "stubborn", "warband"],
+                    "weapons": [{"id": "hand_weapon", "count": 2}, "shield"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"], "limit": 2}, {"addWeapon": "javelin"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "ceorl": {
+            "name": "Ceorl Militia",
+            "description": "A band of freemen/ceorls (Pronouced Churls), typically made up of the conquered peoples living within the lands of a Saxon/Angles king, warlord, or noble. In exchange for their lands and their freedom, these people serve their lord in martial service 2 months a year. As is the tradition of these people, they fight shoulder to shoulder, in the 'shield wall'. A Ceorl, being free, was not property and neither was his children. The Ceorl often owned their own lands, but pay taxes in return for protection.",
+            "category": "rare",
+            "models": [
+                {
+                    "name": "Ceorl",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "spearmen", "warband"],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "thrall_spear_levy": {
+            "name": "Thrall Spear Levy",
+            "description": "The 'Thrall' was a social class below 'Carl'. Thralls included peasants tied to the land and slaves. Due to the plentiful supply of landless/enslaved men, spears, and shields; it is likely that if the Norse could force subject peoples into their armies at sword or spearpoint, and then they could attempt to form a basic spear levy as was common at the time. Such troops would have to be 'bullied' into a formation, and even if trained at all, weren't trained very well.",
+            "category": "rare",
+            "models": [
+                {
+                    "name": "Thrall Levy",
+                    "movement": 6,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["if_it_bleeds", "spearmen", "warband"],
+                    "weapons": ["spear", "shield", "javelin"],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "skirmishers": {
+            "name": "Thrall Skirmishers",
+            "description": "A band of the impoverished, landless (Who, if Thralls, would be slaves or tied to the land), men who could only bring the clothes on their back, a short blade or club, and some ranged weapons. Among the Norse, these people could be the slaves (Thralls) and the freed slaves (Leysingi), but they also had subject Irish and Scots fight within the ranks of the skirmishers as well.",
+            "category": "rare",
+            "models": [
+                {
+                    "name": "Thrall Skirmisher",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [{"addRule": ["stubborn", "buckler"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "norse_hindmen": {
+            "name": "Hindmen",
+            "description": "The hindmen were the professional 'household' troops of a lord or noble with power over a settlement. They were well equipped and trained, and in the earlier years could've been accomplished viking raiders who stood by proud, and successful leaders of viking raids. Regardless of the exact year and reason for their fighting, they were terrifying and brutal fighters, often using the axe to shatter the shields of other norsemen, or shields of Anglo-Saxons or Franks.",
+            "category": "elite",
+            "models": [
+                {
+                    "name": "Hindman",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["light_infantry", "warrior_culture"],
+                    "weapons": ["hand_axe", "shield"],
+                    "options": [{"replaceWeapon": "hand_axe", "withWeapon": ["two_handed_axe"]}, {"addWeapon": "javelin"}, {"addRule": ["harder_than_iron", "light_armor"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "tinglid": {
+            "name": "Tinglid",
+            "description": "The Tinglid were the professional 'household' troops of Cnut the Great, and those loyal to him. They were well equipped and trained, and in the earlier years could've been accomplished viking raiders who stood by proud, and successful leaders of viking raids. Regardless of the exact year and reason for their fighting, they were terrifying and brutal fighters, often using the axe to shatter the shields of other norsemen, or shields of Anglo-Saxons or Franks.",
+            "category": "elite",
+            "subfactions": ["north_sea_empire"],
+            "models": [
+                {
+                    "name": "Tinglid",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["light_infantry", "fanatic", "warrior_culture"],
+                    "weapons": ["hand_axe", "shield"],
+                    "options": [
+                        {"replaceWeapon": "hand_axe", "withWeapon": ["spear", "two_handed_axe"]},
+                        {"addWeapon": "javelin"},
+                        {"addRule": ["harder_than_iron", "light_armor"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "norse_varangian_guard": {
+            "name": "Hardråde's Varangian Guard",
+            "description": "As Harold Hardråde had served in the Varangian Guard and many of the men had been banished with him from the Byzantine Empire. Recruiting them to follow him in battle again, but in his own pay, they served him when he was King of Norway, and helped him attempt to become King of England as well.",
+            "category": "elite",
+            "subfactions": ["harald_hardråde"],
+            "models": [
+                {
+                    "name": "Varangian Guard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["fanatic", "warrior_culture"],
+                    "weapons": ["hand_axe", "shield"],
+                    "options": [{"replaceWeapon": "hand_axe", "withWeapon": ["two_handed_axe"]}, {"addWeapon": "javelin"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        }
+    },
+    "weapons": {},
+    "rules": {"harder_than_iron": {"name": "Harder Than Iron", "description": "This unit has +1 Save whilst being affected by the Going Berserk strategy.", "points": ["constants.defenseCost"]}},
+    "relics": {},
+    "strategies": {
+        "boar_snout": {"name": "Boar Snout", "phase": "activation", "description": "Use when an _Infantry_ unit makes a Charge action. All their Melee weapons gain +1 AP for that attack.", "cost": 1},
+        "going_berserk": {
+            "name": "Going Berserk",
+            "phase": "activation",
+            "description": "Use when activating a unit. That unit gains +1 Strength until the end of the round, but it cannot move away from the closest enemy unit during this round.",
+            "cost": 1
+        },
+        "shield_wall": {
+            "name": "Shield Wall",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit, all with spears and shields, is being charged or targeted by a shooting attack. If that unit moved one or no times this round it gets +1 Save. This strategy stays in effect until the unit moves.",
+            "cost": 1
+        },
+        "veterans_nse": {
+            "subfactions": ["north_sea_empire"],
+            "name": "Veterans",
+            "phase": "activation",
+            "description": "Use when a _Hindmen_ or _Tinglid_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "cost": 1
+        },
+        "veterans_harald": {
+            "subfactions": ["harald_hardråde"],
+            "name": "Veterans",
+            "phase": "activation",
+            "description": "Use when a _Hindmen_ or _Varangian Guard_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "cost": 1
+        },
+        "veterans_norse": {
+            "subfactions": ["norse"],
+            "name": "Veterans",
+            "phase": "activation",
+            "description": "Use when a _Hindmen_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "cost": 1
+        }
+    }
+}

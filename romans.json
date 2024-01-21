@@ -1,0 +1,1465 @@
+{
+    "id": "romans",
+    "name": "Romans",
+    "subfactions": {
+        "slightly_late_roman": {
+            "name": "Late Romans (300-399 AD)",
+            "phase": "activation",
+            "id": "slightly_late_roman",
+            "description": "After the 'Third Century Crisis', the Roman Empire was stiched back together and reformed by Diocletian, than Constantine the Great, which would give it another hundred years to live.",
+            "restricted": "true"
+        },
+        "late_roman": {
+            "name": "Late Romans (400-500 AD)",
+            "phase": "activation",
+            "id": "late_roman",
+            "description": "In the year 410AD Rome would be sacked by Visigoth allies, who were enraged that the Emperor had their families murdered. After this event, the Western Roman Empire would decline and decline, before collapsing into ruin. ",
+            "restricted": "true"
+        },
+        "east_roman": {"name": "Late Eastern Romans (400-492 AD)", "phase": "activation", "id": "later_eastern_roman", "description": "", "restricted": "true"},
+        "early_byzantine_empire": {
+            "name": "Early Byzantine Empire (493-582 AD)",
+            "phase": "activation",
+            "id": "early_byzantine_empire",
+            "description": "The people of this era referred to themselves as 'Romans', but were successors of the eastern half of the empire. This period includes the reign of 'Justinian I', who managed to, for a time, reconquer Italia and Northern Africa.",
+            "restricted": "true"
+        },
+        "byzantine_empire": {"name": "Byzantine Empire (583-641 AD)", "phase": "activation", "id": "byzantine_empire", "description": "", "restricted": "true"},
+        "three_short": {
+            "name": "Thematic Byzantines, Three Short Dynasties (642-867 AD)",
+            "phase": "activation",
+            "id": "three_short",
+            "description": "This period saw the rapid rise and fall of the Heraclian, Isaurian, and Amorian Dynasties, in that order.",
+            "restricted": "true"
+        }
+    },
+    "units": {
+        "dux": {
+            "name": "Dux",
+            "description": "Dux, was a latin word meaning 'leader' or 'general'. The Dux was a powerful military rank under the late Romans. The 'Dux' was typically a military leader responsible for a whole 'front' such as where Northern Gaul and Germania meet.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Dux",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 7,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, "leader", "shield", {"id": "wounds", "x": 3}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]},
+                        {"replaceRule": "shield", "withRule": "large_shield"},
+                        {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "dux_on_warhorse": {
+            "name": "Dux on War Horse",
+            "description": "Dux, was a latin word meaning 'leader' or 'general'. The Dux was a powerful military rank under the late Romans. The 'Dux' was typically a military leader responsible for a whole 'front' such as where Northern Gaul and Germania meet.",
+            "category": "command",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Dux on War Horse",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 7,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, "war_horse", {"id": "leader_x", "x": "Infantry, Cavalry"}, "shield", {"id": "wounds", "x": 3}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]},
+                        {"replaceRule": "shield", "withRule": "large_shield"},
+                        {"replaceRule": [{"id": "field_orders", "x": 1}], "withRule": [{"id": "field_orders", "x": 2}]}
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "magnate": {
+            "name": "Magnate",
+            "description": "A 'Magnate' was an appointed offical, powerful landowner, or wealthy merchant. With these kinds of resources, they either were or would eventually become noblity. Such types of men were not military leaders, or part of a military social class, but they could muster fairly reasonable armies of their own.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Magnate",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "leader", "shield", {"id": "wounds", "x": 2}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]}, {"replaceWeapon": "shield", "withWeapon": "large_shield"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "magnate_on_warhorse": {
+            "name": "Magnate on Warhorse",
+            "description": "A 'Magnate' was an appointed offical, powerful landowner, or wealthy merchant. With these kinds of resources, they either were or would eventually become noblity. Such types of men were not military leaders, or part of a military social class, but they could muster fairly reasonable armies of their own.",
+            "category": "command",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Magnate on Warhorse",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, {"id": "leader_x", "x": "Infantry, Cavalry"}, "shield", "war_horse", {"id": "wounds", "x": 2}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]}, {"replaceRule": "shield", "withRule": "large_shield"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "comes": {
+            "name": "Comes",
+            "description": "A Comes (plural, comites), was another latin word, like 'Dux'. This word meant 'companion', but increasingly among late Romans and 'Migration Era' Germanic peoples, meant 'military leader'. This word eventually evolved into the term 'count' and under the Franks and Romano-British, became a rank of nobility.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Comes",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, "minor_leader", "shield", {"id": "wounds", "x": 2}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]}, {"replaceWeapon": "shield", "withWeapon": "large_shield"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "comes_on_warhorse": {
+            "name": "Comes on War Horse",
+            "description": "A Comes (plural, comites), was another latin word, like 'Dux'. This word meant 'companion', but increasingly among late Romans and 'Migration Era' Germanic peoples, meant 'military leader'. This word eventually evolved into the term 'count' and under the Franks and Romano-British, became a rank of nobility.",
+            "category": "command",
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Comes on War Horse",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 1}, {"id": "minor_leader_x", "x": "Infantry, Cavalry"}, "shield", "war_horse", {"id": "wounds", "x": 2}],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": [{"name": "Pilum", "id": "heavy_throwing_spear"}]}, {"replaceRule": "shield", "withRule": "large_shield"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "priest": {
+            "name": "Christian Priest",
+            "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Abbod",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": ["leader", "man_of_god"],
+                    "weapons": ["spear", "shield"],
+                    "options": [{"addRule": "light_armor"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "priest_on_horse": {
+            "name": "Christian Priest on Horse",
+            "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Abbod on Horse",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": [{"id": "leader_x", "x": "Infantry, Cavalry"}, "man_of_god", "travel_horse"],
+                    "weapons": ["spear", "shield"],
+                    "options": [{"replaceRule": ["travel_horse"], "withRule": ["war_horse"]}, {"addRule": "light_armor"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "conscriptus_pedes": {
+            "name": "Conscriptus Pedes",
+            "description": "Being the son of a soldier or being a volunteer, could provide enough obligation to stand and fight, even if lacking experience or enough training. However, for conscripts that had been in the service long enough to be properly trained, there could be reasons for disillusionment to set in. Wanting to go home and see what had happened to their home communities, or coming from a province now in rebellion. Being part of an usurpers army, not getting paid on time, or seeing cracks in the glory of the Roman Empire; could all leave a soldier unwilling to be part of a battle that isn't going well or would get him killed.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Conscriptus Pedes",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "reluctant", "shield", "spearmen", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": ["spear"]}, {"replaceRule": "shield", "withRule": "large_shield"}, {"addRule": "light_armor"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "tirone_pedes": {
+            "name": "Tirone Pedes",
+            "description": "The Pedyt (The ancestor of the word 'pawn') came from the Latin, Pedes, for 'foot soldier'. This is term often used for soldiers of the period, especially Roman ones. The Tirones were new roman recruits, with less then 6 months of training, typically. The Late Romans also practiced conscription and this unit could represent such troops, perhaps the sons of soldiers, who were often brought into the service like their fathers.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Tirone Pedes",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": "spear"}, {"replaceRule": "shield", "withRule": "large_shield"}, {"addRule": "light_armor"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "limitanei": {
+            "name": "Limitanei",
+            "description": "While more recent research has increasingly proven that Limitanei were professional soldiers, there is still plenty of indicatation that their level of training, regular pay, and equipment degraded over time. This unit can also represent late auxillary forces, or romanized people trained to fight as light infantry. This unit also represents forces that can fight shoulder to shoulder, but prefer to be more mobile, while also not being trained in the 'shield wall' tactic.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Limitanei",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "rules": ["light_infantry", "spearmen"],
+                    "weapons": ["shield", "spear"],
+                    "options": [
+                        {"replaceWeapon": "shield", "withWeapon": "bow"},
+                        {"addWeapon": ["javelin", "heavy_throwing_spear"], "limit": 1},
+                        {"addRule": ["light_armor", "strider", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "veteran_limitanei": {
+            "name": "Guard Limitanei",
+            "description": "Guard Liminei represents limitanei and light infantry, that have more practice and experience as skirmishers and archers. These units (skirmishers and archers) became increasing common among all roman forces in the later era.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Guard Limitanei",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["light_infantry", "stubborn", "spearmen"],
+                    "weapons": ["spear", "shield"],
+                    "options": [
+                        {"replaceWeapon": "shield", "withWeapon": "bow"},
+                        {"addWeapon": ["javelin", "heavy_throwing_spear"], "limit": 1},
+                        {"addRule": ["light_armor", "strider"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "milites": {
+            "name": "Milites",
+            "description": "The Latin term 'Milites' was another word for a 'professional soldier', and during the early part of the middle ages, was a term used also used for warriors that were minor nobility (knights). This unit represents full-time, professional, properly trained 'legionaries', which were often found within the 'Comitatenses' (Mobile Armies).",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Legionary",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["light_armor", "shield", "spearmen"],
+                    "weapons": ["spartha"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": "spear"}, {"addWeapon": ["heavy_throwing_spear", "javelin"]}, {"replaceRule": "shield", "withRule": "large_shield"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "palatini_milites": {
+            "name": "Palatinae Milites",
+            "description": "Seperate from the Limitanei and the Comitatenses, were the Palatini (Palace Troops), who were better paid and respected. While these units started out as troops personally organized and commanded by the Emperor, in some documents they are so plentiful, that they can't all be elite. There are many arguments among scholars, about the exact level of quality the late romans were capable of, in terms of training, material, and experience. This unit represents the 'lowest common denominator', of what the best late roman units were like, which is legionaries that are simply better trained",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Palatini",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_armor", "shield", "spearmen", "stubborn"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "heavy_throwing_spear"], "limit": 1},
+                        {"replaceRule": "shield", "withRule": "large_shield"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "semissalis": {
+            "name": "Semissalis",
+            "description": "Semissalis (Veterans) were the best men in the 'Cohors peditata' (Meaning infantry organized into 'Cohorts' according to the Marian reforms). These men were similar to the 'principes' and 'triarii' of the Republican Era, men who through time and experience managed to become well equiped and hardy fighters. Pay was one and a half that of standard legionaries. This unit could also represent the 'Palatine' in charge of protecting the Emperor, or men personally handpicked to be within a personal army.",
+            "category": "elite",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Veteran Legionary",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["shield", "spearmen"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceRule": "shield", "withRule": "large_shield", "modelLimit": "all"},
+                        {"addWeapon": ["plumbata", "heavy_throwing_spear", "javelin"], "limit": 1}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "sagittarii": {
+            "name": "Sagittarii",
+            "description": "In the late Roman Empire Sagittarii (Archers) became increasingly more important, likely to counter the rising barbarian threat.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "models": [
+                {
+                    "name": "Sagitarius",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["composite_bow"],
+                    "options": [{"addRule": ["stubborn", "agile"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites": {
+            "name": "Equites",
+            "description": "The 'Equites' were members of a landowning social class, much like minor nobility (knights). In many cultures, a warrior who could afford a horse, often fought mounted, and thus the wealthy and nobles made up much of the cavalry. The Romans and those who adopted elements of their culture were no exception.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eques",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_cavalry", "shield", "war_horse"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear", "modelLimit": "all"},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_scout": {
+            "name": "Equites Scouts",
+            "description": "The Stratiotai were holders of a 'Strateia', a general military service obligation. These men were banned from agricultural work and commercial employment, and they had reduced taxes. Justinian had laws banning them from private employment, with huge fines to employers (Likely nobles wanting mercenaries). The Stratiotai resembled state pay and supplies when they build public buildings or took part in military campaigns. In sources, Stratiotai are classified as separate from 'foederati' and 'phoideratoi'. During this time infantry was increasingly relegated to being secondary importance and status, while most of the armed forces were made up of foreigners or partial foreigners.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Eques Scout",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["light_cavalry", "mount_horse", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"}, {"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "heavy_stratiotai_equites": {
+            "name": "Heavy Stratiotai Equites",
+            "description": "The Stratiotai were holders of a 'Strateia', a general military service obligation. These men were banned from agricultural work and commercial employment, and they had reduced taxes. Justinian had laws banning them from private employment, with huge fines to employers (Likely nobles wanting mercenaries). The Stratiotai resembled state pay and supplies when they build public buildings or took part in military campaigns. In sources, Stratiotai are classified as separate from 'foederati' and 'phoideratoi'. During this time infantry was increasingly relegated to being secondary importance and status, while most of the armed forces were made up of foreigners or partial foreigners.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Heavy Stratiotai Eques",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_armor", "light_cavalry", "mount_horse", "shield", "superior_cavalry"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear"},
+                        {"replaceRule": "light_armor", "withRule": "heavy_armor", "modelLimit": "all"},
+                        {"replaceRule": "light_cavalry", "withRule": ["mount_warrior_culture"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "veteran_equites_sagitarii": {
+            "name": "Veteran Equites Sagittarii",
+            "description": "The Stratiotai were holders of a 'Strateia', a general military service obligation. These men were banned from agricultural work and commercial employment, and they had reduced taxes. Justinian had laws banning them from private employment, with huge fines to employers (Likely nobles wanting mercenaries). The Stratiotai resembled state pay and supplies when they build public buildings or took part in military campaigns. In sources, Stratiotai are classified as separate from 'foederati' and 'phoideratoi'. During this time infantry was increasingly relegated to being secondary importance and status, while most of the armed forces were made up of foreigners or partial foreigners.",
+            "category": "rare",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Veteran Eques Sagittarius",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_armor", "light_cavalry", "mount_horse", "superior_cavalry"],
+                    "weapons": ["hand_weapon", "bow"],
+                    "options": [{"replaceWeapon": "bow", "withWeapon": "composite_bow", "modelLimit": "all"}, {"replaceRule": "light_armor", "withRule": "heavy_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "eastern_equites_sagittarii": {
+            "name": "Eastern Equites Sagittarii",
+            "description": "The Stratiotai were holders of a 'Strateia', a general military service obligation. These men were banned from agricultural work and commercial employment, and they had reduced taxes. Justinian had laws banning them from private employment, with huge fines to employers (Likely nobles wanting mercenaries). The Stratiotai resembled state pay and supplies when they build public buildings or took part in military campaigns. In sources, Stratiotai are classified as separate from 'foederati' and 'phoideratoi'. During this time infantry was increasingly relegated to being secondary importance and status, while most of the armed forces were made up of foreigners or partial foreigners.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eastern Eques Sagittarius",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_armor", "light_cavalry", "mount_horse", "superior_cavalry"],
+                    "weapons": ["hand_weapon", "bow"],
+                    "options": [{"replaceWeapon": "bow", "withWeapon": "composite_bow", "modelLimit": "all"}, {"replaceRule": "light_armor", "withRule": "heavy_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stratiotai_contos_equites": {
+            "name": "Stratiotai Contos Equites",
+            "description": "The Stratiotai were holders of a 'Strateia', a general military service obligation. These men were banned from agricultural work and commercial employment, and they had reduced taxes. Justinian had laws banning them from private employment, with huge fines to employers (Likely nobles wanting mercenaries). The Stratiotai resembled state pay and supplies when they build public buildings or took part in military campaigns. In sources, Stratiotai are classified as separate from 'foederati' and 'phoideratoi'. During this time infantry was increasingly relegated to being secondary importance and status, while most of the armed forces were made up of foreigners or partial foreigners.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Stratiotai Contos Eques",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_armor", "light_cavalry", "mount_horse", "superior_cavalry"],
+                    "weapons": ["kontos"],
+                    "options": [
+                        {"replaceRule": "light_armor", "withRule": "heavy_armor", "modelLimit": "all"},
+                        {"replaceRule": "light_cavalry", "withRule": ["mount_warrior_culture"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_scutari": {
+            "name": "Equites Scutari",
+            "description": "Equites Scutari (Horseman with Scutum shield) were typically mounted Iberians, the very people who invented the Scutum shield we often associate with the Romans. This unit can also represent soldiers armed and equipped like Legionaries, but on horseback.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eques Scutari",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["shield", "war_horse"],
+                    "weapons": ["spear", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear", "modelLimit": "all"}, {"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_scutari_palatinae": {
+            "name": "Equites Scutari Palatinae",
+            "description": "As their name suggests, these men would be Horsemen (Equites) with the Iberian/Roman Scutum shield (Scutari), who were 'palace troops' (Palatinae) ",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eques Scutari Palatinae",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["shield", "stubborn", "war_horse"],
+                    "weapons": ["spear", "javelin"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear", "modelLimit": "all"}, {"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_promoti": {
+            "name": "Equites Promoti",
+            "description": "The Equites Promoti (Horsemen, Promoted), were higher ranked or better trained Equites, typically those who behaved as mounted skirmishers.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eques Promoti",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["light_cavalry", "shield", "war_horse"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": "heavy_throwing_spear", "modelLimit": "all"},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_sagittarii": {
+            "name": "Equites Sagittarii",
+            "description": "Equites Sagittarii (Horse Archers), were cavalry who mainly focused on the use of the bow.",
+            "category": "core",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Eques Sagitarius",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "light_cavalry", "war_horse"],
+                    "weapons": ["hand_weapon", "bow"],
+                    "options": [{"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_cataphractarii": {
+            "name": "Equites Cataphractarii",
+            "description": "The late romans made heavy use of 'equites legionis'. Many of these mounted warriors were actually barbarians recruited from nomadic warrior peoples, and various other cultures with strong traditions of mounted warriors. The best of these warriors saw heavy action in 'the east', and were known as 'Equites cataphractarii'. Despite the fact that these units were rarely deployed in 'the west', many of them had very obviously Gaulish names. It wouldn't be especially  hard for retired Equites cataphractarii, romanized peoples, and various mounted cultures in the west to form their own brand new 'Equites cataphractarii'. Unlike what some people mistakenly believe, the Auxilia 'Sarmatians', were last recorded in the area around the 300s and over time any cavalry traditions they taught would be forgotten.",
+            "category": "rare",
+            "subfactions": ["none", "early_byzantine_empire", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Cataphractarii",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["light_armor", "shield", "war_horse"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"addWeapon": ["heavy_throwing_spear", "javelin"], "limit": 1},
+                        {"replaceRule": "light_armor", "withRule": "heavy_armor", "modelLimit": "all"},
+                        {"addRule": "furious_charge", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "equites_clibinarii": {
+            "name": "Equites Clibinarii",
+            "description": "Technically the terms 'Cataphractarii' and 'Clibinarii' are used interchanagably. At the same time, it does seem that most 'Clibinarii' had eastern sounding names. However, for this game, this term is used to refer to Cataphractarii who wear maximum armor.",
+            "category": "elite",
+            "subfactions": ["late_roman", "early_byzantine_empire", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Clibinarii",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["heavy_armor", "horse_armor", "shield", "war_horse"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["heavy_mace", "kontos", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["heavy_throwing_spear", "javelin"], "limit": 1},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "kataphraktoi": {
+            "name": "Kataphraktoi",
+            "description": "The Kataphraktoi are a general return to the Cataphract, espially the most heavily armored kind. They appear to mostly be a reaction to the Muslims and as way to defeat them in battle.",
+            "category": "elite",
+            "subfactions": ["byzantine_empire"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Kataphraktoi",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "rules": ["half_horse_armor", "heavy_armor", "shield", "war_horse"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["heavy_mace", "kontos", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["heavy_throwing_spear", "javelin"], "limit": 1},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "scholae_palatinae": {
+            "name": "Scholae Palatinae",
+            "description": "Scholae Palatinae (literally 'Palatine Schools'), were the replacements for the 'Praetorian Guard' arranged by 'Constantine the Great'. They were deliberately recruited from non-Romans, so that they would be completely loyal to the emperor and not understand local politics.",
+            "category": "elite",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Scholae Palatini",
+                    "movement": 5,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "rules": ["heavy_armor", "horse_armor", "shield", "stubborn", "war_horse"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["heavy_mace", "kontos", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["heavy_throwing_spear", "javelin"], "limit": 1},
+                        {"replaceRule": "stubborn", "withRule": "fanatical", "modelLimit": "all"},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "rustici": {
+            "name": "Rustici",
+            "description": "Like many cultures, including the Romans, those who couldn't fully afford their own spear and shield (Rustici: Rural / 'From the country') often fought as skirmishers.",
+            "category": "rare",
+            "subfactions": ["none", "slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "models": [
+                {
+                    "name": "Rustici",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "hand_weapon", "shield"],
+                    "options": [
+                        {"replaceWeapon": "javelin", "withWeapon": ["spear", "sling"], "modelLimit": "all"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "strider"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "rustici_psiloi": {
+            "name": "Rustici Psiloi",
+            "description": "During the early years of the Byzantine Empire, the organization of the military was much looser, and various proxy or provincial (Rustici: Rural / 'From the country') forces were raised. If recruited from barbarians or less civilized areas, the forces could be especially unmotivated or unruly.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Rustici Psiloi",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "rules": ["if_it_bleeds", "levies", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "unarmed", "shield"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": ["spear", "sling"], "modelLimit": "all"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow"], "modelLimit": "all"},
+                        {"replaceRule": ["levies"], "withRule": ["fierce"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "strider"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "psiloi": {
+            "name": "Psiloi",
+            "description": "Psiloi (Bare, Stripped), were those who couldn't fully afford their own spear and shield, so they often fought as skirmishers.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire", "three_short"],
+            "models": [
+                {
+                    "name": "Psiloi",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "unarmed", "buckler"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": ["spear", "sling"], "modelLimit": "all"},
+                        {"replaceWeapon": "buckler", "withWeapon": ["bow"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "strider"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "isaurian_psiloi": {
+            "name": "Isaurian Psiloi",
+            "description": "The Isaurians were a previously poor people of a mountainous province within what is now Turkey. Like many other people from such descriptions, they were excellent light infantry. The reigns of both, Theodosius II and Leo 1 (Ruled 402-45, 457-474) propelled many of these simple mountain people into positions of great civil and military power, possibly to counter other barbarian or semi-barbarian peoples (Such as 'Germanics').  Indeed, Emperor Zeno (Ruled 474-475) was an Isaurian himself. Despite the fact that within the military, barbarians and romans were increasing indistinguishable, the 'Romans' in Constantinople erupted into what was effectively a race riot in 475 (Which literally started in a chariot stadium..), during which they killed every Isaurian in the city. Zeno ended up ruling from 476 till 491, when he died of natural causes. A fellow Isaurian was not allowed to replace him (More sports fans race riots), and the resulting Isaurian revolt was crushed in 492.",
+            "category": "rare",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Isaurian Psiloi",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "rules": ["light_infantry"],
+                    "weapons": ["javelin", "hand_weapon", "buckler"],
+                    "options": [
+                        {"replaceWeapon": "javelin", "withWeapon": ["sling"], "modelLimit": "all"},
+                        {"replaceWeapon": "buckler", "withWeapon": ["shield", "bow"], "modelLimit": "all"},
+                        {"addRule": ["warrior_culture", "strider", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "psiloi_themata": {
+            "name": "Psiloi Themata",
+            "description": "'Themata' refers to a Byzantine military/administartion province, these provinces are measured by the area protected by a specific army, which might also be called Themata or similar words.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Psiloi Themata",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "skirmisher_formation"],
+                    "weapons": ["javelin", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": ["sling"], "modelLimit": "all"},
+                        {"replaceRule": "buckler", "withWeapon": ["shield"], "modelLimit": "all"},
+                        {"addRule": ["stubborn", "strider"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "elite_psiloi": {
+            "name": "Elite Psiloi Themata",
+            "description": "'Themata' refers to a Byzantine military/administartion province, these provinces are measured by the area protected by a specific army, which might also be called Themata or similar words.",
+            "category": "rare",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Elite Psiloi Themata",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["skirmisher_formation"],
+                    "weapons": ["javelin", "hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": "javelin", "withWeapon": ["spear", "sling"], "modelLimit": "all"}, {"addRule": "strider", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "archer_psiloi": {
+            "name": "Archer Psiloi Themata",
+            "description": "'Themata' refers to a Byzantine military/administartion province, these provinces are measured by the area protected by a specific army, which might also be called Themata or similar words.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Archer Psiloi Themata",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "skirmisher_formation"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "options": [{"addRule": ["stubborn", "strider"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "elite_archer_psiloi": {
+            "name": "Elite Archer Psiloi Themata",
+            "description": "'Themata' refers to a Byzantine military/administartion province, these provinces are measured by the area protected by a specific army, which might also be called Themata or similar words.",
+            "category": "rare",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Elite Archer Psiloi Themata",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "skirmisher_formation"],
+                    "weapons": ["bow", "hand_weapon"],
+                    "options": [{"addRule": "strider", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "early_geoguth": {
+            "name": "Light Saxon Foederati",
+            "description": "A band of Geoguth (Pronouced Yoo-Guths), was the young men and boys of a Saxon warband. Typically these men followed less experienced leaders, warlords, and chieftains. This unit represents 'Foederati' and barbarian mercenaries, which fight in the 'Saxon style' revolving around the buckler.",
+            "category": "core",
+            "subfactions": ["slightly_late_roman"],
+            "models": [
+                {
+                    "name": "Geoguth",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "fierce", "if_it_bleeds", "light_infantry", "warband"],
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [{"addRule": "strider", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "bucellarii": {
+            "name": "Bucellarii",
+            "description": "Bodyguard Mercenaries, Latin for 'biscuit-eater', were recruited from 'Romans', Persians, Goths, and Huns, and other groups of people. These soldiers were often very loyal to their specific employers, and quite hardy fighters.",
+            "category": "elite",
+            "subfactions": ["late_roman", "early_byzantine_empire", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Bucellarii",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["spearmen", "stubborn"],
+                    "weapons": ["spartha", "shield"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow", "large_shield"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "heavy_throwing_spear"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "mounted_bucellarii": {
+            "name": "Mounted Bucellarii",
+            "description": "The Bucellarii were reported to make up some of the best cavalry available to Roman commanders and generals.",
+            "category": "elite",
+            "subfactions": ["late_roman", "early_byzantine_empire", "later_eastern_roman"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Bucellarii",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["mount_horse", "stubborn"],
+                    "weapons": ["spartha", "shield"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": "spear", "modelLimit": "all"},
+                        {"replaceWeapon": "shield", "withWeapon": ["bow", "large_shield"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "heavy_throwing_spear"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "foederati": {
+            "name": "Foederati",
+            "description": "The 'Foederati' (The term comes from a Latin word for 'treaty'), were often allied 'barbarian' peoples or tribes that were bound by treaty and subsidized with land, money, or resources; to act as a 'buffer force' or mercenaries.",
+            "category": "core",
+            "subfactions": ["slightly_late_roman"],
+            "models": [
+                {
+                    "name": "Foederati",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["fierce", "if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spear", "hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Francisca"}], "limit": 1}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "mounted_foederati": {
+            "name": "Mounted Foederati",
+            "description": "The 'Foederati' (The term comes from a Latin word for 'treaty'), were often allied 'barbarian' peoples or tribes that were bound by treaty and subsidized with land, money, or resources; to act as a 'buffer force' or mercenaries.",
+            "category": "core",
+            "subfactions": ["slightly_late_roman"],
+            "models": [
+                {
+                    "name": "Mounted Foederati",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["fierce", "if_it_bleeds", "mount_horse", "shield", "warband"],
+                    "weapons": ["spear", "hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Francisca"}], "limit": 1}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "foederati_veterans": {
+            "name": "Foederati Veterans",
+            "description": "As time passed, warriors would gain renown, experience, and wealth. This meant better equipment and fighting ability.",
+            "category": "rare",
+            "subfactions": ["late_roman", "slightly_late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Foederati Veteran",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spear", "hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Francisca"}], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "foederati_veterans_0": {
+            "name": "Mounted Foederati Veterans",
+            "description": "As time passed, warriors would gain renown, experience, and wealth. This meant better equipment and fighting ability.",
+            "category": "rare",
+            "subfactions": ["late_roman", "slightly_late_roman", "later_eastern_roman"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Foederati Veteran",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "mount_horse", "shield", "warband"],
+                    "weapons": ["spear", "hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Francisca"}], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "phoideratoi": {
+            "name": "Phoideratoi",
+            "description": "The 'Phoideratoi' ('Allies'), had evolved from the Foederati and were regularly paid units, that were mixed units consisting of 'romans' and 'barbarians'. Over time they became increase 'roman' and professional, till they were functionally indistinguishable from other infantry.",
+            "category": "core",
+            "subfactions": ["early_byzantine_empire"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Phoideratoi",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["shield", "spearmen"],
+                    "weapons": ["spear"],
+                    "options": [{"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"}, {"replaceRule": "shield", "withRule": "large_shield", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "mounted phoideratoi": {
+            "name": "Phoideratoi Cavalry ",
+            "description": "The 'Phoideratoi' ('Allies'), had evolved from the Foederati and were regularly paid units, that were mixed units consisting of 'romans' and 'barbarians'. Over time they became increase 'roman' and professional, till they were functionally indistinguishable from other infantry.",
+            "category": "core",
+            "subfactions": ["early_byzantine_empire"],
+            "keywords": ["Drilled", "Cavalry"],
+            "models": [
+                {
+                    "name": "Phoideratoi Cavalry",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["mount_horse", "shield"],
+                    "weapons": ["spear"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["spartha"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Francisca"}], "limit": 1},
+                        {"addRule": ["heavy_armor", "light_armor"], "limit": 1, "modelLimit": "all"},
+                        {"addRule": ["superior_cavalry", "mount_warrior_culture"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stratiotai_skutatoi": {
+            "name": "Stratiotai Skutatoi",
+            "description": "Skutatoi (From 'scutum', literally 'Shield', but meaning the Roman oblong shield) are a unit of spearmen that provide protection against missile fire for archers combined with them.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Skutatoi",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["combined", "if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spear"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": "spartha", "modelLimit": "all"},
+                        {"addWeapon": ["darts", "javelin"], "limit": 1},
+                        {"replaceRule": "shield", "withRule": "large_shield", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "stratiotai_sagittarii": {
+            "name": "Stratiotai Sagittarii",
+            "description": "A unit of archers than combine with a unit of Skutaoi to form a deadly formation.",
+            "category": "core",
+            "subfactions": ["byzantine_empire", "early_byzantine_empire"],
+            "models": [
+                {
+                    "name": "Stratiotai Sagittarius",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["combined"],
+                    "weapons": ["composite_bow"],
+                    "options": [{"addRule": ["stubborn", "strider"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "milita_kontaratoi": {
+            "name": "Militia Kontaratoi Themata",
+            "description": "Kontaratoi were named after their spears, the Kontos and they ranged from the local spear militia of the local Themata (Military province) to elite, professional soldiers.",
+            "category": "core",
+            "subfactions": ["slightly_late_roman", "three_short"],
+            "models": [
+                {
+                    "name": "Kontaratoi",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["kontos"],
+                    "options": [{"addWeapon": ["darts", "javelin"], "limit": 1}, {"replaceRule": "shield", "withRule": "large_shield", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "elite_kontaratoi": {
+            "name": "Elite Kontaratoi Themata",
+            "description": "Kontaratoi were named after their spears, the Kontos and they ranged from the local spear militia of the local Themata (Military province) to elite, professional soldiers.",
+            "category": "core",
+            "subfactions": ["slightly_late_roman", "three_short"],
+            "keywords": ["Drilled", "Infantry"],
+            "models": [
+                {
+                    "name": "Elite Kontaratoi",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_armor", "shield", "spearmen", "stubborn"],
+                    "weapons": ["kontos"],
+                    "options": [{"addWeapon": ["darts", "javelin"], "limit": 1}, {"replaceRule": "shield", "withRule": "large_shield", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        },
+        "bagaudae": {
+            "name": "Bagaudae",
+            "description": "Bagaudae (Celtic for 'fighters', Latin for 'brigands'), were revolting peasant warriors. Many of these uprisings were put down, but eventually some of them managed to time themselves with a barbarian invasion. The cause of unrest was excessive taxation, forced labor, and being treated as property.",
+            "category": "core",
+            "subfactions": ["late_roman", "later_eastern_roman"],
+            "models": [
+                {
+                    "name": "Peasant",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["warband", "buckler", "if_it_bleeds", "light_infantry"],
+                    "weapons": ["hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": ["strider", "stubborn"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ],
+            "options": [{"addRule": ["champion"], "modelLimit": 1}, {"addRule": ["banner"], "modelLimit": 1}, {"addRule": ["musician"], "modelLimit": 1}]
+        }
+    },
+    "weapons": {},
+    "rules": {
+        "hostage_of_the_huns": {
+            "name": "Hostage of The Huns",
+            "description": "Once per turn, select two _Cavalry_ units within 6\" of this unit. Give their ranged weapons the \"Assault\" special rule (Models with this weapon may make a free shoot action after moving at -1 Accuracy. They may not shoot again this round.) and increase their short range by 3\" until the end of the round.",
+            "points": [10]
+        },
+        "levies": {"name": "Levies", "description": "This model subtracts 1 from Courage tests.", "points": [-2]},
+        "combined": {
+            "name": "Combined",
+            "description": "Two units with the \"Combined\" special rule can be deployed as a single unit and act as a single unit for the remainder of the battle.",
+            "points": [1]
+        }
+    },
+    "relics": {
+        "aetius": {
+            "subfactions": ["late_roman"],
+            "name": "Aetius",
+            "rule": "hostage_of_the_huns",
+            "flavor": "Aetius started his career as a 'guest' or 'hostage' of the Visagoths and then Huns. Returning home, he manuevered his way into near supreme power within the Western Roman Empire. His defeat of the Franks, and even Atilla the Hun, made the Emperor jealous and concerned enough to have him killed.",
+            "description": "Upgrade one Dux model with \"Hostage of the Huns\".",
+            "points": 5
+        }
+    },
+    "strategies": {
+        "stuck_pila": {
+            "name": "Stuck Pila",
+            "phase": "activation",
+            "description": "Use after a unit made a shooting attack with an \"Assault\" weapon. The enemy unit has -1 Save until the end of the round.",
+            "flavor": "The pilum was designed to snap in such a fashion that it was stuck in the enemies shield and near impossible to remove.",
+            "cost": 1
+        },
+        "combat_reform": {
+            "name": "Combat Reform",
+            "phase": "activation",
+            "description": "Use when a _Drilled_ unit gets charged. You can move the unit up to 2\".",
+            "flavor": "With lots of training and practice, Roman soldiers would learn to quickly rotate or adjust formation at a moment's notice. Each man would know where his place was to be, as if by instinct.",
+            "cost": 1
+        },
+        "shield_wall": {
+            "name": "Shield Wall",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit, all with shields or large shields, is being charged or targeted by a shooting attack. If that unit moved one or no times this round it gets +1 Save. This strategy stays in effect until the unit moves more than 4\" in a round.",
+            "flavor": "The Romans and those who remembered their traditions, used a tactic and model of fighting that involved large shields and fighting shoulder to shoulder in formation.",
+            "cost": 1
+        },
+        "capital_horse_archers": {
+            "subfactions": ["early_byzantine_empire", "byzantine_empire", "three_short"],
+            "name": "Capital Horse Archers",
+            "phase": "activation",
+            "description": "Use when a _Cavalry_ unit makes a Shoot action. The unit shoots with +1 Accuracy for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        "run_them_down": {
+            "subfactions": ["early_byzantine_empire", "byzantine_empire", "three_short"],
+            "name": "Run Them Down",
+            "phase": "activation",
+            "description": "Use when a _Cavalry_ unit makes a Charge action. Weapons with the \"Impale\" special rule gain +1 AP for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        "shock_attack": {
+            "subfactions": ["early_byzantine_empire", "byzantine_empire", "three_short"],
+            "phase": "activation",
+            "name": "Shock Attack",
+            "description": "Use when charging with a _Cavalry unit. If the attack hits, assign 2 additional Shock.",
+            "flavor": "After the archers dispersed the enemy, cavalry launch shock attacks to keep them from retaliating.",
+            "cost": 1
+        },
+        "tactical_retreat": {
+            "subfactions": ["slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "name": "Tactical Retreat",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit attempts to fall back from melee. That unit automatically passes the Initiative check required to fall back.",
+            "flavor": "",
+            "cost": 1
+        },
+        "devastating_charge": {
+            "subfactions": ["slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "name": "Devastating Charge",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit makes a Charge action. All their Melee weapons gain +1 AP for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        "palace_troops": {
+            "subfactions": ["slightly_late_roman", "late_roman", "later_eastern_roman"],
+            "name": "Palace Troops",
+            "phase": "activation",
+            "description": "Use when a _Palatinae_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "cost": 1
+        }
+    }
+}

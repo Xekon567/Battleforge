@@ -1,0 +1,1228 @@
+{
+    "id": "china",
+    "name": "China",
+    "units": {
+        "in_platoon_command": {
+            "name": "Green Officer",
+            "description": "A properly trained, less experienced officer who can organize his men, but provides a less inspiring example.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle", "assault_pistol"]}, 
+            {"addWeapon": "at_grenades", "modelLimit": 3},
+            {"addRule": ["stubborn", "reluctant"]}
+        ],
+            "models": [
+                {
+                    "name": "Field Officer",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 1}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 1}, "withRule": {"id": "field_orders", "x": 2}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+                ,
+                {"name": "Bodyguard", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["pistol", "sword"],
+                    "rules": ["guardian"],
+                    "options": [
+                        {"replaceWeapon": "pistol", "withWeapon": ["assault_pistol"], "modelLimit": 1}], "min": 0, "max": 1}
+            ]
+        },
+        "platoon_command": {
+            "name": "Experianced Field Officer",
+            "description": "A respected and talented leader. Most men like this learned most of what they knew on the front, but sadly, most of them were busy fighting and dying to pass on their wisdom to new recruits.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle"]}, {"addWeapon": "at_grenades", "modelLimit": 3}],
+            "models": [
+                {
+                    "name": "Field Officer",
+                    "courage": 7,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 7,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 1}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 1}, "withRule": {"id": "field_orders", "x": 2}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 7, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2},
+                    {"name": "Bodyguard", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["pistol", "sword"],
+                        "rules": ["guardian"],
+                        "options": [
+                            {"replaceWeapon": "pistol", "withWeapon": ["assault_pistol"], "modelLimit": 1}], "min": 0, "max": 1}
+            ]
+        },
+        "in_political_officer": {
+            "name": "Inexperianced Political Officer",
+            "description": "An officer dedicated to keeping officers and higher soldiers in line. To the Nationalist Party, to the Motherland, to Communism, or to the local Warlord, it doesn't really matter. This political officer is younger and trained worse, but still an example of courage and devotion.",
+            "subfactions": ["china_nationalist", "none", "china_communist", "china_yan"],
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry", "Political Officer"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["assault_pistol"]},
+            {"addRule": "stubborn"}
+        ],
+            "models": [
+                {
+                    "name": "Commissar",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": ["leader"],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, 
+                    "reflexes": 4, "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["banner"], "modelLimit": 1}],
+                     "min": 0, "max": 2},
+                     {"name": "Bodyguard", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["pistol", "sword"],
+                        "rules": ["guardian"],
+                        "options": [
+                            {"replaceWeapon": "pistol", "withWeapon": ["assault_pistol"], "modelLimit": 1}], "min": 0, "max": 1}
+            ]
+        },
+        "political_officer": {
+            "name": "Political Officer",
+            "description": "An officer dedicated to keeping officers and higher soldiers in line. To the Nationalist Party, to the Motherland, to Communism, or to the local Warlord, it doesn't really matter.",
+            "subfactions": ["china_nationalist", "none", "china_communist", "china_yan"],
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry", "Political Officer"],
+            "options": [
+                {"replaceWeapon": "rifle", "withWeapon": ["assault_pistol"]},
+            {"addRule": ["stubborn", "fanatical"]}
+        ],
+            "models": [
+                {
+                    "name": "Commissar",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": ["leader"],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 4, 
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["banner"], "modelLimit": 1}],
+                     "min": 0, "max": 2}
+            ]
+        },
+        "warlord": {
+            "name": "Warlord",
+            "description": "After the supposed unification of China, only the most charismatic or brutal warlords are still in power.",
+            "subfactions": ["china_nationalist"],
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle", "assault_pistol"]}, 
+            {"addWeapon": "at_grenades", "modelLimit": 3},
+            {"addRule": ["stubborn", "reluctant", "mounted_horse"]}
+        ],
+            "models": [
+                {
+                    "name": "Warlord",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["pistol", "officer_sword", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 1}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 1}, "withRule": {"id": "field_orders", "x": 2}},
+                        [
+                            {"replaceWeapon": "pistol", "withWeapon": ["assault_pistol"], "modelLimit": 1}]
+                    ],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+                ,
+                {"name": "Flag Carrier", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 6, "reflexes": 6, "weapons": ["banner"], "min": 0, "max": 1}
+                    ,
+                {"name": "Bodyguard", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 5, "reflexes": 6, "weapons": ["pistol", "sword"],
+                    "rules": ["guardian"],
+                    "options": [
+                        {"replaceWeapon": "pistol", "withWeapon": ["assault_pistol"], "modelLimit": 1}], "min": 0, "max": 1}
+            ]
+        },
+        "field_medic": {
+            "name": "Field Medic",
+            "description": "A trained field medic used to treat the wounded near the frontline.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["china_western", "none", "china_communist", "china_nationalist", "china_yan"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Field Medic",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["pistol", "unarmed", "smoke_grenades"],
+                    "rules": ["medic", "non_combat", "support"],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+            ]
+        },
+        "peasant_press_gang": {
+            "name": "Peasant Press Gang",
+            "description": "Due to massive manpower shortages and the sheer desperation of the struggle against the Japanese, along with the fighting between the various Warlord factions, it was not completely uncommon for groups of peasants to be press-ganged into support roles.",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "models": [
+                {"name": "Police Officer", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 4, "weapons": ["pistol", "dadao"], "min": 1, "max": 1},
+                {
+                    "name": "Peasant",
+                    "courage": 4,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "weapons": [{"id": "bamboo_spear", "name": "Qiang", "count": 2}],
+                    "modelLimit": 1,
+                    "min": 9,
+                    "max": 16
+                }
+            ]
+        },
+        "vigilante_militia": {
+            "name": "Vigilante Militia",
+            "description": "In order to protect their villages from the attacks of the warlord factions and armies, peasants organized themselves into militias, secret societies and village associations which served as self-defense groups as well as vigilante groups. As the peasants usually had neither currency for guns nor military training, these secret societies relied on martial arts, homemade weapons such as spear, staffs or swords, as well as the staunch belief in Chi and other traditional beliefs.",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["stubborn"],
+            "options": [{"addWeapon": "pistol"}, {"addRule": "fanatical"}],
+            "models": [
+                {
+                    "name": "Vigilante Militia NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "bamboo_spear", "name": "Qiang"}],
+                    "options": [{"replaceWeapon": "bamboo_spear", "withWeapon": "officer_sword"}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Vigilante Militia",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "bamboo_spear", "name": "Qiang"}],
+                    "min": 5,
+                    "max": 16
+                }
+            ]
+        },
+        "peasant_maoists": {
+            "name": "Peasant Marxist-Leninists (National United Front)",
+            "description": "Despite this, many peasants could be reasonably motivated or inspired by political instructors nearby, or they had enough support of Nationalism paired with Communism to behave like ordinary conscripts or even be motivated partisans. Not only that, but, 'Many Mosin-Nagant 1891 rifles were supplied during the Sino-Soviet cooperation in the 1920s and to the troops of the pro-Soviet Sheng Shicai. The Soviet Aid Program early in the war also supplied China with 50,000 Mosin-Nagant 1891/30 rifles, which were used by second line and garrison troops due to the caliber difference.",
+            "subfactions": ["china_communist", "china_yan"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": {"id": "bamboo_spear", "name": "Qiang", "count": 2}, "withWeapon": [[{"id": "rifle", "name": "Mosin Nagant"}], "bayonet"]}],
+            "models": [
+                {
+                    "name": "Peasant Marxist-Leninist Revolutionary",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "bamboo_spear", "name": "Qiang", "count": 2}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Peasant Marxist-Leninists",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "bamboo_spear", "name": "Qiang", "count": 2}],
+                    "min": 5,
+                    "max": 16
+                }
+            ]
+        },
+        "8th_route_guerrillas": {
+            "name": "8th Route Guerrillas (National United Front)",
+            "description": "With enough of the people's faith and support, some regions self-organized communist anti-Japanese units. While lacking in official military training, these volunteers have access to Communist supply lines and some instruction in stealth.",
+            "subfactions": ["china_communist"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["stealth"],
+            "models": [
+                {
+                    "name": "8th Route Guerrilla Revolutionary",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "rifle"}, "bayonet"],
+                    "options": [{"addWeapon": ["molotov_cocktails"], "modelLimit": 2}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "8th Route Guerrilla", "courage": 6, "movement": 6, "shoot": 4, "fight": 5, "defense": 5, "reflexes": 5, "weapons": [{"id": "rifle"}, "bayonet"], "min": 5, "max": 16}
+            ]
+        },
+        "c3_nra_regular": {
+            "name": "Catagory 3 NRA Regular",
+            "description": "A little over half of the reportedly two million soldiers in the National Revolutionary Army were labeled as 'Category 3' and being considered the last loyal, least equipped, with a strong suspicion of having stronger ties to other leaders than Generalissimo Chiang Kai-shek. While a large number of these 'disloyal' men were part of the Sichuan clique, and were so brave as to provide 2/3rds of the men who died for the Motherland, the remainder weren't recorded as brave. China of the period was incredibly poor and quality of equipment was miserable for half of the NRA, with many men having close to no live firearms practice, barely getting enough to eat, and not even being supplied with boots. Considering some reports of brutal mass conscription, a lack of political motivation for non-nationalist/communist troops, and limited financial support, it's no surprise many men had rock bottom motivation.",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Reluctant NRA Regular",
+                    "courage": 4,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 4,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": ["dadao"]},
+                    {"replaceWeapon": "rifle", "withWeapon": ["carbine_rifle"]}],
+                    "min": 10,
+                    "max": 20
+                }
+            ]
+        },
+        "nra_regular": {
+            "name": "NRA Regular",
+            "description": "NRA Regular, 'National Revolutionary Army'). Recruits with modest practice and some access to modern weaponry, organized by the Chinese Nationalist Party and the NRA built to preserve the 'Republic of China'. The NRA Regulars are lucky in that unlike many of those fighting for the Motherland, they have a rifle, a steel helmet, and boots. The NRA Regular is often an illiterate peasant fighting to make a little extra money to support his family. NRA was lacking in ammunition or supplies for training, and the most advanced tactics were retained by officers who stayed in the field, meaning most NRA regulars did the bulk of their learning in classrooms and in the field. Despite this, the NRA regular was described as 'fit', 'hardy', 'obedient', and 'asking little in return'. One visiting American military observer noted that the slowest Chinese soldier learned how to operate a weapon in three days, that might easily take an American five days.",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "NRA Regular",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 4,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": [{"id": "mag_lmg", "name": "ZB vz. 26"}], "modelLimit": 1},
+                        {"replaceWeapon": "rifle", "withWeapon": ["carbine_rifle"]}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "sichuan_clique": {
+            "name": "Sichuan clique Warriors",
+            "description": "Sichuan province was one of the poorest and most populated areas of China during the Warlord Era, and it had many warlords who struggled to defeat each other in minor skimishes due to their limited resources. During “WW2”, Sichuan Clique was mostly organized and in agreement. During the war, data shows that of all the numbers of dead or injured soldiers 2.24 of the 3.26 million were from Sichuan Clique. Three of the nine NRA generals that died in the war were also from the province. While the men were reported to be very brave, they had limited combat experience and during the Warlord Era they were known for being poorly trained even by Chinese Warlord Era standards. The province also had limited access to factories or machine guns. They were so lacking in supplies, that many of them men didn't have boots, only straw sandles",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["stubborn"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["rifle"]}],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["rifle"]}, {"replaceWeapon": "unarmed", "withWeapon": ["dadao"]},
+                    {"replaceWeapon": "rifle", "withWeapon": ["carbine_rifle"]}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "german_nra": {
+            "name": "Chiang Kai-shek's 'Elite' NRA Regulars",
+            "description": "A group of NRA Regulars, handpicked to be in the 'elite central army' of Chairman Chiang Kai-shek, and then supplied with German equipment and training.",
+            "subfactions": ["china_nationalist"],
+            "min": 1,
+            "max": 1,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"], "modelLimit": 2}, {"addWeapon": ["bundle_grenades"], "modelLimit": 3}, {"rules": ["stubborn"]}],
+            "models": [
+                {
+                    "name": "Elite Rifle NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "assault_pistol", "name": "Mauser Pistol"}], "modelLimit": 1},
+                        {"replaceWeapon": "unarmed", "withWeapon": "officer_sword"}
+                    ],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Elite Rifleman",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "mag_lmg", "name": "ZB vz. 26"}], "modelLimit": 1},
+                        {"replaceWeapon": "rifle", "withWeapon": ["small_banner"], "modelLimit": 1},
+                        [{"addWeapon": [{"id": "very_light_mortar", "name": "Type 27"}], "modelLimit": 1}],
+                        {"replaceWeapon": ["rifle"], "withWeapon": [{"id": "box_lmg", "name": "Lewis Gun"}], "modelLimit": 1}
+                    ],
+                    "min": 5,
+                    "max": 14
+                }
+            ]
+        },
+        "8th_route_unit": {
+            "name": "8th Route Army Support (National United Front)",
+            "description": "Firm believers in communism and the Marxist-Leninist Revolution, these men are among the best taught Chinese, in the art of guerrilla warfare. As part of the 'Second United Front', these men are loyal to the Chinese Communist Party, but wear nationalist uniforms and fly the 'blue and white banner' of the Republic of China. They also have first pick of captured Japanese weapons and any available homemade, captured, or soviet imported explosive munitions.",
+            "subfactions": ["china_communist", "china_yan"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": ["rifle", "bayonet"], "withWeapon": [{"id": "assault_lmg", "name": "Type 99"}], "modelLimit": 1}],
+            "models": [
+                {
+                    "name": "8th Route Army Support NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "rifle"}, "bayonet"],
+                    "options": [{"addWeapon": ["bundle_grenades", "lunge_mine", "molotov_cocktails"], "modelLimit": 1}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "8th Route Army Support",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "rifle"}, "bayonet"],
+                    "options": [{"addWeapon": ["bundle_grenades", "lunge_mine", "molotov_cocktails"], "modelLimit": 2}],
+                    "min": 5,
+                    "max": 14
+                }
+            ]
+        },
+        "8th_route_unit_veteran": {
+            "name": "8th Route Army Support Veteran (National United Front)",
+            "description": "Firm believers in communism and the Marxist-Leninist Revolution, these men are among the best taught Chinese, in the art of guerrilla warfare. As part of the 'Second United Front', these men are loyal to the Chinese Communist Party, but wear nationalist uniforms and fly the 'blue and white banner' of the Republic of China. They also have first pick of captured Japanese weapons and any available homemade, captured, or soviet imported explosive munitions.",
+            "subfactions": ["china_communist"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"replaceWeapon": ["rifle", "bayonet"], "withWeapon": [{"id": "assault_lmg", "name": "Type 99"}], "modelLimit": 1},
+                {"replaceWeapon": ["rifle", "bayonet"], "withWeapon": [{"id": "box_lmg", "name": "Degtyaryov DP"}], "modelLimit": 1},
+                {"addWeapon": ["bundle_grenades", "lunge_mine", "molotov_cocktails"], "modelLimit": 3}
+            ],
+            "models": [
+                {
+                    "name": "8th Route Army Support Veteran NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "rifle"}, "bayonet", "unarmed"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": "officer_sword"}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "8th Route Army Support Veteran",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": [{"id": "rifle"}, "bayonet"],
+                    "options": [{"addWeapon": [{"id": "very_light_mortar", "name": "Type 27"}], "modelLimit": 1}],
+                    "min": 5,
+                    "max": 14
+                }
+            ]
+        },
+        "saco": {
+            "name": "SACO Guerrillas",
+            "description": "SACO (Sino-American Cooperative Organization) was created by a treaty between the United States and China, around the time that the US entered WW2. In the treaty, the two nations agreed to share information and work together to defeat Japan. The organization was mostly coordinated by the Chinese Nationalist secret police and the O.S.S., which became the CIA. American police officers within special camps, would train Chinese guerrillas in the use of radios, spying, identifiying enemy equipment, hand to hand fighting, small arms, explosives, and sabotages. Overall, the Americans were suprised at how fast the Chinese were willing to, and could, learn the material",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["stealth"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"addWeapon": "pistol", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "SACO Guerrilla NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": {"id": "smg", "name": "M42"}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "SACO Guerrilla",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": {"id": "smg", "name": "M42", "modelLimit": 1}}],
+                    "min": 5,
+                    "max": 14
+                }
+            ]
+        },
+        "veteran_saco": {
+            "name": " SACO Guerrilla Veterans",
+            "description": "Filler",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["smg"], "modelLimit": 6},
+                {"addWeapon": "at_grenades", "modelLimit": 3},
+                {"addWeapon": "smoke_grenades", "modelLimit": 2}
+            ],
+            "models": [
+                {
+                    "name": "SACO Guerrilla Veteran NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [{"addWeapon": ["bazooka"], "modelLimit": 1}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "SACO Guerrilla Veteran",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["assault_lmg"], "modelLimit": 1},
+                        {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["flamethrower"], "modelLimit": 1},
+                        {"replaceWeapon": ["semi_auto_carbine_rifle"], "withWeapon": [{"id": "box_lmg", "name": "Lewis Gun"}], "modelLimit": 1}
+                    ],
+                    "min": 5,
+                    "max": 14
+                },
+                {
+                    "name": "SACO Guerrilla Veteran Bazooka Assistant",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed"],
+                    "min": 0,
+                    "max": 1
+                }
+            ]
+        },
+        "yan_x_nra": {
+            "name": " Yan Xishan's Army",
+            "description": "The average soldier of Yan Xishan was in a very specific situation, in regards to being a Chinese soldier. He often wasn't a volunteer, nor was he motivated by the nationalist or communist parties. However, unlike a large number of the people of his country, he could read. While maybe half or less of the soldiers of the NRA had a good uniform, boots, and a rifle; the average soldier in service to Yan Xishan could've had spares. Every single one of these men was born in their province and some of them had lived their whole lives with Yan Xishan in power, hearing people repeat his speeches, and reading his newspapers. They spent the time they didn't spend training, building roads, and helping farmers, which made them very popular with many ordinary people. While it's not clear how well the average soldier of Yan Xishan understood the man's seemingly complex blend of every single modern European and ancient Chinese philosophy, the warlord claimed to practice a philosophy of service, modernity, and equality. At the very least, the average soldier would notice the 'land reforms' and how many of the corrupt elite seemed to despise Yan Xishan.",
+            "subfactions": ["china_yan"],
+            "min": 1,
+            "max": 5,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["stubborn"],
+            "options": [
+                {"replaceWeapon": "rifle", "withWeapon": [{"id": "smg", "name": "Thompson"}], "modelLimit": 1},
+                {"addWeapon": "at_grenades", "modelLimit": 1},
+                {"addWeapon": ["frag_grenades"], "modelLimit": 3}
+            ],
+            "models": [
+                {
+                    "name": "Yan Xishan Rifleman NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": ["assault_pistol"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Yan Xishan Rifleman",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "assault_lmg", "name": "ZB vz. 26"}], "modelLimit": 1},
+                        {"replaceWeapon": "unarmed", "withWeapon": ["pistol"]},
+                        {"replaceWeapon": "unarmed", "withWeapon": [{"id": "assault_pistol", "name": "Mauser pistol", "modelLimit": 2}]},
+                        [{"addWeapon": [{"id": "very_light_mortar", "name": "Type 27"}], "modelLimit": 1}]
+                    ],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "yan_x_elite_nra": {
+            "name": " Yan Xishan's Elite Soldiers",
+            "description": "While the communists preferred to 'poke and prod', with their 'hit and run attacks', Yan Xishan had access to men who knew no fear and would fight to the last 10%, which according to all accounts, they did. Even Mao wasn't sure if he wanted to refer to Yan Xishan's thinking as 'suicidal tactics' or praise him for waging complete resistance with no surrender. Yan Xishan's best men were at times better equipped than the Japanese, and were heavily motivated by: better treatment, better living conditions, Yan Xishan's appearance of being a complex and intelligent philosophical leader, seemingly endless automatic weapons, and the fact that Yan Xishan would personally order the execution of commanders he thought were cowardly. According to some reports, for every one of them that died, they took as many as two, three, four, or even five Japanese.",
+            "subfactions": ["china_yan"],
+            "min": 1,
+            "max": 2,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"replaceWeapon": "rifle", "withWeapon": [{"id": "smg", "name": "Thompson"}], "modelLimit": 4},
+                {"addWeapon": "at_grenades", "modelLimit": 3},
+                {"addRule": "fanatical"},
+                {"addWeapon": ["bundle_grenades", "lunge_mine", "molotov_cocktails"], "modelLimit": 3}
+            ],
+            "models": [
+                {
+                    "name": "Yan Xishan Honor Guard NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": ["assault_pistol"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Yan Xishan Honor Guard",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "assault_lmg", "name": "ZB vz. 26"}], "modelLimit": 1},
+                        {"replaceWeapon": "unarmed", "withWeapon": ["pistol"]},
+                        {"replaceWeapon": "unarmed", "withWeapon": [{"id": "assault_pistol", "name": "Mauser pistol", "modelLimit": 4}]},
+                        [{"addWeapon": [{"id": "very_light_mortar", "name": "Type 27"}], "modelLimit": 1}]
+                    ],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "y_force_nra_regular": {
+            "name": "Y Force NRA Regular",
+            "description": "",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Y Force NRA NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["semi_auto_carbine_rifle"], "modelLimit": 1}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Y Force NRA Regular",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "mag_lmg", "name": "ZB vz. 26"}], "modelLimit": 1},
+                        {"replaceWeapon": "rifle", "withWeapon": ["semi_auto_carbine_rifle"]}
+                    ],
+                    "min": 5,
+                    "max": 12
+                }
+            ]
+        },
+        "x_force_nra_regular": {
+            "name": "X Force NRA Regular",
+            "description": "",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"replaceWeapon": "rifle", "withWeapon": [{"id": "smg", "name": "Thompson"}], "modelLimit": 1},
+                [{"replaceWeapon": "unarmed", "withWeapon": [{"id": "pistol", "name": "Browning Pistol"}], "modelLimit": 4}],
+                {"addWeapon": ["frag_grenades"], "modelLimit": 3}
+            ],
+            "models": [
+                {"name": "X Force NRA NCO", "courage": 6, "movement": 6, "shoot": 6, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1},
+                {
+                    "name": "X Force NRA Regular",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "mag_lmg", "name": "8mm Canadian Bren"}], "modelLimit": 1},
+                        {"replaceWeapon": ["rifle"], "withWeapon": [{"id": "box_lmg", "name": "Lewis Gun"}], "modelLimit": 1}
+                    ],
+                    "min": 5,
+                    "max": 12
+                }
+            ]
+        },
+        "yan_railway": {
+            "name": "Yan Xishan Railway/Anti-Bandit Guard",
+            "description": "Yan Xishan who had become the Governor-General of Shanxi, controlled the Taiyuan Arsenal, which “was a major producer of both the ZB vz. 26 light machine guns and Thompson submachine guns.' 'Yen was equipping his troops with a locally produced copy of the Thompson sub machine gun, chambered for the .45 ACP cartridge, but was experiencing supply difficulties as his troops' sidearms were 7.63mm caliber C96 handguns. Yan's solution was to produce a .45 ACP caliber version of the C96, thus standardizing ammunition and making supply logistics easier. Designated Type 17, production of the .45 caliber handgun began in 1929 at the Taiyuan Arsenal and ended in 1931. They are inscribed (in Chinese) '17' on the left hand side of the gun, and 'Republic Year Eighteen, Made in Shansi' on the right hand side. They were issued (along with Thompson SMGs) to railway guards in the province as defense against bandits and other warlords.",
+            "subfactions": ["china_yan"],
+            "min": 1,
+            "max": 1,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"], "modelLimit": 2}, {"addWeapon": ["bundle_grenades"], "modelLimit": 3}, {"rules": ["stubborn"]}],
+            "models": [
+                {
+                    "name": "Guard Pistol",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["pistol", "dadao"],
+                    "options": [{"replaceWeapon": "pistol", "withWeapon": [{"id": "assault_pistol", "name": "Mauser Pistol"}]}, {"replaceWeapon": "dadao", "withWeapon": "officer_sword"}],
+                    "min": 3,
+                    "max": 6
+                },
+                {
+                    "name": "Guard Rifle",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "dadao"],
+                    "options": [
+                        {"replaceWeapon": "rifle", "withWeapon": [{"id": "assault_pistol", "name": "Mauser Pistol"}]},
+                        {"replaceWeapon": ["rifle"], "withWeapon": [{"id": "smg", "name": "Thompson"}], "modelLimit": 3}
+                    ],
+                    "min": 3,
+                    "max": 6
+                }
+            ]
+        },
+        "chinese_cavalry": {
+            "name": "Chinese Cavalry",
+            "description": "Many Chinese factions had stables and breeding stations for Ningxia and/or Mongolian horses, the kind suitable for use in war.",
+            "subfactions": ["china_nationalist", "china_communist", "none"],
+            "min": 1,
+            "max": 3,
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "rules": ["mounted_horse"],
+            "options": [{"replaceWeapon": "unarmed", "withWeapon": ["dadao"]}],
+            "models": [
+                {
+                    "name": "Chinese Cavalryman",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 4,
+                    "reflexes": 4,
+                    "weapons": ["carbine_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "carbine_rifle", "withWeapon": [{"id": "mag_lmg", "name": "ZB vz. 26"}], "modelLimit": 1}],
+                    "min": 5,
+                    "max": 14
+                }
+            ]
+        },
+        "mmg_team": {
+            "name": "Maxim MG Team",
+            "description": "An incredibly modified and updated version of the early WW1 German MG 08, the Type 24 had many features and was the most common heavy machine gun used by China. It could be modified or setup to do all kinds of different tasks, but it was pretty heavy.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "keywords": ["Infantry"],
+            "subfactions": ["china_western", "china_nationalist", "none", "china_communist", "china_yan"],
+            "models": [
+                {
+                    "name": "Medium MG",
+                    "courage": "-",
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "weapons": [{"id": "mmg", "mount": ["Front"]}],
+                    "rules": [{"id": "crew", "x": 3}, "gun_shield"],
+                    "options": [{"replaceWeapon": {"id": "mmg", "mount": ["Front"]}, "withWeapon": "mmg_aa"}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "zis_3_atgun": {
+            "name": "ZiS-3 AT Gun",
+            "description": "A wheeled medium at gun that can be fired indirectly like a light howitzer.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "subfactions": ["none", "china_communist", "china_yan"],
+            "models": [
+                {
+                    "name": "ZiS-3 AT Gun",
+                    "courage": "-",
+                    "movement": 3,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "medium_at_light_howitzer", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "pak_36": {
+            "name": "Pak 36 AT Gun",
+            "description": "A wheeled light at gun.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "subfactions": ["none", "china_nationalist"],
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "Pak 36 AT Gun",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "45mm_1937": {
+            "name": "45mm 53-K",
+            "description": "A wheeled light at gun.",
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "subfactions": ["china_communist"],
+            "models": [
+                {
+                    "name": "45mm 53-K",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "type_94_type_1": {
+            "name": "Type 94, Type 1 37mm AT Gun",
+            "description": "A wheeled light at gun.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "subfactions": ["none", "china_communist", "china_yan"],
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "Type 94, Type 1 37mm AT Gun",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "m3_at": {
+            "name": "37mm M3",
+            "description": "A wheeled light at gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["china_western", "none"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "37mm M3",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "t26m33": {
+            "name": "T-26 M33",
+            "description": "An Interwar light tank armed with a light gun.",
+            "subfactions": ["china_communist"],
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "T-26 M33",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["light_at", "mmg"],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "renault_ft": {
+            "name": "Renault FT",
+            "description": "An early war medium tank.",
+            "subfactions": ["none", "china_nationalist"],
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "Renault FT",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["mmg"],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart"],
+                    "options": [{"replaceWeapon": "mmg", "withWeapon": "very_light_at"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4_sherman": {
+            "name": "M4 Sherman",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4 Sherman",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": ["heavy_at_stabilized_mg", "medium_howitzer_vehicle_stabilized"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "catches_fire"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m3_stuart": {
+            "name": "M3 Stuart",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "subfactions": ["china_western"],
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "rules": ["catches_fire"],
+            "models": [
+                {
+                    "name": "M3 Stuart",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["light_at_stabilized_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "panzer_i": {
+            "name": "Panzer I",
+            "description": "A Interwar German light tank armed only with machineguns.",
+            "subfactions": ["china_nationalist", "none"],
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "Panzer I",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["dual_mmg"],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 2}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "light_mortar_team": {
+            "name": "Light Mortar Team",
+            "description": "A light mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["china_western", "none", "china_communist", "china_nationalist", "china_yan"],
+            "category": "support",
+            "keywords": ["Infantry"],
+            "rules": [{"id": "crew", "x": 2}],
+            "models": [
+                {
+                    "name": "Light Mortar Team",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "light_mortar", "mount": ["Front"]}, {"id": "unarmed", "count": 2}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "medium_mortar_team": {
+            "name": "Medium Mortar Team",
+            "description": "A medium mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["china_western", "none", "china_nationalist", "china_yan"],
+            "category": "support",
+            "keywords": ["Infantry"],
+            "rules": [{"id": "crew", "x": 3}],
+            "models": [
+                {
+                    "name": "Medium Mortar Team",
+                    "courage": 5,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "medium_mortar", "mount": ["Front"]}, {"id": "unarmed", "count": 3}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "heavy_mortar_team": {
+            "name": "Heavy Mortar Team",
+            "description": "A heavy mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["china_western", "none", "china_communist", "china_nationalist", "china_yan"],
+            "category": "support",
+            "keywords": ["Infantry"],
+            "rules": [{"id": "crew", "x": 4}],
+            "models": [
+                {
+                    "name": "Heavy Mortar Team",
+                    "courage": 5,
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": [{"id": "heavy_mortar", "mount": ["Front"]}, {"id": "unarmed", "count": 4}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        }
+    },
+    "strategies": {
+        "kukan": {
+            "name": "Kukan!",
+            "flavor": "A swift and deadly end to a fight can come with a furious charge of spears, bayonets, and swords...",
+            "description": "Use when a Chinese _Infantry_ unit declares a Charge action. It gets +3\" of Movement for that action.",
+            "cost": 1
+        }
+    },
+    "weapons": {
+        "small_banner": {"name": "Small Banner", "attacks": 0, "short": "Melee", "rules": ["blue_and_white_banner"]},
+            "banner": {"name": "Impressive Banner", "attacks": 0, "short": "Melee", "rules": ["icon"]}
+    },
+    "rules": {
+        "blue_and_white_banner": {
+            "name": "Blue and White Banner",
+            "description": "This unit gets +1 Courage when clearing shock. A model may not use its shooting weapons while carrying a Blue and White Banner.",
+            "points": 10
+        },
+        "icon": {
+            "name": "In The Shadow Of The Banner", 
+            "description": "Friendly units of X types within 6'' may re-roll a single failed Courage test when removing Shock.", 
+            "points": 10, "inputs": ["x"]}
+    }
+}

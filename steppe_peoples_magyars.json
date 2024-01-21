@@ -1,0 +1,1135 @@
+{
+  "id": "steppe_peoples_magyars",
+  "name": "Steppe Peoples and Magyars",
+  "notes": "Khazar",
+  "subfactions": {
+    "early_khazar": {
+      "name": "Khazar (568-780)",
+      "id": "early_khazar",
+      "description": "The Khazar people were powerful nomads who conquered and pillaged the various slavic people around them. They were ruled over by a 'Khagan', who had incredible power in the region.",
+      "restricted": "true"
+    },
+    "sarmatians": {
+      "name": "Sarmatians (300-650)",
+      "id": "sarmatians",
+      "description": "Originating in the central parts of the Eurasian Steppe, the Sarmatians were part of the wider Scythian cultures (Probably of Iranian or Turkish origin.), which moved increasing west over time. By the time that the Western Roman Empire was in decline, the Sarmatians were assimilating into the invading Vandals or Goths, being absorbed by Early Slavs, or becoming the Alans of the Northern Caucasus.",
+      "restricted": "true"
+    },
+    "magyars": {
+      "name": "Magyars (650-900)",
+      "id": "magyars",
+      "description": "",
+      "restricted": "true"
+    },
+    "late_magyars": {
+      "name": "Magyars (900-1000)",
+      "id": "late_magyars",
+      "description": "",
+      "restricted": "true"
+    },
+    "early_hungary": {
+      "name": "Hungary (1000-1100)",
+      "id": "early_hungary",
+      "description": "",
+      "restricted": "true"
+    }
+  },
+  "units": {
+    "slav_archer": {
+      "name": "Slavic Archers",
+      "description": "The steppe peoples used Slavic subjects to fullfill their needs for foot archers, as the steppe peoples were more interested in fighting from horseback.",
+      "category": "rare",
+      "subfactions": [
+        "late_magyars",
+        "none",
+        "early_khazar",
+        "early_hungary"
+      ],
+      "rules": [
+        "warband",
+        "if_it_bleeds",
+        "skirmisher_formation"
+      ],
+      "models": [
+        {
+          "name": "Slav",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "hand_weapon",
+            "bow"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "agile",
+                "reluctant"
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "balkan_archer": {
+      "name": "Balkan Archers",
+      "description": "With the Balkans in turmoil, and constantly under the heel of a different master, many Croats and Bosnians became highly skilled with the bow. Some did this to defend themselves, some did this while hunting to feed their families, and others became mercenaries.",
+      "category": "rare",
+      "subfactions": [
+        "early_hungary"
+      ],
+      "rules": [
+        "warband",
+        "if_it_bleeds",
+        "skirmisher_formation"
+      ],
+      "models": [
+        {
+          "name": "Slav",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "wounds": 1,
+          "weapons": [
+            "hand_weapon",
+            "bow"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "agile",
+                "reluctant",
+                "shield"
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "slavic_militia": {
+      "name": "Subject Slavic Militia",
+      "description": "The steppe peoples used Slavic subjects to fullfill their needs for foot archers, as the steppe peoples were more interested in fighting from horseback.",
+      "category": "core",
+      "subfactions": [
+        "early_khazar",
+        "late_magyars",
+        "early_hungary"
+      ],
+      "rules": [
+        "if_it_bleeds"
+      ],
+      "models": [
+        {
+          "name": "Freeman",
+          "courage": 5,
+          "movement": 5,
+          "shoot": 5,
+          "fight": 4,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "hand_weapon",
+            "spear",
+            "shield"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": "javelin"
+            },
+            {
+              "replaceWeapon": "spear",
+              "withWeapon": "sword"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "slavic_warriors": {
+      "name": "Slavic Warriors",
+      "description": "The steppe peoples used Slavic subjects to fullfill their needs for foot archers, as the steppe peoples were more interested in fighting from horseback.",
+      "category": "core",
+      "subfactions": [
+        "early_khazar",
+        "late_magyars",
+        "early_hungary"
+      ],
+      "rules": [
+        "if_it_bleeds"
+      ],
+      "models": [
+        {
+          "name": "Freeman",
+          "courage": 5,
+          "movement": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "hand_weapon",
+            "spear",
+            "shield"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": "javelin"
+            },
+            {
+              "replaceWeapon": "spear",
+              "withWeapon": "sword"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "hungarian_spearmen": {
+      "name": "Spear Garrison",
+      "description": "Not every professional soldier was a noble, and some sons of nobles weren't of very high status. There is some record of professional freeman warriors, typically Slavs or Croats.",
+      "category": "core",
+      "subfactions": [
+        "late_magyars",
+        "early_hungary"
+      ],
+      "rules": [
+        "if_it_bleeds"
+      ],
+      "models": [
+        {
+          "name": "Freeman",
+          "courage": 5,
+          "movement": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "hand_weapon",
+            "spear",
+            "shield"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": "javelin"
+            },
+            {
+              "addRule": [
+                "light_armor",
+                "stubborn"
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "vojīnōs": {
+      "name": "Fierce Slavic Warriors",
+      "description": "The Vojīnōs were a fierce, violent, possibly canibalistic Central Slavic people.",
+      "category": "rare",
+      "subfactions": [
+        "sarmatians"
+      ],
+      "rules": [
+        "warband",
+        "if_it_bleeds",
+        "fierce"
+      ],
+      "models": [
+        {
+          "name": "Slavic Warrior",
+          "courage": 5,
+          "movement": 5,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "hand_weapon",
+            "spear",
+            "shield"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": [
+                "javelin"
+              ]
+            },
+            {
+              "replaceWeapon": "spear",
+              "withWeapon": "sword"
+            },
+            {
+              "addRule": "stubborn",
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "young_steppe_nomad_archer": {
+      "name": "Young Steppe Nomad Mounted Archer",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_khazar",
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Nomads",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "bow",
+            "hand_weapon"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": "javelin"
+            },
+            {
+              "replaceWeapon": "bow",
+              "withWeapon": "composite_bow"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "steppe_nomad_archer": {
+      "name": "Steppe Nomad Mounted Archer",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_khazar",
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Nomads",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "bow",
+            "hand_weapon"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": "javelin"
+            },
+            {
+              "replaceWeapon": "bow",
+              "withWeapon": "composite_bow"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "young_steppe_nomad_cavalry": {
+      "name": "Young Steppe Nomad Cavalry",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_khazar",
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "travel_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Nomad",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "javelin"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "javelin",
+              "withWeapon": "spear"
+            },
+            {
+              "replaceRule": "buckler",
+              "withRule": "shield"
+            },
+            {
+              "replaceRule": "travel_horse",
+              "withRule": "mount_horse"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "steppe_nomad_cavalry": {
+      "name": "Steppe Nomad Cavalry",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_khazar",
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "travel_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Nomad",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "javelin"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "javelin",
+              "withWeapon": "spear"
+            },
+            {
+              "replaceRule": "buckler",
+              "withRule": "shield"
+            },
+            {
+              "replaceRule": "travel_horse",
+              "withRule": "mount_horse"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "roxolani_riders": {
+      "name": "Roxolani Riders",
+      "description": "Over time the Sarmatians increasingly adopted the long lance, to the degree that the Romans remembered them as lancers first.",
+      "subfactions": [
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Roxolani Rider",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "weapons": [
+            "kontos"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "light_armor",
+                "superior_cavalry",
+                "furious_charge",
+                "stubborn"
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "vet_roxolani_riders": {
+      "name": "Veteran Roxolani Riders",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "sarmatians"
+      ],
+      "category": "core",
+      "rules": [
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Veteran Roxolani Rider",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "kontos"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "light_armor",
+                "superior_cavalry",
+                "furious_charge"
+              ],
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "steppe_noble_cavalry": {
+      "name": "Steppe Noble Cavalry",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_hungary",
+        "late_magyars",
+        "sarmatians"
+      ],
+      "category": "elite",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "travel_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Noble",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "javelin"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "javelin",
+              "withWeapon": "spear"
+            },
+            {
+              "replaceRule": "buckler",
+              "withRule": "shield"
+            },
+            {
+              "replaceRule": "travel_horse",
+              "withRule": "mount_horse"
+            },
+            {
+              "addRule": "light_armor"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "steppe_noble_cavalry_lancers": {
+      "name": "Steppe Noble Cavalry Lancers",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_hungary",
+        "late_magyars",
+        "sarmatians"
+      ],
+      "category": "rare",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Noble",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "javelin"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "javelin",
+              "withWeapon": "spear"
+            },
+            {
+              "replaceRule": "buckler",
+              "withRule": "shield"
+            },
+            {
+              "addRule": [
+                "superior_cavalry",
+                "furious_charge"
+              ],
+              "modelLimit": "all"
+            },
+            {
+              "addRule": [
+                "light_armor",
+                "heavy_armor"
+              ],
+              "modelLimit": "all",
+              "limit": 1
+            },
+            {
+              "addRule": "cloth_horse_armor"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "elite_steppe_noble_cavalry": {
+      "name": "Elite Steppe Noble Cavalry",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "magyars",
+        "sarmatians"
+      ],
+      "category": "elite",
+      "min": 1,
+      "max": 1,
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "mount_horse",
+        "half_horse_armor",
+        "light_armor"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Noble",
+          "courage": 6,
+          "movement": 5,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "wounds": 1,
+          "weapons": [
+            "javelin",
+            "bow"
+          ],
+          "options": [
+            {
+              "addRule": "superior_cavalry"
+            },
+            {
+              "addRule": "furious_charge"
+            },
+            [
+              {
+                "replaceWeapon": "bow"
+              },
+              {
+                "withWeapon": "composite_bow"
+              }
+            ],
+            [
+              {
+                "replaceWeapon": "javelin"
+              },
+              {
+                "withWeapon": "spear"
+              }
+            ],
+            [
+              {
+                "replaceRule": "buckler"
+              },
+              {
+                "withRule": "shield"
+              }
+            ],
+            {
+              "addRule": "light_armor"
+            },
+            {
+              "addRule": "heavy_armor"
+            },
+            {
+              "addRule": "cloth_horse_armor"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "khazar_noble_cavalry": {
+      "name": "Khazar Noble Cavalry",
+      "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+      "subfactions": [
+        "early_khazar"
+      ],
+      "category": "elite",
+      "rules": [
+        "light_cavalry",
+        "travel_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Noble",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "hand_weapon",
+            "bow"
+          ],
+          "options": [
+            {
+              "replaceWeapon": "hand_weapon",
+              "withWeapon": [
+                "javelin",
+                "spear"
+              ]
+            },
+            {
+              "replaceWeapon": "bow",
+              "withWeapon": [
+                "shield",
+                "composite_bow"
+              ]
+            },
+            {
+              "replaceRule": "travel_horse",
+              "withRule": "mount_horse",
+              "modelLimit": "all"
+            },
+            {
+              "addRule": "light_armor",
+              "modelLimit": "all"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "roxolani_noble_cavalry_lancers": {
+      "name": "Roxolani Noble Cavalry Lancers",
+      "description": "Overtime the Sarmatians began to mimic their Iranian or Turkic ancestors, wearing increasing amounts of scale, cloth, and mail armor, and adopting shock cavalry tactics.",
+      "subfactions": [
+        "sarmatians"
+      ],
+      "category": "elite",
+      "rules": [
+        "buckler",
+        "mount_horse"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Noble",
+          "courage": 6,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 6,
+          "defense": 5,
+          "reflexes": 6,
+          "weapons": [
+            "kontos"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "superior_cavalry",
+                "furious_charge"
+              ],
+              "modelLimit": "all"
+            },
+            {
+              "addRule": [
+                "light_armor",
+                "heavy_armor"
+              ],
+              "modelLimit": "all",
+              "limit": 1
+            },
+            {
+              "addRule": "cloth_horse_armor"
+            }
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "alan_nomad_archer": {
+      "name": "Alan Tribal Allies",
+      "description": "The Alans were a Turkic/Iranian people from the Caucasus. They became spread over a wider area and assimilated into several other cultures, sometimes as subjects and sometimes as mercenaries.",
+      "subfactions": [
+        "magyars",
+        "none",
+        "early_khazar"
+      ],
+      "category": "rare",
+      "rules": [
+        "light_cavalry",
+        "buckler",
+        "mount_horse",
+        "reluctant"
+      ],
+      "keywords": [
+        "Cavalry"
+      ],
+      "models": [
+        {
+          "name": "Steppe Nomads",
+          "courage": 5,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 5,
+          "reflexes": 5,
+          "wounds": 1,
+          "weapons": [
+            "bow",
+            "hand_weapon"
+          ],
+          "options": [
+            [
+              {
+                "replaceWeapon": "hand_weapon"
+              },
+              {
+                "withWeapon": "javelin"
+              }
+            ],
+            [
+              {
+                "replaceWeapon": "bow"
+              },
+              {
+                "withWeapon": "composite_bow"
+              }
+            ]
+          ],
+          "min": 5,
+          "max": 10
+        }
+      ]
+    },
+    "tudun": {
+      "name": "Tudun",
+      "description": "The Tudun was a type of minor offical, somewhat like a mayor or village leader.",
+      "category": "command",
+      "subfactions": [
+        "none",
+        "early_khazar"
+      ],
+      "rules": [
+        {
+          "id": "field_orders",
+          "x": 1
+        },
+        "lead_by_example",
+        "leader"
+      ],
+      "models": [
+        {
+          "name": "Tudun",
+          "courage": 7,
+          "movement": 6,
+          "shoot": 5,
+          "fight": 5,
+          "defense": 6,
+          "reflexes": 7,
+          "rules": [
+            {
+              "id": "wounds",
+              "x": 2
+            }
+          ],
+          "weapons": [
+            "bow",
+            "sword"
+          ],
+          "options": [
+            {
+              "addRule": [
+                "mount_horse",
+                "war_horse"
+              ],
+              "limit": 1
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    "knyaz": {
+      "name": "Prince",
+      "description": "The Prince (Knyaz) ruled like a king and had his center of power around a major trading city. His status is very similar to the earlier Jarls and many of these princes were desendents of Swede nobility. This unit could also represent a 'Voi-vode' (army, to lead), who would lead an army for the local prince.",
+      "category": "command",
+      "rules": [
+        "lead_by_example",
+        {
+          "id": "field_orders",
+          "x": 2
+        },
+        "leader",
+        {
+          "id": "wounds",
+          "x": 3
+        }
+      ],
+      "models": [
+        {
+          "name": "Knyaz/Voivode",
+          "courage": 8,
+          "movement": 6,
+          "shoot": 6,
+          "fight": 7,
+          "defense": 7,
+          "reflexes": 7,
+          "weapons": [
+            "spear",
+            "shield"
+          ],
+          "options": [
+            {
+              "replaceWeapon": [
+                "spear",
+                "shield"
+              ],
+              "withWeapon": [
+                "two_handed_axe"
+              ]
+            },
+            {
+              "addRule": [
+                "mount_horse",
+                "war_horse"
+              ],
+              "limit": 1
+            }
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  "weapons": {
+
+  },
+  "rules": {
+    "fierce": {
+      "name": "Fierce",
+      "description": "If an enemy unit in short distence (12') runs away or flees, this unit has to charge them. It gets +1 to melee when it does so",
+      "points": [
+        -1
+      ]
+    },
+    "harder_than_iron": {
+      "name": "Harder Than Iron",
+      "description_short": "When 'Berserking', this unit gets +1 saves.",
+      "points": [
+        "constants.defenseCost"
+      ],
+      "hidden": true
+    }},
+  "relics": [
+
+  ],
+  "strategies": [
+    {
+      "subfactions": [
+        "rus",
+        "rus_princes"
+      ],
+      "name": "Shield Wall",
+      "phase": "activation",
+      "description": "One choosen unit with shields and spears equipped (Provided it's not 'Tribal'), if that unit moved one or no times this round, and if charged or targeted by a shooting attack it gets +1 Save. This effect remains in place till the unit moves.",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "rus"
+      ],
+      "name": "Veterans",
+      "phase": "activation",
+      "description": "All units of 'Raiders' or 'Varangians' may, once for the entire battle, choose to reroll all their dice to hit by shooting or melee. All dice must be rerolled, good or bad.",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "rus"
+      ],
+      "name": "Boar Snout",
+      "phase": "activation",
+      "description": "A selected unit gains +1 AP for all their melee weapons, during a charge.",
+      "flavor": "",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "rus"
+      ],
+      "name": "Going Berserk",
+      "phase": "activation",
+      "description": "A selected unit gains +1 Strength till the end of the turn, but they can't use the turn to move away from the closest enemy.",
+      "flavor": "",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "none",
+        "magyars",
+        "early_khazar",
+        "sarmatians",
+        "late_magyars",
+        "early_hungary"
+      ],
+      "name": "Capital Horse Archers",
+      "phase": "activation",
+      "description": "Use when a Cavalry makes a Shoot action. The ranged attacks gain +1 to hit.",
+      "flavor": "",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "none",
+        "magyars",
+        "early_khazar",
+        "sarmatians",
+        "late_magyars",
+        "early_hungary"
+      ],
+      "name": "Move and Rally",
+      "phase": "activation",
+      "description": "Use before a unit takes a Move action. After the move, that unit may perform a free Rally action.",
+      "flavor": "",
+      "cost": 1
+    },
+    {
+      "subfactions": [
+        "none",
+        "magyars",
+        "early_khazar",
+        "sarmatians",
+        "late_magyars"
+      ],
+      "name": "Run Them Down",
+      "phase": "activation",
+      "description": "Use when a Cavalry makes a Charge action. Any 'kontos' present gain +1 AP for the charge.",
+      "flavor": "",
+      "cost": 1
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+{
+    "id": "bulgars",
+    "name": "Bulgars",
+    "notes": "",
+    "subfactions": {
+        "balkan_slavs": {
+            "name": "Balkan Slavs (600-1100)",
+            "phase": "activation",
+            "id": "balkan_slavs",
+            "description": "Slavs migrated into the Balkans, becoming the Serbs, Croats, and various other Slavic people of the region.",
+            "restricted": "true"
+        },
+        "early_bulgars": {
+            "name": "First Bulgarian Empire (681-912)",
+            "phase": "activation",
+            "id": "early_bulgars",
+            "description": "Once the Bulgars had cast off the reigning Avars, it was time for them to rule over their slavic and balkan subjects. The Umayyads were enough to get the Bulgars to work with the Byzantines, but after that they were at each others throats.",
+            "restricted": "true"
+        },
+        "middle_bulgars": {
+            "name": "First Bulgarian Empire (913-1018)",
+            "phase": "activation",
+            "id": "middle_bulgars",
+            "description": "After a great victory against the Romans in the East, Simeon I the Great declared himself Tzar.",
+            "restricted": "true"
+        }
+    },
+    "units": {
+            "tribal_spears": {
+                "name": "Tribal Allies",
+                "description": "",
+                "category": "rare",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "shield", "if_it_bleeds", "light_infantry", "spearmen"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Tribal",
+                        "courage": 4,
+                        "movement": 6,
+                        "shoot": 5,
+                        "fight": 5,
+                        "defense": 5,
+                        "reflexes": 5,
+                        "wounds": 1,
+                        "weapons": ["spear", "javelin", "shield"],
+                        "options": [{"replaceWeapon": "spear", 
+                            "withWeapon": ["hand_axe"]},
+                            {"addRule": "agile"}],
+                        "min": 5,
+                        "max": 10
+                    }
+                ]
+            },
+            "tribal_archers": {
+                "name": "Tribal Skirmisher Allies",
+                "description": "",
+                "category": "rare",
+                "min": 1,
+                "max": 1,
+                "rules": ["warband", "shield", "if_it_bleeds", "light_infantry"],
+                "keywords": ["Infantry"],
+                "models": [
+                    {
+                        "name": "Tribal",
+                        "courage": 4,
+                        "movement": 6,
+                        "shoot": 5,
+                        "fight": 4,
+                        "defense": 5,
+                        "reflexes": 5,
+                        "wounds": 1,
+                        "weapons": ["spear", "javelin", "shield"],
+                        "options": [{"replaceWeapon": "shield", 
+                            "withWeapon": ["bow"]},
+                            {"addRule": "agile"}],
+                        "min": 5,
+                        "max": 10
+                    }
+                ]
+            },
+        "slavic_Militia": {
+            "name": "Slavic Militia",
+            "description": "The Buglars rulared over a vast number of slavic subjects, many of whom lived like common peasants. Due to their lack of training and equipment, they often prefered to fight at a distance.",
+            "category": "core",
+            "subfactions": ["none", "early_bulgars"],
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Slav Militia",
+                    "courage": 4,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin", "shield"],
+                    "options": 
+                    [{"addRule": "agile"},
+                    {"replaceWeapon": "unarmed", "withWeapon": "hand_weapon"}],
+                    "min": 10,
+                    "max": 10
+                }
+            ]
+        },
+        "slavic_archer_militia": {
+            "name": "Smerd Archer Militia",
+            "description": "The Buglars rulared over a vast number of slavic subjects, many of whom lived like common peasants. Due to their lack of training and equipment, they often prefered to fight at a distance.",
+            "category": "core",
+            "subfactions": ["none", "early_bulgars"],
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Slav Militia",
+                    "courage": 4,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["unarmed", "bow"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": "hand_weapon"},
+                    {"addRule": "agile"}],
+                    "min": 10,
+                    "max": 10
+                }
+            ]
+        },
+        "slavic_warrior": {
+            "name": "Slavic Warrior",
+            "description": "Some of the Slavic subjects were eager excited to fight or eager to prove themselves as violent fighters, and so they were treated as warriors.",
+            "category": "core",
+            "subfactions": ["none", "early_khazar", "middle_bulgars", "balkan_slavs"],
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "if_it_bleeds", "light_infantry", "stealth", "spearmen"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Slav Warrior",
+                    "courage": 5,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["unarmed", "javelin", "shield"],
+                    "options": [{"replaceWeapon": "javelin", 
+                        "withWeapon": ["spear"]},
+                        {"replaceWeapon": "unarmed", "withWeapon": "hand_weapon"},
+                        {"addRule": "agile"}],
+                    "min": 10,
+                    "max": 10
+                }
+            ]
+        },
+        "bulgarian_warrior": {
+            "name": "Bulgarian Warrior",
+            "description": "The Bulgarians could not meet the Romans in open battle and hope to win, so they preferred to use stealth and speed to win victory. As such, they rarely fought on foot unless in wooded or rocky areas.",
+            "category": "core",
+            "subfactions": ["none", "early_bulgars"],
+            "min": 1,
+            "max": 1,
+            "rules": ["if_it_bleeds", "warband", "light_infantry"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Militia",
+                    "courage": 5,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin", "shield"],
+                    "options": [{"replaceRule": "light_infantry", "withRule": ["warrior_culture"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "middle_bulgarian_warrior": {
+            "name": "Later Bulgarian Warrior",
+            "description": "",
+            "category": "core",
+            "subfactions": ["none", "middle_bulgars"],
+            "min": 1,
+            "max": 1,
+            "rules": ["if_it_bleeds", "warrior_culture", "shield"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Militia",
+                    "courage": 5,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [{"replaceWeapon": "hand_weapon", 
+                        "withWeapon": ["javelin"]},
+                    {"addRule": "light_armor"},
+                    {"replaceRule": "light_infantry", "withRule": ["warrior_culture"]},
+                    {"replaceRule": "shield", "withRule": ["large_shield"]}
+                
+                ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "rus_spearmen": {
+            "name": "Rus Spear Garrison",
+            "description": "Not very professional soldier was a noble, and some sons of nobles weren't of very high status. There is some record of professional freeman warriors.",
+            "category": "rare",
+            "subfactions": ["rus_princes"],
+            "min": 1,
+            "max": 1,
+            "rules": ["if_it_bleeds"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["hand_weapon", "spear", "shield"],
+                    "options": [{"replaceWeapon": "hand_weapon", 
+                        "withWeapon": ["javelin"]},
+                    {"addRule": "light_armor"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "norse_youngmen": {
+            "name": "Youngmen Warriors",
+            "description": "According to some written sources, the Norse and Vikings were organized like the Saxons were during their early raiding days. As such, younger men seeking fame and plunder would form into bands with the most charismatic as their leader. Eventually, with enough experience and renown, they could lead their own bands, or join a more accomplished one.",
+            "subfactions": ["rus"],
+            "category": "core",
+            "min": 1,
+            "max": 1,
+            "rules": ["warband", "fierce", "if_it_bleeds"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Youngman Varangians",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "wounds": 1,
+                    "weapons": ["spear", "shield", "hand_weapon"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "spear", 
+                            "withWeapon": ["hand_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "varjazi": {
+            "name": "Varjazi",
+            "description": "Varjazi (Company under oath), appear to be a term that is sometimes interchangable with 'Druzhina' and is used here to refer to professial ,and/or noble, heavy infantry ", 
+            "category": "elite",
+            "min": 1,
+            "max": 1,
+            "rules": ["fanatic"],
+            "keywords": [
+                "Infantry"
+            ],
+            "models": [
+                {
+                    "name": "Varangian",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "wounds": 1,
+                    "weapons": ["hand_axe", "shield"],
+                    "options": [{"addWeapon": "javelin"},
+                        {"replaceWeapon": "shield", 
+                            "withWeapon": ["two_handed_axe"]}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+    "veteran_druzhina": {
+        "name": "Veteran Druzhina",
+        "description": "The Druzhina were likely Varangian Warriors, who served the local 'prince', 'king', 'Knyaz', 'Khan', or 'Khagan'. Depending on year and historical interpretation, these men were either warrior nobles or non-noble warrior professionals. All sources agree they were excellent fighters, and were trusted with protecting their master.", 
+        "subfactions": ["rus_princes"],
+        "category": "elite",
+        "min": 1,
+        "max": 1,
+        "rules": ["fanatic"],
+        "keywords": [
+            "Cavalry "
+        ],
+        "models": [
+            {
+                "name": "Varangian Druzhina",
+                "courage": 6,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["spartha", "shield"
+                ],
+                "options": [{"addWeapon": "javelin"}, {"addWeapon": "spear"},
+                    {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"]}],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "later_druzhina": {
+        "name": "Junior_Druzhina",
+        "description": "The Druzhina were likely Varangian Warriors, who served the local 'prince', 'king', 'Knyaz', 'Khan', or 'Khagan'. Depending on year and historical interpretation, these men were either warrior nobles or non-noble warrior professionals. All sources agree they were excellent fighters, and were trusted with protecting their master.", 
+        "subfactions": ["rus_princes"],
+        "category": "rare",
+        "min": 1,
+        "max": 1,
+        "rules": ["stubborn"],
+        "keywords": [
+            "Cavalry "
+        ],
+        "models": [
+            {
+                "name": "Varangian Druzhina",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["spartha", "shield"
+                ],
+                "options": [{"addWeapon": "javelin"}, {"addWeapon": "spear"}, 
+                    {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"]}],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "druzhina": {
+        "name": "Junior_Druzhina",
+        "description": "The Druzhina were likely Varangian Warriors, who served the local 'prince', 'king', 'Knyaz', 'Khan', or 'Khagan'. Depending on year and historical interpretation, these men were either warrior nobles or non-noble warrior professionals. All sources agree they were excellent fighters, and were trusted with protecting their master.", 
+        "subfactions": ["rus_princes", "rus"],
+        "category": "elite",
+        "min": 1,
+        "max": 1,
+        "rules": ["stubborn"],
+        "keywords": [
+            "Cavalry "
+        ],
+        "models": [
+            {
+                "name": "Varangian Druzhina",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["spartha", "shield"
+                ],
+                "options": [{"addWeapon": "javelin"}, {"addWeapon": "spear"}, 
+                    {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"]}],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "young_nomad_archer": {
+        "name": "Young Bulgarian Mounted Archer",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people serving or working with the Rus, could be Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.", 
+        "subfactions": ["none", "early_bulgars"],
+        "category": "rare",
+        "min": 1,
+        "max": 1,
+        "rules": ["light_cavalry", "buckler", "mount_horse"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Nomads",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 5,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 5,
+                "wounds": 1,
+                "weapons": ["hand_weapon", "bow"
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "bulgarian_mounted_archer": {
+        "name": "Bulgarian Mounted Archer",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people serving or working with the Rus, could be Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.", 
+        "subfactions": ["none", "early_bulgars"],
+        "category": "core",
+        "min": 1,
+        "max": 1,
+        "rules": ["light_cavalry", "buckler", "mount_horse"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Nomads",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["hand_weapon", "bow"
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "middle_bulgarian_mounted_archer": {
+        "name": "Bulgarian Mounted Archer",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people serving or working with the Rus, could be Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.", 
+        "subfactions": ["none", "middle_bulgars"],
+        "category": "core",
+        "min": 1,
+        "max": 1,
+        "rules": ["light_cavalry", "buckler", "mount_horse", "light_armor"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Nomads",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["hand_weapon", "bow"
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "bulgarian_noble_cavalry": {
+        "name": "Bulgarian Noble Cavalry",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people could be Magyars, Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.",
+        "subfactions": ["early_bulgars", "none"],
+        "category": "elite",
+        "min": 1,
+        "max": 1,
+        "rules": ["light_cavalry", "buckler", "travel_horse"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Noble",
+                "courage": 6,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 5,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["javelin"
+                ],
+                "options": [
+                    [{"replaceWeapon": "javelin"}, {"withWeapon": "spear"}],
+                [{"replaceRule": "buckler"}, {"withRule": "shield"}],
+                [{"replaceRule": "travel_horse", "withRule": "mount_horse"}],
+                {"addRule": "light_armor"}, {"addRule": "cloth_horse_armor"}
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "slav_cavalry": {
+        "name": "Slavic Horsemen",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people serving or working with the Rus, could be Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.", 
+        "subfactions": ["none", "early_bulgars"],
+        "category": "rare",
+        "min": 1,
+        "max": 1,
+        "rules": ["skirmisher_formation", "buckler", "mount_horse"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Nomads",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["hand_weapon", "javelin"
+                ],
+                "options": [
+                    [{"replaceWeapon": "javelin"}, {"withWeapon": "spear"}],
+                [{"replaceRule": "buckler"}, {"withRule": "shield"}]
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "slav_slav_cavalry": {
+        "name": "Slavic Horsemen",
+        "description": "Eastern Europe and Northwestern Asia (The Eurasian Steppe), were areas very supportive of horses and a nomaidic way of life. As such the area produced a wide range of expert horse archers. Such people serving or working with the Rus, could be Khazars, Kazakhs, desendents of the Sarmatians, desendents of the Huns, or any number of other nomadic peoples within the area.", 
+        "subfactions": ["none", "balkan_slavs"],
+        "category": "core",
+        "min": 1,
+        "max": 1,
+        "rules": ["skirmisher_formation", "buckler", "mount_horse"],
+        "keywords": [
+            "Cavalry"
+        ],
+        "models": [
+            {
+                "name": "Steppe Nomads",
+                "courage": 5,
+                "movement": 8,
+                "shoot": 6,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 1,
+                "weapons": ["hand_weapon", "javelin"
+                ],
+                "options": [
+                    [{"replaceWeapon": "javelin"}, {"withWeapon": "spear"}],
+                [{"replaceRule": "buckler"}, {"withRule": "shield"}]
+                ],
+                "min": 5,
+                "max": 10
+            }
+        ]
+    },
+    "boyar": {
+        "name": "Boyar",
+        "description": "The noble and social rank of 'Boyar' started among the Bulgars, and was an evolution of many similar terms. Over time the boyars would be divided into 'lesser' and 'greater', but at this time they were among the highest nobility.",
+        "category": "command",
+        "subfactions": ["none", "early_bulgars"],
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 2}, "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Tudun",
+                "courage": 6,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 6,
+                "reflexes": 7,
+                "wounds": 2,
+                "weapons": ["bow", "sword"],
+                "options": [{"addRule": "war_horse"},
+                    {"replaceWeapon": ["bow"], 
+                        "withWeapon": ["spear_and_shield"]}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "bagin": {
+        "name": "Bagin",
+        "description": "The Bagains were commanders of small military bands, and also had the privilege of being in charge of the maintenance and storage of heavy armor and helmets.",
+        "category": "command",
+        "subfactions": ["none", "early_bulgars"],
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Bagin",
+                "courage": 6,
+                "movement": 6,
+                "shoot": 6,
+                "fight": 6,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 2,
+                "weapons": ["bow", "sword"],
+                "options": [{"addRule": "war_horse"},
+                    {"replaceWeapon": ["bow"], 
+                        "withWeapon": ["spear_and_shield"]}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    },
+    "tudun": {
+        "name": "Tudun",
+        "description": "The Tudun was a type of minor offical, somewhat like a mayor or village leader.",
+        "category": "command",
+        "subfactions": ["none", "early_khazar"],
+        "min": 1,
+        "max": 1,
+        "rules": ["lead_by_example",{"id": "field_orders", "x": 1}, "leader"],
+        "keywords": ["command"],
+        "models": [
+            {
+                "name": "Tudun",
+                "courage": 6,
+                "movement": 6,
+                "shoot": 5,
+                "fight": 5,
+                "defense": 6,
+                "reflexes": 6,
+                "wounds": 2,
+                "weapons": ["bow", "sword"],
+                "options": [{"addRule": "war_horse"}
+                    ],
+                "min": 1,
+                "max": 1
+            }
+        ]
+    }
+},
+    "weapons": {},
+    "rules": {
+        "fierce": {
+            "name": "Fierce",
+            "hidden": false,
+            "description_short": "If an enemy unit in short distence (12') runs away or flees, this unit has to charge them. It gets +1 to melee when it does so",
+            "description":  "If an enemy unit in short distence (12') runs away or flees, this unit has to charge them. It gets +1 to melee when it does so",
+            "flavor":"During the early Dark Ages, some units were exceptionally eager to 'run down' or 'run through' the enemy.",
+            "points": [-1]},
+        "harder_than_iron": {
+                "name": "Harder Than Iron",
+                "hidden": false,
+                "description_short": "When 'Berserking', this unit gets +1 saves.",
+                "description":  "",
+                "flavor":"",
+                "points": ["constants.defenseCost"]},
+    "notes": "These are redundant because my pushes are not being accepted and I need these rules to work for playtesting.",
+                "light_infantry": {
+                    "name": "Light Infantry",
+                    "hidden": false,
+            "description": "(This unit cannot use 'Spearmen' Rule) Optional: +1 save against ranged attacks made at long range, -1 Save to Melee.",
+                    "flavor": "This unit can choose to fight as skirmishers as a loose formation, or 'close up' to fight as traditional infantry.",
+                    "points": [1]
+                },"man_of_god": {"name": "Man of God", "description": "This unit can be merged with any other unit, that unit may re-roll any failed Courage test when removing Shock once per turn.", "points": 15},
+                "spearmen": {"name": "Spearmen", "description": "(Note: Requires unmounted, spear and shield) Should this unit do a 'Hold' action and be charged before it's next turn, it has +1 Strength when performing a Counter-Attack reaction and ignores 'Horseman Warrior Culture'.", "points": 0.5},
+                "pike": {"name": "Pike", "description": "Should this unit be charged, it has +1 Strength when performing a Counter-Attack reaction and it gets to attack first.", "points": 1.5},
+                "impale": {"name": "Impale", "description": "(Note: Requires horse or warhorse) This weapon gets +1 AP when used during a Charge.", "points": 0.5},
+                "joust": {"name": "Joust", "description": "(Note: Requires horse or warhorse) This weapon gets +2 AP when used during a Charge.", "points": 1},
+                "warrior_culture": {"name": "Warrior Culture", "description": "(Note: Requires attack with melee weapon without 'Reach') This unit gets a +1 Str during a Charge.", "points": 0.5},
+                "mount_warrior_culture": {"name": "Horseman Warrior Culture", "description": "(Note: Requires melee weapon and Horse/War Horse) This unit gets a +1 Str during a Charge", "points": 1}
+                  },
+    "relics": [],
+    "strategies": [{
+        "subfactions": ["rus", "rus_princes"],
+        "name": "Shield Wall",
+        "phase": "activation",
+        "description": "One choosen unit with shields and spears equipped (Provided it's not 'Tribal'), if that unit moved one or no times this round, and if charged or targeted by a shooting attack it gets +1 Save. This effect remains in place till the unit moves.",
+        "cost": 1
+    },{
+        "subfactions": ["rus"],
+        "name": "Veterans",
+        "phase": "activation",
+        "description": "All units of 'Raiders' or 'Varangians' may, once for the entire battle, choose to reroll all their dice to hit by shooting or melee. All dice must be rerolled, good or bad.",
+        "cost": 1
+}
+,{
+    "subfactions": ["rus"],
+    "name": "Boar Snout",
+    "phase": "activation",
+    "description": "A selected unit gains +1 AP for all their melee weapons, during a charge.",
+    "flavor": "",
+    "cost": 1
+}
+,{
+    "subfactions": ["rus"],
+    "name": "Going Berserk",
+    "phase": "activation",
+    "description": "A selected unit gains +1 Strength till the end of the turn, but they can't use the turn to move away from the closest enemy.",
+    "flavor": "",
+    "cost": 1
+}
+]}

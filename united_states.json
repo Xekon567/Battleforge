@@ -1,0 +1,1936 @@
+{
+    "id": "united_states",
+    "name": "United States",
+    "units": {
+        "company_command": {
+            "name": "Company Command",
+            "description": "A higher-ranking field officer trained to command more units and occasionally direct field operations.",
+            "category": "command",
+            "keywords": ["Infantry", "Officer"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle"]}, {"addWeapon": "at_grenades", "modelLimit": 3}],
+            "models": [
+                {
+                    "name": "Higher Officer",
+                    "courage": 8,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 2}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 2}, "withRule": {"id": "field_orders", "x": 3}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+            ]
+        },
+        "platoon_command": {
+            "name": "Platoon Command",
+            "description": "A lower-ranking platoon commander to provide support to other field units.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry", "Officer"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle"]}, {"addWeapon": "at_grenades", "modelLimit": 3}],
+            "models": [
+                {
+                    "name": "Field Officer",
+                    "courage": 7,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 1}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 1}, "withRule": {"id": "field_orders", "x": 2}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+            ]
+        },
+        "veteran_platoon_command": {
+            "name": "Veteran Platoon Command",
+            "description": "A lower-ranking platoon commander to provide support to other field units.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "keywords": ["Infantry", "Officer"],
+            "subfactions": ["infantry_focus", "airborne_focus"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle"]}, {"addWeapon": "at_grenades", "modelLimit": 3}],
+            "models": [
+                {
+                    "name": "Veteran Field Officer",
+                    "courage": 7,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["rifle", "unarmed", "smoke_grenades", "frag_grenades"],
+                    "rules": [{"id": "field_orders", "x": 1}, "leader"],
+                    "options": [{"replaceRule": {"id": "field_orders", "x": 1}, "withRule": {"id": "field_orders", "x": 2}}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 2}
+            ]
+        },
+        "forward_artillery_observer": {
+            "name": "Forward Artillery Observer",
+            "description": "An artillery forward observer able to call in a fire mission.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "keywords": ["Infantry", "Observer"],
+            "subfactions": ["none", "infantry_focus", "armored_focus", "airborne_focus"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg", "semi_auto_rifle"]}],
+            "models": [
+                {
+                    "name": "Forward Artillery Observer",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["support"],
+                    "weapons": ["rifle", "unarmed", "smoke_battery"],
+                    "options": [{"replaceWeapon": "smoke_battery", "withWeapon": ["light_mortar_battery", "medium_mortar_battery", "heavy_mortar_battery", "rocket_battery"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+            ]
+        },
+        "field_medic": {
+            "name": "Field Medic",
+            "description": "A trained field medic used to treat the wounded near the frontline.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus", "armored_focus", "airborne_focus"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Field Medic",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["pistol", "unarmed", "smoke_grenades"],
+                    "rules": ["medic", "non_combat", "support"],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Assistant", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 0, "max": 2}
+            ]
+        },
+        "riflemen": {
+            "name": "Rifle Squad",
+            "description": "A group of trained US Riflemen.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Rifle NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Rifleman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 2}],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "armored_riflemen": {
+            "name": "Armored Rifle Squad",
+            "description": "A group of trained US Riflemen.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "armored_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Armored Rifle NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Armored Rifleman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1}, {"addWeapon": "bazooka", "modelLimit": 1}],
+                    "min": 4,
+                    "max": 9
+                }
+            ]
+        },
+        "veteran_armored_riflemen": {
+            "name": "Veteran Armored Rifle Squad",
+            "description": "A group of trained US Riflemen.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["armored_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Veteran Armored Rifle NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Veteran Armored Rifleman",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1}, {"addWeapon": "bazooka"}],
+                    "min": 4,
+                    "max": 9
+                }
+            ]
+        },
+        "marines": {
+            "name": "Marine Squad",
+            "description": "A group of trained US Marines.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"addWeapon": "at_grenades", "modelLimit": 3},
+                {"replaceWeapon": "rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4},
+                {"replaceWeapon": "rifle", "withWeapon": "semi_auto_rifle"},
+                {"replaceWeapon": "rifle", "withWeapon": "shotgun", "modelLimit": 3}
+            ],
+            "models": [
+                {
+                    "name": "Marine NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Marine",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["bar"], "modelLimit": 3}],
+                    "min": 6,
+                    "max": 14
+                }
+            ]
+        },
+        "veteran_marines": {
+            "name": "Veteran Marine Squad",
+            "description": "A group of trained US Marines.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["marine_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [
+                {"addWeapon": "at_grenades", "modelLimit": 3},
+                {"replaceWeapon": "rifle", "withWeapon": "semi_auto_rifle"},
+                {"replaceWeapon": "rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4},
+                {"replaceWeapon": "rifle", "withWeapon": "shotgun", "modelLimit": 3},
+                {"replaceWeapon": "rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}
+            ],
+            "models": [
+                {
+                    "name": "Veteran Marine NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Veteran Marine",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "weapons": ["rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "rifle", "withWeapon": ["bar"], "modelLimit": 3}],
+                    "min": 6,
+                    "max": 14
+                }
+            ]
+        },
+        "rangers": {
+            "name": "Rangers",
+            "description": "A group of trained US Rangers.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Ranger NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Ranger",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["belt_lmg"], "modelLimit": 1}],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "veteran_rangers": {
+            "name": "Veteran Rangers",
+            "description": "A group of trained US Rangers.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["infantry_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Veteran Ranger NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Veteran Ranger",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["belt_lmg"], "modelLimit": 1}],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "glider_rifle_squad": {
+            "name": "Glider Rifle Squad",
+            "description": "A group of trained US Riflemen dropped in gliders.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["airborne_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "models": [
+                {
+                    "name": "Glider Rifle NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Glider Rifleman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 2}],
+                    "min": 5,
+                    "max": 9
+                }
+            ]
+        },
+        "pathfinder_squad": {
+            "name": "Pathfinder Squad",
+            "description": "A group of forward scouting pathfinders.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["airborne_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "rules": ["scout", "stubborn"],
+            "models": [
+                {
+                    "name": "Pathfinder NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Pathfinder",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"], "modelLimit": 5}],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "airborne_squad": {
+            "name": "Airborne Squad",
+            "description": "A group of trained US Airborne paratroopers.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "airborne_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}, {"replaceWeapon": "semi_auto_rifle", "withWeapon": "semi_auto_carbine_rifle", "modelLimit": 4}],
+            "rules": ["stubborn"],
+            "models": [
+                {
+                    "name": "Airborne NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Airborne",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1},
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["belt_lmg"], "modelLimit": 1},
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"], "modelLimit": 5}
+                    ],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "veteran_airborne_squad": {
+            "name": "Veteran Airborne Squad",
+            "description": "A group of trained US Airborne.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["airborne_focus"],
+            "category": "infantry",
+            "keywords": ["Infantry"],
+            "options": [{"addWeapon": "at_grenades", "modelLimit": 3}],
+            "rules": ["stubborn"],
+            "models": [
+                {
+                    "name": "Veteran Airborne NCO",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Veteran Airborne",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "weapons": ["semi_auto_rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["bar"], "modelLimit": 1},
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["belt_lmg"], "modelLimit": 1},
+                        {"replaceWeapon": "semi_auto_rifle", "withWeapon": ["smg"], "modelLimit": 5}
+                    ],
+                    "min": 5,
+                    "max": 11
+                }
+            ]
+        },
+        "combat_engineers": {
+            "name": "Combat Engineers",
+            "description": "A squad of us combat engineers.",
+            "category": "support",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Infantry"],
+            "options": [
+                {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["smg"]},
+                {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["semi_auto_rifle"]},
+                {"addWeapon": "at_grenades", "modelLimit": 3},
+                {"addRule": ["wire_cutters", "demolition_charges", "mine_sweepers", "repair_toolkit"]}
+            ],
+            "models": [
+                {
+                    "name": "Engineer NCO",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [{"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["smg"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {
+                    "name": "Engineer",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "weapons": ["semi_auto_carbine_rifle", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "semi_auto_carbine_rifle", "withWeapon": ["flamethrower"], "modelLimit": 1}
+                    ],
+                    "min": 2,
+                    "max": 5
+                }
+            ]
+        },
+        "flamethrower_team": {
+            "name": "Flamethrower Team",
+            "description": "A team equipped to clear bunkers and other defensive positions.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "models": [
+                {"name": "Flamethrower Gunner", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["flamethrower", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "sniper_team": {
+            "name": "Sniper Team",
+            "description": "A team equipped to take out important targets from a distance.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "rules": ["scout", "stealth"],
+            "models": [
+                {"name": "Sniper", "courage": 5, "movement": 6, "shoot": 6, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["sniper_rifle", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "sniper_team_airborne": {
+            "name": "Sniper Team (Airborne)",
+            "description": "A team equipped to take out important targets from a distance.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["airborne_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "rules": ["scout", "stealth"],
+            "models": [
+                {"name": "Sniper", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["sniper_rifle", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "bazooka_team": {
+            "name": "Bazooka Team",
+            "description": "A team dedicated to hunting heavy tanks.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus", "armored_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "models": [
+                {"name": "Bazooka Gunner", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["bazooka", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "veteran_bazooka_team": {
+            "name": "Veteran Bazooka Team",
+            "description": "A team dedicated to hunting heavy tanks.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["infantry_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "models": [
+                {"name": "Veteran Bazooka Gunner", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["bazooka", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "airborne_bazooka_team": {
+            "name": "Bazooka Team (Airborne)",
+            "description": "A team dedicated to hunting heavy tanks.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["airborne_focus"],
+            "keywords": ["Infantry"],
+            "options": [{"replaceWeapon": "rifle", "withWeapon": ["smg"]}],
+            "models": [
+                {"name": "Bazooka Gunner (Airborne)", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["bazooka", "unarmed"], "min": 1, "max": 1},
+                {"name": "Assistant", "courage": 6, "movement": 6, "shoot": 6, "fight": 6, "defense": 6, "reflexes": 6, "weapons": ["rifle", "unarmed"], "min": 1, "max": 1}
+            ]
+        },
+        "mmg_team": {
+            "name": ".30 Cal MG Team",
+            "description": "A us MMG.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus", "airborne_focus", "armored_focus"],
+            "category": "support",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": ".30 Cal MG",
+                    "courage": "-",
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "weapons": [{"id": "mmg", "mount": ["Front"]}],
+                    "rules": [{"id": "crew", "x": 3}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "hmg_team": {
+            "name": ".50 Cal MG Team",
+            "description": "A us HMG.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus", "airborne_focus", "armored_focus"],
+            "category": "support",
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": ".50 Cal MG Team",
+                    "courage": "-",
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "weapons": [{"id": "hmg", "mount": ["Front"]}, {"id": "unarmed", "count": 3}],
+                    "rules": [{"id": "crew", "x": 3}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "light_mortar_team": {
+            "name": "Light Mortar Team",
+            "description": "A light mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus", "armored_focus", "airborne_focus"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Light Mortar",
+                    "courage": "-",
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 2}],
+                    "weapons": [{"id": "light_mortar", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 2, "max": 2}
+            ]
+        },
+        "medium_mortar_team": {
+            "name": "Medium Mortar Team",
+            "description": "A medium mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus", "armored_focus", "armored_focus", "airborne_focus"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Medium Mortar",
+                    "courage": "-",
+                    "movement": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 3}],
+                    "weapons": [{"id": "medium_mortar", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "heavy_mortar_team": {
+            "name": "Heavy Mortar Team",
+            "description": "A heavy mortar carried by a small team.",
+            "min": 1,
+            "max": 1,
+            "category": "support",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Infantry"],
+            "models": [
+                {
+                    "name": "Heavy Mortar",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 4}],
+                    "weapons": [{"id": "heavy_mortar", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 4, "max": 4}
+            ]
+        },
+        "75mm_pack": {
+            "name": "75mm Pack Howitzer",
+            "description": "A wheeled light howitzer.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus", "airborne_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "75mm Pack Howitzer",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_howitzer_light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "m2a1_howitzer": {
+            "name": "M2A1 Howitzer",
+            "description": "A wheeled medium howitzer.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "M2A1 Howitzer",
+                    "courage": "-",
+                    "movement": 3,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 4}],
+                    "weapons": [{"id": "medium_howitzer", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 4, "max": 4}
+            ]
+        },
+        "m1_155mm": {
+            "name": "M1 155mm \"Long Tom\"",
+            "description": "A wheeled heavy howitzer.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "M1 155mm \"Long Tom\"",
+                    "courage": "-",
+                    "movement": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 5}],
+                    "weapons": [{"id": "heavy_howitzer", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 5, "max": 5}
+            ]
+        },
+        "m3_at": {
+            "name": "37mm M3",
+            "description": "A wheeled light at gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus", "airborne_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "37mm M3",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "57mm_m1": {
+            "name": "57mm M1",
+            "description": "A wheeled medium at gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus", "airborne_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "57mm M1",
+                    "courage": "-",
+                    "movement": 3,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 3}],
+                    "weapons": [{"id": "medium_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "3_inch_m5": {
+            "name": "3-inch M5",
+            "description": "A wheeled heavy at gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "infantry_focus"],
+            "category": "artillery",
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "3-inch M5",
+                    "courage": "-",
+                    "movement": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": ["gun_shield", {"id": "crew", "x": 4}],
+                    "weapons": [{"id": "heavy_at", "mount": ["Front"]}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "m16_rocket_launcher": {
+            "name": "M16 Rocket Launcher",
+            "description": "A wheeled light rocket artillery piece.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Artillery"],
+            "models": [
+                {
+                    "name": "M16 Rocket Launcher",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 3}],
+                    "weapons": [{"id": "light_rockets", "mount": ["Front"], "count": 3}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "m45_quadmount": {
+            "name": "M45 Quadmount",
+            "description": "A wheeled aa piece.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Artillery", "Anti-Air"],
+            "models": [
+                {
+                    "name": "M45 Quadmount",
+                    "courage": "-",
+                    "movement": 4,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 3}, "gun_shield"],
+                    "weapons": [{"id": "hmg_aa", "count": 4}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "37mm_aa": {
+            "name": "37mm M1A2 AA",
+            "description": "A wheeled heavy anti-aircraft autocannon.",
+            "min": 1,
+            "max": 1,
+            "category": "artillery",
+            "subfactions": ["none", "infantry_focus"],
+            "keywords": ["Artillery", "Anti-Air"],
+            "models": [
+                {
+                    "name": "37mm M1A2 AA",
+                    "courage": "-",
+                    "movement": 2,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": "-",
+                    "reflexes": "-",
+                    "rules": [{"id": "crew", "x": 3}],
+                    "weapons": [{"id": "heavy_autocannon_aa"}],
+                    "options": [{"addRule": "gun_shield"}],
+                    "min": 1,
+                    "max": 1
+                },
+                {"name": "Crew", "courage": 5, "movement": 6, "shoot": 5, "fight": 5, "defense": 5, "reflexes": 5, "weapons": ["unarmed"], "min": 3, "max": 3}
+            ]
+        },
+        "m8_greyhound": {
+            "name": "M8 Greyhound",
+            "description": "An armored recon car with a light tank killing gun.",
+            "min": 1,
+            "max": 1,
+            "category": "light_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Armored Car"],
+            "models": [
+                {
+                    "name": "M8 Greyhound",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["light_at_mg"],
+                    "rules": ["vulnerable_side_rear", "damage_chart", "exposed", "scout"],
+                    "options": [{"addWeapon": "hmg_aa"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m20_scout_car": {
+            "name": "M20 Scout Car",
+            "description": "An armored recon car with a heavy MG for infantry support.",
+            "min": 1,
+            "max": 1,
+            "category": "light_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Armored Car"],
+            "models": [
+                {
+                    "name": "M20 Scout Car",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["hmg_aa"],
+                    "rules": ["vulnerable_side_rear", "damage_chart", "exposed", "scout"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4_m21_mortar_carrier": {
+            "name": "M4/M21 Mortar Carrier",
+            "description": "A lightly armored mortar half-track.",
+            "min": 1,
+            "max": 1,
+            "category": "light_vehicles",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M4/M21 Mortar Carrier",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "medium_mortar", "mount": ["Rear"]}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", "exposed"],
+                    "options": [{"addWeapon": {"id": "hmg_aa"}}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m8_scott": {
+            "name": "M8 Scott",
+            "description": "A light tank with a turret howitzer for light infantry support.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M8 Scott",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["light_howitzer_vehicle"],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart", "exposed"],
+                    "options": [{"addWeapon": "hmg_aa"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m3_stuart": {
+            "name": "M3 Stuart",
+            "description": "A light tank with a decent AT gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M3 Stuart",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["light_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart"],
+                    "options": [{"addRule": "scout"}, {"addWeapon": "mmg_aa"}, {"addWeapon": {"id": "belt_lmg", "count": 2, "mount": ["Front"]}}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m24_chaffee": {
+            "name": "M24 Chaffee",
+            "description": "A light tank with a decent AT gun.",
+            "min": 1,
+            "max": 1,
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "category": "heavy_vehicles",
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M24 Chaffee",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart"],
+                    "options": [{"addRule": "scout"}, {"addWeapon": "mmg_aa"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4_sherman": {
+            "name": "M4 Sherman",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4 Sherman",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": ["heavy_at_mg", "medium_howitzer_vehicle"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "catches_fire"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4_sherman_calliope": {
+            "name": "M4 Sherman Calliope",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4 Sherman Calliope",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg_rockets", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "catches_fire"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4_sherman_command": {
+            "name": "M4 Sherman (Command)",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "subfactions": ["armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4 Sherman (Command)",
+                    "courage": 6,
+                    "movement": 10,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 12,
+                    "reflexes": 6,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": "heavy_at_mg"}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "catches_fire", {"id": "field_orders_armored", "x": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4a1_sherman": {
+            "name": "M4A1 Sherman",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4A1 Sherman",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": ["heavy_at_mg", "medium_howitzer_vehicle"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4a1_sherman_command": {
+            "name": "M4A1 Sherman (Command)",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "command",
+            "subfactions": ["armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4A1 Sherman (Command)",
+                    "courage": 6,
+                    "movement": 10,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 12,
+                    "reflexes": 6,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": "heavy_at_mg"}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", {"id": "field_orders_armored", "x": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4a3e8_easy_eight": {
+            "name": "M4A3E8 \"Easy Eight\"",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4A3E8 \"Easy Eight\"",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["heavy_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m4a3e2_sherman_jumbo": {
+            "name": "M4A3E2 Sherman Jumbo",
+            "description": "A heavy assault tank with optional heavy gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M4A3E2 Sherman Jumbo",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 13,
+                    "reflexes": 5,
+                    "weapons": ["medium_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}, {"replaceWeapon": "medium_at_mg", "withWeapon": "heavy_at_mg"}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m26_pershing": {
+            "name": "M26 Pershing",
+            "description": "A heavy assault tank with optional heavy gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "armored_focus"],
+            "keywords": ["Vehicle", "Tank"],
+            "models": [
+                {
+                    "name": "M26 Pershing",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 13,
+                    "reflexes": 5,
+                    "weapons": ["very_heavy_at_mg", {"id": "mmg_internal", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["hmg_aa"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m18_hellcat": {
+            "name": "M18 Hellcat",
+            "description": "A lightly armored but fast tank destroyer.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank", "Tank Destroyer"],
+            "models": [
+                {
+                    "name": "M4A1 Sherman",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": ["heavy_at"],
+                    "options": [{"addWeapon": "hmg_aa"}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "exposed"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m10_tank_destroyer": {
+            "name": "M10 Tank Destroyer",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank", "Tank Destroyer"],
+            "models": [
+                {
+                    "name": "M10 Tank Destroyer",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["heavy_at"],
+                    "options": [{"addWeapon": "hmg_aa"}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "exposed"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m36_jackson": {
+            "name": "M36 Jackson",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank", "Tank Destroyer"],
+            "models": [
+                {
+                    "name": "M36 Jackson",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": ["very_heavy_at"],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "exposed"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m36b_jackson": {
+            "name": "M36B1 Jackson",
+            "description": "A medium tank with a decent all-round AT gun.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Tank", "Tank Destroyer"],
+            "models": [
+                {
+                    "name": "M36B1 Jackson",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 12,
+                    "reflexes": 5,
+                    "weapons": ["very_heavy_at", {"id": "mmg", "mount": ["Front"]}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 6}, "damage_chart", "exposed"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m7_priest": {
+            "name": "M7 Priest",
+            "description": "A later war infantry support medium tank.",
+            "min": 1,
+            "max": 1,
+            "category": "heavy_vehicles",
+            "subfactions": ["none", "infantry_focus", "armored_focus"],
+            "keywords": ["Vehicle", "Artillery"],
+            "models": [
+                {
+                    "name": "M7 Priest",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 11,
+                    "reflexes": 5,
+                    "weapons": [{"id": "medium_howitzer_vehicle", "mount": ["Front"]}],
+                    "rules": ["tracked", "vulnerable_side_rear", {"id": "impact", "x": 3}, "damage_chart"],
+                    "options": [{"addWeapon": "hmg_aa"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m2_halftrack": {
+            "name": "M2 Halftrack",
+            "description": "A lightly armored mechanized transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M2 Halftrack",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aa", "mount": ["Front"]}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", {"id": "transport", "x": 12}, "exposed"],
+                    "options": [{"addWeapon": "mmg"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m2a1_3_5_halftrack": {
+            "name": "M2A1/M3/M5 Halftrack",
+            "description": "A lightly armored mechanized transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M2A1/M3/M5 Halftrack",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aa"}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", {"id": "transport", "x": 12}, "exposed"],
+                    "options": [{"addWeapon": "mmg_aa", "mount": ["Left"]}, {"addWeapon": "mmg_aa", "mount": ["Left"]}, {"addWeapon": "mmg_aa", "mount": ["Rear"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m17_mgmc": {
+            "name": "M17 MGMC",
+            "description": "An armored halftrack upgraded with several anti-air machine-guns.",
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M17 MGMC",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aa", "count": 4}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", "exposed"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m3_white_scout": {
+            "name": "M3 White Scout Car",
+            "description": "A lightly armored scout transport car.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M3 White Scout Car",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aa", "mount": ["Front"]}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", {"id": "transport", "x": 8}, "exposed", "scout"],
+                    "options": [{"addWeapon": "mmg", "mount": ["Left", "Rear"]}, {"addWeapon": "mmg", "mount": ["Right", "Rear"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "jeep": {
+            "name": "Jeep",
+            "description": "A light transport car.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "Jeep",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 7,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", {"id": "transport", "x": 5}],
+                    "options": [{"addWeapon": {"id": "mmg_aa", "mount": ["Front"]}}, {"addRule": "amphibious"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "airborne_jeep": {
+            "name": "Jeep (Airborne)",
+            "description": "A light transport car.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["airborne_focus"],
+            "keywords": ["Vehicle", "Airborne Vehicle"],
+            "models": [
+                {
+                    "name": "Jeep (Airborne)",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 7,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", {"id": "transport", "x": 5}],
+                    "options": [{"addWeapon": {"id": "mmg_aa", "mount": ["Front"]}}, {"addRule": "amphibious"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "3_4_ton_truck": {
+            "name": "3/4 Ton Truck",
+            "description": "A light truck transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "3/4 Ton Truck",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", {"id": "transport", "x": 8}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "1_1_2_ton_truck": {
+            "name": "1.5 Ton Truck",
+            "description": "A light truck transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "3/4 Ton Truck",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", {"id": "transport", "x": 12}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "2_1_2_ton_truck": {
+            "name": "2.5 Ton Truck",
+            "description": "A light truck transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "3/4 Ton Truck",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 5,
+                    "rules": ["damage_chart", {"id": "transport", "x": 18}],
+                    "options": [{"addWeapon": ["mmg_aa", "hmg_aa"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "m2a1_m3_halftrack": {
+            "name": "M2A1/M3 Halftrack",
+            "description": "A lightly armored mechanized transport.",
+            "min": 1,
+            "max": 1,
+            "category": "transport",
+            "subfactions": ["none", "armored_focus", "infantry_focus"],
+            "keywords": ["Vehicle", "Half-Track"],
+            "models": [
+                {
+                    "name": "M2A1 Halftrack",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aa"}],
+                    "rules": ["half_tracked", "vulnerable_side_rear", "damage_chart", {"id": "transport", "x": 12}, "exposed"],
+                    "options": [{"addWeapon": "mmg", "mount": ["Left"]}, {"addWeapon": "mmg", "mount": ["Right"]}, {"addWeapon": "mmg", "mount": ["Rear"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "waco_glider": {
+            "name": "Waco CG-4A Glider",
+            "description": "A lightweight glider used to transport troops to the battlefield.",
+            "subfactions": ["airborne_focus", "special_forces_focus"],
+            "category": "transport",
+            "keywords": ["Vehicle"],
+            "models": [
+                {
+                    "name": "Waco CG-4A Glider",
+                    "movement": "-",
+                    "courage": "-",
+                    "shoot": "-",
+                    "fight": "-",
+                    "defense": "-",
+                    "reflexes": "-",
+                    "weapons": [],
+                    "rules": [{"id": "transport", "x": 12}, "ambush"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "o_57_grasshopper": {
+            "name": "O-57 Grasshopper OP",
+            "description": "A lightweight observer aircraft.",
+            "category": "aircraft",
+            "keywords": ["Aircraft", "Observer"],
+            "models": [
+                {
+                    "name": "O-57 Grasshopper OP",
+                    "courage": 5,
+                    "movement": 10,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 8,
+                    "reflexes": 5,
+                    "weapons": ["smoke_battery"],
+                    "options": [{"replaceWeapon": "smoke_battery", "withWeapon": ["light_mortar_battery", "medium_mortar_battery", "heavy_mortar_battery", "rocket_battery"]}],
+                    "rules": ["aircraft", "damage_chart"],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "p51_mustang": {
+            "name": "P-51 Mustang",
+            "description": "An air to air fighter plane.",
+            "category": "aircraft",
+            "keywords": ["Aircraft"],
+            "models": [
+                {
+                    "name": "P-51 Mustang",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aircraft", "count": 6, "mount": ["Front"]}],
+                    "rules": ["aircraft", "damage_chart"],
+                    "options": [
+                        {
+                            "addWeapon": [
+                                {"id": "light_aircraft_rocket", "count": 6},
+                                {"id": "light_aircraft_rocket", "count": 10},
+                                {"id": "light_bomb", "count": 2},
+                                {"id": "medium_bomb", "count": 2},
+                                {"id": "heavy_bomb", "count": 2}
+                            ],
+                            "limit": 1
+                        }
+                    ],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "p47_thunderbolt": {
+            "name": "P-47D-40 Thunderbolt",
+            "description": "An air to air fighter plane.",
+            "category": "aircraft",
+            "keywords": ["Aircraft"],
+            "models": [
+                {
+                    "name": "P-47D-40 Thunderbolt",
+                    "courage": 5,
+                    "movement": 12,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 10,
+                    "reflexes": 5,
+                    "weapons": [{"id": "hmg_aircraft", "count": 8, "mount": ["Front"]}],
+                    "rules": ["aircraft", "damage_chart"],
+                    "options": [{"addWeapon": [{"id": "light_aircraft_rocket", "count": 10}, {"id": "medium_bomb", "count": 2}], "limit": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        }
+    },
+    "weapons": {},
+    "strategies": {
+        "fire_and_move": {
+            "phase": "activation",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "name": "Fire and Move",
+            "flavor": "With a doctrine of mobile warfare, US Infantry advance and fire with great effect.",
+            "description": "Use when an _Infantry_ unit performs a Move action. That unit may perform a free Shoot action at -1 Accuracy.",
+            "cost": 1
+        },
+        "scouting_team": {
+            "phase": "activation",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "name": "Scouting Team",
+            "flavor": "US Infantry would often form small scouting teams to scout out the route ahead.",
+            "description": "Use instead of your activation. Choose 3 models from an _Infantry_ unit to become a new scouting team unit. That unit immediately activates and is treated as a separate unit for the remainder of the game. This strategy may only be used once per _Infantry_ unit.",
+            "cost": 1
+        },
+        "gyrostabilizers": {
+            "phase": "activation",
+            "subfactions": ["none", "airborne_focus", "armored_focus", "infantry_focus"],
+            "name": "Mobile Gunners",
+            "flavor": "US tanks were often equipped with gyro-stabilizers and trained to move forward which allowed them to fire on the move more accurately.",
+            "description": "Use when a _Tank_ unit performs a Move action. That unit may perform a free Shoot action at -1 Accuracy.",
+            "cost": 1
+        }
+    },
+    "rules": {
+        "natural_leader": {"name": "Natural Leader", "description": "This unit and friendly _Infantry_ units within 6\" get +1 Courage and +1 Initiative.", "points": 15},
+        "defensive_fire": {"name": "Defensive Fire", "description": "This unit and friendly _Infantry_ units within 6\" get +1 Accuracy when using an Ambush reaction.", "points": 10},
+        "move_it": {"name": "Move It", "description": "When this unit is activated, this unit and friendly _Infantry_ units within 6\" may immediately remove one shock.", "points": 10},
+        "mobile_expert": {"name": "Mobile Expert", "description": "After this unit performs a Move action, it may perform a free Shoot action at -1 Accuracy.", "points": 20}
+    },
+    "relics": {
+        "richard_winters": {
+            "subfactions": ["none", "airborne_focus"],
+            "name": "Richard Davis Winters",
+            "rule": "natural_leader",
+            "flavor": "A natural leader and an excellent officer, Richard Winters lead his Parachute unit through D-Day and beyond.",
+            "description": "Upgrade one Field Officer model with Natural Leader.",
+            "points": 10
+        },
+        "turner_turnbull": {
+            "subfactions": ["none", "infantry_focus"],
+            "name": "Turner 'Brashears' Turnbull III",
+            "rule": "defensive_fire",
+            "flavor": "Turner Turnbull organized his men and against all odds held out a German counter-attack at Neuville-au-Plein.",
+            "description": "Upgrade one Field Officer model with Defensive Fire.",
+            "points": 5
+        },
+        "dutch_cota": {
+            "subfactions": ["none", "infantry_focus"],
+            "name": "Norman 'Dutch' Cota",
+            "rule": "move_it",
+            "flavor": "Cota lead American forces on the beaches of Normandy and inspired his men under severe enemy fire.",
+            "description": "Upgrade one Field Officer model with Move It.",
+            "points": 5
+        },
+        "lafayette_pool": {
+            "subfactions": ["none", "armored_focus"],
+            "name": "Lafayette G. Pool",
+            "rule": "mobile_expert",
+            "flavor": "Lafayette Pool used a mix of suprise and mobile tactics to outwit his armored opponents.",
+            "description": "Upgrade one M4 Sherman or M4A1 Sherman with Mobile Expert.",
+            "points": 5
+        }
+    }
+}

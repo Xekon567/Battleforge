@@ -1,0 +1,1449 @@
+{
+    "id": "franks",
+    "name": "Franks",
+    "subfactions": {
+        "migration_period_franks": {
+            "name": "Migration Period Franks (250 - 450 AD)",
+            "phase": "activation",
+            "id": "migration_period_franks",
+            "description": "The Franks were a hostile, frontier people during the beginning of this era. During the last decades or even century of this era, they often were allies of the Romans, and well rewarded ones too.",
+            "restricted": "true"
+        },
+        "early_merovingian_franks": {
+            "name": "Early Merovingian Franks (450 - 600 AD)",
+            "phase": "activation",
+            "id": "early_merovingian_franks",
+            "description": "The Merovingian Dynasty was started with Merovech. Childeric and Clovis would continue the line, with Clovis conquering and ruling over most of Gaul (France). After Clovis died, according to Frankish tradition, the land was divided among his sons and they drove the kingdom into violent civil war. ",
+            "restricted": "true"
+        },
+        "later_merovingian_franks": {
+            "name": "Later Merovingian Franks (600-750 AD)",
+            "phase": "activation",
+            "id": "later_merovingian_franks",
+            "description": "After Cholotar, the Frankish lands were again divided, united, divided, and united again. During this period of time, known as the 'Roi Fainéant' (Lazy King) were overshadowed by the powerful 'mayors of the palace'.",
+            "restricted": "true"
+        },
+        "carolingian_french": {
+            "name": "Carolingian Franks (768-900 AD)",
+            "phase": "activation",
+            "id": "carolingian_french",
+            "description": "The dynasty and empire of Charlemagne (Charles the Great), till his lands were divided amongst his grandchildren. Lothair and his desendents would rule the western portion, which became what is now France. Louis and his desendents would rule the eastern portion, which is now known as 'Germany'.",
+            "restricted": "true"
+        },
+        "aquitaine": {
+            "name": "Duchy of Aquitaine (660-769 AD)",
+            "phase": "activation",
+            "id": "aquitaine",
+            "description": "The Duchy of Aquintaine was a semi-independent Frankish during period of Merovingian weakness. Being on the border of the Christian world, it would often choose Muslims or enemies of the Franks as allies. It was later crushed by the Carolingians.",
+            "restricted": "true"
+        },
+        "capetian_french": {"name": "Capetian French (900-1100 AD)", "phase": "activation", "id": "capetian_french", "description": "", "restricted": "true"}
+    },
+    "units": {
+        "rex": {
+            "name": "Rex",
+            "description": "Rex, was a latin word meaning 'king'. A cunning man, dangerous in politics and on the battlefield.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Rex",
+                    "movement": 6,
+                    "courage": 8,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 2}, "lead_by_example", "leader", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield", "javelin"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "dux": {
+            "name": "Dux",
+            "description": "Dux, was a latin word meaning 'leader' or 'general'. The Dux made up the upper echelons of power in Frankish society, and the word would evolve into the familiar 'Duke'.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Dux",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", "leader", {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield", "javelin"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "comes": {
+            "name": "Comes",
+            "description": "A Comes (plural, comites), was another latin word, like 'Dux'. This word meant 'companion', but increasingly among late Romans and 'Migration Era' Germanic peoples, meant 'military leader'. This word eventually evolved into the term 'count' and under the Franks, became a rank of nobility. It would seem that the Antrustiones had evolved into the Counts, amassing wealth from the masses of Gallo-Romano coloni tenant farmers.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Comes",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", "leader", {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield", "javelin"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "antrustio": {
+            "name": "Antrustio",
+            "description": "An Antrustio (Antrustiones, plural), was a latin word for noble of power, loyal to their Dux or even the King. The Antrustio started as the personal companions and retinue of Clovis, and later Frankish kings. Later on, they were spread out over the kingdom and put into positions of power, at which time they often they had their own personal bands of Pueri.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Antrustio",
+                    "courage": 6,
+                    "movement": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", "minor_leader", {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield", "javelin"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "bishop": {
+            "name": "Bishop",
+            "description": "As the Franks christianized, The Church became a center of their lives. The Church had access to so much wealth and lands, that some of its officals assembled their own armies and operated as warlords.",
+            "category": "command",
+            "subfactions": ["carolingian_french", "capetian_french", "later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Bishop",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", "leader", "man_of_god", {"id": "wounds", "x": 2}],
+                    "weapons": ["spear", "shield", "hand_weapon"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"addWeapon": "javelin"}, {"addRule": ["heavy_armor", "light_armor"], "limit": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "priest": {
+            "name": "Christian Priest",
+            "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Abbod",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 4,
+                    "fight": 4,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", "minor_leader", "man_of_god", {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"addWeapon": "javelin"}, {"addRule": ["light_armor"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "rex_on_warhorse": {
+            "name": "Rex on War Horse",
+            "description": "Rex, was a latin word meaning 'king'. A cunning man, dangerous in politics and on the battlefield.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Rex on War Horse",
+                    "movement": 8,
+                    "courage": 8,
+                    "shoot": 6,
+                    "fight": 7,
+                    "defense": 7,
+                    "reflexes": 7,
+                    "rules": [{"id": "field_orders", "x": 2}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield", "javelin", "horse_attack"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "dux_on_warhorse": {
+            "name": "Dux on War Horse",
+            "description": "Dux, was a latin word meaning 'leader' or 'general'. The Dux made up the upper echelons of power in Frankish society, and the word would evolve into the familiar 'Duke'.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Dux on War Horse",
+                    "movement": 6,
+                    "courage": 7,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 3}],
+                    "weapons": ["hand_weapon", "shield", "javelin", "horse_attack"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "comes_on_warhorse": {
+            "name": "Comes on War Horse",
+            "description": "A Comes (plural, comites), was another latin word, like 'Dux'. This word meant 'companion', but increasingly among late Romans and 'Migration Era' Germanic peoples, meant 'military leader'. This word eventually evolved into the term 'count' and under the Franks, became a rank of nobility. It would seem that the Antrustiones had evolved into the Counts, amassing wealth from the masses of Gallo-Romano coloni tenant farmers.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Comes on War Horse",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": [{"id": "field_orders", "x": 1}, "lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield", "javelin", "horse_attack"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "antrustio_on_warhorse": {
+            "name": "Antrustio on War Horse",
+            "description": "An Antrustio (Antrustiones, plural), was a latin word for noble of power, loyal to their Dux or even the King. The Antrustio started as the personal companions and retinue of Clovis, and later Frankish kings. Later on, they were spread out over the kingdom and put into positions of power, at which time they often they had their own personal bands of Pueri.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Antrustio on War Horse",
+                    "courage": 6,
+                    "movement": 8,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", {"id": "minor_leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield", "javelin", "horse_attack"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"replaceWeapon": "javelin", "withWeapon": ["francisca"]}, {"addWeapon": "bow"}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "bishop_on_horse": {
+            "name": "Bishop on Horse",
+            "description": "As the Franks christianized, The Church became a center of their lives. The Church had access to so much wealth and lands, that some of its officals assembled their own armies and operated as warlords.",
+            "category": "command",
+            "subfactions": ["carolingian_french", "capetian_french", "later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Bishop on Horse",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", {"id": "leader_x", "x": "Infantry, Cavalry"}, "man_of_god", {"id": "wounds", "x": 2}],
+                    "weapons": ["spear", "shield", "hand_weapon"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"addWeapon": "javelin"}, {"addRule": ["heavy_armor", "light_armor"], "limit": 1}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "priest_on_horse": {
+            "name": "Christian Priest on Horse",
+            "description": "For the lives of rural living people, religion has always been at the center. During these dark and desperate times, for many in Europe, the Christian faith was the only hope they had.",
+            "category": "command",
+            "models": [
+                {
+                    "name": "Abbod on Horse",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 4,
+                    "fight": 4,
+                    "defense": 4,
+                    "reflexes": 5,
+                    "rules": ["lead_by_example", "man_of_god", {"id": "minor_leader_x", "x": "Infantry, Cavalry"}, {"id": "wounds", "x": 2}],
+                    "weapons": ["hand_weapon", "shield"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"]}, {"addWeapon": "javelin"}, {"addRule": ["light_armor"]}],
+                    "min": 1,
+                    "max": 1
+                }
+            ]
+        },
+        "lowborn_spear_levy": {
+            "name": "Peasant Spear Levy",
+            "description": "Due to the plentiful supply of landless men, spears, and shields; it is likely that if the Franks were involved in a battle that required them to defend their lands, rather then raid those of another, they would attempt to form a basic spear levy as was common at the time. Such troops would have to be 'bullied' into a formation, and even if trained at all, weren't trained very well.",
+            "category": "core",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Lowborn",
+                    "movement": 6,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["if_it_bleeds", "spearmen", "warband"],
+                    "weapons": ["spear", "shield", "javelin"],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "bagaudae": {
+            "name": "Bagaudae",
+            "description": "Bagaudae (Celtic for 'fighters', Latin for 'brigands'), were revolting peasant warriors. Many of these uprisings were put down, but eventually some of them managed to time themselves with a barbarian invasion. The cause of unrest was excessive taxation, forced labor, and being treated as property.",
+            "category": "core",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Peasant",
+                    "movement": 7,
+                    "courage": 4,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 4,
+                    "rules": ["buckler", "if_it_bleeds", "light_infantry", "warband"],
+                    "weapons": ["hand_weapon"],
+                    "options": [{"addWeapon": "javelin"}, {"addRule": "agile", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "frank_heerbann": {
+            "name": "Frankish Heerbann",
+            "description": "The Frankish 'Heerbann' (Master Demand/Call/Speak) was a call from the king or a duke for military service. On a technical, legal basis, all men with their own land were obligated, but historians debate if this was even remotely realistic economically, and so its agreed that only a small fraction were expected to fight. The economics suggest that some sort of 'warrior class' must've been fostered, or that men pooled their money and were called up in rotations. What is known with absolute certainty, is that the Latin/Gaul tenant farmers were not called up.",
+            "category": "core",
+            "subfactions": ["migration_period_franks", "early_merovingian_franks", "none"],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "shield", "warband", "warrior_culture"],
+                    "weapons": ["hand_weapon"],
+                    "options": [{"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"}, {"addWeapon": ["javelin", "francisca"], "limit": 1}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "frank_heerbann_cavalry": {
+            "name": "Mounted Frankish Heerbann",
+            "description": "The Frankish 'Heerbann' (Master Demand/Call/Speak) was a call from the king or a duke for military service. On a technical, legal basis, all men with their own land were obligated, but historians debate if this was even remotely realistic economically, and so its agreed that only a small fraction were expected to fight. The economics suggest that some sort of 'warrior class' must've been fostered, or that men pooled their money and were called up in rotations. What is known with absolute certainty, is that the Latin/Gaul tenant farmers were not called up.",
+            "category": "core",
+            "subfactions": ["migration_period_franks", "early_merovingian_franks", "none"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Freeman",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["shield", "if_it_bleeds", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"}, {"addWeapon": ["javelin", "francisca"], "limit": 1}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "subject_heerbann": {
+            "name": "Subject Heerbann",
+            "description": "Besides the Germanic and uncivilized allies or levies, there were subjects (likely Gallo-Romans) assembled for battle from the Romanized areas.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks", "later_merovingian_franks", "aquitaine"],
+            "models": [
+                {
+                    "name": "Freeman",
+                    "courage": 5,
+                    "movement": 6,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "reluctant", "shield", "spearmen", "warband"],
+                    "weapons": ["spear"],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "franci": {
+            "name": "Franci",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those with more money and resources, while the 'Frankish Heerbann' unit represents the poorer franci.",
+            "category": "core",
+            "subfactions": ["none", "early_merovingian_franks", "migration_period_franks"],
+            "models": [
+                {
+                    "name": "Franci",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband", "warrior_culture"],
+                    "weapons": ["hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": 5}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_franci": {
+            "name": "Mounted Franci",
+            "description": "The franci (Latin) were the landowning class, some with enough money to afford a horse, but with most just having enough to have at least decent equipment. This unit represents those with more money and resources, while the 'Frankish Heerbann' unit represents the poorer franci.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks", "migration_period_franks", "none"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Franci",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband"],
+                    "weapons": ["spartha", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": 5}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "liberi": {
+            "name": "Liberi",
+            "description": "Previously known as 'Franci', the Liberi (Latin) were the landowning class. By the time of Charlemagne, the 'Franci'/'Liberi' answering the Heerbann increasingly found themselves fighting without horses, and religated to paying for the equipment of the 'milities', which was quite expensive. This was a considerable burden to the poor landowners, basically low class 'freemen', who hoped to be under the service of a lord rich enough to, help them afford their obligations or ask less of them.",
+            "category": "core",
+            "subfactions": ["later_merovingian_franks", "aquitaine", "carolingian_french", "capetian_french"],
+            "models": [
+                {
+                    "name": "Liberi",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spear"],
+                    "options": [{"addWeapon": ["javelin", "francisca"], "limit": 1}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "liberi_archers": {
+            "name": "Liberi Archers",
+            "description": "Previously known as 'Franci', the Liberi (Latin) were the landowning class. By the time of Charlemagne, the 'Franci'/'Liberi' answering the Heerbann increasingly found themselves fighting without horses, and/or religated to paying for the equipment of the 'milities', which was quite expensive. This was a considerable burden to the poor landowners, basically low class 'freemen', who hoped to be under the service of a lord rich enough to, help them afford their obligations or ask less of them.",
+            "category": "core",
+            "subfactions": ["later_merovingian_franks", "aquitaine", "carolingian_french", "capetian_french"],
+            "rules": ["buckler", "if_it_bleeds", "light_infantry", "warband"],
+            "models": [
+                {
+                    "name": "Liberi Archer",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "weapons": ["unarmed", "bow"],
+                    "options": [{"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"}, {"addRule": "agile", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "liberi_skirmishers": {
+            "name": "Liberi Skirmishers",
+            "description": "Previously known as 'Franci', the Liberi (Latin) were the landowning class. By the time of Charlemagne, the 'Franci'/'Liberi' answering the Heerbann increasingly found themselves fighting without horses, and/or religated to paying for the equipment of the 'milities', which was quite expensive. This was a considerable burden to the poor landowners, basically low class 'freemen', who hoped to be under the service of a lord rich enough to, help them afford their obligations or ask less of them.",
+            "category": "core",
+            "subfactions": ["later_merovingian_franks", "aquitaine", "carolingian_french", "capetian_french"],
+            "models": [
+                {
+                    "name": "Liberi Skirmisher",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["buckler", "if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [{"replaceRule": "buckler", "withRule": ["shield"], "modelLimit": "all"}, {"addRule": "agile", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "gallo_roman_noble_cavalry": {
+            "name": "Mounted Gallo-Roman Nobles",
+            "description": "Among the Franks, most of the management class of Romans was retained. While the bulk of Gallo-Romans were tenant farmers below the Frankish freemen, those with the means and will to fight were considered Franks, and were recruited or intermarried with.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Gallo-Roman Noble",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "light_armor", "shield", "stubborn", "warband"],
+                    "weapons": ["spartha", "horse_attack"],
+                    "options": [{"replaceWeapon": "spartha", "withWeapon": ["hand_axe"], "modelLimit": "all"}, {"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Angon"}], "limit": 1}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "merchant_militia": {
+            "name": "Merchant Militia",
+            "description": "The southern areas of Gaul/Francia, were wealthier and retained more elements of Romano-Gallo civilization. The trading ports and merchant towns of these areas could produce wealthy nobles, with vested self-interest in maintaining the current political order.",
+            "category": "core",
+            "subfactions": ["aquitaine"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Merchant Militia",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"addWeapon": "bow"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": ["stubborn", "light_armor"], "modelLimit": "all"}
+                    ],
+                    "notes": "Carol Cab Osprey states source that indicates this existed.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "fideles": {
+            "name": "Fideles Mounted Warriors",
+            "description": "While there are records of several different overlapping terms for who was obligated to muster for battle, there is strong indication that for economic and practical reasons, only the companions of nobles or the 'fideles' (Trusted Ones, lit: Faithful Ones) could be expected to assemble in time.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Fideles",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "stubborn", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["francisca", "javelin"], "limit": 1},
+                        {"addRule": ["light_armor", "furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "notes": "Hans Delbruck (Super hardcore Geramn historian) says the math does not add up. The early Merovingians are covered in multiple WAB books with slightly different units.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "veteran_fideles": {
+            "name": "Veteran Fideles Mounted Warriors",
+            "description": "While there are records of several different overlapping terms for who was obligated to muster for battle, there is strong indication that for economic and practical reasons, only the companions of nobles or the 'fideles' (Trusted Ones, lit: Faithful Ones) could be expected to assemble in time.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Veteran Fideles",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "stubborn", "warband"],
+                    "weapons": ["spartha", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": ["light_armor", "furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "notes": "Hans Delbruck (Super hardcore Geramn historian) says the math does not add up. The early Merovingians are covered in multiple WAB books with slightly different units.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "nobility": {
+            "name": "Warrior Nobility",
+            "description": "Records from this time indicate there was a lot of fighting, but the population of 'retainers' was too few, skilled warriors were spread out across wide areas, and the usefulness of freeman militia too terrible. This indicates a reasonable population of 'warrior nobility' must've existed, desendents of Latin and Germanic warriors.",
+            "category": "core",
+            "subfactions": ["later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Warrior",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["spear"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": ["scout", "light_armor", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "notes": "Hans Delbruck (Super hardcore Geramn historian) says the math does not add up. The early Merovingians are covered in multiple WAB books with slightly different units.",
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_nobility": {
+            "name": "Mounted Warrior Nobility",
+            "description": "Records from this time indicate there was a lot of fighting, but the population of 'retainers' was too few, skilled warriors were spread out across wide areas, and the usefulness of freeman militia too terrible. This indicates a reasonable population of 'warrior nobility' must've existed, desendents of Latin and Germanic warriors.",
+            "category": "core",
+            "subfactions": ["later_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Warrior",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband"],
+                    "weapons": ["spear", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spear", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": ["scout", "light_armor", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "notes": "Hans Delbruck (Super hardcore Geramn historian) says the math does not add up. The early Merovingians are covered in multiple WAB books with slightly different units.",
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "tribal_warriors": {
+            "name": "Tribal Warriors",
+            "description": "As the Merovingians conquered other peoples and tribes, expanding their armies, some of these people fought as allies or subordinants before they had fully been assimilated into 'Franks'.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks", "later_merovingian_franks", "none"],
+            "models": [
+                {
+                    "name": "Duguth",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["buckler", "if_it_bleeds", "light_infantry", "warband", "warrior_culture"],
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [{"replaceRule": ["light_infantry", "buckler"], "withRule": ["shield"], "modelLimit": "all"}, {"addRule": "strider", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mayor's_socii": {
+            "name": "Mayor's Socii",
+            "description": "Local leaders who gained power during this dark and troubled time gained enough wealth and power to rule like dukes, or even as if they themselves were king. Each Mayor had his own specific Pueri ('Boys') retainers, known as Socii. They receieved extra wealth and training, which allowed them access to techniques and armor others didn't have.",
+            "category": "elite",
+            "subfactions": ["later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Socius",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "rules": ["fierce", "shield", "warrior_culture"],
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mayor's_socii_cav": {
+            "name": "Mounted Mayor's Socii",
+            "description": "Local leaders who gained power during this dark and troubled time gained enough wealth and power to rule like dukes, or even as if they themselves were king. Each Mayor had his own specific Pueri ('Boys') retainers, known as Socii. They receieved extra wealth and training, which allowed them access to techniques and armor others didn't have.",
+            "category": "elite",
+            "subfactions": ["later_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Mounted Mayor's Socius",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 7,
+                    "reflexes": 6,
+                    "rules": ["fierce", "shield", "mount_warrior_culture"],
+                    "weapons": ["spartha", "javelin", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "pueri_trustis": {
+            "name": "Pueri Trustis",
+            "description": "Pueri ('Boys') Trustis, were the personal guards and retinue of powerful nobles such as lords, Antrustiones or even the king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks", "migration_period_franks", "none"],
+            "models": [
+                {
+                    "name": "Pueri",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["fierce", "shield", "warrior_culture"],
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_pueri_trustis": {
+            "name": "Pueri Trustis Horsemen",
+            "description": "Pueri ('Boys') Trustis, were the personal guards and retinue of powerful nobles such as lords, Antrustiones or even the king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures.",
+            "category": "core",
+            "subfactions": ["early_merovingian_franks", "migration_period_franks", "none"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Pueri Horseman",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["fierce", "light_cavalry", "shield", "mount_warrior_culture"],
+                    "weapons": ["spartha", "javelin", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "later_pueri_trustis": {
+            "name": "Pueri Trustis",
+            "description": "Pueri ('Boys') Trustis, were the personal guards and retinue of powerful nobles such as lords, Comes (Counts), or even the king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures.",
+            "category": "rare",
+            "subfactions": ["later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Pueri",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["fierce", "shield", "warrior_culture"],
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mount_later_pueri_trustis": {
+            "name": "Pueri Trustis Horsemen",
+            "description": "Pueri ('Boys') Trustis, were the personal guards and retinue of powerful nobles such as lords, Comes (Counts), or even the king. They were just as skilled as fighting on foot and on horseback, and were similar to the 'honor guard' units of other cultures.",
+            "category": "rare",
+            "subfactions": ["later_merovingian_franks"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Pueri Horseman",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 6,
+                    "reflexes": 6,
+                    "rules": ["fierce", "light_cavalry", "shield", "mount_warrior_culture"],
+                    "weapons": ["spartha", "javelin", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["furious_charge", "superior_cavalry"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "latest_pueri_light_cav": {
+            "name": "Pueri Light Cavalry ",
+            "description": "Pueri ('Boys') stopped being a term specificly for the personial guard of nobles, and started being a term for poorer nobles, squires, and 'Franci'/'Liberi' who had their own horse, but weren't stuck paying for the equipment of a milites. The bulk of warriors who served under Charlemagne, could afford a war-horse valued at 12 cows or 4 mares, but a helmet/sword would be 6/7 more cows, and a coat of mail another 12 cows.",
+            "category": "core",
+            "subfactions": ["carolingian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Pueri Horseman",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_cavalry", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": ["spartha"], "withWeapon": ["spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["light_armor", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "veteran_latest_pueri": {
+            "name": "Veteran Pueri Light Cavalry ",
+            "description": "With enough experiance, the light cavalry would become increasingly talented in the use of maneuver and ranged weapons.",
+            "category": "core",
+            "subfactions": ["carolingian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Veteran Pueri Horseman",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_cavalry", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": ["spartha"], "withWeapon": ["spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["light_armor", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "capetian_pueri_light_cav": {
+            "name": "Pueri Light Cavalry ",
+            "description": "Pueri ('Boys') stopped being a term specificly for the personial guard of nobles, and started being a term for poorer nobles, squires, and 'Franci'/'Liberi' who had their own horse, but weren't stuck paying for the equipment of a milites. The bulk of warriors who served under Charlemagne, could afford a war-horse valued at 12 cows or 4 mares, but a helmet/sword would be 6/7 more cows, and a coat of mail another 12 cows.",
+            "category": "rare",
+            "subfactions": ["capetian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Pueri Horseman",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["light_cavalry", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": ["spartha"], "withWeapon": ["spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["light_armor", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "milites": {
+            "name": "Milites",
+            "description": "By the time of Charles the Great, a concrete military nobility existed, where males trained from boyhood with their fathers and hunted. They are recorded as being trained to easily mount or dismount their horses, and being well read in the tactics of other civilized peoples. The milites (Previously a Roman term for 'soldier) were a professional soldier class, who often fought on horseback, as had increasingly been the tradition and focus of the Franks over the previous few hundred years. While similar to the 'knights' of later periods, which this class would evolve into (Especially for the Normans), they focused less on the thrusting spear or lance, and more on the throwing spear and sword. Considering that some letters from the period require the milites to have a bow and javelin, and the common practice of nobles greatly enjoying hunting with bow and javelin, indicates that at least some of the mounted nobility must've been good with ranged weapons.",
+            "category": "core",
+            "subfactions": ["carolingian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Milites",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["mount_warrior_culture", "shield", "spearmen"],
+                    "weapons": ["spartha", "javelin", "horse_attack"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addWeapon": "bow"},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "late_milites": {
+            "name": "Milites",
+            "description": "By the twilight of the 10th Century, the French Milites had transitioned to a greater use of the lance and shock tactics.",
+            "category": "core",
+            "subfactions": ["capetian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Milites",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["furious_charge", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "lance"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "post_limitanei": {
+            "name": "Lineage Limitanei",
+            "description": "Even before the Franks invaded and conquered, the Limitanei had been degraded to a part-time or even unpaid militia. They are recorded as remaining their martial spirit and passing down what training, equipment, and experience they could to their children. Those who gained favor among the nobles or retained some wealth, status, they could serve as reasonable troops.",
+            "category": "rare",
+            "subfactions": ["early_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Limitanei",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["shield", "spearmen"],
+                    "weapons": ["spear"],
+                    "options": [{"addWeapon": ["javelin", {"id": "heavy_throwing_spear", "name": "Pilum"}], "limit": 1}, {"addRule": ["stubborn", "light_armor"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "former_foederati": {
+            "name": "Former Foederati",
+            "description": "The 'Foederati' (The term comes from a Latin word for 'treaty'), were often allied 'barbarian' peoples or tribes that were bound by treaty and subsidized with land, money, or resources; to act as a 'buffer force' or mercenaries.",
+            "category": "rare",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Foederati",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["hand_weapon"],
+                    "options": [{"replaceWeapon": ["hand_weapon"], "withWeapon": ["spear"], "modelLimit": "all"}, {"addWeapon": ["javelin", "francisca"], "limit": 1}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "former_foederati_cav": {
+            "name": "Former Foederati Cavalry",
+            "description": "The 'Foederati' (The term comes from a Latin word for 'treaty'), were often allied 'barbarian' peoples or tribes that were bound by treaty and subsidized with land, money, or resources; to act as a 'buffer force' or mercenaries.",
+            "category": "rare",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Foederati Horseman",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [{"replaceWeapon": ["spartha"], "withWeapon": ["spear"], "modelLimit": "all"}, {"addWeapon": ["javelin", "francisca"], "limit": 1}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "former_foederati_veterans": {
+            "name": "Former Foederati Veterans",
+            "description": "As time passed, warriors would gain renown, experience, and wealth. This meant better equipment and fighting ability.",
+            "category": "rare",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Foederati Veteran",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "spearmen", "warband"],
+                    "weapons": ["hand_weapon"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["spear"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "former_foederati_veteran_cavalry": {
+            "name": "Former Foederati Veteran Cavalry",
+            "description": "As time passed, warriors would gain renown, experience, and wealth. This meant better equipment and fighting ability.",
+            "category": "rare",
+            "subfactions": ["migration_period_franks"],
+            "models": [
+                {
+                    "name": "Foederati Veteran Horseman",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "shield", "warband"],
+                    "weapons": ["spartha"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["spear"], "modelLimit": "all"},
+                        {"addWeapon": ["javelin", "francisca"], "limit": 1},
+                        {"addRule": "light_armor", "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "skirmishers": {
+            "name": "Landless Skirmishers",
+            "description": "A band of the impoverished, landless men who could only bring the clothes on their back, a short blade or club, and some ranged weapons.",
+            "category": "rare",
+            "subfactions": ["none", "migration_period_franks", "early_merovingian_franks", "later_merovingian_franks"],
+            "models": [
+                {
+                    "name": "Lowborn",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["short_bow", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "short_bow", "withWeapon": ["bow", "sling", "javelin"], "modelLimit": "all"},
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"addRule": ["buckler", "strider", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "coloni_skirm": {
+            "name": "Coloni Skirmishers",
+            "description": "A band of the impoverished and landless men who could only bring the clothes on their back, a short blade or club, and some ranged weapons. These 'Coloni' were fond of the bow, but generally used any ranged weapon that would prevent them from having to fight in melee. This was a common fate of people called to service, but incredibly poor, extending all the way back to the Republican Romans.",
+            "category": "rare",
+            "subfactions": ["carolingian_french"],
+            "models": [
+                {
+                    "name": "Lowborn",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["short_bow", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "short_bow", "withWeapon": ["sling", "javelin", "bow"], "modelLimit": "all"},
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"addRule": ["buckler", "strider", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "notes": "The Aachen capitulary contained a further provision that no soldier should carry a cudgel (baculum), but rather a bow.",
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "basque_skirm": {
+            "name": "Basque Warriors",
+            "description": "The 'Basque'/'Gascon' people lived around the present day borders of France and Spain. Historically, they were mostly ignored by the Romans and those around them. When others did notice them and try to conquer them, they put up fierce resistance. They were eventually conquered, and even before that, plenty of them saw employment as mercenaries.",
+            "category": "rare",
+            "subfactions": ["aquitaine", "carolingian_french", "capetian_french"],
+            "models": [
+                {
+                    "name": "Basque Freeman",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband", "warrior_culture"],
+                    "weapons": ["javelin", "unarmed"],
+                    "options": [
+                        {"replaceWeapon": "unarmed", "withWeapon": ["hand_weapon"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": ["sling"], "modelLimit": "all"},
+                        {"replaceRule": "skirmisher_formation", "withRule": ["light_infantry"], "modelLimit": "all"},
+                        {"addRule": ["buckler", "strider", "stubborn"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "basque_light_horse": {
+            "name": "Basque Light Cavalry",
+            "description": "The 'Basque' people lived around the present day borders of France and Spain. Historically, they were mostly ignored by the Romans and those around them. When others did notice them and try to conquer them, they put up fierce resistance. They were eventually conquered, and even before that, plenty of them saw employment as mercenaries.",
+            "category": "rare",
+            "subfactions": ["aquitaine", "carolingian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Basque Horseman",
+                    "movement": 8,
+                    "courage": 5,
+                    "shoot": 6,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["if_it_bleeds", "skirmisher_formation", "warband"],
+                    "weapons": ["javelin", "hand_weapon"],
+                    "options": [{"replaceRule": "skirmisher_formation", "withRule": ["light_cavalry"], "modelLimit": "all"}, {"addRule": ["buckler", "strider", "stubborn"], "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "mercenary_crossbowmen": {
+            "name": "Mercenary Crossbowmen",
+            "description": "During the period after Charlemagne, much of Western Europe (Not Britian) had grown used to seeing mounted warriors making the standard freeman levy 'obsolete'. They were replaced by military 'serjeants' (Translates to 'Servent', but is a term used often for professonal, full-time soldiers), who due to being career mercenaries and having good pay, could build up experience and get better equipment.",
+            "category": "rare",
+            "subfactions": ["capetian_french"],
+            "models": [
+                {
+                    "name": "Serjeant Crossbowman",
+                    "movement": 7,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 4,
+                    "defense": 5,
+                    "reflexes": 5,
+                    "rules": ["skirmisher_formation"],
+                    "weapons": ["crossbow", "hand_weapon"],
+                    "options": [{"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "mercenary_spearmen": {
+            "name": "Mercenary Spearmen",
+            "description": "During the period after Charlemagne, much of Western Europe (Not Britian) had grown used to seeing mounted warriors making the standard freeman levy 'obsolete'. They were replaced by mercenary 'serjeants' (Translates to 'Servent', but is a term used often for professonal, full-time soldiers), who due to being career mercenaries and having good pay, could build up experience and get better equipment.",
+            "category": "rare",
+            "subfactions": ["capetian_french"],
+            "models": [
+                {
+                    "name": "Serjeant Spearman",
+                    "movement": 6,
+                    "courage": 5,
+                    "shoot": 5,
+                    "fight": 5,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["shield", "spearmen"],
+                    "weapons": ["spear"],
+                    "options": [{"addWeapon": ["javelin", "francisca"], "limit": 1}, {"addRule": "light_armor", "modelLimit": "all"}],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "flemish_milites": {
+            "name": "Mercenary Flemish Milites",
+            "description": "The professional soldiers, minor nobility, and 'knights' of Flanders were known to fight on foot. They were powerful and dangerious infantry.",
+            "category": "rare",
+            "subfactions": ["capetian_french"],
+            "models": [
+                {
+                    "name": "Flemish Milites",
+                    "movement": 6,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["shield", "spearmen"],
+                    "weapons": ["hand_weapon", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "hand_weapon", "withWeapon": ["hand_axe", "spear"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        },
+        "flemish_milites_cav": {
+            "name": "Mercenary Flemish Cavalry",
+            "description": "The professional soldiers, minor nobility, and 'knights' of Flanders were known to fight on foot. They were powerful and dangerious infantry.",
+            "category": "rare",
+            "subfactions": ["capetian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Flemish Horseman",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 5,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["furious_charge", "shield"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "spartha", "withWeapon": ["hand_axe", "lance"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": ["light_armor", "heavy_armor"], "limit": 1, "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        },
+        "paladins": {
+            "name": "Paladins / Caballarius",
+            "description": "Charlemagne and his desendents needed a 'royal' or 'house' guard, just like all other rulars of their time period or before them. At the same time, Charlemagne and many of his desendents were blessed or crowned by the Pope. Thus, it is likely that their personal guard were exceptionally brave.",
+            "category": "elite",
+            "subfactions": ["carolingian_french"],
+            "keywords": ["Cavalry"],
+            "models": [
+                {
+                    "name": "Paladin",
+                    "movement": 8,
+                    "courage": 6,
+                    "shoot": 6,
+                    "fight": 6,
+                    "defense": 5,
+                    "reflexes": 6,
+                    "rules": ["furious_charge", "mount_warrior_culture", "shield", "stubborn", "superior_cavalry"],
+                    "weapons": ["spartha", "javelin"],
+                    "options": [
+                        {"replaceWeapon": "sword", "withWeapon": ["hand_axe", "lance"], "modelLimit": "all"},
+                        {"replaceWeapon": "javelin", "withWeapon": [{"id": "heavy_throwing_spear", "name": "Angon"}]},
+                        {"addRule": ["heavy_armor", "light_armor"], "modelLimit": "all"}
+                    ],
+                    "min": 5,
+                    "max": 10
+                }
+            ]
+        }
+    },
+    "weapons": {"francisca": {"name": "Francisca", "attacks": 1, "short": 9, "ap": 2, "rules": ["assault", "rending"]}},
+    "rules": {
+        "the_emperor": {"name": "The Emperor", "hidden": false, "description_short": "This model may target a third unit with the Field Orders special rule.", "points": [10]},
+        "power_behind_the_throne": {"name": "The Emperor", "hidden": false, "description_short": "This model may target a third unit with the Field Orders special rule.", "points": [10]},
+        "legend_saint": {"name": "Saint", "description": "Friendly _Infantry_ units within 6'' may re-roll a single failed Courage test when removing Shock."}
+    },
+    "relics": {
+        "clovis": {
+            "subfactions": ["early_merovingian_franks"],
+            "name": "Clovis",
+            "rule": "legend_saint",
+            "flavor": "Clovis was the first Frankish king to conquer a portion of the Roman Empire (part of Gaul). He was however, the first Frankish king to convert to Christianity and a great leader in battle against other 'barbarians'.",
+            "description": "Upgrade one _Leader_ model with 'Saint'.",
+            "points": 10
+        },
+        "pepin_of_herstal": {
+            "subfactions": ["later_merovingian_franks"],
+            "name": "Pepin of Herstal",
+            "rule": "power_behind_the_throne",
+            "flavor": "Pepin of Herstal was the first, great Carolingian 'mayors of the palace' (Ruled 687-714). While the Carolingian dynasty (Where the Carolingians were openly kings) came later, the family was the de-facto supreme power at this point.",
+            "description": "Upgrade one Dux model with 'Power Behind The Throne'.",
+            "points": 10
+        },
+        "odo_the_great": {
+            "subfactions": [""],
+            "name": "Odo the Great",
+            "rule": "sudden_return",
+            "flavor": "Odo The Great, was beloved by The Pope, for his victories against the Muslims south of him.",
+            "description": "Upgrade one Dux model with 'sudden_return'.",
+            "points": 10
+        },
+        "charlemagne": {
+            "subfactions": ["carolingian_french"],
+            "name": "Charlemagne, Holy Roman Emperor",
+            "rule": "the_emperor",
+            "flavor": "Charlemagne (Charles the Great), managed to not only unite the Franks, but also to build an empire that streched all the way into what is now Germany. His conquest of Rome and piety was enough to get him crowned 'Emperor' by the Pope.",
+            "description": "Upgrade one Rex model with 'The Emperor'.",
+            "points": 10
+        }
+    },
+    "strategies": {
+        "shield_wall": {
+            "name": "Shield Wall",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit, all with spears and shields, is being charged or targeted by a shooting attack. If that unit moved one or no times this round it gets +1 Save and ignores the “Superior Cavalry“ special rule. This strategy stays in effect until the unit moves.",
+            "cost": 1
+        },
+        "devastating_charge": {
+            "name": "Devastating Charge",
+            "phase": "activation",
+            "description": "Use when an _Infantry_ unit makes a Charge action. All their Melee weapons gain +1 AP for that attack.",
+            "flavor": "",
+            "cost": 1
+        },
+        "bounce": {
+            "name": "They Bounce",
+            "phase": "activation",
+            "description": "Use when a unit makes a shooting attack including one or more \"Francisca\" weapons. If the attack hits, assign 2 additional Shock.",
+            "flavor": "The Frankish throwing axe was a terror weapon, which bounced in seemingly random and terrifying directions.",
+            "cost": 1
+        },
+        "veterans": {
+            "subfactions": ["migration_period_franks", "early_merovingian_franks", "later_merovingian_franks"],
+            "name": "Veterans",
+            "phase": "activation",
+            "description": "Use when a _Pueri_ unit attacks. You may re-roll all dice and they may not be re-rolled again. A unit may only be affected by this strategy once.",
+            "flavor": "Many years of campaigning have given the Franks a pool of hardened veterans.",
+            "cost": 1
+        },
+        "run_them_down": {
+            "subfactions": ["capetian_french", "carolingian_french"],
+            "name": "Run Them Down",
+            "phase": "activation",
+            "description": "Use when a _Cavalry_ unit makes a Charge action. Weapons with the \"Joust\" special rule gain +1 AP for that attack.",
+            "flavor": "With the heavy usage of mounted warriors, devastating charges became common place.",
+            "cost": 1
+        },
+        "shock_attack": {
+            "subfactions": ["capetian_french", "carolingian_french"],
+            "phase": "activation",
+            "name": "Shock Attack",
+            "description": "Use when charging with a _Cavalry unit. If the attack hits, assign 2 additional Shock.",
+            "flavor": "Cavalry shock attacks keep the enemy from retaliating.",
+            "cost": 1
+        },
+        "hurry": {
+            "subfactions": ["capetian_french", "carolingian_french"],
+            "name": "Hurry Hurry",
+            "phase": "activation",
+            "description": "Use after a _Cavalry_ unit fails to rush a Move action. The unit doesn't suffer any shock.",
+            "flavor": "",
+            "cost": 1
+        }
+    }
+}
